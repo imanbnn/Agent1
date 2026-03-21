@@ -42,7 +42,9 @@ async def handle_dashboard(page, kb):
     await asyncio.sleep(8)
     return "continue"
 
-async def handle_search_results(page, kb):
+# 👇 FIX: Renamed from handle_search_results to handle_product_page
+async def handle_product_page(page, kb):
+    print("🛒 Product page identified. Starting harvest...")
     await run_harvest(page)
     return "stop"
 
@@ -71,10 +73,11 @@ async def handle_dynamic_page(page, kb, current_state):
     await asyncio.sleep(5)
     return "continue"
 
+# 👇 FIX: Updated mapping to explicitly route "product_page"
 STATE_ROUTER = {
     "login_page": handle_login_page,
     "location_selection": handle_location_selection,
     "dashboard": handle_dashboard,
-    "search_results": handle_search_results,
+    "product_page": handle_product_page,
     "popup_active": handle_popup_active,
 }
