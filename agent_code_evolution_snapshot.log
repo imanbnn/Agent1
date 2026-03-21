@@ -1,0 +1,251 @@
+# ==========================================================
+# GFS AGENT AUTO-GENERATED EVOLUTION MANIFEST
+# Generated at: 2026-03-21 15:02:16
+# ==========================================================
+
+# --- FILE: main.py ---
+import asyncio
+from playwright.async_api import async_playwright
+from brain import KnowledgeBase
+from actions import identify_state, apply_stealth, scroll_and_verify
+from states.handlers import STATE_ROUTER
+from logger import log_event, generate_evolution_manifest 
+
+async def main():
+    generate_evolution_manifest()
+    kb = KnowledgeBase()
+    
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=False, args=["--disable-blink-features=AutomationControlled"])
+        context = await browser.new_context(viewport={'width': 1280, 'height': 800})
+        page = await context.new_page()
+
+        await apply_stealth(page)
+        print("🚀 Starting Autonomous State Machine...")
+        await page.goto("https://order.gfs.com/")
+
+        last_state = None
+        while True:
+            current_state = await identify_state(page)
+            
+            if current_state != last_state:
+                log_event("STATE_CHANGE", {"from": last_state, "to": current_state, "url": page.url})
+                print(f"📍 State Changed -> {current_state}")
+                
+                # 🧬 DISCOVERY SCROLLING: Always scroll on new state to discover elements
+                if current_state not in ["transitioning", "unknown_page"]:
+                    await scroll_and_verify(page)
+                
+                if current_state == "dashboard":
+                    await page.keyboard.press("Escape")
+                last_state = current_state
+
+            if current_state in ["transitioning", "unknown_page"]:
+                await asyncio.sleep(2)
+                continue
+
+            if current_state in STATE_ROUTER:
+                status = await STATE_ROUTER[current_state](page, kb)
+                if status == "stop": break
+            
+            await asyncio.sleep(1.5) 
+        await browser.close()
+
+if __name__ == "__main__":
+    asyncio.run(main())
+
+# --- FILE: actions.py ---
+import asyncio
+import re
+import os
+import datetime
+import shutil
+from urllib.parse import urlparse
+from logger import log_event
+
+async def apply_stealth(page):
+    await page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+    await page.add_init_script("Object.defineProperty(navigator, 'plugins', {get: () => [1, 2, 3, 4, 5]})")
+    await page.add_init_script("window.chrome = { runtime: {} };")
+
+async def scroll_and_verify(page):
+    """Deep scroll to trigger all lazy-loading and popups."""
+    print("📜 Scrolling for discovery...")
+    await page.mouse.move(0, 0)
+    last_height = await page.evaluate("document.body.scrollHeight")
+    for _ in range(3): 
+        await page.mouse.wheel(0, 1000)
+        await asyncio.sleep(1.2)
+        new_height = await page.evaluate("document.body.scrollHeight")
+        if new_height == last_height: break
+        last_height = new_height
+    await page.evaluate("window.scrollTo(0, 0)")
+    await asyncio.sleep(0.5)
+
+async def identify_state(page):
+    try:
+        popup_selectors = "dialog, [role='dialog'], [class*='modal'], [class*='popup'], .cdk-overlay-pane"
+        popup_locator = page.locator(popup_selectors).first
+        state = "unknown_page"
+        if await popup_locator.is_visible(timeout=500):
+            state = "popup_active"
+        else:
+            url, content = page.url.lower(), (await page.content()).lower()
+            if any(x in url for x in ["sso.gfs.com", "okta"]) or "password" in content: state = "login_page"
+            elif "search" in url: state = "search_results"
+            elif "order.gfs.com" in url and ("dashboard" in url or "home" in url): state = "dashboard"
+            elif "order.gfs.com" in url: return "transitioning"
+            else:
+                path = urlparse(url).path
+                clean = re.sub(r'[^a-zA-Z0-9]', '_', path).strip('_')
+                state = f"page_{clean}" if clean else "unknown_page"
+
+        if state not in ["transitioning", "unknown_page"]:
+            os.makedirs("vision/last_seen", exist_ok=True)
+            await page.screenshot(path=f"vision/last_seen/{state}_LATEST.png")
+        return state
+    except: return "transitioning"
+
+async def teach_and_click(page, kb, state, element, action="click", value=None):
+    coords = kb.get_coords(state, element)
+    auto_locator = None
+    
+    if not coords:
+        # 🤖 Vision Locators
+        if element == "username_field":
+            auto_locator = page.locator('input[name*="user" i], input[id*="username" i], input[type="email"]').first
+        elif element == "password_field":
+            auto_locator = page.locator('input[type="password"]').first
+        elif element == "next_button":
+            auto_locator = page.locator('input[value="Next"], button:has-text("Next"), #okta-signin-submit').first
+        elif element == "sign_in_button":
+            auto_locator = page.locator('input[value*="Sign In"], button:has-text("Sign In"), #okta-signin-submit').first
+        elif element == "search_bar": 
+            auto_locator = page.locator('input[type="search"], input[placeholder*="search" i]').first
+        
+        if auto_locator:
+            try:
+                await auto_locator.wait_for(state="visible", timeout=3000)
+                box = await auto_locator.bounding_box()
+                if not box: # Try one last scroll if it's off-screen
+                    await scroll_and_verify(page)
+                    box = await auto_locator.bounding_box()
+                if box:
+                    coords = {"x": int(box["x"] + box["width"]/2), "y": int(box["y"] + box["height"]/2)}
+                    if element != "close_popup_btn": kb.learn(state, element, coords)
+            except: pass
+
+    if coords:
+        # 🎯 Force Focus Click
+        await page.mouse.click(coords['x'], coords['y'])
+        await asyncio.sleep(0.5)
+
+        if action == "type" and value:
+            if auto_locator:
+                await auto_locator.fill(value)
+            else:
+                await page.keyboard.type(value, delay=60)
+            await page.keyboard.press("Enter")
+    else:
+        # Fallback to manual teaching (Standard Overlay logic)
+        log_event("LEARNING_REQUIRED", {"state": state, "element": element})
+        print(f"🎯 [TEACHING] Click the: **{element.upper()}**")
+
+# --- FILE: brain.py ---
+import json
+import os
+
+class KnowledgeBase:
+    def __init__(self, file_path="knowledge.json"):
+        self.file_path = file_path
+        self.data = self._load()
+
+    def _load(self):
+        if os.path.exists(self.file_path):
+            with open(self.file_path, 'r') as f:
+                return json.load(f)
+        return {}
+
+    def learn(self, state, element, coords):
+        if state not in self.data: self.data[state] = {}
+        self.data[state][element] = coords
+        with open(self.file_path, 'w') as f:
+            json.dump(self.data, f, indent=4)
+
+    def get_coords(self, state, element):
+        return self.data.get(state, {}).get(element)
+
+# --- FILE: states/handlers.py ---
+import asyncio
+import os
+from actions import teach_and_click
+
+async def handle_login_page(page, kb):
+    print("🔐 Executing SSO Sequence...")
+    # 1. Type Username
+    await teach_and_click(page, kb, "login_page", "username_field", "type", os.getenv("GFS_USERNAME"))
+    await asyncio.sleep(1)
+    
+    # 2. Check for Okta "Next" button
+    if not await page.locator('input[type="password"]').is_visible(timeout=1000):
+        print("⏭️ Multi-step detected. Clicking Next...")
+        await teach_and_click(page, kb, "login_page", "next_button", "click")
+        await asyncio.sleep(2)
+
+    # 3. Type Password
+    await teach_and_click(page, kb, "login_page", "password_field", "type", os.getenv("GFS_PASSWORD"))
+    await asyncio.sleep(1)
+    
+    # 4. Explicit Sign In Click (Bypasses 'Enter' key blocks)
+    await teach_and_click(page, kb, "login_page", "sign_in_button", "click")
+    
+    print("⏳ Waiting for Dashboard (10s)...")
+    await asyncio.sleep(10)
+    return "continue"
+
+async def handle_dashboard(page, kb):
+    product = os.getenv("GFS_DEFAULT_PRODUCT", "Butter")
+    await teach_and_click(page, kb, "dashboard", "search_bar", "type", product)
+    return "continue"
+
+STATE_ROUTER = {
+    "login_page": handle_login_page,
+    "dashboard": handle_dashboard,
+    "popup_active": lambda p, k: p.keyboard.press("Escape")
+}
+
+# --- FILE: logger.py ---
+import json
+import os
+import datetime
+
+def log_event(event_type, details):
+    log_entry = {
+        "timestamp": datetime.datetime.now().isoformat(),
+        "type": event_type,
+        "details": details
+    }
+    with open("evolution_log.jsonl", "a") as f:
+        f.write(json.dumps(log_entry) + "\n")
+
+def generate_evolution_manifest():
+    """Bundles core logic files into a single snapshot for AI analysis."""
+    files_to_track = ["main.py", "actions.py", "brain.py", "states/handlers.py", "logger.py"]
+    manifest_path = "agent_code_evolution_snapshot.log"
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    print(f"🧬 Generating Evolution Manifest at {timestamp}...")
+    with open(manifest_path, "w") as manifest:
+        manifest.write(f"# ==========================================================\n")
+        manifest.write(f"# GFS AGENT AUTO-GENERATED EVOLUTION MANIFEST\n")
+        manifest.write(f"# Generated at: {timestamp}\n")
+        manifest.write(f"# ==========================================================\n\n")
+        for file_path in files_to_track:
+            if os.path.exists(file_path):
+                with open(file_path, "r") as f:
+                    content = f.read()
+                manifest.write(f"# --- FILE: {file_path} ---\n{content}\n\n")
+        manifest.write(f"# END OF MANIFEST\n# ==========================================================\n")
+
+# END OF MANIFEST
+# ==========================================================
