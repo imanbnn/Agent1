@@ -249,3 +249,9 @@ def generate_evolution_manifest():
 
 # END OF MANIFEST
 # ==========================================================
+
+============================================================
+SNAPSHOT: 2026-03-21 15:40:18
+CHANGE: Multi-Popup Recursive Dismissal
+DETAILS: Added dismiss_all_popups loop to handle chained overlays and automated evolution logging.
+============================================================
