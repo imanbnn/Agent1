@@ -1,0 +1,80 @@
+{"timestamp": "2026-03-23T15:47:15.900622", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-24T09:18:02.986042", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-24T09:21:12.981013", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-24T09:23:05.780708", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-24T09:26:25.349093", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-24T09:33:32.276016", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-24T10:02:15.337057", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-24T10:03:46.842244", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-24T10:05:51.974134", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-24T10:08:08.692590", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-24T10:10:17.827462", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-24T10:13:45.374430", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-24T10:17:38.675841", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-24T10:18:12.871950", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-03-24T10:18:41.895264", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-03-24T10:18:41.897615", "type": "HARVEST_START", "details": {"mode": "API_COMPILER"}}
+{"timestamp": "2026-03-24T10:19:13.967582", "type": "HARVEST_END", "details": {"total_items": 0, "target_total": 9999}}
+{"timestamp": "2026-03-24T10:25:59.918727", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-24T10:26:15.018330", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-03-24T10:26:43.000179", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-03-24T10:29:16.500803", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-24T10:29:31.171189", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-03-24T10:29:58.281468", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-03-24T10:29:58.283306", "type": "HARVEST_START", "details": {"mode": "API_COMPILER"}}
+{"timestamp": "2026-03-24T10:30:26.230237", "type": "HARVEST_END", "details": {"total_items": 0, "target_total": 9999}}
+{"timestamp": "2026-03-24T10:36:29.740888", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-24T10:36:44.832580", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-03-24T10:37:10.394159", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-03-24T10:37:10.396919", "type": "HARVEST_START", "details": {"mode": "API_COMPILER"}}
+{"timestamp": "2026-03-24T10:37:35.669128", "type": "HARVEST_END", "details": {"total_items": 0, "target_total": 9999}}
+{"timestamp": "2026-03-24T10:40:27.700070", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-24T10:40:42.447577", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-03-24T10:41:14.980356", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-03-24T10:41:14.982169", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
+{"timestamp": "2026-03-24T10:41:15.032233", "type": "HARVEST_END", "details": {"total_items": 2139, "target_total": 16}}
+{"timestamp": "2026-03-24T11:23:07.798042", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-24T11:23:22.434161", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-03-24T11:23:50.118958", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-03-24T11:23:50.121692", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
+{"timestamp": "2026-03-24T11:23:50.187055", "type": "HARVEST_END", "details": {"total_items": 2138, "target_total": 16}}
+{"timestamp": "2026-03-24T12:29:48.150548", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-24T12:30:04.238158", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-03-24T12:30:30.523621", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-03-24T12:30:30.526447", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
+{"timestamp": "2026-03-24T12:30:30.592423", "type": "HARVEST_END", "details": {"total_items": 2142, "target_total": 16}}
+{"timestamp": "2026-03-25T13:46:35.892293", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-25T13:46:51.064691", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-03-25T13:47:32.119497", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-03-25T13:47:32.122416", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
+{"timestamp": "2026-03-25T13:47:32.182745", "type": "HARVEST_END", "details": {"total_items": 2142, "target_total": 16}}
+{"timestamp": "2026-03-25T13:48:38.455852", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-25T13:48:54.583158", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-03-25T13:49:35.022264", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-03-25T13:49:35.025406", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
+{"timestamp": "2026-03-25T13:49:35.087471", "type": "HARVEST_END", "details": {"total_items": 2143, "target_total": 16}}
+{"timestamp": "2026-03-25T13:51:55.544484", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-25T13:52:11.068325", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-03-25T13:52:51.522346", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-03-25T13:52:51.524177", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
+{"timestamp": "2026-03-25T13:52:51.582868", "type": "HARVEST_END", "details": {"total_items": 2143, "target_total": 16}}
+{"timestamp": "2026-03-25T14:47:57.796913", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-25T14:48:12.760390", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-03-25T14:48:39.606634", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-03-25T14:48:39.609483", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
+{"timestamp": "2026-03-25T14:48:39.671490", "type": "HARVEST_END", "details": {"total_items": 2102, "target_total": 16}}
+{"timestamp": "2026-03-25T16:02:24.083022", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-25T16:02:39.757391", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-03-25T16:03:12.233524", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-03-25T16:03:12.236227", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
+{"timestamp": "2026-03-25T16:03:12.298228", "type": "HARVEST_END", "details": {"total_items": 2118, "target_total": 16}}
+{"timestamp": "2026-03-25T18:39:49.289840", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-25T18:40:05.290248", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-03-25T18:40:44.516497", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-03-25T18:40:44.517821", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
+{"timestamp": "2026-03-25T18:40:44.568761", "type": "HARVEST_END", "details": {"total_items": 2133, "target_total": 16}}
+{"timestamp": "2026-03-26T13:49:03.942192", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-03-26T13:49:19.066135", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-03-26T13:50:04.625745", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-03-26T13:50:04.628466", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
+{"timestamp": "2026-03-26T13:50:04.686110", "type": "HARVEST_END", "details": {"total_items": 2167, "target_total": 16}}

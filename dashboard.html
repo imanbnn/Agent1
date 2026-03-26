@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GFS Harvest - Manual & Auto Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    <style>
+        body { background-color: #f0f2f5; font-family: 'Segoe UI', sans-serif; }
+        .container { margin-top: 30px; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .header-box { border-bottom: 2px solid #dc3545; margin-bottom: 25px; padding-bottom: 15px; display: flex; justify-content: space-between; align-items: flex-end; }
+        h2 { color: #2b5a87; font-weight: 800; margin: 0; }
+        .upload-section { background: #f8f9fa; border: 2px dashed #ced4da; padding: 20px; border-radius: 10px; margin-bottom: 25px; }
+        .badge-count { background-color: #2b5a87; color: white; padding: 6px 15px; border-radius: 20px; font-weight: 600; }
+        .table thead { background-color: #2b5a87; color: white; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-box">
+        <div>
+            <h2>GFS Scraper Dashboard</h2>
+            <p class="text-muted mb-0">Visualize results from <code>gfs_results.csv</code></p>
+        </div>
+        <div class="text-end">
+            <span class="badge-count" id="itemCount">Ready for Data</span>
+        </div>
+    </div>
+
+    <div class="upload-section">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <label for="csvFileInput" class="form-label fw-bold text-secondary">Upload GFS Result File manually:</label>
+                <input class="form-control" type="file" id="csvFileInput" accept=".csv">
+            </div>
+            <div class="col-md-4 text-center mt-3 mt-md-0">
+                <button onclick="autoFetch()" class="btn btn-outline-primary w-100">📡 Try Auto-Fetch</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table id="resultsTable" class="table table-hover border" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Item Code</th>
+                    <th>Price</th>
+                    <th>Primary Measurement</th>
+                    <th>Secondary Measurement</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+
+<script>
+    let dataTable;
+
+    // --- 1. Manual Upload Logic ---
+    document.getElementById('csvFileInput').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        Papa.parse(file, {
+            header: true,
+            delimiter: ";", // Essential: matches harvester.py
+            skipEmptyLines: true,
+            complete: function(results) {
+                console.log("File parsed successfully:", results.data);
+                renderTable(results.data);
+            }
+        });
+    });
+
+    // --- 2. Auto-Fetch Logic ---
+    async function autoFetch() {
+        try {
+            const response = await fetch('gfs_results.csv?t=' + new Date().getTime());
+            if (!response.ok) throw new Error("File not found on server.");
+            
+            const csvData = await response.text();
+            Papa.parse(csvData, {
+                header: true,
+                delimiter: ";",
+                skipEmptyLines: true,
+                complete: function(results) {
+                    renderTable(results.data);
+                }
+            });
+        } catch (error) {
+            alert("Auto-fetch failed. Please use the 'Choose File' button to select gfs_results.csv manually.");
+        }
+    }
+
+    // --- 3. Rendering Logic ---
+    function renderTable(data) {
+        if (dataTable) {
+            dataTable.destroy();
+        }
+
+        const tableBody = document.getElementById('tableBody');
+        tableBody.innerHTML = '';
+        
+        data.forEach(row => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td><strong>${row.Name || 'Unknown'}</strong></td>
+                <td><span class="badge bg-light text-dark border">${row.Code || 'N/A'}</span></td>
+                <td class="text-success fw-bold">${row.Price || 'N/A'}</td>
+                <td>${row.First_Measurement || 'N/A'}</td>
+                <td>${row.Second_Measurement || 'N/A'}</td>
+            `;
+            tableBody.appendChild(tr);
+        });
+
+        document.getElementById('itemCount').innerText = `${data.length} Products Found`;
+
+        dataTable = $('#resultsTable').DataTable({
+            order: [[0, 'asc']],
+            pageLength: 15,
+            dom: '<"row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6"f>>rtip',
+            language: { 
+                search: "_INPUT_",
+                searchPlaceholder: "Search butter, codes, etc..." 
+            }
+        });
+    }
+
+    // Attempt auto-fetch on load
+    window.onload = autoFetch;
+</script>
+
+</body>
+</html>

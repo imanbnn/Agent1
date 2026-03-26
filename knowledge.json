@@ -1,0 +1,21 @@
+{
+    "login_page": {
+        "username_field": {
+            "x": 852,
+            "y": 356
+        },
+        "password_field": {
+            "x": 864,
+            "y": 401
+        }
+    },
+    "dashboard": {
+        "scroll_depth": {
+            "scrolls": 1
+        },
+        "search_bar": {
+            "x": 467,
+            "y": 71
+        }
+    }
+}
