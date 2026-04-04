@@ -1,26 +1,110 @@
+# ============================================================
+# 🧠 GEMINI TROUBLESHOOTING MANIFEST
+# GENERATED: 2026-04-04 17:25:21
+# OS: Darwin 25.3.0
+# PYTHON: 3.14.3
+# ============================================================
 
-============================================================
-SNAPSHOT: 2026-03-26 18:00:31
-CHANGE: Global Wiretap Integration
-DETAILS: Moved API wiretap to global scope to prevent race conditions.
-============================================================
+# --- 🧠 CURRENT KNOWLEDGE BASE (MEMORY) ---
+{
+    "login_page": {
+        "username_field": {
+            "x": 852,
+            "y": 356
+        },
+        "password_field": {
+            "x": 864,
+            "y": 401
+        }
+    },
+    "dashboard": {
+        "scroll_depth": {
+            "scrolls": 1
+        },
+        "search_bar": {
+            "x": 467,
+            "y": 71
+        }
+    },
+    "sitemap": {
+        "xml_links": "<... 0 links hidden ...>",
+        "dom_links": "<... 10 links hidden ...>"
+    }
+}
+
+# --- 📂 DIRECTORY STRUCTURE ---
+./
+    raw_info_dump.json
+    raw_price_dump.json
+    CHANGELOG.md
+    gfs_results.csv
+    scroll.py
+    actions.py
+    logger.py
+    brain.py
+    .env
+    harvester.py
+    knowledge.json
+    main.py
+    states/
+        handlers.py
+        __init__.py
+    raw_dumps/
+    .vscode/
+        settings.json
 
 
-# --- FULL ARCHITECTURE SNAPSHOT: 2026-03-26 18:00:31 ---
+# --- 💻 FULL ARCHITECTURE SNAPSHOT ---
+
+# FILE: CHANGELOG.md
+# 🤖 Agent Architecture Changelog
+
+### [2026-04-04 16:26:56]
+* **Change:** Accelerated Video
+* **Details:** Added FFmpeg post-processing for 2x speed and smaller file size.
+
+### [2026-04-04 16:41:27]
+* **Change:** Hyper-Accelerated Video
+* **Details:** Updated FFmpeg post-processing to 3.5x playback speed.
+
+### [2026-04-04 17:08:55] SESSION START
+* **Change/Run Context:** Hyper-Accelerated Video
+* **Technical Details:** Updated FFmpeg post-processing to 3.5x playback speed.
+
+### [2026-04-04 17:12:54] SESSION START
+* **Change/Run Context:** Hyper-Accelerated Video
+* **Technical Details:** Updated FFmpeg post-processing to 3.5x playback speed.
+
+### [2026-04-04 17:13:28] SESSION START
+* **Change/Run Context:** Hyper-Accelerated Video
+* **Technical Details:** Updated FFmpeg post-processing to 3.5x playback speed.
+
+### [2026-04-04 17:22:06] SESSION START
+* **Change/Run Context:** Hyper-Accelerated Video
+* **Technical Details:** Updated FFmpeg post-processing to 3.5x playback speed.
+
+### [2026-04-04 17:25:21] SESSION START
+* **Change/Run Context:** Hyper-Accelerated Video
+* **Technical Details:** Updated FFmpeg post-processing to 3.5x playback speed.
+
+
 
 # FILE: main.py
 import asyncio
 import random
+import os
+import glob
+import shutil
+import subprocess
 from playwright.async_api import async_playwright
 from brain import KnowledgeBase
 from actions import identify_state, apply_stealth, dismiss_all_popups, deep_human_scroll
 from states.handlers import STATE_ROUTER
 from logger import log_event, generate_evolution_manifest, log_evolution_snapshot
-from harvester import setup_wiretap  # <--- IMPORT THE NEW WIRETAP
 
 async def main():
     # 📝 Self-Updating Evolution Log
-    log_evolution_snapshot("Global Wiretap Integration", "Moved API wiretap to global scope to prevent race conditions.")
+    log_evolution_snapshot("Hyper-Accelerated Video", "Updated FFmpeg post-processing to 3.5x playback speed.")
     generate_evolution_manifest()
     
     kb = KnowledgeBase()
@@ -28,47 +112,86 @@ async def main():
     async with async_playwright() as p:
         ua = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
         browser = await p.chromium.launch(headless=False, args=["--disable-blink-features=AutomationControlled"])
-        context = await browser.new_context(viewport={'width': 1280, 'height': 800}, user_agent=ua)
+        
+        # 🔴 Enable Video Recording in the Browser Context
+        context = await browser.new_context(
+            viewport={'width': 1280, 'height': 800}, 
+            user_agent=ua,
+            record_video_dir="videos/",  # Save raw videos here temporarily
+            record_video_size={"width": 1280, "height": 800}
+        )
         page = await context.new_page()
 
         await apply_stealth(page)
-        
-        # 🚨 ATTACH THE GLOBAL WIRETAP IMMEDIATELY
-        await setup_wiretap(page)
 
-        print("🚀 Launching Beefed-up Autonomous Scraper...")
+        print("🚀 Launching Beefed-up Autonomous Scraper with Debug Recording...")
         await page.goto("https://order.gfs.com/")
 
         last_state = None
-        while True:
-            await dismiss_all_popups(page)
-            current_state = await identify_state(page)
-            
-            if current_state != last_state:
-                log_event("STATE_CHANGE", {"from": last_state, "to": current_state})
-                print(f"📍 State Changed -> {current_state}")
+        
+        try:
+            while True:
+                await dismiss_all_popups(page)
+                current_state = await identify_state(page)
                 
-                if current_state not in ["transitioning", "unknown_page"]:
-                    try:
-                        await page.wait_for_load_state("networkidle", timeout=5000)
-                    except: 
-                        pass # Network idle timeout is common, proceed anyway
+                if current_state != last_state:
+                    log_event("STATE_CHANGE", {"from": last_state, "to": current_state})
+                    print(f"📍 State Changed -> {current_state}")
                     
-                    # 📜 Pass the KB and State so the bot can use its memory
+                    if current_state not in ["transitioning", "unknown_page"]:
+                        try:
+                            await page.wait_for_load_state("networkidle", timeout=5000)
+                        except: 
+                            pass
+                        
                     await deep_human_scroll(page, kb, current_state)
                     current_state = await identify_state(page)
+                    last_state = current_state
+
+                if current_state in ["transitioning", "unknown_page"]:
+                    await asyncio.sleep(2)
+                    continue
+
+                if current_state in STATE_ROUTER:
+                    status = await STATE_ROUTER[current_state](page, kb)
+                    if status == "stop": break
                 
-                last_state = current_state
-
-            if current_state in ["transitioning", "unknown_page"]:
-                await asyncio.sleep(2)
-                continue
-
-            if current_state in STATE_ROUTER:
-                status = await STATE_ROUTER[current_state](page, kb)
-                if status == "stop": break
+                await asyncio.sleep(random.uniform(1.5, 3.5))
+                
+        finally:
+            print("\n🛑 Stopping bot. Finalizing debug video...")
             
-            await asyncio.sleep(random.uniform(1.5, 3.5))
+            await context.close()
+            await browser.close()
+            
+            # ♻️ 3.5x Speed Compression & Overwrite Logic
+            video_files = glob.glob("videos/*.webm")
+            if video_files:
+                latest_video = max(video_files, key=os.path.getctime)
+                target_path = "debug_recording.webm"
+                
+                print("📼 Compressing and accelerating video (3.5x speed)...")
+                try:
+                    # FFmpeg command: 1 / 3.5 = 0.2857
+                    subprocess.run(
+                        ["ffmpeg", "-y", "-i", latest_video, "-filter:v", "setpts=0.2857*PTS", "-an", target_path],
+                        check=True,
+                        stdout=subprocess.DEVNULL,
+                        stderr=subprocess.DEVNULL
+                    )
+                    print(f"✅ Success! 3.5x Speed video saved to: {target_path}")
+                except (subprocess.CalledProcessError, FileNotFoundError):
+                    print("⚠️ FFmpeg not installed or failed. Falling back to normal 1x raw video.")
+                    if os.path.exists(target_path):
+                        os.remove(target_path)
+                    shutil.move(latest_video, target_path)
+                    print(f"📼 Raw video saved over: {target_path}")
+
+                for f in glob.glob("videos/*.webm"):
+                    try: os.remove(f)
+                    except: pass
+                try: os.rmdir("videos")
+                except: pass
 
 if __name__ == "__main__":
     asyncio.run(main())
@@ -80,6 +203,7 @@ import re
 import os
 import datetime
 import shutil
+import json
 from urllib.parse import urlparse
 from logger import log_event, capture_context
 from PIL import Image, ImageChops
@@ -161,6 +285,69 @@ async def dismiss_all_popups(page):
             return True
     return False
 
+# --- 🗺️ SITE DISCOVERY (SPIDER) ---
+async def build_sitemap(page, kb):
+    print("\n🗺️ --- STARTING 3-LEVEL SITE DISCOVERY ---")
+    
+    # We use the current origin as the base URL
+    base_url = await page.evaluate("window.location.origin")
+    sitemap_data = {"xml_links": [], "dom_links": []}
+
+    # ==========================================
+    # LEVEL 1: Standard XML Sitemap
+    # ==========================================
+    print("🔍 [LEVEL 1] Checking robots.txt & sitemap.xml...")
+    try:
+        # Check robots.txt
+        response = await page.request.get(f"{base_url}/robots.txt")
+        if response.ok:
+            print("✅ Found robots.txt. (Can be parsed for hidden paths)")
+        
+        # Check standard sitemap
+        response = await page.request.get(f"{base_url}/sitemap.xml")
+        if response.ok:
+            text = await response.text()
+            urls = re.findall(r'<loc>(.*?)</loc>', text)
+            sitemap_data["xml_links"] = list(set(urls))
+            print(f"✅ Extracted {len(sitemap_data['xml_links'])} hidden links from sitemap.xml!")
+        else:
+            print("⚠️ No public sitemap.xml found. Proceeding to DOM Spidering...")
+    except Exception as e:
+        print(f"⚠️ Level 1 Failed: {e}")
+
+    # ==========================================
+    # LEVEL 2: Recursive DOM Spidering
+    # ==========================================
+    print("🕸️ [LEVEL 2] Spidering current DOM for hidden href links...")
+    try:
+        links = await page.evaluate("""() => {
+            const anchors = document.querySelectorAll('a[href]');
+            return [...new Set(Array.from(anchors).map(a => a.href))];
+        }""")
+        
+        valid_links = []
+        for link in links:
+            if "gfs.com" in link and "javascript:" not in link and "mailto:" not in link:
+                clean_link = link.split('?')[0].split('#')[0] 
+                valid_links.append(clean_link)
+                
+        sitemap_data["dom_links"] = list(set(valid_links))
+        print(f"✅ Extracted {len(sitemap_data['dom_links'])} internal links from the page.")
+    except Exception as e:
+        print(f"⚠️ Level 2 Failed: {e}")
+
+    # Save findings to Knowledge Base
+    if "sitemap" not in kb.data:
+        kb.data["sitemap"] = {}
+    
+    kb.data["sitemap"].update(sitemap_data)
+    
+    with open(kb.file_path, 'w', encoding='utf-8') as f:
+        json.dump(kb.data, f, indent=4)
+        
+    print("💾 Sitemap saved to knowledge.json (Level 3 API intercepts running in background).")
+    print("🗺️ --- DISCOVERY COMPLETE ---\n")
+
 # --- 👁️ VISION & STATE AWARENESS ---
 def detect_visual_change(new_path, ref_path, threshold=5):
     if not os.path.exists(ref_path): return False
@@ -177,7 +364,8 @@ def detect_visual_change(new_path, ref_path, threshold=5):
 async def identify_state(page):
     url = page.url.lower()
     if any(x in url for x in ["sso.gfs.com", "okta"]): return "login_page"
-    if any(x in url for x in ["search", "product", "item"]): return "product_page"
+    if any(x in url for x in ["search", "product", "item", "order.gfs.com/shopping"]): 
+        return "product_page"
     if "home" in url or "dashboard" in url: return "dashboard"
     return "transitioning"
 
@@ -195,14 +383,12 @@ async def teach_and_click(page, kb, state, element, action="click", value=None):
         # PLAN A: Standard HTML Selectors
         if element in selectors:
             try:
-                # First try the main page
                 loc = page.locator(selectors[element]).first
                 await loc.wait_for(state="visible", timeout=2000)
                 box = await loc.bounding_box()
                 if box:
                     coords = {"x": int(box["x"] + box["width"]/2), "y": int(box["y"] + box["height"]/2)}
             except:
-                # If that fails, pierce through the iframes
                 for frame in page.frames:
                     try:
                         loc = frame.locator(selectors[element]).first
@@ -241,7 +427,6 @@ async def teach_and_click(page, kb, state, element, action="click", value=None):
                     print(f"\n🚨 [CRITICAL ALERT] Bot is blind! Cannot find {element}.")
                     print(f"👉 PLEASE CLICK THE {element.upper()} DIRECTLY ON THE BROWSER WINDOW NOW...")
                     
-                    # Inject a full-screen invisible overlay to intercept the human's mouse click
                     coords = await page.evaluate("""() => {
                         return new Promise(resolve => {
                             const overlay = document.createElement('div');
@@ -251,16 +436,14 @@ async def teach_and_click(page, kb, state, element, action="click", value=None):
                             overlay.style.width = '100vw';
                             overlay.style.height = '100vh';
                             overlay.style.zIndex = '99999999';
-                            overlay.style.backgroundColor = 'rgba(255, 0, 0, 0.15)'; // Light red tint
+                            overlay.style.backgroundColor = 'rgba(255, 0, 0, 0.15)'; 
                             overlay.style.cursor = 'crosshair';
-                            
                             overlay.addEventListener('click', (e) => {
                                 e.preventDefault();
                                 e.stopPropagation();
                                 document.body.removeChild(overlay);
                                 resolve({x: e.clientX, y: e.clientY});
                             });
-                            
                             document.body.appendChild(overlay);
                         });
                     }""")
@@ -305,940 +488,315 @@ class KnowledgeBase:
     def get_coords(self, state, element):
         return self.data.get(state, {}).get(element)
 
-# FILE: states/handlers.py
+# FILE: harvester.py
 import asyncio
 import os
-from dotenv import load_dotenv
-from actions import teach_and_click
-from harvester import run_harvest  # Required for the product_page handler
-
-load_dotenv()
-
-USERNAME = os.getenv("GFS_USERNAME")
-PASSWORD = os.getenv("GFS_PASSWORD")
-PRODUCT = os.getenv("GFS_DEFAULT_PRODUCT", "Butter") 
-
-async def handle_popup_active(page, kb):
-    print("🚨 Popup detected blocking the screen!")
-    await teach_and_click(page, kb, "popup_active", "close_popup_btn", "click")
-    await asyncio.sleep(3) 
-    return "continue"
-
-async def handle_login_page(page, kb):
-    print("\n🔑 Login page detected. Assessing form...")
-    
-    if not USERNAME or not PASSWORD:
-        print("⚠️ ERROR: Missing credentials in .env file!")
-        return "stop"
-        
-    # 1. Try to input Username
-    username_found = await teach_and_click(page, kb, "login_page", "username_field", "type", USERNAME)
-    if not username_found:
-        print("⚠️ Waiting for Username field to appear...")
-        await asyncio.sleep(3)
-        return "continue"
-        
-    await asyncio.sleep(2)
-    
-    # 2. Try to input Password
-    await teach_and_click(page, kb, "login_page", "password_field", "type", PASSWORD)
-    
-    await asyncio.sleep(5)
-    return "continue"
-
-async def handle_location_selection(page, kb):
-    await teach_and_click(page, kb, "location_selection", "brera_row")
-    await asyncio.sleep(5)
-    return "continue"
-
-async def handle_dashboard(page, kb):
-    print("🧹 Pressing 'Escape' to clear potential hidden popups...")
-    await page.keyboard.press("Escape")
-    await asyncio.sleep(1) 
-    
-    await teach_and_click(page, kb, "dashboard", "search_bar", "type", PRODUCT)
-    await asyncio.sleep(8)
-    return "continue"
-
-async def handle_product_page(page, kb):
-    print("🛒 Product page identified. Starting harvest...")
-    # This calls the hybrid OCR/Wiretap harvester we built
-    await run_harvest(page)
-    return "stop"
-
-async def handle_dynamic_page(page, kb, current_state):
-    action_directive = kb.get_coords(current_state, "__target_action__")
-    if action_directive:
-        el = action_directive["element"]
-        act = action_directive["action"]
-        val = action_directive["value"]
-        await teach_and_click(page, kb, current_state, el, act, val)
-        await asyncio.sleep(5)
-        return "continue"
-
-    print(f"\n🌟 [AUTONOMOUS DISCOVERY] Auto-learning new state: {current_state}")
-    print("🔴 Waiting for human to click the target on the Red Overlay...")
-    
-    element_name = f"auto_target_for_{current_state}"
-    action_type = 'click'
-    val = None
-        
-    kb.learn(current_state, "__target_action__", {
-        "element": element_name, "action": action_type, "value": val
-    })
-    
-    await teach_and_click(page, kb, current_state, element_name, action_type, val)
-    await asyncio.sleep(5)
-    return "continue"
-
-# 🚨 THE MISSING LINK: This dictionary must be at the bottom of the file
-STATE_ROUTER = {
-    "login_page": handle_login_page,
-    "location_selection": handle_location_selection,
-    "dashboard": handle_dashboard,
-    "product_page": handle_product_page,
-    "popup_active": handle_popup_active,
-}
-
-# FILE: logger.py
-import json
-import os
-import datetime
-
-def log_event(event_type, details):
-    """Logs runtime data to JSONL for debugging."""
-    log_entry = {
-        "timestamp": datetime.datetime.now().isoformat(),
-        "type": event_type,
-        "details": details
-    }
-    with open("evolution_log.jsonl", "a", encoding="utf-8") as f:
-        f.write(json.dumps(log_entry) + "\n")
-
-def log_evolution_snapshot(change_summary, technical_details):
-    """Updates the evolution log with high-level architectural changes."""
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    entry = (
-        f"\n{'='*60}\n"
-        f"SNAPSHOT: {timestamp}\n"
-        f"CHANGE: {change_summary}\n"
-        f"DETAILS: {technical_details}\n"
-        f"{'='*60}\n"
-    )
-    with open("agent_code_evolution_snapshot.log", "a", encoding="utf-8") as f:
-        f.write(entry)
-
-def generate_evolution_manifest():
-    """
-    Bundles core logic files into the evolution log.
-    This prevents agents from losing context on previous code changes.
-    """
-    files_to_track = ["main.py", "actions.py", "brain.py", "states/handlers.py", "logger.py"]
-    manifest_path = "agent_code_evolution_snapshot.log"
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    if not os.path.exists(manifest_path):
-        with open(manifest_path, "w", encoding="utf-8") as f:
-            f.write("# Evolution Log Started\n")
-
-    with open(manifest_path, "a", encoding="utf-8") as manifest:
-        manifest.write(f"\n\n# --- FULL ARCHITECTURE SNAPSHOT: {timestamp} ---\n")
-        for file_path in files_to_track:
-            if os.path.exists(file_path):
-                with open(file_path, "r", encoding="utf-8", errors="replace") as f:
-                    content = f.read()
-                manifest.write(f"\n# FILE: {file_path}\n{content}\n")
-        manifest.write("# --- END SNAPSHOT ---\n")
-
-async def capture_context(page, name):
-    """Captures the URL and a snippet of HTML when a popup or error occurs."""
-    try:
-        url = page.url
-        content = (await page.content())[:500]
-        log_event("CONTEXT_SNAPSHOT", {"element": name, "url": url, "html": content})
-    except Exception:
-        log_event("CONTEXT_ERROR", {"msg": "Failed to capture page context"})
-# --- END SNAPSHOT ---
-
-============================================================
-SNAPSHOT: 2026-03-26 18:01:09
-CHANGE: Global Wiretap Integration
-DETAILS: Moved API wiretap to global scope to prevent race conditions.
-============================================================
-
-
-# --- FULL ARCHITECTURE SNAPSHOT: 2026-03-26 18:01:09 ---
-
-# FILE: main.py
-import asyncio
-import random
-from playwright.async_api import async_playwright
-from brain import KnowledgeBase
-from actions import identify_state, apply_stealth, dismiss_all_popups, deep_human_scroll
-from states.handlers import STATE_ROUTER
-from logger import log_event, generate_evolution_manifest, log_evolution_snapshot
-from harvester import setup_wiretap  # <--- IMPORT THE NEW WIRETAP
-
-async def main():
-    # 📝 Self-Updating Evolution Log
-    log_evolution_snapshot("Global Wiretap Integration", "Moved API wiretap to global scope to prevent race conditions.")
-    generate_evolution_manifest()
-    
-    kb = KnowledgeBase()
-    
-    async with async_playwright() as p:
-        ua = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
-        browser = await p.chromium.launch(headless=False, args=["--disable-blink-features=AutomationControlled"])
-        context = await browser.new_context(viewport={'width': 1280, 'height': 800}, user_agent=ua)
-        page = await context.new_page()
-
-        await apply_stealth(page)
-        
-        # 🚨 ATTACH THE GLOBAL WIRETAP IMMEDIATELY
-        await setup_wiretap(page)
-
-        print("🚀 Launching Beefed-up Autonomous Scraper...")
-        await page.goto("https://order.gfs.com/")
-
-        last_state = None
-        while True:
-            await dismiss_all_popups(page)
-            current_state = await identify_state(page)
-            
-            if current_state != last_state:
-                log_event("STATE_CHANGE", {"from": last_state, "to": current_state})
-                print(f"📍 State Changed -> {current_state}")
-                
-                if current_state not in ["transitioning", "unknown_page"]:
-                    try:
-                        await page.wait_for_load_state("networkidle", timeout=5000)
-                    except: 
-                        pass # Network idle timeout is common, proceed anyway
-                    
-                    # 📜 Pass the KB and State so the bot can use its memory
-                    await deep_human_scroll(page, kb, current_state)
-                    current_state = await identify_state(page)
-                
-                last_state = current_state
-
-            if current_state in ["transitioning", "unknown_page"]:
-                await asyncio.sleep(2)
-                continue
-
-            if current_state in STATE_ROUTER:
-                status = await STATE_ROUTER[current_state](page, kb)
-                if status == "stop": break
-            
-            await asyncio.sleep(random.uniform(1.5, 3.5))
-
-if __name__ == "__main__":
-    asyncio.run(main())
-
-# FILE: actions.py
-import asyncio
-import random
 import re
-import os
-import datetime
-import shutil
-from urllib.parse import urlparse
-from logger import log_event, capture_context
-from PIL import Image, ImageChops
-from paddleocr import PaddleOCR
+import json
+from logger import log_event
+from scroll import force_scroll_down
+from actions import get_ocr
 
-# --- 🧠 VISION ENGINE INITIALIZATION ---
-ocr_engine = None
+CSV_FILE = "gfs_results.csv"
 
-def get_ocr():
-    global ocr_engine
-    if ocr_engine is None:
-        print("🧠 Vision Engine: Booting AI Eye (PaddleOCR)...")
-        ocr_engine = PaddleOCR(use_angle_cls=False, lang='en')
-    return ocr_engine
+# 🌍 GLOBAL MEMORY FOR THE WIRETAP
+product_db = {}
+written_codes = set()
+target_total = 9999 
 
-# --- 🧪 HUMAN PHYSICS ENGINE ---
-async def bezier_move(page, end_x, end_y, steps=15):
-    """Moves mouse in a curve to simulate human trackpad acceleration."""
-    start_x, start_y = random.randint(0, 100), random.randint(0, 100)
-    cp1_x = start_x + (end_x - start_x) * random.uniform(0.1, 0.4)
-    cp1_y = start_y + (end_y - start_y) * random.uniform(0.1, 0.4)
-    cp2_x = start_x + (end_x - start_x) * random.uniform(0.6, 0.9)
-    cp2_y = start_y + (end_y - start_y) * random.uniform(0.6, 0.9)
+# 🧠 BUFFERS: Aggregates JSON payloads across multiple scrolls
+RAW_INFO_BUFFER = None
+RAW_PRICE_BUFFER = None
 
-    for i in range(steps + 1):
-        t = i / steps
-        x = (1-t)**3 * start_x + 3*(1-t)**2 * t * cp1_x + 3*(1-t) * t**2 * cp2_x + t**3 * end_x
-        y = (1-t)**3 * start_y + 3*(1-t)**2 * t * cp1_y + 3*(1-t) * t**2 * cp2_y + t**3 * end_y
-        await page.mouse.move(x, y)
-        await asyncio.sleep(random.uniform(0.01, 0.02))
+def initialize_csv():
+    """Clears the CSV and writes the headers."""
+    with open(CSV_FILE, mode="w", encoding="utf-8") as f:
+        f.write("Name;Code;Price;First_Measurement;Second_Measurement\n")
+    print("🧹 CSV initialized for new harvest.")
 
-async def deep_human_scroll(page, kb, state):
-    """Smart Scroll: Bypasses non-content pages like Login to prevent layout breaks."""
-    if state in ["product_page", "login_page"]:
-        print(f"⚡ {state} detected. Bypassing pre-scan to keep form stable.")
-        return
+def write_csv_line(code, data):
+    """Appends a completed product to the CSV."""
+    if code in written_codes: return
+    with open(CSV_FILE, mode="a", encoding="utf-8") as f:
+        name = str(data.get('name', 'Unknown')).replace(';', ',').replace('\n', ' ')
+        price = str(data.get('price', 'Price Not Found')).replace(';', ',')
+        m1 = str(data.get('m1', 'Not Found')).replace(';', ',')
+        m2 = str(data.get('m2', 'Not Found')).replace(';', ',')
+        f.write(f"{name};{code};{price};{m1};{m2}\n")
+    written_codes.add(code)
 
-    saved_depth = kb.get_coords(state, "scroll_depth")
-    if saved_depth and "scrolls" in saved_depth:
-        print(f"🧠 Memory active: Recalled this page needs {saved_depth['scrolls']} scrolls.")
-        for _ in range(saved_depth["scrolls"]):
-            await page.mouse.wheel(0, random.randint(800, 1200))
-            await asyncio.sleep(random.uniform(0.3, 0.8))
+async def scrape_current_html(page):
+    """
+    Direct DOM Scrape: Extracts visible products from HTML.
+    FIXED: Escaped forward slashes in Regex to prevent JavaScript SyntaxError.
+    """
+    products = await page.evaluate("""() => {
+        const items = [];
+        const cards = document.querySelectorAll('.product-card, .list-item, .product-row, tr, [role="row"], article, .product-info, .item-row');
+
+        cards.forEach(card => {
+            const cardText = card.innerText;
+            if (!cardText) return;
+
+            // 1. Find Item Number
+            const codeMatch = cardText.match(/#\\s*(\\d{6,8})/);
+            let cleanCode = '';
+
+            if (codeMatch) {
+                cleanCode = codeMatch[1];
+            } else {
+                const codeEl = card.querySelector('.item-number, .product-code, [class*="material-number"], [class*="sku"]');
+                if (codeEl) cleanCode = codeEl.innerText.replace(/[^0-9]/g, '');
+            }
+
+            if (cleanCode.length > 3) {
+                const upperText = cardText.toUpperCase();
+                const isOOS = upperText.includes('OUT OF STOCK');
+                const isContact = upperText.includes('CONTACT YOUR SALES REPRESENTATIVE');
+
+                // 2. Find Price & Handle Dual Pricing (Case | Unit)
+                let finalPrice = 'Price Not Found';
+                if (isOOS) {
+                    finalPrice = 'OUT OF STOCK';
+                } else if (isContact) {
+                    finalPrice = 'Contact Sales Rep';
+                } else {
+                    const priceEl = card.querySelector('.price, .amount, [class*="unit-price"], .price-container, [class*="pricing"], [class*="price-val"], td:nth-child(4)');
+                    if (priceEl && priceEl.innerText.includes('$')) {
+                        finalPrice = priceEl.innerText.trim().replace(/\\n+/g, ' | ').replace(/\\s{2,}/g, ' ');
+                    } else {
+                        // FIXED: Escaped forward slashes (\\/) for JS context
+                        const priceMatches = cardText.match(/\\$\\d+\\.\\d{2}(?:\\s*(?:Case|Each|\\/CS|\\/EA|\\/LB|\\/KG))?/gi);
+                        if (priceMatches) finalPrice = priceMatches.join(' | ');
+                    }
+                }
+
+                let cleanName = 'Unknown';
+                const nameEl = card.querySelector('.product-name, h3, [class*="title"], [class*="desc"]');
+                if (nameEl) cleanName = nameEl.innerText.trim();
+
+                items.push({
+                    name: cleanName,
+                    code: cleanCode,
+                    price: finalPrice
+                });
+            }
+        });
+        return items;
+    }""")
+
+    for p in products:
+        if p['code'] not in product_db:
+            product_db[p['code']] = {"name": p['name'], "price": p['price'], "m1": "HTML_SCAN", "m2": "HTML_SCAN"}
+        else:
+            if p['price'] != "Price Not Found":
+                product_db[p['code']]["price"] = p['price']
+        write_csv_line(p['code'], product_db[p['code']])
+
+async def get_total_results_via_ocr(page):
+    """Uses Vision to read the total result count from the screen."""
+    shot_path = "vision/harvest_start_count.png"
+    os.makedirs("vision", exist_ok=True)
+    try: await page.wait_for_selector(".result-text-title", timeout=5000)
+    except: pass
+    await page.screenshot(path=shot_path)
+    ocr = get_ocr()
+    result = ocr.ocr(shot_path)
+    if result and result[0]:
+        for line in result[0]:
+            text = line[1][0]
+            match = re.search(r'(\d+)\s+results', text.lower())
+            if match:
+                total = int(match.group(1))
+                return total
+    return 9999
+
+async def setup_wiretap(page):
+    """Intercepts and aggregates all background API traffic."""
+    async def handle_response(response):
+        global target_total, RAW_INFO_BUFFER, RAW_PRICE_BUFFER
+        if response.request.resource_type in ["fetch", "xhr"]:
+            url = response.url.lower()
+            try:
+                if any(x in url for x in ["categories", "nav", "menu", "taxonomy"]):
+                    data = await response.json()
+                    with open("navigation_dump.json", "w", encoding="utf-8") as f: json.dump(data, f, indent=4)
+                elif "materials/search" in url:
+                    data = await response.json()
+                    if "totalResults" in data: target_total = int(data["totalResults"])
+                elif "materials/info" in url or "material-info" in url:
+                    data = await response.json()
+                    if RAW_INFO_BUFFER is None: RAW_INFO_BUFFER = data
+                    elif "materialInfos" in data: RAW_INFO_BUFFER.setdefault("materialInfos", []).extend(data["materialInfos"])
+                    for item in data.get("materialInfos", []):
+                        code = item.get("materialNumber")
+                        if not code: continue
+                        desc = item.get("description", {})
+                        name = desc.get("en") or desc.get("fr") or "Unknown"
+                        weight = item.get("baseUomWeight", {})
+                        m1 = f"{weight.get('net', '')} {weight.get('uom', '')}".strip() or "Not Found"
+                        if code not in product_db:
+                            product_db[code] = {"name": name, "price": "Price Not Found", "m1": m1, "m2": "Not Found"}
+                        else: product_db[code].update({"name": name, "m1": m1})
+                elif "prices" in url:
+                    data = await response.json()
+                    if RAW_PRICE_BUFFER is None: RAW_PRICE_BUFFER = data
+                    elif "materialPrices" in data: RAW_PRICE_BUFFER.setdefault("materialPrices", []).extend(data["materialPrices"])
+                    for item in data.get("materialPrices", []):
+                        code = item.get("materialNumber")
+                        if not code: continue
+                        units = item.get("unitPrices") or []
+                        price_strings = [f"${u['price']}/{u.get('uom', 'EA')}" for u in units if u.get("price") is not None]
+                        price_val = " | ".join(price_strings) if price_strings else "Price Not Found"
+                        if code not in product_db:
+                            product_db[code] = {"name": "", "price": price_val, "m1": "Not Found", "m2": "Not Found"}
+                        elif product_db[code]["price"] == "Price Not Found":
+                            product_db[code]["price"] = price_val
+            except: pass
+    page.on("response", handle_response)
+
+async def run_harvest(page, mode="scan"):
+    global target_total, RAW_INFO_BUFFER, RAW_PRICE_BUFFER
+    initialize_csv()
+    print(f"📡 DEPLOYING HARVESTER (Mode: {mode.upper()})...")
+
+    if mode == "quick_dump":
+        print("🚨 INITIATING QUICK JSON DUMP...")
+        if RAW_INFO_BUFFER:
+            with open("raw_info_dump.json", "w", encoding="utf-8") as f: json.dump(RAW_INFO_BUFFER, f, indent=4)
+        if RAW_PRICE_BUFFER:
+            with open("raw_price_dump.json", "w", encoding="utf-8") as f: json.dump(RAW_PRICE_BUFFER, f, indent=4)
+        await scrape_current_html(page) 
+        for code, details in list(product_db.items()):
+            if details["name"]: write_csv_line(code, details)
+        return 
+
+    if target_total == 9999: target_total = await get_total_results_via_ocr(page)
+
+    await scrape_current_html(page)
+    max_empty_scrolls, scroll_attempts, last_screen_text, stagnant_strikes = 20, 0, "", 0
+    
+    while len(written_codes) < target_total and scroll_attempts < max_empty_scrolls:
+        last_count = len(written_codes)
+        await force_scroll_down(page, scrolls=1)
+        await asyncio.sleep(4.0) 
+        await scrape_current_html(page)
+        
+        for code, details in list(product_db.items()):
+            if details["name"] and details["price"] != "Price Not Found":
+                write_csv_line(code, details)
+
+        if len(written_codes) > last_count:
+            scroll_attempts, last_screen_text, stagnant_strikes = 0, "", 0
+            print(f"📦 Progress: {len(written_codes)} / {target_total} products saved.")
+        else:
+            scroll_attempts += 1
+            if scroll_attempts % 2 == 0: 
+                shot_path = "vision/bottom_check.png"
+                await page.screenshot(path=shot_path)
+                ocr = get_ocr()
+                result = ocr.ocr(shot_path)
+                current_screen_text = " ".join([line[1][0].strip() for line in result[0]]) if result and result[0] else ""
+                if current_screen_text and current_screen_text == last_screen_text:
+                    stagnant_strikes += 1
+                    if stagnant_strikes >= 2: break 
+                else:
+                    stagnant_strikes = 0
+                    last_screen_text = current_screen_text
+
+    for code, details in list(product_db.items()):
+        if details["name"]: write_csv_line(code, details)
+
+    if mode == "agg_dump":
+        print("🚨 SAVING AGGREGATED JSON DUMPS...")
+        if RAW_INFO_BUFFER:
+            with open("raw_info_dump.json", "w", encoding="utf-8") as f: json.dump(RAW_INFO_BUFFER, f, indent=4)
+        if RAW_PRICE_BUFFER:
+            with open("raw_price_dump.json", "w", encoding="utf-8") as f: json.dump(RAW_PRICE_BUFFER, f, indent=4)
+
+    print(f"🎉 Harvest complete. Total Saved: {len(written_codes)}")
+
+# FILE: scroll.py
+import asyncio
+import random
+
+async def force_scroll_down(page, scrolls=1):
+    """
+    A dedicated scroll engine to guarantee DOWNWARD movement.
+    Bypasses OS-level 'Natural Scrolling' quirks by using pure JavaScript 
+    injection to target the exact GFS Angular containers.
+    """
+    for _ in range(scrolls):
+        # 1. Move mouse to center so wheel events hit the actual products, not the margins
+        viewport = page.viewport_size
+        if viewport:
+            await page.mouse.move(viewport['width'] / 2, viewport['height'] / 2)
+        
+        # 2. Playwright Wheel Backup (Positive 1000 = Down)
+        await page.mouse.wheel(0, random.randint(800, 1200))
+        
+        # 3. 🚨 THE FIX: JavaScript Force-Scroll (Guarantees downward movement)
+        await page.evaluate("""() => {
+            // Scroll the main window down
+            window.scrollBy({ top: 1000, behavior: 'smooth' });
+            
+            // Scroll GFS's specific internal containers down
+            const containers = document.querySelectorAll('cdk-virtual-scroll-viewport, .scroll-container, main, .product-grid');
+            containers.forEach(c => {
+                c.scrollBy({ top: 1000, behavior: 'smooth' });
+            });
+        }""")
+        
+        # Wait for the network to catch up and load the next batch of products
+        await asyncio.sleep(random.uniform(2.0, 3.5))
+
+async def deep_human_scan(page, kb, state, is_product_page=False):
+    """
+    Scans the page to calculate total depth.
+    """
+    print(f"📜 Initiating Universal Downward Scan for: {state}...")
+    
+    if is_product_page:
+        print("🛒 Product page detected. Yielding scroll control to Harvester.")
         return
 
     last_height = await page.evaluate("document.body.scrollHeight")
     scrolls_taken = 0
-    for _ in range(15):
+    max_scrolls = 15 
+    
+    for _ in range(max_scrolls):
         scrolls_taken += 1
-        await page.mouse.wheel(0, random.randint(800, 1200))
-        await page.evaluate("window.scrollBy(0, 1000)")
-        await asyncio.sleep(2.5) 
+        await force_scroll_down(page, scrolls=1)
+        
         new_height = await page.evaluate("document.body.scrollHeight")
-        if new_height == last_height: break
+        if new_height == last_height:
+            print(f"✅ Verified: Reached absolute bottom after {scrolls_taken} scrolls.")
+            break
+            
         last_height = new_height
+        print(f"📉 Scrolled down... Page expanded (New height: {new_height}px)")
         
     kb.learn(state, "scroll_depth", {"scrolls": scrolls_taken})
-
-async def human_click(page, x, y):
-    hx, hy = x + random.randint(-3, 3), y + random.randint(-3, 3)
-    await page.mouse.move(hx, hy)
-    await page.mouse.down()
-    await asyncio.sleep(random.uniform(0.07, 0.18))
-    await page.mouse.up()
-
-# --- 🛡️ STEALTH & POPUPS ---
-async def apply_stealth(page):
-    await page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined});")
-
-async def dismiss_all_popups(page):
-    selectors = ["button:has-text('Close')", "button:has-text('Dismiss')", ".close", "[aria-label*='close' i]"]
-    for selector in selectors:
-        loc = page.locator(selector).filter(visible=True).first
-        if await loc.count() > 0:
-            print(f"🧹 Clearing popup: {selector}")
-            box = await loc.bounding_box()
-            await bezier_move(page, box['x'] + box['width']/2, box['y'] + box['height']/2)
-            await human_click(page, box['x'] + box['width']/2, box['y'] + box['height']/2)
-            return True
-    return False
-
-# --- 👁️ VISION & STATE AWARENESS ---
-def detect_visual_change(new_path, ref_path, threshold=5):
-    if not os.path.exists(ref_path): return False
-    try:
-        img1, img2 = Image.open(new_path).convert('RGB'), Image.open(ref_path).convert('RGB')
-        diff = ImageChops.difference(img1, img2)
-        if diff.getbbox():
-            diff_pixels = sum(abs(p) for p in diff.getdata())
-            total_pixels = img1.size[0] * img1.size[1] * 255
-            return (diff_pixels / total_pixels) * 100 > threshold
-    except Exception: pass
-    return False
-
-async def identify_state(page):
-    url = page.url.lower()
-    if any(x in url for x in ["sso.gfs.com", "okta"]): return "login_page"
-    if any(x in url for x in ["search", "product", "item"]): return "product_page"
-    if "home" in url or "dashboard" in url: return "dashboard"
-    return "transitioning"
-
-async def teach_and_click(page, kb, state, element, action="click", value=None):
-    """Hybrid Click: Tries standard DOM, falls back to OCR, then falls back to Human."""
-    coords = kb.get_coords(state, element)
-    
-    if not coords:
-        selectors = {
-            "username_field": 'input[name*="user" i], input[type="email"], #okta-signin-username',
-            "password_field": 'input[type="password"], #okta-signin-password',
-            "search_bar": 'input[type="search"], input[placeholder*="search" i]'
-        }
-        
-        # PLAN A: Standard HTML Selectors
-        if element in selectors:
-            try:
-                # First try the main page
-                loc = page.locator(selectors[element]).first
-                await loc.wait_for(state="visible", timeout=2000)
-                box = await loc.bounding_box()
-                if box:
-                    coords = {"x": int(box["x"] + box["width"]/2), "y": int(box["y"] + box["height"]/2)}
-            except:
-                # If that fails, pierce through the iframes
-                for frame in page.frames:
-                    try:
-                        loc = frame.locator(selectors[element]).first
-                        if await loc.is_visible():
-                            box = await loc.bounding_box()
-                            if box:
-                                coords = {"x": int(box["x"] + box["width"]/2), "y": int(box["y"] + box["height"]/2)}
-                                break
-                    except: pass
-                
-                # PLAN B: PaddleOCR Vision Fallback
-                if not coords:
-                    print(f"👁️ [VISION] HTML failed for {element}. Trying OCR...")
-                    await asyncio.sleep(2.5) 
-                    
-                    shot_path = f"vision/ocr_attempt_{element}.png"
-                    os.makedirs("vision", exist_ok=True)
-                    await page.screenshot(path=shot_path)
-                    
-                    ocr = get_ocr()
-                    result = ocr.ocr(shot_path)
-                    
-                    if result and result[0]:
-                        look_for = ["Email", "Username", "Sign In", "User"] if "username" in element else ["Password"]
-                        for line in result[0]:
-                            text = line[1][0]
-                            if any(word.lower() in text.lower() for word in look_for):
-                                box = line[0]
-                                offset = 40 if any(w in text.lower() for w in ["password", "email", "user"]) else 0
-                                coords = {"x": int((box[0][0] + box[2][0]) / 2), "y": int((box[0][1] + box[2][1]) / 2) + offset}
-                                print(f"🎯 [VISION] TARGET ACQUIRED: '{text}'! Mapping coordinates.")
-                                break
-
-                # 🚨 PLAN C: HUMAN IN THE LOOP (The Ultimate Override)
-                if not coords:
-                    print(f"\n🚨 [CRITICAL ALERT] Bot is blind! Cannot find {element}.")
-                    print(f"👉 PLEASE CLICK THE {element.upper()} DIRECTLY ON THE BROWSER WINDOW NOW...")
-                    
-                    # Inject a full-screen invisible overlay to intercept the human's mouse click
-                    coords = await page.evaluate("""() => {
-                        return new Promise(resolve => {
-                            const overlay = document.createElement('div');
-                            overlay.style.position = 'fixed';
-                            overlay.style.top = '0';
-                            overlay.style.left = '0';
-                            overlay.style.width = '100vw';
-                            overlay.style.height = '100vh';
-                            overlay.style.zIndex = '99999999';
-                            overlay.style.backgroundColor = 'rgba(255, 0, 0, 0.15)'; // Light red tint
-                            overlay.style.cursor = 'crosshair';
-                            
-                            overlay.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                document.body.removeChild(overlay);
-                                resolve({x: e.clientX, y: e.clientY});
-                            });
-                            
-                            document.body.appendChild(overlay);
-                        });
-                    }""")
-                    
-                    print(f"🤝 [HUMAN OVERRIDE] Learned coordinates at X:{coords['x']}, Y:{coords['y']}!")
-
-    if coords:
-        kb.learn(state, element, coords)
-        print(f"🖱️ Moving to {element}...")
-        await bezier_move(page, coords['x'], coords['y'])
-        await human_click(page, coords['x'], coords['y'])
-        if action.startswith("type") and value:
-            await asyncio.sleep(0.5)
-            await page.keyboard.type(value, delay=random.randint(50, 90))
-            if action == "type": await page.keyboard.press("Enter")
-        return True
-        
-    print(f"❌ [CRITICAL] Could not find {element} via HTML, Vision, or Human.")
-    return False
-
-# FILE: brain.py
-import json
-import os
-
-class KnowledgeBase:
-    def __init__(self, file_path="knowledge.json"):
-        self.file_path = file_path
-        self.data = self._load()
-
-    def _load(self):
-        if os.path.exists(self.file_path):
-            with open(self.file_path, 'r') as f:
-                return json.load(f)
-        return {}
-
-    def learn(self, state, element, coords):
-        if state not in self.data: self.data[state] = {}
-        self.data[state][element] = coords
-        with open(self.file_path, 'w') as f:
-            json.dump(self.data, f, indent=4)
-
-    def get_coords(self, state, element):
-        return self.data.get(state, {}).get(element)
 
 # FILE: states/handlers.py
 import asyncio
 import os
-from dotenv import load_dotenv
-from actions import teach_and_click
-from harvester import run_harvest  # Required for the product_page handler
-
-load_dotenv()
-
-USERNAME = os.getenv("GFS_USERNAME")
-PASSWORD = os.getenv("GFS_PASSWORD")
-PRODUCT = os.getenv("GFS_DEFAULT_PRODUCT", "Butter") 
-
-async def handle_popup_active(page, kb):
-    print("🚨 Popup detected blocking the screen!")
-    await teach_and_click(page, kb, "popup_active", "close_popup_btn", "click")
-    await asyncio.sleep(3) 
-    return "continue"
-
-async def handle_login_page(page, kb):
-    print("\n🔑 Login page detected. Assessing form...")
-    
-    if not USERNAME or not PASSWORD:
-        print("⚠️ ERROR: Missing credentials in .env file!")
-        return "stop"
-        
-    # 1. Try to input Username
-    username_found = await teach_and_click(page, kb, "login_page", "username_field", "type", USERNAME)
-    if not username_found:
-        print("⚠️ Waiting for Username field to appear...")
-        await asyncio.sleep(3)
-        return "continue"
-        
-    await asyncio.sleep(2)
-    
-    # 2. Try to input Password
-    await teach_and_click(page, kb, "login_page", "password_field", "type", PASSWORD)
-    
-    await asyncio.sleep(5)
-    return "continue"
-
-async def handle_location_selection(page, kb):
-    await teach_and_click(page, kb, "location_selection", "brera_row")
-    await asyncio.sleep(5)
-    return "continue"
-
-async def handle_dashboard(page, kb):
-    print("🧹 Pressing 'Escape' to clear potential hidden popups...")
-    await page.keyboard.press("Escape")
-    await asyncio.sleep(1) 
-    
-    await teach_and_click(page, kb, "dashboard", "search_bar", "type", PRODUCT)
-    await asyncio.sleep(8)
-    return "continue"
-
-async def handle_product_page(page, kb):
-    print("🛒 Product page identified. Starting harvest...")
-    # This calls the hybrid OCR/Wiretap harvester we built
-    await run_harvest(page)
-    return "stop"
-
-async def handle_dynamic_page(page, kb, current_state):
-    action_directive = kb.get_coords(current_state, "__target_action__")
-    if action_directive:
-        el = action_directive["element"]
-        act = action_directive["action"]
-        val = action_directive["value"]
-        await teach_and_click(page, kb, current_state, el, act, val)
-        await asyncio.sleep(5)
-        return "continue"
-
-    print(f"\n🌟 [AUTONOMOUS DISCOVERY] Auto-learning new state: {current_state}")
-    print("🔴 Waiting for human to click the target on the Red Overlay...")
-    
-    element_name = f"auto_target_for_{current_state}"
-    action_type = 'click'
-    val = None
-        
-    kb.learn(current_state, "__target_action__", {
-        "element": element_name, "action": action_type, "value": val
-    })
-    
-    await teach_and_click(page, kb, current_state, element_name, action_type, val)
-    await asyncio.sleep(5)
-    return "continue"
-
-# 🚨 THE MISSING LINK: This dictionary must be at the bottom of the file
-STATE_ROUTER = {
-    "login_page": handle_login_page,
-    "location_selection": handle_location_selection,
-    "dashboard": handle_dashboard,
-    "product_page": handle_product_page,
-    "popup_active": handle_popup_active,
-}
-
-# FILE: logger.py
-import json
-import os
-import datetime
-
-def log_event(event_type, details):
-    """Logs runtime data to JSONL for debugging."""
-    log_entry = {
-        "timestamp": datetime.datetime.now().isoformat(),
-        "type": event_type,
-        "details": details
-    }
-    with open("evolution_log.jsonl", "a", encoding="utf-8") as f:
-        f.write(json.dumps(log_entry) + "\n")
-
-def log_evolution_snapshot(change_summary, technical_details):
-    """Updates the evolution log with high-level architectural changes."""
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    entry = (
-        f"\n{'='*60}\n"
-        f"SNAPSHOT: {timestamp}\n"
-        f"CHANGE: {change_summary}\n"
-        f"DETAILS: {technical_details}\n"
-        f"{'='*60}\n"
-    )
-    with open("agent_code_evolution_snapshot.log", "a", encoding="utf-8") as f:
-        f.write(entry)
-
-def generate_evolution_manifest():
-    """
-    Bundles core logic files into the evolution log.
-    This prevents agents from losing context on previous code changes.
-    """
-    files_to_track = ["main.py", "actions.py", "brain.py", "states/handlers.py", "logger.py"]
-    manifest_path = "agent_code_evolution_snapshot.log"
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    if not os.path.exists(manifest_path):
-        with open(manifest_path, "w", encoding="utf-8") as f:
-            f.write("# Evolution Log Started\n")
-
-    with open(manifest_path, "a", encoding="utf-8") as manifest:
-        manifest.write(f"\n\n# --- FULL ARCHITECTURE SNAPSHOT: {timestamp} ---\n")
-        for file_path in files_to_track:
-            if os.path.exists(file_path):
-                with open(file_path, "r", encoding="utf-8", errors="replace") as f:
-                    content = f.read()
-                manifest.write(f"\n# FILE: {file_path}\n{content}\n")
-        manifest.write("# --- END SNAPSHOT ---\n")
-
-async def capture_context(page, name):
-    """Captures the URL and a snippet of HTML when a popup or error occurs."""
-    try:
-        url = page.url
-        content = (await page.content())[:500]
-        log_event("CONTEXT_SNAPSHOT", {"element": name, "url": url, "html": content})
-    except Exception:
-        log_event("CONTEXT_ERROR", {"msg": "Failed to capture page context"})
-# --- END SNAPSHOT ---
-
-============================================================
-SNAPSHOT: 2026-03-28 12:51:57
-CHANGE: Global Wiretap Integration
-DETAILS: Moved API wiretap to global scope to prevent race conditions.
-============================================================
-
-
-# --- FULL ARCHITECTURE SNAPSHOT: 2026-03-28 12:51:57 ---
-
-# FILE: main.py
-import asyncio
-import random
-from playwright.async_api import async_playwright
-from brain import KnowledgeBase
-from actions import identify_state, apply_stealth, dismiss_all_popups, deep_human_scroll
-from states.handlers import STATE_ROUTER
-from logger import log_event, generate_evolution_manifest, log_evolution_snapshot
-from harvester import setup_wiretap  # <--- IMPORT THE NEW WIRETAP
-
-async def main():
-    # 📝 Self-Updating Evolution Log
-    log_evolution_snapshot("Global Wiretap Integration", "Moved API wiretap to global scope to prevent race conditions.")
-    generate_evolution_manifest()
-    
-    kb = KnowledgeBase()
-    
-    async with async_playwright() as p:
-        ua = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
-        browser = await p.chromium.launch(headless=False, args=["--disable-blink-features=AutomationControlled"])
-        context = await browser.new_context(viewport={'width': 1280, 'height': 800}, user_agent=ua)
-        page = await context.new_page()
-
-        await apply_stealth(page)
-        
-        # 🚨 ATTACH THE GLOBAL WIRETAP IMMEDIATELY
-        await setup_wiretap(page)
-
-        print("🚀 Launching Beefed-up Autonomous Scraper...")
-        await page.goto("https://order.gfs.com/")
-
-        last_state = None
-        while True:
-            await dismiss_all_popups(page)
-            current_state = await identify_state(page)
-            
-            if current_state != last_state:
-                log_event("STATE_CHANGE", {"from": last_state, "to": current_state})
-                print(f"📍 State Changed -> {current_state}")
-                
-                if current_state not in ["transitioning", "unknown_page"]:
-                    try:
-                        await page.wait_for_load_state("networkidle", timeout=5000)
-                    except: 
-                        pass # Network idle timeout is common, proceed anyway
-                    
-                    # 📜 Pass the KB and State so the bot can use its memory
-                    await deep_human_scroll(page, kb, current_state)
-                    current_state = await identify_state(page)
-                
-                last_state = current_state
-
-            if current_state in ["transitioning", "unknown_page"]:
-                await asyncio.sleep(2)
-                continue
-
-            if current_state in STATE_ROUTER:
-                status = await STATE_ROUTER[current_state](page, kb)
-                if status == "stop": break
-            
-            await asyncio.sleep(random.uniform(1.5, 3.5))
-
-if __name__ == "__main__":
-    asyncio.run(main())
-
-# FILE: actions.py
-import asyncio
-import random
 import re
-import os
-import datetime
-import shutil
-from urllib.parse import urlparse
-from logger import log_event, capture_context
-from PIL import Image, ImageChops
-from paddleocr import PaddleOCR
-
-# --- 🧠 VISION ENGINE INITIALIZATION ---
-ocr_engine = None
-
-def get_ocr():
-    global ocr_engine
-    if ocr_engine is None:
-        print("🧠 Vision Engine: Booting AI Eye (PaddleOCR)...")
-        ocr_engine = PaddleOCR(use_angle_cls=False, lang='en')
-    return ocr_engine
-
-# --- 🧪 HUMAN PHYSICS ENGINE ---
-async def bezier_move(page, end_x, end_y, steps=15):
-    """Moves mouse in a curve to simulate human trackpad acceleration."""
-    start_x, start_y = random.randint(0, 100), random.randint(0, 100)
-    cp1_x = start_x + (end_x - start_x) * random.uniform(0.1, 0.4)
-    cp1_y = start_y + (end_y - start_y) * random.uniform(0.1, 0.4)
-    cp2_x = start_x + (end_x - start_x) * random.uniform(0.6, 0.9)
-    cp2_y = start_y + (end_y - start_y) * random.uniform(0.6, 0.9)
-
-    for i in range(steps + 1):
-        t = i / steps
-        x = (1-t)**3 * start_x + 3*(1-t)**2 * t * cp1_x + 3*(1-t) * t**2 * cp2_x + t**3 * end_x
-        y = (1-t)**3 * start_y + 3*(1-t)**2 * t * cp1_y + 3*(1-t) * t**2 * cp2_y + t**3 * end_y
-        await page.mouse.move(x, y)
-        await asyncio.sleep(random.uniform(0.01, 0.02))
-
-async def deep_human_scroll(page, kb, state):
-    """Smart Scroll: Bypasses non-content pages like Login to prevent layout breaks."""
-    if state in ["product_page", "login_page"]:
-        print(f"⚡ {state} detected. Bypassing pre-scan to keep form stable.")
-        return
-
-    saved_depth = kb.get_coords(state, "scroll_depth")
-    if saved_depth and "scrolls" in saved_depth:
-        print(f"🧠 Memory active: Recalled this page needs {saved_depth['scrolls']} scrolls.")
-        for _ in range(saved_depth["scrolls"]):
-            await page.mouse.wheel(0, random.randint(800, 1200))
-            await asyncio.sleep(random.uniform(0.3, 0.8))
-        return
-
-    last_height = await page.evaluate("document.body.scrollHeight")
-    scrolls_taken = 0
-    for _ in range(15):
-        scrolls_taken += 1
-        await page.mouse.wheel(0, random.randint(800, 1200))
-        await page.evaluate("window.scrollBy(0, 1000)")
-        await asyncio.sleep(2.5) 
-        new_height = await page.evaluate("document.body.scrollHeight")
-        if new_height == last_height: break
-        last_height = new_height
-        
-    kb.learn(state, "scroll_depth", {"scrolls": scrolls_taken})
-
-async def human_click(page, x, y):
-    hx, hy = x + random.randint(-3, 3), y + random.randint(-3, 3)
-    await page.mouse.move(hx, hy)
-    await page.mouse.down()
-    await asyncio.sleep(random.uniform(0.07, 0.18))
-    await page.mouse.up()
-
-# --- 🛡️ STEALTH & POPUPS ---
-async def apply_stealth(page):
-    await page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined});")
-
-async def dismiss_all_popups(page):
-    selectors = ["button:has-text('Close')", "button:has-text('Dismiss')", ".close", "[aria-label*='close' i]"]
-    for selector in selectors:
-        loc = page.locator(selector).filter(visible=True).first
-        if await loc.count() > 0:
-            print(f"🧹 Clearing popup: {selector}")
-            box = await loc.bounding_box()
-            await bezier_move(page, box['x'] + box['width']/2, box['y'] + box['height']/2)
-            await human_click(page, box['x'] + box['width']/2, box['y'] + box['height']/2)
-            return True
-    return False
-
-# --- 👁️ VISION & STATE AWARENESS ---
-def detect_visual_change(new_path, ref_path, threshold=5):
-    if not os.path.exists(ref_path): return False
-    try:
-        img1, img2 = Image.open(new_path).convert('RGB'), Image.open(ref_path).convert('RGB')
-        diff = ImageChops.difference(img1, img2)
-        if diff.getbbox():
-            diff_pixels = sum(abs(p) for p in diff.getdata())
-            total_pixels = img1.size[0] * img1.size[1] * 255
-            return (diff_pixels / total_pixels) * 100 > threshold
-    except Exception: pass
-    return False
-
-async def identify_state(page):
-    url = page.url.lower()
-    if any(x in url for x in ["sso.gfs.com", "okta"]): return "login_page"
-    if any(x in url for x in ["search", "product", "item"]): return "product_page"
-    if "home" in url or "dashboard" in url: return "dashboard"
-    return "transitioning"
-
-async def teach_and_click(page, kb, state, element, action="click", value=None):
-    """Hybrid Click: Tries standard DOM, falls back to OCR, then falls back to Human."""
-    coords = kb.get_coords(state, element)
-    
-    if not coords:
-        selectors = {
-            "username_field": 'input[name*="user" i], input[type="email"], #okta-signin-username',
-            "password_field": 'input[type="password"], #okta-signin-password',
-            "search_bar": 'input[type="search"], input[placeholder*="search" i]'
-        }
-        
-        # PLAN A: Standard HTML Selectors
-        if element in selectors:
-            try:
-                # First try the main page
-                loc = page.locator(selectors[element]).first
-                await loc.wait_for(state="visible", timeout=2000)
-                box = await loc.bounding_box()
-                if box:
-                    coords = {"x": int(box["x"] + box["width"]/2), "y": int(box["y"] + box["height"]/2)}
-            except:
-                # If that fails, pierce through the iframes
-                for frame in page.frames:
-                    try:
-                        loc = frame.locator(selectors[element]).first
-                        if await loc.is_visible():
-                            box = await loc.bounding_box()
-                            if box:
-                                coords = {"x": int(box["x"] + box["width"]/2), "y": int(box["y"] + box["height"]/2)}
-                                break
-                    except: pass
-                
-                # PLAN B: PaddleOCR Vision Fallback
-                if not coords:
-                    print(f"👁️ [VISION] HTML failed for {element}. Trying OCR...")
-                    await asyncio.sleep(2.5) 
-                    
-                    shot_path = f"vision/ocr_attempt_{element}.png"
-                    os.makedirs("vision", exist_ok=True)
-                    await page.screenshot(path=shot_path)
-                    
-                    ocr = get_ocr()
-                    result = ocr.ocr(shot_path)
-                    
-                    if result and result[0]:
-                        look_for = ["Email", "Username", "Sign In", "User"] if "username" in element else ["Password"]
-                        for line in result[0]:
-                            text = line[1][0]
-                            if any(word.lower() in text.lower() for word in look_for):
-                                box = line[0]
-                                offset = 40 if any(w in text.lower() for w in ["password", "email", "user"]) else 0
-                                coords = {"x": int((box[0][0] + box[2][0]) / 2), "y": int((box[0][1] + box[2][1]) / 2) + offset}
-                                print(f"🎯 [VISION] TARGET ACQUIRED: '{text}'! Mapping coordinates.")
-                                break
-
-                # 🚨 PLAN C: HUMAN IN THE LOOP (The Ultimate Override)
-                if not coords:
-                    print(f"\n🚨 [CRITICAL ALERT] Bot is blind! Cannot find {element}.")
-                    print(f"👉 PLEASE CLICK THE {element.upper()} DIRECTLY ON THE BROWSER WINDOW NOW...")
-                    
-                    # Inject a full-screen invisible overlay to intercept the human's mouse click
-                    coords = await page.evaluate("""() => {
-                        return new Promise(resolve => {
-                            const overlay = document.createElement('div');
-                            overlay.style.position = 'fixed';
-                            overlay.style.top = '0';
-                            overlay.style.left = '0';
-                            overlay.style.width = '100vw';
-                            overlay.style.height = '100vh';
-                            overlay.style.zIndex = '99999999';
-                            overlay.style.backgroundColor = 'rgba(255, 0, 0, 0.15)'; // Light red tint
-                            overlay.style.cursor = 'crosshair';
-                            
-                            overlay.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                document.body.removeChild(overlay);
-                                resolve({x: e.clientX, y: e.clientY});
-                            });
-                            
-                            document.body.appendChild(overlay);
-                        });
-                    }""")
-                    
-                    print(f"🤝 [HUMAN OVERRIDE] Learned coordinates at X:{coords['x']}, Y:{coords['y']}!")
-
-    if coords:
-        kb.learn(state, element, coords)
-        print(f"🖱️ Moving to {element}...")
-        await bezier_move(page, coords['x'], coords['y'])
-        await human_click(page, coords['x'], coords['y'])
-        if action.startswith("type") and value:
-            await asyncio.sleep(0.5)
-            await page.keyboard.type(value, delay=random.randint(50, 90))
-            if action == "type": await page.keyboard.press("Enter")
-        return True
-        
-    print(f"❌ [CRITICAL] Could not find {element} via HTML, Vision, or Human.")
-    return False
-
-# FILE: brain.py
 import json
-import os
-
-class KnowledgeBase:
-    def __init__(self, file_path="knowledge.json"):
-        self.file_path = file_path
-        self.data = self._load()
-
-    def _load(self):
-        if os.path.exists(self.file_path):
-            with open(self.file_path, 'r') as f:
-                return json.load(f)
-        return {}
-
-    def learn(self, state, element, coords):
-        if state not in self.data: self.data[state] = {}
-        self.data[state][element] = coords
-        with open(self.file_path, 'w') as f:
-            json.dump(self.data, f, indent=4)
-
-    def get_coords(self, state, element):
-        return self.data.get(state, {}).get(element)
-
-# FILE: states/handlers.py
-import asyncio
-import os
 from dotenv import load_dotenv
-from actions import teach_and_click
-from harvester import run_harvest  # Required for the product_page handler
+from actions import teach_and_click, build_sitemap
+from harvester import run_harvest, setup_wiretap
 
 load_dotenv()
 
 USERNAME = os.getenv("GFS_USERNAME")
 PASSWORD = os.getenv("GFS_PASSWORD")
 PRODUCT = os.getenv("GFS_DEFAULT_PRODUCT", "Butter") 
+
+# Global flags for Auto-Pilot state management
+WIRETAP_ATTACHED = False
+AUTO_PILOT = False
+URL_QUEUE = []
 
 async def handle_popup_active(page, kb):
     print("🚨 Popup detected blocking the screen!")
@@ -1248,23 +806,13 @@ async def handle_popup_active(page, kb):
 
 async def handle_login_page(page, kb):
     print("\n🔑 Login page detected. Assessing form...")
-    
     if not USERNAME or not PASSWORD:
         print("⚠️ ERROR: Missing credentials in .env file!")
         return "stop"
-        
-    # 1. Try to input Username
-    username_found = await teach_and_click(page, kb, "login_page", "username_field", "type", USERNAME)
-    if not username_found:
-        print("⚠️ Waiting for Username field to appear...")
-        await asyncio.sleep(3)
-        return "continue"
-        
+    
+    await teach_and_click(page, kb, "login_page", "username_field", "type", USERNAME)
     await asyncio.sleep(2)
-    
-    # 2. Try to input Password
     await teach_and_click(page, kb, "login_page", "password_field", "type", PASSWORD)
-    
     await asyncio.sleep(5)
     return "continue"
 
@@ -1274,507 +822,194 @@ async def handle_location_selection(page, kb):
     return "continue"
 
 async def handle_dashboard(page, kb):
-    print("🧹 Pressing 'Escape' to clear potential hidden popups...")
-    await page.keyboard.press("Escape")
-    await asyncio.sleep(1) 
+    global WIRETAP_ATTACHED, AUTO_PILOT, URL_QUEUE
     
-    await teach_and_click(page, kb, "dashboard", "search_bar", "type", PRODUCT)
-    await asyncio.sleep(8)
-    return "continue"
-
-async def handle_product_page(page, kb):
-    print("🛒 Product page identified. Starting harvest...")
-    # This calls the hybrid OCR/Wiretap harvester we built
-    await run_harvest(page)
-    return "stop"
-
-async def handle_dynamic_page(page, kb, current_state):
-    action_directive = kb.get_coords(current_state, "__target_action__")
-    if action_directive:
-        el = action_directive["element"]
-        act = action_directive["action"]
-        val = action_directive["value"]
-        await teach_and_click(page, kb, current_state, el, act, val)
-        await asyncio.sleep(5)
-        return "continue"
-
-    print(f"\n🌟 [AUTONOMOUS DISCOVERY] Auto-learning new state: {current_state}")
-    print("🔴 Waiting for human to click the target on the Red Overlay...")
-    
-    element_name = f"auto_target_for_{current_state}"
-    action_type = 'click'
-    val = None
-        
-    kb.learn(current_state, "__target_action__", {
-        "element": element_name, "action": action_type, "value": val
-    })
-    
-    await teach_and_click(page, kb, current_state, element_name, action_type, val)
-    await asyncio.sleep(5)
-    return "continue"
-
-# 🚨 THE MISSING LINK: This dictionary must be at the bottom of the file
-STATE_ROUTER = {
-    "login_page": handle_login_page,
-    "location_selection": handle_location_selection,
-    "dashboard": handle_dashboard,
-    "product_page": handle_product_page,
-    "popup_active": handle_popup_active,
-}
-
-# FILE: logger.py
-import json
-import os
-import datetime
-
-def log_event(event_type, details):
-    """Logs runtime data to JSONL for debugging."""
-    log_entry = {
-        "timestamp": datetime.datetime.now().isoformat(),
-        "type": event_type,
-        "details": details
-    }
-    with open("evolution_log.jsonl", "a", encoding="utf-8") as f:
-        f.write(json.dumps(log_entry) + "\n")
-
-def log_evolution_snapshot(change_summary, technical_details):
-    """Updates the evolution log with high-level architectural changes."""
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    entry = (
-        f"\n{'='*60}\n"
-        f"SNAPSHOT: {timestamp}\n"
-        f"CHANGE: {change_summary}\n"
-        f"DETAILS: {technical_details}\n"
-        f"{'='*60}\n"
-    )
-    with open("agent_code_evolution_snapshot.log", "a", encoding="utf-8") as f:
-        f.write(entry)
-
-def generate_evolution_manifest():
-    """
-    Bundles core logic files into the evolution log.
-    This prevents agents from losing context on previous code changes.
-    """
-    files_to_track = ["main.py", "actions.py", "brain.py", "states/handlers.py", "logger.py"]
-    manifest_path = "agent_code_evolution_snapshot.log"
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    if not os.path.exists(manifest_path):
-        with open(manifest_path, "w", encoding="utf-8") as f:
-            f.write("# Evolution Log Started\n")
-
-    with open(manifest_path, "a", encoding="utf-8") as manifest:
-        manifest.write(f"\n\n# --- FULL ARCHITECTURE SNAPSHOT: {timestamp} ---\n")
-        for file_path in files_to_track:
-            if os.path.exists(file_path):
-                with open(file_path, "r", encoding="utf-8", errors="replace") as f:
-                    content = f.read()
-                manifest.write(f"\n# FILE: {file_path}\n{content}\n")
-        manifest.write("# --- END SNAPSHOT ---\n")
-
-async def capture_context(page, name):
-    """Captures the URL and a snippet of HTML when a popup or error occurs."""
-    try:
-        url = page.url
-        content = (await page.content())[:500]
-        log_event("CONTEXT_SNAPSHOT", {"element": name, "url": url, "html": content})
-    except Exception:
-        log_event("CONTEXT_ERROR", {"msg": "Failed to capture page context"})
-# --- END SNAPSHOT ---
-
-============================================================
-SNAPSHOT: 2026-03-29 16:08:36
-CHANGE: Global Wiretap Integration
-DETAILS: Moved API wiretap to global scope to prevent race conditions.
-============================================================
-
-
-# --- FULL ARCHITECTURE SNAPSHOT: 2026-03-29 16:08:36 ---
-
-# FILE: main.py
-import asyncio
-import random
-from playwright.async_api import async_playwright
-from brain import KnowledgeBase
-from actions import identify_state, apply_stealth, dismiss_all_popups, deep_human_scroll
-from states.handlers import STATE_ROUTER
-from logger import log_event, generate_evolution_manifest, log_evolution_snapshot
-from harvester import setup_wiretap  # <--- IMPORT THE NEW WIRETAP
-
-async def main():
-    # 📝 Self-Updating Evolution Log
-    log_evolution_snapshot("Global Wiretap Integration", "Moved API wiretap to global scope to prevent race conditions.")
-    generate_evolution_manifest()
-    
-    kb = KnowledgeBase()
-    
-    async with async_playwright() as p:
-        ua = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
-        browser = await p.chromium.launch(headless=False, args=["--disable-blink-features=AutomationControlled"])
-        context = await browser.new_context(viewport={'width': 1280, 'height': 800}, user_agent=ua)
-        page = await context.new_page()
-
-        await apply_stealth(page)
-        
-        # 🚨 ATTACH THE GLOBAL WIRETAP IMMEDIATELY
+    if not WIRETAP_ATTACHED:
+        print("📡 Deploying Global Wiretap for upcoming search...")
         await setup_wiretap(page)
+        WIRETAP_ATTACHED = True
 
-        print("🚀 Launching Beefed-up Autonomous Scraper...")
-        await page.goto("https://order.gfs.com/")
-
-        last_state = None
-        while True:
-            await dismiss_all_popups(page)
-            current_state = await identify_state(page)
-            
-            if current_state != last_state:
-                log_event("STATE_CHANGE", {"from": last_state, "to": current_state})
-                print(f"📍 State Changed -> {current_state}")
-                
-                if current_state not in ["transitioning", "unknown_page"]:
-                    try:
-                        await page.wait_for_load_state("networkidle", timeout=5000)
-                    except: 
-                        pass # Network idle timeout is common, proceed anyway
-                    
-                    # 📜 Pass the KB and State so the bot can use its memory
-                    await deep_human_scroll(page, kb, current_state)
-                    current_state = await identify_state(page)
-                
-                last_state = current_state
-
-            if current_state in ["transitioning", "unknown_page"]:
-                await asyncio.sleep(2)
-                continue
-
-            if current_state in STATE_ROUTER:
-                status = await STATE_ROUTER[current_state](page, kb)
-                if status == "stop": break
-            
-            await asyncio.sleep(random.uniform(1.5, 3.5))
-
-if __name__ == "__main__":
-    asyncio.run(main())
-
-# FILE: actions.py
-import asyncio
-import random
-import re
-import os
-import datetime
-import shutil
-from urllib.parse import urlparse
-from logger import log_event, capture_context
-from PIL import Image, ImageChops
-from paddleocr import PaddleOCR
-
-# --- 🧠 VISION ENGINE INITIALIZATION ---
-ocr_engine = None
-
-def get_ocr():
-    global ocr_engine
-    if ocr_engine is None:
-        print("🧠 Vision Engine: Booting AI Eye (PaddleOCR)...")
-        ocr_engine = PaddleOCR(use_angle_cls=False, lang='en')
-    return ocr_engine
-
-# --- 🧪 HUMAN PHYSICS ENGINE ---
-async def bezier_move(page, end_x, end_y, steps=15):
-    """Moves mouse in a curve to simulate human trackpad acceleration."""
-    start_x, start_y = random.randint(0, 100), random.randint(0, 100)
-    cp1_x = start_x + (end_x - start_x) * random.uniform(0.1, 0.4)
-    cp1_y = start_y + (end_y - start_y) * random.uniform(0.1, 0.4)
-    cp2_x = start_x + (end_x - start_x) * random.uniform(0.6, 0.9)
-    cp2_y = start_y + (end_y - start_y) * random.uniform(0.6, 0.9)
-
-    for i in range(steps + 1):
-        t = i / steps
-        x = (1-t)**3 * start_x + 3*(1-t)**2 * t * cp1_x + 3*(1-t) * t**2 * cp2_x + t**3 * end_x
-        y = (1-t)**3 * start_y + 3*(1-t)**2 * t * cp1_y + 3*(1-t) * t**2 * cp2_y + t**3 * end_y
-        await page.mouse.move(x, y)
-        await asyncio.sleep(random.uniform(0.01, 0.02))
-
-async def deep_human_scroll(page, kb, state):
-    """Smart Scroll: Bypasses non-content pages like Login to prevent layout breaks."""
-    if state in ["product_page", "login_page"]:
-        print(f"⚡ {state} detected. Bypassing pre-scan to keep form stable.")
-        return
-
-    saved_depth = kb.get_coords(state, "scroll_depth")
-    if saved_depth and "scrolls" in saved_depth:
-        print(f"🧠 Memory active: Recalled this page needs {saved_depth['scrolls']} scrolls.")
-        for _ in range(saved_depth["scrolls"]):
-            await page.mouse.wheel(0, random.randint(800, 1200))
-            await asyncio.sleep(random.uniform(0.3, 0.8))
-        return
-
-    last_height = await page.evaluate("document.body.scrollHeight")
-    scrolls_taken = 0
-    for _ in range(15):
-        scrolls_taken += 1
-        await page.mouse.wheel(0, random.randint(800, 1200))
-        await page.evaluate("window.scrollBy(0, 1000)")
-        await asyncio.sleep(2.5) 
-        new_height = await page.evaluate("document.body.scrollHeight")
-        if new_height == last_height: break
-        last_height = new_height
-        
-    kb.learn(state, "scroll_depth", {"scrolls": scrolls_taken})
-
-async def human_click(page, x, y):
-    hx, hy = x + random.randint(-3, 3), y + random.randint(-3, 3)
-    await page.mouse.move(hx, hy)
-    await page.mouse.down()
-    await asyncio.sleep(random.uniform(0.07, 0.18))
-    await page.mouse.up()
-
-# --- 🛡️ STEALTH & POPUPS ---
-async def apply_stealth(page):
-    await page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined});")
-
-async def dismiss_all_popups(page):
-    selectors = ["button:has-text('Close')", "button:has-text('Dismiss')", ".close", "[aria-label*='close' i]"]
-    for selector in selectors:
-        loc = page.locator(selector).filter(visible=True).first
-        if await loc.count() > 0:
-            print(f"🧹 Clearing popup: {selector}")
-            box = await loc.bounding_box()
-            await bezier_move(page, box['x'] + box['width']/2, box['y'] + box['height']/2)
-            await human_click(page, box['x'] + box['width']/2, box['y'] + box['height']/2)
-            return True
-    return False
-
-# --- 👁️ VISION & STATE AWARENESS ---
-def detect_visual_change(new_path, ref_path, threshold=5):
-    if not os.path.exists(ref_path): return False
-    try:
-        img1, img2 = Image.open(new_path).convert('RGB'), Image.open(ref_path).convert('RGB')
-        diff = ImageChops.difference(img1, img2)
-        if diff.getbbox():
-            diff_pixels = sum(abs(p) for p in diff.getdata())
-            total_pixels = img1.size[0] * img1.size[1] * 255
-            return (diff_pixels / total_pixels) * 100 > threshold
-    except Exception: pass
-    return False
-
-async def identify_state(page):
-    url = page.url.lower()
-    if any(x in url for x in ["sso.gfs.com", "okta"]): return "login_page"
-    if any(x in url for x in ["search", "product", "item"]): return "product_page"
-    if "home" in url or "dashboard" in url: return "dashboard"
-    return "transitioning"
-
-async def teach_and_click(page, kb, state, element, action="click", value=None):
-    """Hybrid Click: Tries standard DOM, falls back to OCR, then falls back to Human."""
-    coords = kb.get_coords(state, element)
-    
-    if not coords:
-        selectors = {
-            "username_field": 'input[name*="user" i], input[type="email"], #okta-signin-username',
-            "password_field": 'input[type="password"], #okta-signin-password',
-            "search_bar": 'input[type="search"], input[placeholder*="search" i]'
-        }
-        
-        # PLAN A: Standard HTML Selectors
-        if element in selectors:
-            try:
-                # First try the main page
-                loc = page.locator(selectors[element]).first
-                await loc.wait_for(state="visible", timeout=2000)
-                box = await loc.bounding_box()
-                if box:
-                    coords = {"x": int(box["x"] + box["width"]/2), "y": int(box["y"] + box["height"]/2)}
-            except:
-                # If that fails, pierce through the iframes
-                for frame in page.frames:
-                    try:
-                        loc = frame.locator(selectors[element]).first
-                        if await loc.is_visible():
-                            box = await loc.bounding_box()
-                            if box:
-                                coords = {"x": int(box["x"] + box["width"]/2), "y": int(box["y"] + box["height"]/2)}
-                                break
-                    except: pass
-                
-                # PLAN B: PaddleOCR Vision Fallback
-                if not coords:
-                    print(f"👁️ [VISION] HTML failed for {element}. Trying OCR...")
-                    await asyncio.sleep(2.5) 
-                    
-                    shot_path = f"vision/ocr_attempt_{element}.png"
-                    os.makedirs("vision", exist_ok=True)
-                    await page.screenshot(path=shot_path)
-                    
-                    ocr = get_ocr()
-                    result = ocr.ocr(shot_path)
-                    
-                    if result and result[0]:
-                        look_for = ["Email", "Username", "Sign In", "User"] if "username" in element else ["Password"]
-                        for line in result[0]:
-                            text = line[1][0]
-                            if any(word.lower() in text.lower() for word in look_for):
-                                box = line[0]
-                                offset = 40 if any(w in text.lower() for w in ["password", "email", "user"]) else 0
-                                coords = {"x": int((box[0][0] + box[2][0]) / 2), "y": int((box[0][1] + box[2][1]) / 2) + offset}
-                                print(f"🎯 [VISION] TARGET ACQUIRED: '{text}'! Mapping coordinates.")
-                                break
-
-                # 🚨 PLAN C: HUMAN IN THE LOOP (The Ultimate Override)
-                if not coords:
-                    print(f"\n🚨 [CRITICAL ALERT] Bot is blind! Cannot find {element}.")
-                    print(f"👉 PLEASE CLICK THE {element.upper()} DIRECTLY ON THE BROWSER WINDOW NOW...")
-                    
-                    # Inject a full-screen invisible overlay to intercept the human's mouse click
-                    coords = await page.evaluate("""() => {
-                        return new Promise(resolve => {
-                            const overlay = document.createElement('div');
-                            overlay.style.position = 'fixed';
-                            overlay.style.top = '0';
-                            overlay.style.left = '0';
-                            overlay.style.width = '100vw';
-                            overlay.style.height = '100vh';
-                            overlay.style.zIndex = '99999999';
-                            overlay.style.backgroundColor = 'rgba(255, 0, 0, 0.15)'; // Light red tint
-                            overlay.style.cursor = 'crosshair';
-                            
-                            overlay.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                document.body.removeChild(overlay);
-                                resolve({x: e.clientX, y: e.clientY});
-                            });
-                            
-                            document.body.appendChild(overlay);
-                        });
-                    }""")
-                    
-                    print(f"🤝 [HUMAN OVERRIDE] Learned coordinates at X:{coords['x']}, Y:{coords['y']}!")
-
-    if coords:
-        kb.learn(state, element, coords)
-        print(f"🖱️ Moving to {element}...")
-        await bezier_move(page, coords['x'], coords['y'])
-        await human_click(page, coords['x'], coords['y'])
-        if action.startswith("type") and value:
-            await asyncio.sleep(0.5)
-            await page.keyboard.type(value, delay=random.randint(50, 90))
-            if action == "type": await page.keyboard.press("Enter")
-        return True
-        
-    print(f"❌ [CRITICAL] Could not find {element} via HTML, Vision, or Human.")
-    return False
-
-# FILE: brain.py
-import json
-import os
-
-class KnowledgeBase:
-    def __init__(self, file_path="knowledge.json"):
-        self.file_path = file_path
-        self.data = self._load()
-
-    def _load(self):
-        if os.path.exists(self.file_path):
-            with open(self.file_path, 'r') as f:
-                return json.load(f)
-        return {}
-
-    def learn(self, state, element, coords):
-        if state not in self.data: self.data[state] = {}
-        self.data[state][element] = coords
-        with open(self.file_path, 'w') as f:
-            json.dump(self.data, f, indent=4)
-
-    def get_coords(self, state, element):
-        return self.data.get(state, {}).get(element)
-
-# FILE: states/handlers.py
-import asyncio
-import os
-from dotenv import load_dotenv
-from actions import teach_and_click
-from harvester import run_harvest  # Required for the product_page handler
-
-load_dotenv()
-
-USERNAME = os.getenv("GFS_USERNAME")
-PASSWORD = os.getenv("GFS_PASSWORD")
-PRODUCT = os.getenv("GFS_DEFAULT_PRODUCT", "Butter") 
-
-async def handle_popup_active(page, kb):
-    print("🚨 Popup detected blocking the screen!")
-    await teach_and_click(page, kb, "popup_active", "close_popup_btn", "click")
-    await asyncio.sleep(3) 
-    return "continue"
-
-async def handle_login_page(page, kb):
-    print("\n🔑 Login page detected. Assessing form...")
-    
-    if not USERNAME or not PASSWORD:
-        print("⚠️ ERROR: Missing credentials in .env file!")
-        return "stop"
-        
-    # 1. Try to input Username
-    username_found = await teach_and_click(page, kb, "login_page", "username_field", "type", USERNAME)
-    if not username_found:
-        print("⚠️ Waiting for Username field to appear...")
-        await asyncio.sleep(3)
-        return "continue"
-        
-    await asyncio.sleep(2)
-    
-    # 2. Try to input Password
-    await teach_and_click(page, kb, "login_page", "password_field", "type", PASSWORD)
-    
-    await asyncio.sleep(5)
-    return "continue"
-
-async def handle_location_selection(page, kb):
-    await teach_and_click(page, kb, "location_selection", "brera_row")
-    await asyncio.sleep(5)
-    return "continue"
-
-async def handle_dashboard(page, kb):
-    print("🧹 Pressing 'Escape' to clear potential hidden popups...")
+    print("🧹 Clearing workspace...")
     await page.keyboard.press("Escape")
     await asyncio.sleep(1) 
     
-    await teach_and_click(page, kb, "dashboard", "search_bar", "type", PRODUCT)
-    await asyncio.sleep(8)
-    return "continue"
+    print("\n📍 [STATE] Dashboard Confirmed.")
+    print("👆 Awaiting manual action... Choose [SEARCH ITEM] or [AUTO-CRAWL SITEMAP]")
 
-async def handle_product_page(page, kb):
-    print("🛒 Product page identified. Starting harvest...")
-    # This calls the hybrid OCR/Wiretap harvester we built
-    await run_harvest(page)
-    return "stop"
+    await page.evaluate("""() => {
+        const container = document.createElement('div');
+        container.id = 'dashboard-trigger-container';
+        container.style.cssText = `
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+            z-index: 9999999; display: flex; gap: 20px;
+        `;
 
-async def handle_dynamic_page(page, kb, current_state):
-    action_directive = kb.get_coords(current_state, "__target_action__")
-    if action_directive:
-        el = action_directive["element"]
-        act = action_directive["action"]
-        val = action_directive["value"]
-        await teach_and_click(page, kb, current_state, el, act, val)
-        await asyncio.sleep(5)
+        const createBtn = (id, text, color) => {
+            const btn = document.createElement('button');
+            btn.id = id;
+            btn.innerHTML = text;
+            btn.style.cssText = `
+                padding: 15px 30px; background: ${color}; color: white;
+                font-size: 16px; font-weight: bold; border: 3px solid rgba(0,0,0,0.2);
+                border-radius: 10px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+                transition: transform 0.1s;
+            `;
+            btn.onmousedown = () => btn.style.transform = 'scale(0.95)';
+            btn.onmouseup = () => btn.style.transform = 'scale(1)';
+            return btn;
+        };
+
+        const searchBtn = createBtn('btn-search', '🔍 SEARCH SINGLE ITEM', '#8e44ad');
+        const crawlBtn = createBtn('btn-crawl', '🗺️ AUTO-CRAWL SITEMAP', '#c0392b'); 
+
+        searchBtn.onclick = () => { window.dashAction = 'search'; searchBtn.innerHTML = '⏳ TYPING...'; searchBtn.style.background = '#f39c12'; };
+        crawlBtn.onclick = () => { window.dashAction = 'crawl'; crawlBtn.innerHTML = '⏳ MAPPING ROUTE...'; crawlBtn.style.background = '#f39c12'; };
+
+        container.appendChild(searchBtn);
+        container.appendChild(crawlBtn);
+        document.body.appendChild(container);
+    }""")
+
+    action = None
+    while not action:
+        action = await page.evaluate("window.dashAction || null")
+        await asyncio.sleep(0.5)
+
+    await page.evaluate("""() => {
+        const container = document.getElementById('dashboard-trigger-container');
+        if (container) container.remove();
+        delete window.dashAction;
+    }""")
+
+    if action == "search":
+        print("🔍 Proceeding with single-item search...")
+        await teach_and_click(page, kb, "dashboard", "search_bar", "type", PRODUCT)
+        await asyncio.sleep(8)
         return "continue"
 
-    print(f"\n🌟 [AUTONOMOUS DISCOVERY] Auto-learning new state: {current_state}")
-    print("🔴 Waiting for human to click the target on the Red Overlay...")
-    
-    element_name = f"auto_target_for_{current_state}"
-    action_type = 'click'
-    val = None
-        
-    kb.learn(current_state, "__target_action__", {
-        "element": element_name, "action": action_type, "value": val
-    })
-    
-    await teach_and_click(page, kb, current_state, element_name, action_type, val)
-    await asyncio.sleep(5)
-    return "continue"
+    elif action == "crawl":
+        print("🗺️ Engaging Auto-Pilot: Expanding category menus...")
 
-# 🚨 THE MISSING LINK: This dictionary must be at the bottom of the file
+        try:
+            await page.locator("text=Categories").first.click(timeout=3000)
+            await asyncio.sleep(2) 
+        except Exception:
+            print("⚠️ Could not click 'Categories', attempting standard DOM scrape...")
+
+        print("🕸️ Spidering DOM for active category links...")
+        links = await page.evaluate("""() => {
+            const anchors = document.querySelectorAll('a[href]');
+            return [...new Set(Array.from(anchors).map(a => a.href))];
+        }""")
+
+        valid_urls = []
+        for link in links:
+            if "gfs.com" in link and any(k in link.lower() for k in ["/category", "/shop", "/products"]):
+                clean_link = link.split('?')[0].split('#')[0] 
+                if clean_link not in valid_urls:
+                    valid_urls.append(clean_link)
+
+        if os.path.exists("navigation_dump.json"):
+            try:
+                with open("navigation_dump.json", "r", encoding="utf-8") as f:
+                    nav_links = re.findall(r'"(/[a-zA-Z0-9\-\/]*category[a-zA-Z0-9\-\/]*)"', f.read())
+                    for nl in nav_links:
+                        full_url = "https://order.gfs.com" + nl
+                        if full_url not in valid_urls:
+                            valid_urls.append(full_url)
+            except Exception:
+                pass
+
+        if not valid_urls:
+            print("⚠️ [WARNING] No valid category URLs found. Defaulting to Search.")
+            await teach_and_click(page, kb, "dashboard", "search_bar", "type", PRODUCT)
+            return "continue"
+
+        URL_QUEUE = valid_urls
+        AUTO_PILOT = True
+        print(f"🚀 [AUTO-PILOT] Found {len(URL_QUEUE)} targeted categories to scrape!")
+
+        next_url = URL_QUEUE.pop(0)
+        print(f"🌐 Navigating to first URL: {next_url}")
+        await page.goto(next_url)
+        await asyncio.sleep(5) 
+        return "continue" 
+
+async def handle_product_page(page, kb):
+    global AUTO_PILOT, URL_QUEUE
+
+    if AUTO_PILOT:
+        print(f"\n🤖 [AUTO-PILOT] Auto-Scraping Category... ({len(URL_QUEUE)} pages remaining in queue)")
+        
+        await run_harvest(page, mode="scan")
+
+        if URL_QUEUE:
+            next_url = URL_QUEUE.pop(0)
+            print(f"🤖 [AUTO-PILOT] Moving to next category in sitemap: {next_url}")
+            await page.goto(next_url)
+            await asyncio.sleep(5)
+            return "continue"
+        else:
+            print("🎉 [AUTO-PILOT] Sitemap queue empty! Full site crawl is complete.")
+            return "stop"
+
+    print("\n📍 [STATE] Product Page Confirmed.")
+    print("👆 Awaiting manual action... Please select a mode.")
+
+    await page.evaluate("""() => {
+        const container = document.createElement('div');
+        container.id = 'manual-trigger-container';
+        container.style.cssText = `
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+            z-index: 9999999; display: flex; gap: 15px;
+        `;
+
+        const createBtn = (id, text, color) => {
+            const btn = document.createElement('button');
+            btn.id = id;
+            btn.innerHTML = text;
+            btn.style.cssText = `
+                padding: 15px 20px; background: ${color}; color: white;
+                font-size: 15px; font-weight: bold; border: 3px solid rgba(0,0,0,0.2);
+                border-radius: 10px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+                transition: transform 0.1s;
+            `;
+            btn.onmousedown = () => btn.style.transform = 'scale(0.95)';
+            btn.onmouseup = () => btn.style.transform = 'scale(1)';
+            return btn;
+        };
+
+        const quickDumpBtn = createBtn('btn-quick-dump', '⚡ QUICK JSON DUMP', '#2980b9'); 
+        const scrollDumpBtn = createBtn('btn-scroll-dump', '🗄️ SCROLL & DUMP', '#8e44ad'); 
+        const scanBtn = createBtn('btn-api-scan', '📡 FULL SCAN', '#27ae60'); 
+
+        quickDumpBtn.onclick = () => { window.manualAction = 'quick_dump'; quickDumpBtn.innerHTML = '⏳ DUMPING...'; quickDumpBtn.style.background = '#f39c12'; };
+        scrollDumpBtn.onclick = () => { window.manualAction = 'agg_dump'; scrollDumpBtn.innerHTML = '⏳ MAPPING...'; scrollDumpBtn.style.background = '#f39c12'; };
+        scanBtn.onclick = () => { window.manualAction = 'scan'; scanBtn.innerHTML = '⏳ SCANNING...'; scanBtn.style.background = '#f39c12'; };
+
+        container.appendChild(quickDumpBtn);
+        container.appendChild(scrollDumpBtn);
+        container.appendChild(scanBtn);
+        document.body.appendChild(container);
+    }""")
+
+    action = None
+    while not action:
+        action = await page.evaluate("window.manualAction || null")
+        await asyncio.sleep(0.5)
+
+    print(f"📡 [COMMAND RECEIVED] Executing: {action.upper()}")
+    await run_harvest(page, mode=action) 
+
+    await page.evaluate("""() => {
+        const container = document.getElementById('manual-trigger-container');
+        if (container) container.remove();
+        delete window.manualAction;
+    }""")
+    
+    print(f"🎉 {action.upper()} Complete. Stopping agent.")
+    return "stop"
+
 STATE_ROUTER = {
     "login_page": handle_login_page,
     "location_selection": handle_location_selection,
@@ -1787,6 +1022,8 @@ STATE_ROUTER = {
 import json
 import os
 import datetime
+import platform
+import sys
 
 def log_event(event_type, details):
     """Logs runtime data to JSONL for debugging."""
@@ -1799,961 +1036,98 @@ def log_event(event_type, details):
         f.write(json.dumps(log_entry) + "\n")
 
 def log_evolution_snapshot(change_summary, technical_details):
-    """Updates the evolution log with high-level architectural changes."""
+    """Maintains a persistent history of every run session in CHANGELOG.md."""
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    # 1. Log to the machine-readable JSONL
+    log_event("ARCHITECTURE_UPDATE", {"summary": change_summary, "details": technical_details})
+    
+    # 2. Append to a persistent CHANGELOG.md
+    changelog_path = "CHANGELOG.md"
+    
+    if not os.path.exists(changelog_path):
+        with open(changelog_path, "w", encoding="utf-8") as f:
+            f.write("# 🤖 Agent Architecture Changelog\n\n")
+            
+    # FIXED: We removed the 'if' gatekeeper. 
+    # Every execution now adds a new timestamped entry to the log.
     entry = (
-        f"\n{'='*60}\n"
-        f"SNAPSHOT: {timestamp}\n"
-        f"CHANGE: {change_summary}\n"
-        f"DETAILS: {technical_details}\n"
-        f"{'='*60}\n"
+        f"### [{timestamp}] SESSION START\n"
+        f"* **Change/Run Context:** {change_summary}\n"
+        f"* **Technical Details:** {technical_details}\n\n"
     )
-    with open("agent_code_evolution_snapshot.log", "a", encoding="utf-8") as f:
+    with open(changelog_path, "a", encoding="utf-8") as f:
         f.write(entry)
 
 def generate_evolution_manifest():
     """
-    Bundles core logic files into the evolution log.
-    This prevents agents from losing context on previous code changes.
+    Bundles core logic files, the changelog, and environment context.
+    Provides the ultimate 'God View' for Gemini troubleshooting.
     """
-    files_to_track = ["main.py", "actions.py", "brain.py", "states/handlers.py", "logger.py"]
+    files_to_track = [
+        "CHANGELOG.md", 
+        "main.py", 
+        "actions.py", 
+        "brain.py", 
+        "harvester.py", 
+        "scroll.py", 
+        "states/handlers.py", 
+        "logger.py"
+    ]
     manifest_path = "agent_code_evolution_snapshot.log"
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    if not os.path.exists(manifest_path):
-        with open(manifest_path, "w", encoding="utf-8") as f:
-            f.write("# Evolution Log Started\n")
+    # Overwrite the snapshot file so it is always fresh and clean
+    with open(manifest_path, "w", encoding="utf-8") as manifest:
+        manifest.write(f"# {'='*60}\n")
+        manifest.write(f"# 🧠 GEMINI TROUBLESHOOTING MANIFEST\n")
+        manifest.write(f"# GENERATED: {timestamp}\n")
+        manifest.write(f"# OS: {platform.system()} {platform.release()}\n")
+        manifest.write(f"# PYTHON: {sys.version.split(' ')[0]}\n")
+        manifest.write(f"# {'='*60}\n\n")
 
-    with open(manifest_path, "a", encoding="utf-8") as manifest:
-        manifest.write(f"\n\n# --- FULL ARCHITECTURE SNAPSHOT: {timestamp} ---\n")
-        for file_path in files_to_track:
-            if os.path.exists(file_path):
-                with open(file_path, "r", encoding="utf-8", errors="replace") as f:
-                    content = f.read()
-                manifest.write(f"\n# FILE: {file_path}\n{content}\n")
-        manifest.write("# --- END SNAPSHOT ---\n")
-
-async def capture_context(page, name):
-    """Captures the URL and a snippet of HTML when a popup or error occurs."""
-    try:
-        url = page.url
-        content = (await page.content())[:500]
-        log_event("CONTEXT_SNAPSHOT", {"element": name, "url": url, "html": content})
-    except Exception:
-        log_event("CONTEXT_ERROR", {"msg": "Failed to capture page context"})
-# --- END SNAPSHOT ---
-
-============================================================
-SNAPSHOT: 2026-03-29 16:13:56
-CHANGE: Global Wiretap Integration
-DETAILS: Moved API wiretap to global scope to prevent race conditions.
-============================================================
-
-
-# --- FULL ARCHITECTURE SNAPSHOT: 2026-03-29 16:13:56 ---
-
-# FILE: main.py
-import asyncio
-import random
-from playwright.async_api import async_playwright
-from brain import KnowledgeBase
-from actions import identify_state, apply_stealth, dismiss_all_popups, deep_human_scroll
-from states.handlers import STATE_ROUTER
-from logger import log_event, generate_evolution_manifest, log_evolution_snapshot
-from harvester import setup_wiretap  # <--- IMPORT THE NEW WIRETAP
-
-async def main():
-    # 📝 Self-Updating Evolution Log
-    log_evolution_snapshot("Global Wiretap Integration", "Moved API wiretap to global scope to prevent race conditions.")
-    generate_evolution_manifest()
-    
-    kb = KnowledgeBase()
-    
-    async with async_playwright() as p:
-        ua = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
-        browser = await p.chromium.launch(headless=False, args=["--disable-blink-features=AutomationControlled"])
-        context = await browser.new_context(viewport={'width': 1280, 'height': 800}, user_agent=ua)
-        page = await context.new_page()
-
-        await apply_stealth(page)
-        
-        # 🚨 ATTACH THE GLOBAL WIRETAP IMMEDIATELY
-        await setup_wiretap(page)
-
-        print("🚀 Launching Beefed-up Autonomous Scraper...")
-        await page.goto("https://order.gfs.com/")
-
-        last_state = None
-        while True:
-            await dismiss_all_popups(page)
-            current_state = await identify_state(page)
-            
-            if current_state != last_state:
-                log_event("STATE_CHANGE", {"from": last_state, "to": current_state})
-                print(f"📍 State Changed -> {current_state}")
-                
-                if current_state not in ["transitioning", "unknown_page"]:
-                    try:
-                        await page.wait_for_load_state("networkidle", timeout=5000)
-                    except: 
-                        pass # Network idle timeout is common, proceed anyway
-                    
-                    # 📜 Pass the KB and State so the bot can use its memory
-                    await deep_human_scroll(page, kb, current_state)
-                    current_state = await identify_state(page)
-                
-                last_state = current_state
-
-            if current_state in ["transitioning", "unknown_page"]:
-                await asyncio.sleep(2)
-                continue
-
-            if current_state in STATE_ROUTER:
-                status = await STATE_ROUTER[current_state](page, kb)
-                if status == "stop": break
-            
-            await asyncio.sleep(random.uniform(1.5, 3.5))
-
-if __name__ == "__main__":
-    asyncio.run(main())
-
-# FILE: actions.py
-import asyncio
-import random
-import re
-import os
-import datetime
-import shutil
-from urllib.parse import urlparse
-from logger import log_event, capture_context
-from PIL import Image, ImageChops
-from paddleocr import PaddleOCR
-
-# --- 🧠 VISION ENGINE INITIALIZATION ---
-ocr_engine = None
-
-def get_ocr():
-    global ocr_engine
-    if ocr_engine is None:
-        print("🧠 Vision Engine: Booting AI Eye (PaddleOCR)...")
-        ocr_engine = PaddleOCR(use_angle_cls=False, lang='en')
-    return ocr_engine
-
-# --- 🧪 HUMAN PHYSICS ENGINE ---
-async def bezier_move(page, end_x, end_y, steps=15):
-    """Moves mouse in a curve to simulate human trackpad acceleration."""
-    start_x, start_y = random.randint(0, 100), random.randint(0, 100)
-    cp1_x = start_x + (end_x - start_x) * random.uniform(0.1, 0.4)
-    cp1_y = start_y + (end_y - start_y) * random.uniform(0.1, 0.4)
-    cp2_x = start_x + (end_x - start_x) * random.uniform(0.6, 0.9)
-    cp2_y = start_y + (end_y - start_y) * random.uniform(0.6, 0.9)
-
-    for i in range(steps + 1):
-        t = i / steps
-        x = (1-t)**3 * start_x + 3*(1-t)**2 * t * cp1_x + 3*(1-t) * t**2 * cp2_x + t**3 * end_x
-        y = (1-t)**3 * start_y + 3*(1-t)**2 * t * cp1_y + 3*(1-t) * t**2 * cp2_y + t**3 * end_y
-        await page.mouse.move(x, y)
-        await asyncio.sleep(random.uniform(0.01, 0.02))
-
-async def deep_human_scroll(page, kb, state):
-    """Smart Scroll: Bypasses non-content pages like Login to prevent layout breaks."""
-    if state in ["product_page", "login_page"]:
-        print(f"⚡ {state} detected. Bypassing pre-scan to keep form stable.")
-        return
-
-    saved_depth = kb.get_coords(state, "scroll_depth")
-    if saved_depth and "scrolls" in saved_depth:
-        print(f"🧠 Memory active: Recalled this page needs {saved_depth['scrolls']} scrolls.")
-        for _ in range(saved_depth["scrolls"]):
-            await page.mouse.wheel(0, random.randint(800, 1200))
-            await asyncio.sleep(random.uniform(0.3, 0.8))
-        return
-
-    last_height = await page.evaluate("document.body.scrollHeight")
-    scrolls_taken = 0
-    for _ in range(15):
-        scrolls_taken += 1
-        await page.mouse.wheel(0, random.randint(800, 1200))
-        await page.evaluate("window.scrollBy(0, 1000)")
-        await asyncio.sleep(2.5) 
-        new_height = await page.evaluate("document.body.scrollHeight")
-        if new_height == last_height: break
-        last_height = new_height
-        
-    kb.learn(state, "scroll_depth", {"scrolls": scrolls_taken})
-
-async def human_click(page, x, y):
-    hx, hy = x + random.randint(-3, 3), y + random.randint(-3, 3)
-    await page.mouse.move(hx, hy)
-    await page.mouse.down()
-    await asyncio.sleep(random.uniform(0.07, 0.18))
-    await page.mouse.up()
-
-# --- 🛡️ STEALTH & POPUPS ---
-async def apply_stealth(page):
-    await page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined});")
-
-async def dismiss_all_popups(page):
-    selectors = ["button:has-text('Close')", "button:has-text('Dismiss')", ".close", "[aria-label*='close' i]"]
-    for selector in selectors:
-        loc = page.locator(selector).filter(visible=True).first
-        if await loc.count() > 0:
-            print(f"🧹 Clearing popup: {selector}")
-            box = await loc.bounding_box()
-            await bezier_move(page, box['x'] + box['width']/2, box['y'] + box['height']/2)
-            await human_click(page, box['x'] + box['width']/2, box['y'] + box['height']/2)
-            return True
-    return False
-
-# --- 👁️ VISION & STATE AWARENESS ---
-def detect_visual_change(new_path, ref_path, threshold=5):
-    if not os.path.exists(ref_path): return False
-    try:
-        img1, img2 = Image.open(new_path).convert('RGB'), Image.open(ref_path).convert('RGB')
-        diff = ImageChops.difference(img1, img2)
-        if diff.getbbox():
-            diff_pixels = sum(abs(p) for p in diff.getdata())
-            total_pixels = img1.size[0] * img1.size[1] * 255
-            return (diff_pixels / total_pixels) * 100 > threshold
-    except Exception: pass
-    return False
-
-async def identify_state(page):
-    url = page.url.lower()
-    if any(x in url for x in ["sso.gfs.com", "okta"]): return "login_page"
-    if any(x in url for x in ["search", "product", "item"]): return "product_page"
-    if "home" in url or "dashboard" in url: return "dashboard"
-    return "transitioning"
-
-async def teach_and_click(page, kb, state, element, action="click", value=None):
-    """Hybrid Click: Tries standard DOM, falls back to OCR, then falls back to Human."""
-    coords = kb.get_coords(state, element)
-    
-    if not coords:
-        selectors = {
-            "username_field": 'input[name*="user" i], input[type="email"], #okta-signin-username',
-            "password_field": 'input[type="password"], #okta-signin-password',
-            "search_bar": 'input[type="search"], input[placeholder*="search" i]'
-        }
-        
-        # PLAN A: Standard HTML Selectors
-        if element in selectors:
+        # --- 1. LOG THE BOT'S MEMORY STATE ---
+        manifest.write("# --- 🧠 CURRENT KNOWLEDGE BASE (MEMORY) ---\n")
+        if os.path.exists("knowledge.json"):
             try:
-                # First try the main page
-                loc = page.locator(selectors[element]).first
-                await loc.wait_for(state="visible", timeout=2000)
-                box = await loc.bounding_box()
-                if box:
-                    coords = {"x": int(box["x"] + box["width"]/2), "y": int(box["y"] + box["height"]/2)}
-            except:
-                # If that fails, pierce through the iframes
-                for frame in page.frames:
-                    try:
-                        loc = frame.locator(selectors[element]).first
-                        if await loc.is_visible():
-                            box = await loc.bounding_box()
-                            if box:
-                                coords = {"x": int(box["x"] + box["width"]/2), "y": int(box["y"] + box["height"]/2)}
-                                break
-                    except: pass
-                
-                # PLAN B: PaddleOCR Vision Fallback
-                if not coords:
-                    print(f"👁️ [VISION] HTML failed for {element}. Trying OCR...")
-                    await asyncio.sleep(2.5) 
-                    
-                    shot_path = f"vision/ocr_attempt_{element}.png"
-                    os.makedirs("vision", exist_ok=True)
-                    await page.screenshot(path=shot_path)
-                    
-                    ocr = get_ocr()
-                    result = ocr.ocr(shot_path)
-                    
-                    if result and result[0]:
-                        look_for = ["Email", "Username", "Sign In", "User"] if "username" in element else ["Password"]
-                        for line in result[0]:
-                            text = line[1][0]
-                            if any(word.lower() in text.lower() for word in look_for):
-                                box = line[0]
-                                offset = 40 if any(w in text.lower() for w in ["password", "email", "user"]) else 0
-                                coords = {"x": int((box[0][0] + box[2][0]) / 2), "y": int((box[0][1] + box[2][1]) / 2) + offset}
-                                print(f"🎯 [VISION] TARGET ACQUIRED: '{text}'! Mapping coordinates.")
-                                break
+                with open("knowledge.json", "r") as f:
+                    kb_data = json.load(f)
+                    # Truncate massive sitemap arrays for brevity
+                    if "sitemap" in kb_data:
+                        dom_len = len(kb_data["sitemap"].get("dom_links", []))
+                        xml_len = len(kb_data["sitemap"].get("xml_links", []))
+                        kb_data["sitemap"]["dom_links"] = f"<... {dom_len} links hidden ...>"
+                        kb_data["sitemap"]["xml_links"] = f"<... {xml_len} links hidden ...>"
+                    manifest.write(json.dumps(kb_data, indent=4) + "\n")
+            except Exception as e:
+                manifest.write(f"# Error reading knowledge.json: {e}\n")
+        else:
+            manifest.write("# No knowledge.json found yet.\n")
 
-                # 🚨 PLAN C: HUMAN IN THE LOOP (The Ultimate Override)
-                if not coords:
-                    print(f"\n🚨 [CRITICAL ALERT] Bot is blind! Cannot find {element}.")
-                    print(f"👉 PLEASE CLICK THE {element.upper()} DIRECTLY ON THE BROWSER WINDOW NOW...")
-                    
-                    # Inject a full-screen invisible overlay to intercept the human's mouse click
-                    coords = await page.evaluate("""() => {
-                        return new Promise(resolve => {
-                            const overlay = document.createElement('div');
-                            overlay.style.position = 'fixed';
-                            overlay.style.top = '0';
-                            overlay.style.left = '0';
-                            overlay.style.width = '100vw';
-                            overlay.style.height = '100vh';
-                            overlay.style.zIndex = '99999999';
-                            overlay.style.backgroundColor = 'rgba(255, 0, 0, 0.15)'; // Light red tint
-                            overlay.style.cursor = 'crosshair';
-                            
-                            overlay.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                document.body.removeChild(overlay);
-                                resolve({x: e.clientX, y: e.clientY});
-                            });
-                            
-                            document.body.appendChild(overlay);
-                        });
-                    }""")
-                    
-                    print(f"🤝 [HUMAN OVERRIDE] Learned coordinates at X:{coords['x']}, Y:{coords['y']}!")
-
-    if coords:
-        kb.learn(state, element, coords)
-        print(f"🖱️ Moving to {element}...")
-        await bezier_move(page, coords['x'], coords['y'])
-        await human_click(page, coords['x'], coords['y'])
-        if action.startswith("type") and value:
-            await asyncio.sleep(0.5)
-            await page.keyboard.type(value, delay=random.randint(50, 90))
-            if action == "type": await page.keyboard.press("Enter")
-        return True
-        
-    print(f"❌ [CRITICAL] Could not find {element} via HTML, Vision, or Human.")
-    return False
-
-# FILE: brain.py
-import json
-import os
-
-class KnowledgeBase:
-    def __init__(self, file_path="knowledge.json"):
-        self.file_path = file_path
-        self.data = self._load()
-
-    def _load(self):
-        if os.path.exists(self.file_path):
-            with open(self.file_path, 'r') as f:
-                return json.load(f)
-        return {}
-
-    def learn(self, state, element, coords):
-        if state not in self.data: self.data[state] = {}
-        self.data[state][element] = coords
-        with open(self.file_path, 'w') as f:
-            json.dump(self.data, f, indent=4)
-
-    def get_coords(self, state, element):
-        return self.data.get(state, {}).get(element)
-
-# FILE: states/handlers.py
-import asyncio
-import os
-from dotenv import load_dotenv
-from actions import teach_and_click
-from harvester import run_harvest  # Required for the product_page handler
-
-load_dotenv()
-
-USERNAME = os.getenv("GFS_USERNAME")
-PASSWORD = os.getenv("GFS_PASSWORD")
-PRODUCT = os.getenv("GFS_DEFAULT_PRODUCT", "Butter") 
-
-async def handle_popup_active(page, kb):
-    print("🚨 Popup detected blocking the screen!")
-    await teach_and_click(page, kb, "popup_active", "close_popup_btn", "click")
-    await asyncio.sleep(3) 
-    return "continue"
-
-async def handle_login_page(page, kb):
-    print("\n🔑 Login page detected. Assessing form...")
-    
-    if not USERNAME or not PASSWORD:
-        print("⚠️ ERROR: Missing credentials in .env file!")
-        return "stop"
-        
-    # 1. Try to input Username
-    username_found = await teach_and_click(page, kb, "login_page", "username_field", "type", USERNAME)
-    if not username_found:
-        print("⚠️ Waiting for Username field to appear...")
-        await asyncio.sleep(3)
-        return "continue"
-        
-    await asyncio.sleep(2)
-    
-    # 2. Try to input Password
-    await teach_and_click(page, kb, "login_page", "password_field", "type", PASSWORD)
-    
-    await asyncio.sleep(5)
-    return "continue"
-
-async def handle_location_selection(page, kb):
-    await teach_and_click(page, kb, "location_selection", "brera_row")
-    await asyncio.sleep(5)
-    return "continue"
-
-async def handle_dashboard(page, kb):
-    print("🧹 Pressing 'Escape' to clear potential hidden popups...")
-    await page.keyboard.press("Escape")
-    await asyncio.sleep(1) 
-    
-    await teach_and_click(page, kb, "dashboard", "search_bar", "type", PRODUCT)
-    await asyncio.sleep(8)
-    return "continue"
-
-async def handle_product_page(page, kb):
-    print("🛒 Product page identified. Starting harvest...")
-    # This calls the hybrid OCR/Wiretap harvester we built
-    await run_harvest(page)
-    return "stop"
-
-async def handle_dynamic_page(page, kb, current_state):
-    action_directive = kb.get_coords(current_state, "__target_action__")
-    if action_directive:
-        el = action_directive["element"]
-        act = action_directive["action"]
-        val = action_directive["value"]
-        await teach_and_click(page, kb, current_state, el, act, val)
-        await asyncio.sleep(5)
-        return "continue"
-
-    print(f"\n🌟 [AUTONOMOUS DISCOVERY] Auto-learning new state: {current_state}")
-    print("🔴 Waiting for human to click the target on the Red Overlay...")
-    
-    element_name = f"auto_target_for_{current_state}"
-    action_type = 'click'
-    val = None
-        
-    kb.learn(current_state, "__target_action__", {
-        "element": element_name, "action": action_type, "value": val
-    })
-    
-    await teach_and_click(page, kb, current_state, element_name, action_type, val)
-    await asyncio.sleep(5)
-    return "continue"
-
-# 🚨 THE MISSING LINK: This dictionary must be at the bottom of the file
-STATE_ROUTER = {
-    "login_page": handle_login_page,
-    "location_selection": handle_location_selection,
-    "dashboard": handle_dashboard,
-    "product_page": handle_product_page,
-    "popup_active": handle_popup_active,
-}
-
-# FILE: logger.py
-import json
-import os
-import datetime
-
-def log_event(event_type, details):
-    """Logs runtime data to JSONL for debugging."""
-    log_entry = {
-        "timestamp": datetime.datetime.now().isoformat(),
-        "type": event_type,
-        "details": details
-    }
-    with open("evolution_log.jsonl", "a", encoding="utf-8") as f:
-        f.write(json.dumps(log_entry) + "\n")
-
-def log_evolution_snapshot(change_summary, technical_details):
-    """Updates the evolution log with high-level architectural changes."""
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    entry = (
-        f"\n{'='*60}\n"
-        f"SNAPSHOT: {timestamp}\n"
-        f"CHANGE: {change_summary}\n"
-        f"DETAILS: {technical_details}\n"
-        f"{'='*60}\n"
-    )
-    with open("agent_code_evolution_snapshot.log", "a", encoding="utf-8") as f:
-        f.write(entry)
-
-def generate_evolution_manifest():
-    """
-    Bundles core logic files into the evolution log.
-    This prevents agents from losing context on previous code changes.
-    """
-    files_to_track = ["main.py", "actions.py", "brain.py", "states/handlers.py", "logger.py"]
-    manifest_path = "agent_code_evolution_snapshot.log"
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    if not os.path.exists(manifest_path):
-        with open(manifest_path, "w", encoding="utf-8") as f:
-            f.write("# Evolution Log Started\n")
-
-    with open(manifest_path, "a", encoding="utf-8") as manifest:
-        manifest.write(f"\n\n# --- FULL ARCHITECTURE SNAPSHOT: {timestamp} ---\n")
-        for file_path in files_to_track:
-            if os.path.exists(file_path):
-                with open(file_path, "r", encoding="utf-8", errors="replace") as f:
-                    content = f.read()
-                manifest.write(f"\n# FILE: {file_path}\n{content}\n")
-        manifest.write("# --- END SNAPSHOT ---\n")
-
-async def capture_context(page, name):
-    """Captures the URL and a snippet of HTML when a popup or error occurs."""
-    try:
-        url = page.url
-        content = (await page.content())[:500]
-        log_event("CONTEXT_SNAPSHOT", {"element": name, "url": url, "html": content})
-    except Exception:
-        log_event("CONTEXT_ERROR", {"msg": "Failed to capture page context"})
-# --- END SNAPSHOT ---
-
-============================================================
-SNAPSHOT: 2026-03-30 13:13:09
-CHANGE: Global Wiretap Integration
-DETAILS: Moved API wiretap to global scope to prevent race conditions.
-============================================================
-
-
-# --- FULL ARCHITECTURE SNAPSHOT: 2026-03-30 13:13:09 ---
-
-# FILE: main.py
-import asyncio
-import random
-from playwright.async_api import async_playwright
-from brain import KnowledgeBase
-from actions import identify_state, apply_stealth, dismiss_all_popups, deep_human_scroll
-from states.handlers import STATE_ROUTER
-from logger import log_event, generate_evolution_manifest, log_evolution_snapshot
-from harvester import setup_wiretap  # <--- IMPORT THE NEW WIRETAP
-
-async def main():
-    # 📝 Self-Updating Evolution Log
-    log_evolution_snapshot("Global Wiretap Integration", "Moved API wiretap to global scope to prevent race conditions.")
-    generate_evolution_manifest()
-    
-    kb = KnowledgeBase()
-    
-    async with async_playwright() as p:
-        ua = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
-        browser = await p.chromium.launch(headless=False, args=["--disable-blink-features=AutomationControlled"])
-        context = await browser.new_context(viewport={'width': 1280, 'height': 800}, user_agent=ua)
-        page = await context.new_page()
-
-        await apply_stealth(page)
-        
-        # 🚨 ATTACH THE GLOBAL WIRETAP IMMEDIATELY
-        await setup_wiretap(page)
-
-        print("🚀 Launching Beefed-up Autonomous Scraper...")
-        await page.goto("https://order.gfs.com/")
-
-        last_state = None
-        while True:
-            await dismiss_all_popups(page)
-            current_state = await identify_state(page)
-            
-            if current_state != last_state:
-                log_event("STATE_CHANGE", {"from": last_state, "to": current_state})
-                print(f"📍 State Changed -> {current_state}")
-                
-                if current_state not in ["transitioning", "unknown_page"]:
-                    try:
-                        await page.wait_for_load_state("networkidle", timeout=5000)
-                    except: 
-                        pass # Network idle timeout is common, proceed anyway
-                    
-                    # 📜 Pass the KB and State so the bot can use its memory
-                    await deep_human_scroll(page, kb, current_state)
-                    current_state = await identify_state(page)
-                
-                last_state = current_state
-
-            if current_state in ["transitioning", "unknown_page"]:
-                await asyncio.sleep(2)
+        # --- 2. LOG DIRECTORY STRUCTURE ---
+        manifest.write("\n# --- 📂 DIRECTORY STRUCTURE ---\n")
+        for root, dirs, files in os.walk("."):
+            if any(ignored in root for ignored in [".git", "__pycache__", "venv", "env", "videos", "vision"]):
                 continue
+            level = root.replace(".", "").count(os.sep)
+            indent = " " * 4 * (level)
+            manifest.write(f"{indent}{os.path.basename(root)}/\n")
+            subindent = " " * 4 * (level + 1)
+            for f in files:
+                if f.endswith((".py", ".json", ".csv", ".env", ".md")):
+                    manifest.write(f"{subindent}{f}\n")
 
-            if current_state in STATE_ROUTER:
-                status = await STATE_ROUTER[current_state](page, kb)
-                if status == "stop": break
-            
-            await asyncio.sleep(random.uniform(1.5, 3.5))
-
-if __name__ == "__main__":
-    asyncio.run(main())
-
-# FILE: actions.py
-import asyncio
-import random
-import re
-import os
-import datetime
-import shutil
-from urllib.parse import urlparse
-from logger import log_event, capture_context
-from PIL import Image, ImageChops
-from paddleocr import PaddleOCR
-
-# --- 🧠 VISION ENGINE INITIALIZATION ---
-ocr_engine = None
-
-def get_ocr():
-    global ocr_engine
-    if ocr_engine is None:
-        print("🧠 Vision Engine: Booting AI Eye (PaddleOCR)...")
-        ocr_engine = PaddleOCR(use_angle_cls=False, lang='en')
-    return ocr_engine
-
-# --- 🧪 HUMAN PHYSICS ENGINE ---
-async def bezier_move(page, end_x, end_y, steps=15):
-    """Moves mouse in a curve to simulate human trackpad acceleration."""
-    start_x, start_y = random.randint(0, 100), random.randint(0, 100)
-    cp1_x = start_x + (end_x - start_x) * random.uniform(0.1, 0.4)
-    cp1_y = start_y + (end_y - start_y) * random.uniform(0.1, 0.4)
-    cp2_x = start_x + (end_x - start_x) * random.uniform(0.6, 0.9)
-    cp2_y = start_y + (end_y - start_y) * random.uniform(0.6, 0.9)
-
-    for i in range(steps + 1):
-        t = i / steps
-        x = (1-t)**3 * start_x + 3*(1-t)**2 * t * cp1_x + 3*(1-t) * t**2 * cp2_x + t**3 * end_x
-        y = (1-t)**3 * start_y + 3*(1-t)**2 * t * cp1_y + 3*(1-t) * t**2 * cp2_y + t**3 * end_y
-        await page.mouse.move(x, y)
-        await asyncio.sleep(random.uniform(0.01, 0.02))
-
-async def deep_human_scroll(page, kb, state):
-    """Smart Scroll: Bypasses non-content pages like Login to prevent layout breaks."""
-    if state in ["product_page", "login_page"]:
-        print(f"⚡ {state} detected. Bypassing pre-scan to keep form stable.")
-        return
-
-    saved_depth = kb.get_coords(state, "scroll_depth")
-    if saved_depth and "scrolls" in saved_depth:
-        print(f"🧠 Memory active: Recalled this page needs {saved_depth['scrolls']} scrolls.")
-        for _ in range(saved_depth["scrolls"]):
-            await page.mouse.wheel(0, random.randint(800, 1200))
-            await asyncio.sleep(random.uniform(0.3, 0.8))
-        return
-
-    last_height = await page.evaluate("document.body.scrollHeight")
-    scrolls_taken = 0
-    for _ in range(15):
-        scrolls_taken += 1
-        await page.mouse.wheel(0, random.randint(800, 1200))
-        await page.evaluate("window.scrollBy(0, 1000)")
-        await asyncio.sleep(2.5) 
-        new_height = await page.evaluate("document.body.scrollHeight")
-        if new_height == last_height: break
-        last_height = new_height
-        
-    kb.learn(state, "scroll_depth", {"scrolls": scrolls_taken})
-
-async def human_click(page, x, y):
-    hx, hy = x + random.randint(-3, 3), y + random.randint(-3, 3)
-    await page.mouse.move(hx, hy)
-    await page.mouse.down()
-    await asyncio.sleep(random.uniform(0.07, 0.18))
-    await page.mouse.up()
-
-# --- 🛡️ STEALTH & POPUPS ---
-async def apply_stealth(page):
-    await page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined});")
-
-async def dismiss_all_popups(page):
-    selectors = ["button:has-text('Close')", "button:has-text('Dismiss')", ".close", "[aria-label*='close' i]"]
-    for selector in selectors:
-        loc = page.locator(selector).filter(visible=True).first
-        if await loc.count() > 0:
-            print(f"🧹 Clearing popup: {selector}")
-            box = await loc.bounding_box()
-            await bezier_move(page, box['x'] + box['width']/2, box['y'] + box['height']/2)
-            await human_click(page, box['x'] + box['width']/2, box['y'] + box['height']/2)
-            return True
-    return False
-
-# --- 👁️ VISION & STATE AWARENESS ---
-def detect_visual_change(new_path, ref_path, threshold=5):
-    if not os.path.exists(ref_path): return False
-    try:
-        img1, img2 = Image.open(new_path).convert('RGB'), Image.open(ref_path).convert('RGB')
-        diff = ImageChops.difference(img1, img2)
-        if diff.getbbox():
-            diff_pixels = sum(abs(p) for p in diff.getdata())
-            total_pixels = img1.size[0] * img1.size[1] * 255
-            return (diff_pixels / total_pixels) * 100 > threshold
-    except Exception: pass
-    return False
-
-async def identify_state(page):
-    url = page.url.lower()
-    if any(x in url for x in ["sso.gfs.com", "okta"]): return "login_page"
-    if any(x in url for x in ["search", "product", "item"]): return "product_page"
-    if "home" in url or "dashboard" in url: return "dashboard"
-    return "transitioning"
-
-async def teach_and_click(page, kb, state, element, action="click", value=None):
-    """Hybrid Click: Tries standard DOM, falls back to OCR, then falls back to Human."""
-    coords = kb.get_coords(state, element)
-    
-    if not coords:
-        selectors = {
-            "username_field": 'input[name*="user" i], input[type="email"], #okta-signin-username',
-            "password_field": 'input[type="password"], #okta-signin-password',
-            "search_bar": 'input[type="search"], input[placeholder*="search" i]'
-        }
-        
-        # PLAN A: Standard HTML Selectors
-        if element in selectors:
-            try:
-                # First try the main page
-                loc = page.locator(selectors[element]).first
-                await loc.wait_for(state="visible", timeout=2000)
-                box = await loc.bounding_box()
-                if box:
-                    coords = {"x": int(box["x"] + box["width"]/2), "y": int(box["y"] + box["height"]/2)}
-            except:
-                # If that fails, pierce through the iframes
-                for frame in page.frames:
-                    try:
-                        loc = frame.locator(selectors[element]).first
-                        if await loc.is_visible():
-                            box = await loc.bounding_box()
-                            if box:
-                                coords = {"x": int(box["x"] + box["width"]/2), "y": int(box["y"] + box["height"]/2)}
-                                break
-                    except: pass
-                
-                # PLAN B: PaddleOCR Vision Fallback
-                if not coords:
-                    print(f"👁️ [VISION] HTML failed for {element}. Trying OCR...")
-                    await asyncio.sleep(2.5) 
-                    
-                    shot_path = f"vision/ocr_attempt_{element}.png"
-                    os.makedirs("vision", exist_ok=True)
-                    await page.screenshot(path=shot_path)
-                    
-                    ocr = get_ocr()
-                    result = ocr.ocr(shot_path)
-                    
-                    if result and result[0]:
-                        look_for = ["Email", "Username", "Sign In", "User"] if "username" in element else ["Password"]
-                        for line in result[0]:
-                            text = line[1][0]
-                            if any(word.lower() in text.lower() for word in look_for):
-                                box = line[0]
-                                offset = 40 if any(w in text.lower() for w in ["password", "email", "user"]) else 0
-                                coords = {"x": int((box[0][0] + box[2][0]) / 2), "y": int((box[0][1] + box[2][1]) / 2) + offset}
-                                print(f"🎯 [VISION] TARGET ACQUIRED: '{text}'! Mapping coordinates.")
-                                break
-
-                # 🚨 PLAN C: HUMAN IN THE LOOP (The Ultimate Override)
-                if not coords:
-                    print(f"\n🚨 [CRITICAL ALERT] Bot is blind! Cannot find {element}.")
-                    print(f"👉 PLEASE CLICK THE {element.upper()} DIRECTLY ON THE BROWSER WINDOW NOW...")
-                    
-                    # Inject a full-screen invisible overlay to intercept the human's mouse click
-                    coords = await page.evaluate("""() => {
-                        return new Promise(resolve => {
-                            const overlay = document.createElement('div');
-                            overlay.style.position = 'fixed';
-                            overlay.style.top = '0';
-                            overlay.style.left = '0';
-                            overlay.style.width = '100vw';
-                            overlay.style.height = '100vh';
-                            overlay.style.zIndex = '99999999';
-                            overlay.style.backgroundColor = 'rgba(255, 0, 0, 0.15)'; // Light red tint
-                            overlay.style.cursor = 'crosshair';
-                            
-                            overlay.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                document.body.removeChild(overlay);
-                                resolve({x: e.clientX, y: e.clientY});
-                            });
-                            
-                            document.body.appendChild(overlay);
-                        });
-                    }""")
-                    
-                    print(f"🤝 [HUMAN OVERRIDE] Learned coordinates at X:{coords['x']}, Y:{coords['y']}!")
-
-    if coords:
-        kb.learn(state, element, coords)
-        print(f"🖱️ Moving to {element}...")
-        await bezier_move(page, coords['x'], coords['y'])
-        await human_click(page, coords['x'], coords['y'])
-        if action.startswith("type") and value:
-            await asyncio.sleep(0.5)
-            await page.keyboard.type(value, delay=random.randint(50, 90))
-            if action == "type": await page.keyboard.press("Enter")
-        return True
-        
-    print(f"❌ [CRITICAL] Could not find {element} via HTML, Vision, or Human.")
-    return False
-
-# FILE: brain.py
-import json
-import os
-
-class KnowledgeBase:
-    def __init__(self, file_path="knowledge.json"):
-        self.file_path = file_path
-        self.data = self._load()
-
-    def _load(self):
-        if os.path.exists(self.file_path):
-            with open(self.file_path, 'r') as f:
-                return json.load(f)
-        return {}
-
-    def learn(self, state, element, coords):
-        if state not in self.data: self.data[state] = {}
-        self.data[state][element] = coords
-        with open(self.file_path, 'w') as f:
-            json.dump(self.data, f, indent=4)
-
-    def get_coords(self, state, element):
-        return self.data.get(state, {}).get(element)
-
-# FILE: states/handlers.py
-import asyncio
-import os
-from dotenv import load_dotenv
-from actions import teach_and_click
-from harvester import run_harvest  # Required for the product_page handler
-
-load_dotenv()
-
-USERNAME = os.getenv("GFS_USERNAME")
-PASSWORD = os.getenv("GFS_PASSWORD")
-PRODUCT = os.getenv("GFS_DEFAULT_PRODUCT", "Butter") 
-
-async def handle_popup_active(page, kb):
-    print("🚨 Popup detected blocking the screen!")
-    await teach_and_click(page, kb, "popup_active", "close_popup_btn", "click")
-    await asyncio.sleep(3) 
-    return "continue"
-
-async def handle_login_page(page, kb):
-    print("\n🔑 Login page detected. Assessing form...")
-    
-    if not USERNAME or not PASSWORD:
-        print("⚠️ ERROR: Missing credentials in .env file!")
-        return "stop"
-        
-    # 1. Try to input Username
-    username_found = await teach_and_click(page, kb, "login_page", "username_field", "type", USERNAME)
-    if not username_found:
-        print("⚠️ Waiting for Username field to appear...")
-        await asyncio.sleep(3)
-        return "continue"
-        
-    await asyncio.sleep(2)
-    
-    # 2. Try to input Password
-    await teach_and_click(page, kb, "login_page", "password_field", "type", PASSWORD)
-    
-    await asyncio.sleep(5)
-    return "continue"
-
-async def handle_location_selection(page, kb):
-    await teach_and_click(page, kb, "location_selection", "brera_row")
-    await asyncio.sleep(5)
-    return "continue"
-
-async def handle_dashboard(page, kb):
-    print("🧹 Pressing 'Escape' to clear potential hidden popups...")
-    await page.keyboard.press("Escape")
-    await asyncio.sleep(1) 
-    
-    await teach_and_click(page, kb, "dashboard", "search_bar", "type", PRODUCT)
-    await asyncio.sleep(8)
-    return "continue"
-
-async def handle_product_page(page, kb):
-    print("🛒 Product page identified. Starting harvest...")
-    # This calls the hybrid OCR/Wiretap harvester we built
-    await run_harvest(page)
-    return "stop"
-
-async def handle_dynamic_page(page, kb, current_state):
-    action_directive = kb.get_coords(current_state, "__target_action__")
-    if action_directive:
-        el = action_directive["element"]
-        act = action_directive["action"]
-        val = action_directive["value"]
-        await teach_and_click(page, kb, current_state, el, act, val)
-        await asyncio.sleep(5)
-        return "continue"
-
-    print(f"\n🌟 [AUTONOMOUS DISCOVERY] Auto-learning new state: {current_state}")
-    print("🔴 Waiting for human to click the target on the Red Overlay...")
-    
-    element_name = f"auto_target_for_{current_state}"
-    action_type = 'click'
-    val = None
-        
-    kb.learn(current_state, "__target_action__", {
-        "element": element_name, "action": action_type, "value": val
-    })
-    
-    await teach_and_click(page, kb, current_state, element_name, action_type, val)
-    await asyncio.sleep(5)
-    return "continue"
-
-# 🚨 THE MISSING LINK: This dictionary must be at the bottom of the file
-STATE_ROUTER = {
-    "login_page": handle_login_page,
-    "location_selection": handle_location_selection,
-    "dashboard": handle_dashboard,
-    "product_page": handle_product_page,
-    "popup_active": handle_popup_active,
-}
-
-# FILE: logger.py
-import json
-import os
-import datetime
-
-def log_event(event_type, details):
-    """Logs runtime data to JSONL for debugging."""
-    log_entry = {
-        "timestamp": datetime.datetime.now().isoformat(),
-        "type": event_type,
-        "details": details
-    }
-    with open("evolution_log.jsonl", "a", encoding="utf-8") as f:
-        f.write(json.dumps(log_entry) + "\n")
-
-def log_evolution_snapshot(change_summary, technical_details):
-    """Updates the evolution log with high-level architectural changes."""
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    entry = (
-        f"\n{'='*60}\n"
-        f"SNAPSHOT: {timestamp}\n"
-        f"CHANGE: {change_summary}\n"
-        f"DETAILS: {technical_details}\n"
-        f"{'='*60}\n"
-    )
-    with open("agent_code_evolution_snapshot.log", "a", encoding="utf-8") as f:
-        f.write(entry)
-
-def generate_evolution_manifest():
-    """
-    Bundles core logic files into the evolution log.
-    This prevents agents from losing context on previous code changes.
-    """
-    files_to_track = ["main.py", "actions.py", "brain.py", "states/handlers.py", "logger.py"]
-    manifest_path = "agent_code_evolution_snapshot.log"
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    if not os.path.exists(manifest_path):
-        with open(manifest_path, "w", encoding="utf-8") as f:
-            f.write("# Evolution Log Started\n")
-
-    with open(manifest_path, "a", encoding="utf-8") as manifest:
-        manifest.write(f"\n\n# --- FULL ARCHITECTURE SNAPSHOT: {timestamp} ---\n")
+        # --- 3. DUMP THE CODEBASE & CHANGELOG ---
+        manifest.write(f"\n\n# --- 💻 FULL ARCHITECTURE SNAPSHOT ---\n")
         for file_path in files_to_track:
             if os.path.exists(file_path):
                 with open(file_path, "r", encoding="utf-8", errors="replace") as f:
                     content = f.read()
                 manifest.write(f"\n# FILE: {file_path}\n{content}\n")
-        manifest.write("# --- END SNAPSHOT ---\n")
+            else:
+                manifest.write(f"\n# FILE: {file_path} (⚠️ NOT FOUND)\n")
+        
+        manifest.write("\n# --- END SNAPSHOT ---\n")
 
 async def capture_context(page, name):
     """Captures the URL and a snippet of HTML when a popup or error occurs."""
@@ -2763,4 +1137,5 @@ async def capture_context(page, name):
         log_event("CONTEXT_SNAPSHOT", {"element": name, "url": url, "html": content})
     except Exception:
         log_event("CONTEXT_ERROR", {"msg": "Failed to capture page context"})
+
 # --- END SNAPSHOT ---

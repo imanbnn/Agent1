@@ -4,6 +4,7 @@ import re
 import os
 import datetime
 import shutil
+import json
 from urllib.parse import urlparse
 from logger import log_event, capture_context
 from PIL import Image, ImageChops
@@ -85,6 +86,69 @@ async def dismiss_all_popups(page):
             return True
     return False
 
+# --- 🗺️ SITE DISCOVERY (SPIDER) ---
+async def build_sitemap(page, kb):
+    print("\n🗺️ --- STARTING 3-LEVEL SITE DISCOVERY ---")
+    
+    # We use the current origin as the base URL
+    base_url = await page.evaluate("window.location.origin")
+    sitemap_data = {"xml_links": [], "dom_links": []}
+
+    # ==========================================
+    # LEVEL 1: Standard XML Sitemap
+    # ==========================================
+    print("🔍 [LEVEL 1] Checking robots.txt & sitemap.xml...")
+    try:
+        # Check robots.txt
+        response = await page.request.get(f"{base_url}/robots.txt")
+        if response.ok:
+            print("✅ Found robots.txt. (Can be parsed for hidden paths)")
+        
+        # Check standard sitemap
+        response = await page.request.get(f"{base_url}/sitemap.xml")
+        if response.ok:
+            text = await response.text()
+            urls = re.findall(r'<loc>(.*?)</loc>', text)
+            sitemap_data["xml_links"] = list(set(urls))
+            print(f"✅ Extracted {len(sitemap_data['xml_links'])} hidden links from sitemap.xml!")
+        else:
+            print("⚠️ No public sitemap.xml found. Proceeding to DOM Spidering...")
+    except Exception as e:
+        print(f"⚠️ Level 1 Failed: {e}")
+
+    # ==========================================
+    # LEVEL 2: Recursive DOM Spidering
+    # ==========================================
+    print("🕸️ [LEVEL 2] Spidering current DOM for hidden href links...")
+    try:
+        links = await page.evaluate("""() => {
+            const anchors = document.querySelectorAll('a[href]');
+            return [...new Set(Array.from(anchors).map(a => a.href))];
+        }""")
+        
+        valid_links = []
+        for link in links:
+            if "gfs.com" in link and "javascript:" not in link and "mailto:" not in link:
+                clean_link = link.split('?')[0].split('#')[0] 
+                valid_links.append(clean_link)
+                
+        sitemap_data["dom_links"] = list(set(valid_links))
+        print(f"✅ Extracted {len(sitemap_data['dom_links'])} internal links from the page.")
+    except Exception as e:
+        print(f"⚠️ Level 2 Failed: {e}")
+
+    # Save findings to Knowledge Base
+    if "sitemap" not in kb.data:
+        kb.data["sitemap"] = {}
+    
+    kb.data["sitemap"].update(sitemap_data)
+    
+    with open(kb.file_path, 'w', encoding='utf-8') as f:
+        json.dump(kb.data, f, indent=4)
+        
+    print("💾 Sitemap saved to knowledge.json (Level 3 API intercepts running in background).")
+    print("🗺️ --- DISCOVERY COMPLETE ---\n")
+
 # --- 👁️ VISION & STATE AWARENESS ---
 def detect_visual_change(new_path, ref_path, threshold=5):
     if not os.path.exists(ref_path): return False
@@ -101,7 +165,8 @@ def detect_visual_change(new_path, ref_path, threshold=5):
 async def identify_state(page):
     url = page.url.lower()
     if any(x in url for x in ["sso.gfs.com", "okta"]): return "login_page"
-    if any(x in url for x in ["search", "product", "item"]): return "product_page"
+    if any(x in url for x in ["search", "product", "item", "order.gfs.com/shopping"]): 
+        return "product_page"
     if "home" in url or "dashboard" in url: return "dashboard"
     return "transitioning"
 
@@ -119,14 +184,12 @@ async def teach_and_click(page, kb, state, element, action="click", value=None):
         # PLAN A: Standard HTML Selectors
         if element in selectors:
             try:
-                # First try the main page
                 loc = page.locator(selectors[element]).first
                 await loc.wait_for(state="visible", timeout=2000)
                 box = await loc.bounding_box()
                 if box:
                     coords = {"x": int(box["x"] + box["width"]/2), "y": int(box["y"] + box["height"]/2)}
             except:
-                # If that fails, pierce through the iframes
                 for frame in page.frames:
                     try:
                         loc = frame.locator(selectors[element]).first
@@ -165,7 +228,6 @@ async def teach_and_click(page, kb, state, element, action="click", value=None):
                     print(f"\n🚨 [CRITICAL ALERT] Bot is blind! Cannot find {element}.")
                     print(f"👉 PLEASE CLICK THE {element.upper()} DIRECTLY ON THE BROWSER WINDOW NOW...")
                     
-                    # Inject a full-screen invisible overlay to intercept the human's mouse click
                     coords = await page.evaluate("""() => {
                         return new Promise(resolve => {
                             const overlay = document.createElement('div');
@@ -175,16 +237,14 @@ async def teach_and_click(page, kb, state, element, action="click", value=None):
                             overlay.style.width = '100vw';
                             overlay.style.height = '100vh';
                             overlay.style.zIndex = '99999999';
-                            overlay.style.backgroundColor = 'rgba(255, 0, 0, 0.15)'; // Light red tint
+                            overlay.style.backgroundColor = 'rgba(255, 0, 0, 0.15)'; 
                             overlay.style.cursor = 'crosshair';
-                            
                             overlay.addEventListener('click', (e) => {
                                 e.preventDefault();
                                 e.stopPropagation();
                                 document.body.removeChild(overlay);
                                 resolve({x: e.clientX, y: e.clientY});
                             });
-                            
                             document.body.appendChild(overlay);
                         });
                     }""")

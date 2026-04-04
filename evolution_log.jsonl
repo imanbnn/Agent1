@@ -108,3 +108,98 @@
 {"timestamp": "2026-03-30T13:14:31.559875", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
 {"timestamp": "2026-03-30T13:14:31.566576", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
 {"timestamp": "2026-03-30T13:14:31.951210", "type": "HARVEST_END", "details": {"total_items": 2169, "target_total": 258}}
+{"timestamp": "2026-04-04T14:35:41.600280", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T14:35:56.738501", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T14:36:35.925807", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T14:36:35.928191", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
+{"timestamp": "2026-04-04T14:36:35.992383", "type": "HARVEST_END", "details": {"total_items": 2172, "target_total": 258}}
+{"timestamp": "2026-04-04T14:53:34.489333", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T14:53:50.609155", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T14:54:32.526806", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T14:54:32.529935", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
+{"timestamp": "2026-04-04T14:54:32.589372", "type": "HARVEST_END", "details": {"total_items": 2197, "target_total": 258}}
+{"timestamp": "2026-04-04T15:00:20.047716", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T15:00:35.726422", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T15:01:16.193510", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T15:01:27.303287", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
+{"timestamp": "2026-04-04T15:01:27.375165", "type": "HARVEST_END", "details": {"total_items": 2181, "target_total": 258}}
+{"timestamp": "2026-04-04T15:09:10.293782", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T15:09:25.408262", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T15:10:05.274713", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T15:10:12.853801", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
+{"timestamp": "2026-04-04T15:13:37.706852", "type": "HARVEST_END", "details": {"total_items": 239, "target_total": 258}}
+{"timestamp": "2026-04-04T15:21:54.451707", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T15:22:10.581051", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T15:22:49.178290", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T15:23:00.293358", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
+{"timestamp": "2026-04-04T15:29:25.364761", "type": "HARVEST_END", "details": {"total_items": 239, "target_total": 258}}
+{"timestamp": "2026-04-04T15:31:34.432081", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T15:31:49.212379", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T15:32:28.993173", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T15:41:15.117450", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T15:41:29.258474", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T15:42:09.920113", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T15:44:08.254487", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T15:44:24.270191", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T15:45:04.512395", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T15:51:56.597002", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T15:52:12.934213", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T15:52:52.651558", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T15:56:13.061825", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T15:56:29.065044", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T15:57:07.591689", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T16:07:34.632034", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T16:07:48.908659", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T16:08:45.765745", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T16:13:16.266336", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T16:13:32.081586", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T16:14:42.971084", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T16:21:37.783531", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T16:21:52.715552", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T16:26:56.140502", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Accelerated Video", "details": "Added FFmpeg post-processing for 2x speed and smaller file size."}}
+{"timestamp": "2026-04-04T16:26:58.644882", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T16:27:13.129849", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T16:27:49.109515", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T16:36:24.294020", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Accelerated Video", "details": "Added FFmpeg post-processing for 2x speed and smaller file size."}}
+{"timestamp": "2026-04-04T16:36:27.159930", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T16:36:42.025419", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T16:37:14.518075", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T16:41:27.086976", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Hyper-Accelerated Video", "details": "Updated FFmpeg post-processing to 3.5x playback speed."}}
+{"timestamp": "2026-04-04T16:41:29.627980", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T16:41:44.713520", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T16:42:00.163367", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T16:47:18.715583", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Hyper-Accelerated Video", "details": "Updated FFmpeg post-processing to 3.5x playback speed."}}
+{"timestamp": "2026-04-04T16:47:21.624912", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T16:47:36.849657", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T16:47:52.673853", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T16:51:24.218325", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Hyper-Accelerated Video", "details": "Updated FFmpeg post-processing to 3.5x playback speed."}}
+{"timestamp": "2026-04-04T16:51:27.100019", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T16:51:41.433483", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T16:51:57.406026", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T16:58:35.034490", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Hyper-Accelerated Video", "details": "Updated FFmpeg post-processing to 3.5x playback speed."}}
+{"timestamp": "2026-04-04T16:58:37.652853", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T16:58:51.722114", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T16:59:09.303518", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T17:04:01.871994", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Hyper-Accelerated Video", "details": "Updated FFmpeg post-processing to 3.5x playback speed."}}
+{"timestamp": "2026-04-04T17:04:04.459989", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T17:04:20.728186", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T17:04:50.436327", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T17:08:55.771587", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Hyper-Accelerated Video", "details": "Updated FFmpeg post-processing to 3.5x playback speed."}}
+{"timestamp": "2026-04-04T17:08:58.479457", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T17:09:13.952735", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T17:09:34.066992", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T17:12:54.823706", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Hyper-Accelerated Video", "details": "Updated FFmpeg post-processing to 3.5x playback speed."}}
+{"timestamp": "2026-04-04T17:12:57.262548", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T17:13:11.209242", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T17:13:28.019126", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Hyper-Accelerated Video", "details": "Updated FFmpeg post-processing to 3.5x playback speed."}}
+{"timestamp": "2026-04-04T17:13:30.584353", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T17:13:45.097733", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T17:13:59.469782", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T17:22:06.278149", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Hyper-Accelerated Video", "details": "Updated FFmpeg post-processing to 3.5x playback speed."}}
+{"timestamp": "2026-04-04T17:22:08.833832", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T17:22:24.225022", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T17:22:39.274435", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp": "2026-04-04T17:25:21.004858", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Hyper-Accelerated Video", "details": "Updated FFmpeg post-processing to 3.5x playback speed."}}
+{"timestamp": "2026-04-04T17:25:23.447020", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
+{"timestamp": "2026-04-04T17:25:37.875992", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
+{"timestamp": "2026-04-04T17:25:52.869529", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}

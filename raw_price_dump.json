@@ -2,13 +2,13 @@
     "currency": "CAD",
     "materialPrices": [
         {
-            "materialNumber": "1019932",
+            "materialNumber": "1000017",
             "weightUom": "KG",
             "unitPrices": [
                 {
                     "salesUom": "CS",
                     "pricingType": "SAPEXT_PRECALC",
-                    "price": 59.99,
+                    "price": 103.27,
                     "catchWeightPrice": null,
                     "priceLoyaltyPoints": null,
                     "catchWeightPriceLoyaltyPoints": null,
@@ -27,13 +27,13 @@
             ]
         },
         {
-            "materialNumber": "1043289",
+            "materialNumber": "1119176",
             "weightUom": "KG",
             "unitPrices": [
                 {
                     "salesUom": "CS",
                     "pricingType": "SAPEXT_PRECALC",
-                    "price": 65.36,
+                    "price": 51.74,
                     "catchWeightPrice": null,
                     "priceLoyaltyPoints": null,
                     "catchWeightPriceLoyaltyPoints": null,
@@ -52,13 +52,13 @@
             ]
         },
         {
-            "materialNumber": "1080913",
+            "materialNumber": "1121323",
             "weightUom": "KG",
             "unitPrices": [
                 {
                     "salesUom": "CS",
                     "pricingType": "SAPEXT_PRECALC",
-                    "price": 55.22,
+                    "price": 33.87,
                     "catchWeightPrice": null,
                     "priceLoyaltyPoints": null,
                     "catchWeightPriceLoyaltyPoints": null,
@@ -77,13 +77,13 @@
             ]
         },
         {
-            "materialNumber": "1087483",
+            "materialNumber": "1123225",
             "weightUom": "KG",
             "unitPrices": [
                 {
                     "salesUom": "CS",
                     "pricingType": "SAPEXT_PRECALC",
-                    "price": 92.1,
+                    "price": 45.46,
                     "catchWeightPrice": null,
                     "priceLoyaltyPoints": null,
                     "catchWeightPriceLoyaltyPoints": null,
@@ -102,57 +102,13 @@
             ]
         },
         {
-            "materialNumber": "1109465",
+            "materialNumber": "1127383",
             "weightUom": "KG",
             "unitPrices": [
                 {
                     "salesUom": "CS",
                     "pricingType": "SAPEXT_PRECALC",
-                    "price": 141,
-                    "catchWeightPrice": 12.5,
-                    "priceLoyaltyPoints": null,
-                    "catchWeightPriceLoyaltyPoints": null,
-                    "quantityPriceLoyaltyPoints": null,
-                    "quantityCatchWeightPriceLoyaltyPoints": null,
-                    "onSale": null,
-                    "onClearance": null,
-                    "quantityPrice": null,
-                    "quantityCatchWeightPrice": null,
-                    "quantityPriceThreshold": null,
-                    "coupon": null,
-                    "discountAmount": null,
-                    "originalPrice": null,
-                    "isContract": false
-                },
-                {
-                    "salesUom": "EA",
-                    "pricingType": "SAPEXT_PRECALC",
-                    "price": 74.22,
-                    "catchWeightPrice": 13.16,
-                    "priceLoyaltyPoints": null,
-                    "catchWeightPriceLoyaltyPoints": null,
-                    "quantityPriceLoyaltyPoints": null,
-                    "quantityCatchWeightPriceLoyaltyPoints": null,
-                    "onSale": null,
-                    "onClearance": null,
-                    "quantityPrice": null,
-                    "quantityCatchWeightPrice": null,
-                    "quantityPriceThreshold": null,
-                    "coupon": null,
-                    "discountAmount": null,
-                    "originalPrice": null,
-                    "isContract": false
-                }
-            ]
-        },
-        {
-            "materialNumber": "1125457",
-            "weightUom": "KG",
-            "unitPrices": [
-                {
-                    "salesUom": "CS",
-                    "pricingType": "SAPEXT_PRECALC",
-                    "price": 38.83,
+                    "price": 101.34,
                     "catchWeightPrice": null,
                     "priceLoyaltyPoints": null,
                     "catchWeightPriceLoyaltyPoints": null,
@@ -171,13 +127,13 @@
             ]
         },
         {
-            "materialNumber": "1146973",
+            "materialNumber": "1169203",
             "weightUom": "KG",
             "unitPrices": [
                 {
                     "salesUom": "CS",
                     "pricingType": "SAPEXT_PRECALC",
-                    "price": 94.69,
+                    "price": 51.09,
                     "catchWeightPrice": null,
                     "priceLoyaltyPoints": null,
                     "catchWeightPriceLoyaltyPoints": null,
@@ -196,432 +152,7 @@
             ]
         },
         {
-            "materialNumber": "1164661",
-            "weightUom": "KG",
-            "unitPrices": [
-                {
-                    "salesUom": "CS",
-                    "pricingType": "SAPEXT_PRECALC",
-                    "price": 80.29,
-                    "catchWeightPrice": null,
-                    "priceLoyaltyPoints": null,
-                    "catchWeightPriceLoyaltyPoints": null,
-                    "quantityPriceLoyaltyPoints": null,
-                    "quantityCatchWeightPriceLoyaltyPoints": null,
-                    "onSale": null,
-                    "onClearance": null,
-                    "quantityPrice": null,
-                    "quantityCatchWeightPrice": null,
-                    "quantityPriceThreshold": null,
-                    "coupon": null,
-                    "discountAmount": null,
-                    "originalPrice": null,
-                    "isContract": false
-                }
-            ]
-        },
-        {
-            "materialNumber": "1184882",
-            "weightUom": "KG",
-            "unitPrices": [
-                {
-                    "salesUom": "CS",
-                    "pricingType": "SAPEXT_PRECALC",
-                    "price": 159.11,
-                    "catchWeightPrice": null,
-                    "priceLoyaltyPoints": null,
-                    "catchWeightPriceLoyaltyPoints": null,
-                    "quantityPriceLoyaltyPoints": null,
-                    "quantityCatchWeightPriceLoyaltyPoints": null,
-                    "onSale": null,
-                    "onClearance": null,
-                    "quantityPrice": null,
-                    "quantityCatchWeightPrice": null,
-                    "quantityPriceThreshold": null,
-                    "coupon": null,
-                    "discountAmount": null,
-                    "originalPrice": null,
-                    "isContract": false
-                }
-            ]
-        },
-        {
-            "materialNumber": "1184900",
-            "weightUom": "KG",
-            "unitPrices": [
-                {
-                    "salesUom": "CS",
-                    "pricingType": "SAPEXT_PRECALC",
-                    "price": 78.46,
-                    "catchWeightPrice": null,
-                    "priceLoyaltyPoints": null,
-                    "catchWeightPriceLoyaltyPoints": null,
-                    "quantityPriceLoyaltyPoints": null,
-                    "quantityCatchWeightPriceLoyaltyPoints": null,
-                    "onSale": null,
-                    "onClearance": null,
-                    "quantityPrice": null,
-                    "quantityCatchWeightPrice": null,
-                    "quantityPriceThreshold": null,
-                    "coupon": null,
-                    "discountAmount": null,
-                    "originalPrice": null,
-                    "isContract": false
-                }
-            ]
-        },
-        {
-            "materialNumber": "1197237",
-            "weightUom": "KG",
-            "unitPrices": [
-                {
-                    "salesUom": "CS",
-                    "pricingType": "SAPEXT_PRECALC",
-                    "price": 77.93,
-                    "catchWeightPrice": null,
-                    "priceLoyaltyPoints": null,
-                    "catchWeightPriceLoyaltyPoints": null,
-                    "quantityPriceLoyaltyPoints": null,
-                    "quantityCatchWeightPriceLoyaltyPoints": null,
-                    "onSale": null,
-                    "onClearance": null,
-                    "quantityPrice": null,
-                    "quantityCatchWeightPrice": null,
-                    "quantityPriceThreshold": null,
-                    "coupon": null,
-                    "discountAmount": null,
-                    "originalPrice": null,
-                    "isContract": false
-                }
-            ]
-        },
-        {
-            "materialNumber": "1203024",
-            "weightUom": "KG",
-            "unitPrices": [
-                {
-                    "salesUom": "CS",
-                    "pricingType": "SAPEXT_PRECALC",
-                    "price": 58.35,
-                    "catchWeightPrice": null,
-                    "priceLoyaltyPoints": null,
-                    "catchWeightPriceLoyaltyPoints": null,
-                    "quantityPriceLoyaltyPoints": null,
-                    "quantityCatchWeightPriceLoyaltyPoints": null,
-                    "onSale": null,
-                    "onClearance": null,
-                    "quantityPrice": null,
-                    "quantityCatchWeightPrice": null,
-                    "quantityPriceThreshold": null,
-                    "coupon": null,
-                    "discountAmount": null,
-                    "originalPrice": null,
-                    "isContract": false
-                }
-            ]
-        },
-        {
-            "materialNumber": "1203780",
-            "weightUom": "KG",
-            "unitPrices": [
-                {
-                    "salesUom": "CS",
-                    "pricingType": "SAPEXT_PRECALC",
-                    "price": 70.72,
-                    "catchWeightPrice": null,
-                    "priceLoyaltyPoints": null,
-                    "catchWeightPriceLoyaltyPoints": null,
-                    "quantityPriceLoyaltyPoints": null,
-                    "quantityCatchWeightPriceLoyaltyPoints": null,
-                    "onSale": null,
-                    "onClearance": null,
-                    "quantityPrice": null,
-                    "quantityCatchWeightPrice": null,
-                    "quantityPriceThreshold": null,
-                    "coupon": null,
-                    "discountAmount": null,
-                    "originalPrice": null,
-                    "isContract": false
-                }
-            ]
-        },
-        {
-            "materialNumber": "1232155",
-            "weightUom": "KG",
-            "unitPrices": [
-                {
-                    "salesUom": "CS",
-                    "pricingType": "SAPEXT_PRECALC",
-                    "price": 82.32,
-                    "catchWeightPrice": null,
-                    "priceLoyaltyPoints": null,
-                    "catchWeightPriceLoyaltyPoints": null,
-                    "quantityPriceLoyaltyPoints": null,
-                    "quantityCatchWeightPriceLoyaltyPoints": null,
-                    "onSale": null,
-                    "onClearance": null,
-                    "quantityPrice": null,
-                    "quantityCatchWeightPrice": null,
-                    "quantityPriceThreshold": null,
-                    "coupon": null,
-                    "discountAmount": null,
-                    "originalPrice": null,
-                    "isContract": false
-                }
-            ]
-        },
-        {
-            "materialNumber": "1240250",
-            "weightUom": "KG",
-            "unitPrices": [
-                {
-                    "salesUom": "CS",
-                    "pricingType": "SAPEXT_PRECALC",
-                    "price": 66.08,
-                    "catchWeightPrice": null,
-                    "priceLoyaltyPoints": null,
-                    "catchWeightPriceLoyaltyPoints": null,
-                    "quantityPriceLoyaltyPoints": null,
-                    "quantityCatchWeightPriceLoyaltyPoints": null,
-                    "onSale": null,
-                    "onClearance": null,
-                    "quantityPrice": null,
-                    "quantityCatchWeightPrice": null,
-                    "quantityPriceThreshold": null,
-                    "coupon": null,
-                    "discountAmount": null,
-                    "originalPrice": null,
-                    "isContract": false
-                }
-            ]
-        },
-        {
-            "materialNumber": "1278126",
-            "weightUom": "KG",
-            "unitPrices": [
-                {
-                    "salesUom": "CS",
-                    "pricingType": "SAPEXT_PRECALC",
-                    "price": 57.28,
-                    "catchWeightPrice": null,
-                    "priceLoyaltyPoints": null,
-                    "catchWeightPriceLoyaltyPoints": null,
-                    "quantityPriceLoyaltyPoints": null,
-                    "quantityCatchWeightPriceLoyaltyPoints": null,
-                    "onSale": null,
-                    "onClearance": null,
-                    "quantityPrice": null,
-                    "quantityCatchWeightPrice": null,
-                    "quantityPriceThreshold": null,
-                    "coupon": null,
-                    "discountAmount": null,
-                    "originalPrice": null,
-                    "isContract": false
-                }
-            ]
-        },
-        {
-            "materialNumber": "1327053",
-            "weightUom": "KG",
-            "unitPrices": [
-                {
-                    "salesUom": "CS",
-                    "pricingType": "SAPEXT_PRECALC",
-                    "price": 33.03,
-                    "catchWeightPrice": null,
-                    "priceLoyaltyPoints": null,
-                    "catchWeightPriceLoyaltyPoints": null,
-                    "quantityPriceLoyaltyPoints": null,
-                    "quantityCatchWeightPriceLoyaltyPoints": null,
-                    "onSale": null,
-                    "onClearance": null,
-                    "quantityPrice": null,
-                    "quantityCatchWeightPrice": null,
-                    "quantityPriceThreshold": null,
-                    "coupon": null,
-                    "discountAmount": null,
-                    "originalPrice": null,
-                    "isContract": false
-                }
-            ]
-        },
-        {
-            "materialNumber": "1329190",
-            "weightUom": "KG",
-            "unitPrices": [
-                {
-                    "salesUom": "CS",
-                    "pricingType": "SAPEXT_PRECALC",
-                    "price": 93.23,
-                    "catchWeightPrice": null,
-                    "priceLoyaltyPoints": null,
-                    "catchWeightPriceLoyaltyPoints": null,
-                    "quantityPriceLoyaltyPoints": null,
-                    "quantityCatchWeightPriceLoyaltyPoints": null,
-                    "onSale": null,
-                    "onClearance": null,
-                    "quantityPrice": null,
-                    "quantityCatchWeightPrice": null,
-                    "quantityPriceThreshold": null,
-                    "coupon": null,
-                    "discountAmount": null,
-                    "originalPrice": null,
-                    "isContract": false
-                }
-            ]
-        },
-        {
-            "materialNumber": "1353548",
-            "weightUom": "KG",
-            "unitPrices": [
-                {
-                    "salesUom": "CS",
-                    "pricingType": "SAPEXT_PRECALC",
-                    "price": 82.61,
-                    "catchWeightPrice": null,
-                    "priceLoyaltyPoints": null,
-                    "catchWeightPriceLoyaltyPoints": null,
-                    "quantityPriceLoyaltyPoints": null,
-                    "quantityCatchWeightPriceLoyaltyPoints": null,
-                    "onSale": null,
-                    "onClearance": null,
-                    "quantityPrice": null,
-                    "quantityCatchWeightPrice": null,
-                    "quantityPriceThreshold": null,
-                    "coupon": null,
-                    "discountAmount": null,
-                    "originalPrice": null,
-                    "isContract": false
-                }
-            ]
-        },
-        {
-            "materialNumber": "1354154",
-            "weightUom": "KG",
-            "unitPrices": [
-                {
-                    "salesUom": "CS",
-                    "pricingType": "SAPEXT_PRECALC",
-                    "price": 139.92,
-                    "catchWeightPrice": null,
-                    "priceLoyaltyPoints": null,
-                    "catchWeightPriceLoyaltyPoints": null,
-                    "quantityPriceLoyaltyPoints": null,
-                    "quantityCatchWeightPriceLoyaltyPoints": null,
-                    "onSale": null,
-                    "onClearance": null,
-                    "quantityPrice": null,
-                    "quantityCatchWeightPrice": null,
-                    "quantityPriceThreshold": null,
-                    "coupon": null,
-                    "discountAmount": null,
-                    "originalPrice": null,
-                    "isContract": false
-                }
-            ]
-        },
-        {
-            "materialNumber": "1357333",
-            "weightUom": "KG",
-            "unitPrices": [
-                {
-                    "salesUom": "CS",
-                    "pricingType": "SAPEXT_PRECALC",
-                    "price": 227.91,
-                    "catchWeightPrice": null,
-                    "priceLoyaltyPoints": null,
-                    "catchWeightPriceLoyaltyPoints": null,
-                    "quantityPriceLoyaltyPoints": null,
-                    "quantityCatchWeightPriceLoyaltyPoints": null,
-                    "onSale": null,
-                    "onClearance": null,
-                    "quantityPrice": null,
-                    "quantityCatchWeightPrice": null,
-                    "quantityPriceThreshold": null,
-                    "coupon": null,
-                    "discountAmount": null,
-                    "originalPrice": null,
-                    "isContract": false
-                }
-            ]
-        },
-        {
-            "materialNumber": "1446342",
-            "weightUom": "KG",
-            "unitPrices": [
-                {
-                    "salesUom": "CS",
-                    "pricingType": "SAPEXT_PRECALC",
-                    "price": 79.93,
-                    "catchWeightPrice": null,
-                    "priceLoyaltyPoints": null,
-                    "catchWeightPriceLoyaltyPoints": null,
-                    "quantityPriceLoyaltyPoints": null,
-                    "quantityCatchWeightPriceLoyaltyPoints": null,
-                    "onSale": null,
-                    "onClearance": null,
-                    "quantityPrice": null,
-                    "quantityCatchWeightPrice": null,
-                    "quantityPriceThreshold": null,
-                    "coupon": null,
-                    "discountAmount": null,
-                    "originalPrice": null,
-                    "isContract": false
-                }
-            ]
-        },
-        {
-            "materialNumber": "1456711",
-            "weightUom": "KG",
-            "unitPrices": [
-                {
-                    "salesUom": "CS",
-                    "pricingType": "SAPEXT_PRECALC",
-                    "price": 116.12,
-                    "catchWeightPrice": null,
-                    "priceLoyaltyPoints": null,
-                    "catchWeightPriceLoyaltyPoints": null,
-                    "quantityPriceLoyaltyPoints": null,
-                    "quantityCatchWeightPriceLoyaltyPoints": null,
-                    "onSale": null,
-                    "onClearance": null,
-                    "quantityPrice": null,
-                    "quantityCatchWeightPrice": null,
-                    "quantityPriceThreshold": null,
-                    "coupon": null,
-                    "discountAmount": null,
-                    "originalPrice": null,
-                    "isContract": false
-                }
-            ]
-        },
-        {
-            "materialNumber": "1492872",
-            "weightUom": "KG",
-            "unitPrices": [
-                {
-                    "salesUom": "CS",
-                    "pricingType": "SAPEXT_PRECALC",
-                    "price": 91.67,
-                    "catchWeightPrice": null,
-                    "priceLoyaltyPoints": null,
-                    "catchWeightPriceLoyaltyPoints": null,
-                    "quantityPriceLoyaltyPoints": null,
-                    "quantityCatchWeightPriceLoyaltyPoints": null,
-                    "onSale": null,
-                    "onClearance": null,
-                    "quantityPrice": null,
-                    "quantityCatchWeightPrice": null,
-                    "quantityPriceThreshold": null,
-                    "coupon": null,
-                    "discountAmount": null,
-                    "originalPrice": null,
-                    "isContract": false
-                }
-            ]
-        },
-        {
-            "materialNumber": "1497350",
+            "materialNumber": "1174114",
             "weightUom": "KG",
             "unitPrices": [
                 {
@@ -646,13 +177,13 @@
             ]
         },
         {
-            "materialNumber": "1501039",
+            "materialNumber": "1229965",
             "weightUom": "KG",
             "unitPrices": [
                 {
                     "salesUom": "CS",
                     "pricingType": "SAPEXT_PRECALC",
-                    "price": 83.15,
+                    "price": 26.79,
                     "catchWeightPrice": null,
                     "priceLoyaltyPoints": null,
                     "catchWeightPriceLoyaltyPoints": null,
@@ -671,13 +202,13 @@
             ]
         },
         {
-            "materialNumber": "1505557",
+            "materialNumber": "1230008",
             "weightUom": "KG",
             "unitPrices": [
                 {
                     "salesUom": "CS",
                     "pricingType": "SAPEXT_PRECALC",
-                    "price": 26.56,
+                    "price": 88.01,
                     "catchWeightPrice": null,
                     "priceLoyaltyPoints": null,
                     "catchWeightPriceLoyaltyPoints": null,
@@ -696,13 +227,13 @@
             ]
         },
         {
-            "materialNumber": "1507065",
+            "materialNumber": "1230020",
             "weightUom": "KG",
             "unitPrices": [
                 {
                     "salesUom": "CS",
                     "pricingType": "SAPEXT_PRECALC",
-                    "price": 36.25,
+                    "price": 32.25,
                     "catchWeightPrice": null,
                     "priceLoyaltyPoints": null,
                     "catchWeightPriceLoyaltyPoints": null,
@@ -721,13 +252,13 @@
             ]
         },
         {
-            "materialNumber": "1507167",
+            "materialNumber": "1312240",
             "weightUom": "KG",
             "unitPrices": [
                 {
                     "salesUom": "CS",
                     "pricingType": "SAPEXT_PRECALC",
-                    "price": 69.56,
+                    "price": 172.65,
                     "catchWeightPrice": null,
                     "priceLoyaltyPoints": null,
                     "catchWeightPriceLoyaltyPoints": null,
@@ -746,13 +277,13 @@
             ]
         },
         {
-            "materialNumber": "1507727",
+            "materialNumber": "1354206",
             "weightUom": "KG",
             "unitPrices": [
                 {
                     "salesUom": "CS",
                     "pricingType": "SAPEXT_PRECALC",
-                    "price": 16.19,
+                    "price": 22.51,
                     "catchWeightPrice": null,
                     "priceLoyaltyPoints": null,
                     "catchWeightPriceLoyaltyPoints": null,
@@ -771,13 +302,13 @@
             ]
         },
         {
-            "materialNumber": "1509853",
+            "materialNumber": "1355405",
             "weightUom": "KG",
             "unitPrices": [
                 {
                     "salesUom": "CS",
                     "pricingType": "SAPEXT_PRECALC",
-                    "price": 91.68,
+                    "price": 28.38,
                     "catchWeightPrice": null,
                     "priceLoyaltyPoints": null,
                     "catchWeightPriceLoyaltyPoints": null,
@@ -796,13 +327,13 @@
             ]
         },
         {
-            "materialNumber": "1513903",
+            "materialNumber": "1372597",
             "weightUom": "KG",
             "unitPrices": [
                 {
                     "salesUom": "CS",
                     "pricingType": "SAPEXT_PRECALC",
-                    "price": 76.32,
+                    "price": 63.34,
                     "catchWeightPrice": null,
                     "priceLoyaltyPoints": null,
                     "catchWeightPriceLoyaltyPoints": null,
@@ -821,13 +352,13 @@
             ]
         },
         {
-            "materialNumber": "1519247",
+            "materialNumber": "1380362",
             "weightUom": "KG",
             "unitPrices": [
                 {
                     "salesUom": "CS",
                     "pricingType": "SAPEXT_PRECALC",
-                    "price": 108.59,
+                    "price": 29.61,
                     "catchWeightPrice": null,
                     "priceLoyaltyPoints": null,
                     "catchWeightPriceLoyaltyPoints": null,
@@ -846,13 +377,13 @@
             ]
         },
         {
-            "materialNumber": "2473805",
+            "materialNumber": "1474897",
             "weightUom": "KG",
             "unitPrices": [
                 {
                     "salesUom": "CS",
                     "pricingType": "SAPEXT_PRECALC",
-                    "price": 46.12,
+                    "price": 24.13,
                     "catchWeightPrice": null,
                     "priceLoyaltyPoints": null,
                     "catchWeightPriceLoyaltyPoints": null,
@@ -871,13 +402,13 @@
             ]
         },
         {
-            "materialNumber": "7226936",
+            "materialNumber": "1474898",
             "weightUom": "KG",
             "unitPrices": [
                 {
                     "salesUom": "CS",
                     "pricingType": "SAPEXT_PRECALC",
-                    "price": 78.91,
+                    "price": 43.26,
                     "catchWeightPrice": null,
                     "priceLoyaltyPoints": null,
                     "catchWeightPriceLoyaltyPoints": null,
@@ -896,13 +427,13 @@
             ]
         },
         {
-            "materialNumber": "7664605",
+            "materialNumber": "2088805",
             "weightUom": "KG",
             "unitPrices": [
                 {
                     "salesUom": "CS",
                     "pricingType": "SAPEXT_PRECALC",
-                    "price": 58.21,
+                    "price": 37.04,
                     "catchWeightPrice": null,
                     "priceLoyaltyPoints": null,
                     "catchWeightPriceLoyaltyPoints": null,
@@ -921,38 +452,13 @@
             ]
         },
         {
-            "materialNumber": "7791105",
+            "materialNumber": "2552805",
             "weightUom": "KG",
             "unitPrices": [
                 {
                     "salesUom": "CS",
                     "pricingType": "SAPEXT_PRECALC",
-                    "price": 144.64,
-                    "catchWeightPrice": 18.08,
-                    "priceLoyaltyPoints": null,
-                    "catchWeightPriceLoyaltyPoints": null,
-                    "quantityPriceLoyaltyPoints": null,
-                    "quantityCatchWeightPriceLoyaltyPoints": null,
-                    "onSale": null,
-                    "onClearance": null,
-                    "quantityPrice": null,
-                    "quantityCatchWeightPrice": null,
-                    "quantityPriceThreshold": null,
-                    "coupon": null,
-                    "discountAmount": null,
-                    "originalPrice": null,
-                    "isContract": false
-                }
-            ]
-        },
-        {
-            "materialNumber": "9554605",
-            "weightUom": "KG",
-            "unitPrices": [
-                {
-                    "salesUom": "CS",
-                    "pricingType": "SAPEXT_PRECALC",
-                    "price": 146.46,
+                    "price": 71.51,
                     "catchWeightPrice": null,
                     "priceLoyaltyPoints": null,
                     "catchWeightPriceLoyaltyPoints": null,
@@ -971,13 +477,345 @@
             ]
         },
         {
-            "materialNumber": "9567805",
+            "materialNumber": "9769205",
             "weightUom": "KG",
             "unitPrices": [
                 {
                     "salesUom": "CS",
                     "pricingType": "SAPEXT_PRECALC",
-                    "price": 62.91,
+                    "price": 82.61,
+                    "catchWeightPrice": null,
+                    "priceLoyaltyPoints": null,
+                    "catchWeightPriceLoyaltyPoints": null,
+                    "quantityPriceLoyaltyPoints": null,
+                    "quantityCatchWeightPriceLoyaltyPoints": null,
+                    "onSale": null,
+                    "onClearance": null,
+                    "quantityPrice": null,
+                    "quantityCatchWeightPrice": null,
+                    "quantityPriceThreshold": null,
+                    "coupon": null,
+                    "discountAmount": null,
+                    "originalPrice": null,
+                    "isContract": false
+                }
+            ]
+        },
+        {
+            "materialNumber": "1068102",
+            "weightUom": "KG",
+            "unitPrices": [
+                {
+                    "salesUom": "CS",
+                    "pricingType": "SAPEXT_PRECALC",
+                    "price": 70.62,
+                    "catchWeightPrice": null,
+                    "priceLoyaltyPoints": null,
+                    "catchWeightPriceLoyaltyPoints": null,
+                    "quantityPriceLoyaltyPoints": null,
+                    "quantityCatchWeightPriceLoyaltyPoints": null,
+                    "onSale": null,
+                    "onClearance": null,
+                    "quantityPrice": null,
+                    "quantityCatchWeightPrice": null,
+                    "quantityPriceThreshold": null,
+                    "coupon": null,
+                    "discountAmount": null,
+                    "originalPrice": null,
+                    "isContract": false
+                },
+                {
+                    "salesUom": "EA",
+                    "pricingType": "SAPEXT_PRECALC",
+                    "price": 18.59,
+                    "catchWeightPrice": null,
+                    "priceLoyaltyPoints": null,
+                    "catchWeightPriceLoyaltyPoints": null,
+                    "quantityPriceLoyaltyPoints": null,
+                    "quantityCatchWeightPriceLoyaltyPoints": null,
+                    "onSale": null,
+                    "onClearance": null,
+                    "quantityPrice": null,
+                    "quantityCatchWeightPrice": null,
+                    "quantityPriceThreshold": null,
+                    "coupon": null,
+                    "discountAmount": null,
+                    "originalPrice": null,
+                    "isContract": false
+                }
+            ]
+        },
+        {
+            "materialNumber": "1209398",
+            "weightUom": "KG",
+            "unitPrices": [
+                {
+                    "salesUom": "CS",
+                    "pricingType": "SAPEXT_PRECALC",
+                    "price": 57.92,
+                    "catchWeightPrice": null,
+                    "priceLoyaltyPoints": null,
+                    "catchWeightPriceLoyaltyPoints": null,
+                    "quantityPriceLoyaltyPoints": null,
+                    "quantityCatchWeightPriceLoyaltyPoints": null,
+                    "onSale": null,
+                    "onClearance": null,
+                    "quantityPrice": null,
+                    "quantityCatchWeightPrice": null,
+                    "quantityPriceThreshold": null,
+                    "coupon": null,
+                    "discountAmount": null,
+                    "originalPrice": null,
+                    "isContract": false
+                }
+            ]
+        },
+        {
+            "materialNumber": "1230016",
+            "weightUom": "KG",
+            "unitPrices": [
+                {
+                    "salesUom": "CS",
+                    "pricingType": "SAPEXT_PRECALC",
+                    "price": 29.23,
+                    "catchWeightPrice": null,
+                    "priceLoyaltyPoints": null,
+                    "catchWeightPriceLoyaltyPoints": null,
+                    "quantityPriceLoyaltyPoints": null,
+                    "quantityCatchWeightPriceLoyaltyPoints": null,
+                    "onSale": null,
+                    "onClearance": null,
+                    "quantityPrice": null,
+                    "quantityCatchWeightPrice": null,
+                    "quantityPriceThreshold": null,
+                    "coupon": null,
+                    "discountAmount": null,
+                    "originalPrice": null,
+                    "isContract": false
+                }
+            ]
+        },
+        {
+            "materialNumber": "1249190",
+            "weightUom": "KG",
+            "unitPrices": [
+                {
+                    "salesUom": "CS",
+                    "pricingType": "SAPEXT_PRECALC",
+                    "price": 152.09,
+                    "catchWeightPrice": null,
+                    "priceLoyaltyPoints": null,
+                    "catchWeightPriceLoyaltyPoints": null,
+                    "quantityPriceLoyaltyPoints": null,
+                    "quantityCatchWeightPriceLoyaltyPoints": null,
+                    "onSale": null,
+                    "onClearance": null,
+                    "quantityPrice": null,
+                    "quantityCatchWeightPrice": null,
+                    "quantityPriceThreshold": null,
+                    "coupon": null,
+                    "discountAmount": null,
+                    "originalPrice": null,
+                    "isContract": false
+                },
+                {
+                    "salesUom": "EA",
+                    "pricingType": "SAPEXT_PRECALC",
+                    "price": 3.34,
+                    "catchWeightPrice": null,
+                    "priceLoyaltyPoints": null,
+                    "catchWeightPriceLoyaltyPoints": null,
+                    "quantityPriceLoyaltyPoints": null,
+                    "quantityCatchWeightPriceLoyaltyPoints": null,
+                    "onSale": null,
+                    "onClearance": null,
+                    "quantityPrice": null,
+                    "quantityCatchWeightPrice": null,
+                    "quantityPriceThreshold": null,
+                    "coupon": null,
+                    "discountAmount": null,
+                    "originalPrice": null,
+                    "isContract": false
+                }
+            ]
+        },
+        {
+            "materialNumber": "1356691",
+            "weightUom": "KG",
+            "unitPrices": [
+                {
+                    "salesUom": "CS",
+                    "pricingType": "SAPEXT_PRECALC",
+                    "price": 105.36,
+                    "catchWeightPrice": null,
+                    "priceLoyaltyPoints": null,
+                    "catchWeightPriceLoyaltyPoints": null,
+                    "quantityPriceLoyaltyPoints": null,
+                    "quantityCatchWeightPriceLoyaltyPoints": null,
+                    "onSale": null,
+                    "onClearance": null,
+                    "quantityPrice": null,
+                    "quantityCatchWeightPrice": null,
+                    "quantityPriceThreshold": null,
+                    "coupon": null,
+                    "discountAmount": null,
+                    "originalPrice": null,
+                    "isContract": false
+                },
+                {
+                    "salesUom": "EA",
+                    "pricingType": "SAPEXT_PRECALC",
+                    "price": 27.73,
+                    "catchWeightPrice": null,
+                    "priceLoyaltyPoints": null,
+                    "catchWeightPriceLoyaltyPoints": null,
+                    "quantityPriceLoyaltyPoints": null,
+                    "quantityCatchWeightPriceLoyaltyPoints": null,
+                    "onSale": null,
+                    "onClearance": null,
+                    "quantityPrice": null,
+                    "quantityCatchWeightPrice": null,
+                    "quantityPriceThreshold": null,
+                    "coupon": null,
+                    "discountAmount": null,
+                    "originalPrice": null,
+                    "isContract": false
+                }
+            ]
+        },
+        {
+            "materialNumber": "1382416",
+            "weightUom": "KG",
+            "unitPrices": [
+                {
+                    "salesUom": "CS",
+                    "pricingType": "SAPEXT_PRECALC",
+                    "price": 143.9,
+                    "catchWeightPrice": null,
+                    "priceLoyaltyPoints": null,
+                    "catchWeightPriceLoyaltyPoints": null,
+                    "quantityPriceLoyaltyPoints": null,
+                    "quantityCatchWeightPriceLoyaltyPoints": null,
+                    "onSale": null,
+                    "onClearance": null,
+                    "quantityPrice": null,
+                    "quantityCatchWeightPrice": null,
+                    "quantityPriceThreshold": null,
+                    "coupon": null,
+                    "discountAmount": null,
+                    "originalPrice": null,
+                    "isContract": false
+                }
+            ]
+        },
+        {
+            "materialNumber": "1461645",
+            "weightUom": "KG",
+            "unitPrices": [
+                {
+                    "salesUom": "CS",
+                    "pricingType": "SAPEXT_PRECALC",
+                    "price": 37.2,
+                    "catchWeightPrice": null,
+                    "priceLoyaltyPoints": null,
+                    "catchWeightPriceLoyaltyPoints": null,
+                    "quantityPriceLoyaltyPoints": null,
+                    "quantityCatchWeightPriceLoyaltyPoints": null,
+                    "onSale": null,
+                    "onClearance": null,
+                    "quantityPrice": null,
+                    "quantityCatchWeightPrice": null,
+                    "quantityPriceThreshold": null,
+                    "coupon": null,
+                    "discountAmount": null,
+                    "originalPrice": null,
+                    "isContract": false
+                }
+            ]
+        },
+        {
+            "materialNumber": "1508192",
+            "weightUom": "KG",
+            "unitPrices": [
+                {
+                    "salesUom": "CS",
+                    "pricingType": "SAPEXT_PRECALC",
+                    "price": 25.49,
+                    "catchWeightPrice": null,
+                    "priceLoyaltyPoints": null,
+                    "catchWeightPriceLoyaltyPoints": null,
+                    "quantityPriceLoyaltyPoints": null,
+                    "quantityCatchWeightPriceLoyaltyPoints": null,
+                    "onSale": null,
+                    "onClearance": null,
+                    "quantityPrice": null,
+                    "quantityCatchWeightPrice": null,
+                    "quantityPriceThreshold": null,
+                    "coupon": null,
+                    "discountAmount": null,
+                    "originalPrice": null,
+                    "isContract": false
+                }
+            ]
+        },
+        {
+            "materialNumber": "2448205",
+            "weightUom": "KG",
+            "unitPrices": [
+                {
+                    "salesUom": "CS",
+                    "pricingType": "SAPEXT_PRECALC",
+                    "price": 144.86,
+                    "catchWeightPrice": null,
+                    "priceLoyaltyPoints": null,
+                    "catchWeightPriceLoyaltyPoints": null,
+                    "quantityPriceLoyaltyPoints": null,
+                    "quantityCatchWeightPriceLoyaltyPoints": null,
+                    "onSale": null,
+                    "onClearance": null,
+                    "quantityPrice": null,
+                    "quantityCatchWeightPrice": null,
+                    "quantityPriceThreshold": null,
+                    "coupon": null,
+                    "discountAmount": null,
+                    "originalPrice": null,
+                    "isContract": false
+                }
+            ]
+        },
+        {
+            "materialNumber": "2637005",
+            "weightUom": "KG",
+            "unitPrices": [
+                {
+                    "salesUom": "CS",
+                    "pricingType": "SAPEXT_PRECALC",
+                    "price": 79.45,
+                    "catchWeightPrice": null,
+                    "priceLoyaltyPoints": null,
+                    "catchWeightPriceLoyaltyPoints": null,
+                    "quantityPriceLoyaltyPoints": null,
+                    "quantityCatchWeightPriceLoyaltyPoints": null,
+                    "onSale": null,
+                    "onClearance": null,
+                    "quantityPrice": null,
+                    "quantityCatchWeightPrice": null,
+                    "quantityPriceThreshold": null,
+                    "coupon": null,
+                    "discountAmount": null,
+                    "originalPrice": null,
+                    "isContract": false
+                }
+            ]
+        },
+        {
+            "materialNumber": "9460076",
+            "weightUom": "KG",
+            "unitPrices": [
+                {
+                    "salesUom": "CS",
+                    "pricingType": "SAPEXT_PRECALC",
+                    "price": 73.49,
                     "catchWeightPrice": null,
                     "priceLoyaltyPoints": null,
                     "catchWeightPriceLoyaltyPoints": null,

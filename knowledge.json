@@ -17,5 +17,20 @@
             "x": 467,
             "y": 71
         }
+    },
+    "sitemap": {
+        "xml_links": [],
+        "dom_links": [
+            "https://order.gfs.com/product/1240250",
+            "https://order.gfs.com/product/1509853",
+            "https://order.gfs.com/customer-unit-selection",
+            "https://order.gfs.com/product/2473805",
+            "https://order.gfs.com/categories",
+            "https://order.gfs.com/product/7664605",
+            "https://order.gfs.com/guides",
+            "https://order.gfs.com/",
+            "https://order.gfs.com/product/1125457",
+            "https://order.gfs.com/product/1203024"
+        ]
     }
 }
