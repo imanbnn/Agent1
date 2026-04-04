@@ -1,0 +1,3350 @@
+{
+    "materialInfos": [
+        {
+            "materialNumber": "1326128",
+            "brand": {
+                "en": "Ocean Jewel",
+                "fr": "Ocean Jewel",
+                "es": null,
+                "id": "105478"
+            },
+            "description": {
+                "en": "Trout Fillets, Skin On Rainbow, 6-7oz, Individual Vacuum Packed, Frozen",
+                "fr": "Filets de truite arc-en-ciel avec peau 6-7 oz, emball\u00e9s s\u00e9par\u00e9ment sous vide, congel\u00e9",
+                "es": "Filetes de trucha, con piel, arco\u00edris, 6-7 onzas, envasados al vac\u00edo individualmente, congelados"
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D12000128812629"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "20059371800485",
+                    "alternateGtins": [
+                        "059371800481"
+                    ],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "4.54",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.540",
+                "gross": "4.990",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "018",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "9472205",
+            "brand": {
+                "en": "Heinz",
+                "fr": "Heinz",
+                "es": null,
+                "id": "103496"
+            },
+            "description": {
+                "en": "Mustard, Yellow, Big Plastic",
+                "fr": "Moutarde jaune, bidon de plastique",
+                "es": "Mostaza amarilla, botella de pl\u00e1stico grande"
+            },
+            "image": {
+                "en": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250516366"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10057000019966",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "4.0",
+                    "primaryGtin": "057000019969",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "L",
+                    "displayCode": "L",
+                    "isoCode": "LTR",
+                    "parentUom": "EA",
+                    "qtyInParent": "2.84",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "11.720",
+                "gross": "12.710",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "077",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1345747",
+            "brand": {
+                "en": "Gordon Choice",
+                "fr": "Gordon Choix",
+                "es": null,
+                "id": "103211"
+            },
+            "description": {
+                "en": "Pesto, Vegan Basil",
+                "fr": "Pesto au basilic, v\u00e9g\u00e9talien",
+                "es": "PESTO, Albahaca Vegana"
+            },
+            "image": {
+                "en": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D12000126751983"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "00620868195696",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "L",
+                    "displayCode": "L",
+                    "isoCode": "LTR",
+                    "parentUom": "CS",
+                    "qtyInParent": "1.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "1.000",
+                "gross": "1.500",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "066",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1101389",
+            "brand": {
+                "en": "High Liner Foods",
+                "fr": "High Liner Foods",
+                "es": null,
+                "id": "103537"
+            },
+            "description": {
+                "en": "Cod Loins, Atlantic, 6oz, Vacuum Packed, Frozen",
+                "fr": "Longes de morue de l\u2019Atlantique 6oz sous vide, congel\u00e9",
+                "es": "Filetes de Bacalao, Atl\u00e1ntico, 6oz, Empacados al Vac\u00edo, Congelados"
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D12000128261718"
+                },
+                "fr": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250517799"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10061763083379",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "4.54",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.540",
+                "gross": "5.220",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "5201718",
+            "brand": {
+                "en": "Ready-Set-Serve",
+                "fr": "Ready-Set-Serve",
+                "es": null,
+                "id": "104728"
+            },
+            "description": {
+                "en": "Lettuce, Chopped Romaine",
+                "fr": "Laitue romaine coup\u00e9e",
+                "es": "Lechuga Romana picada"
+            },
+            "image": {
+                "en": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D1200012505101808"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10611628926459",
+                    "alternateGtins": [
+                        "10790629023333",
+                        "10030223079535",
+                        "10030223135286"
+                    ],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "6.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "LB",
+                    "displayCode": "LB",
+                    "isoCode": "LBR",
+                    "parentUom": "EA",
+                    "qtyInParent": "2.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "5.440",
+                "gross": "5.900",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "066",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1416908",
+            "brand": {
+                "en": "Poisson Sale G",
+                "fr": "Poisson Sale G",
+                "es": null,
+                "id": "106024"
+            },
+            "description": {
+                "en": "Lobster Meat, Broken, Cooked, Frozen",
+                "fr": "Chair de homard en morceaux, pinces et articulations, surgel\u00e9",
+                "es": "Carne de langosta partida, Cocida, Congelada"
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D1200012686650"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "00692517240088",
+                    "alternateGtins": [
+                        "80628668000512"
+                    ],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "6.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "G",
+                    "displayCode": "G",
+                    "isoCode": "GRM",
+                    "parentUom": "EA",
+                    "qtyInParent": "908.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "5.450",
+                "gross": "5.750",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "019",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1138732",
+            "brand": {
+                "en": "High Liner Foods",
+                "fr": "High Liner Foods",
+                "es": null,
+                "id": "103537"
+            },
+            "description": {
+                "en": "Salmon, Diced Pacific, 7-12G, Raw, Frozen",
+                "fr": "Saumon du Pacifique en d\u00e9s 7-12 g, surg\u00e9lation individuelle",
+                "es": "Salm\u00f3n, en cubos del Pac\u00edfico, 7-12 G, crudo, congelado"
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250529461"
+                },
+                "fr": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250531155"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10061763089586",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "7.26",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "7.260",
+                "gross": "8.350",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1410552",
+            "brand": {
+                "en": "Oceanic",
+                "fr": "Oceanic",
+                "es": null,
+                "id": "105487"
+            },
+            "description": {
+                "en": "Salmon Loins, 4oz Pacific, Marine Stewardship Council, Frozen, Vacuum Packed",
+                "fr": "Longes de saumon du Pacifique 4 oz, MSC, emball\u00e9 sous vide, surgel\u00e9",
+                "es": null
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001274534"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10813397002567",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "4.54",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.990",
+                "gross": "5.440",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1426780",
+            "brand": {
+                "en": "Packer Label",
+                "fr": "Packer Label",
+                "es": null,
+                "id": "105685"
+            },
+            "description": {
+                "en": "Lobster Tail, 4-5oz, Frozen",
+                "fr": "Queues de homard 4-5 oz, surgel\u00e9",
+                "es": null
+            },
+            "image": {
+                "en": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D12000126752793"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "00621237134780",
+                    "alternateGtins": [
+                        "06280821101047"
+                    ],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "4.54",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.540",
+                "gross": "5.040",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "019",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1070691",
+            "brand": {
+                "en": "High Liner Foods",
+                "fr": "High Liner Foods",
+                "es": null,
+                "id": "103537"
+            },
+            "description": {
+                "en": "Haddock Fillets, Marine Stewardship Council, 4oz, Individually Quick Frozen",
+                "fr": "Filet d\u2019aiglefin 4 oz, MSC, surg\u00e9lation individuelle",
+                "es": "Filetes de abadejo, Consejo de administraci\u00f3n marina, 4 oz, congelados individualmente r\u00e1pidamente"
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250518530"
+                },
+                "fr": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250530945"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10061763010047",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "4.54",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.540",
+                "gross": "5.220",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1288751",
+            "brand": {
+                "en": "Gordon Choice",
+                "fr": "Gordon Choix",
+                "es": null,
+                "id": "103211"
+            },
+            "description": {
+                "en": "Quinoa, White",
+                "fr": "Quinoa blanc",
+                "es": "QUINUA, Blanca"
+            },
+            "image": {
+                "en": {
+                    "type": "PWB",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D1200012857231"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "00620868172628",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "10.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "10.000",
+                "gross": "10.070",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "037",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1303879",
+            "brand": {
+                "en": "Ocean Jewel",
+                "fr": "Ocean Jewel",
+                "es": null,
+                "id": "105478"
+            },
+            "description": {
+                "en": "Haddock Fillets, Beer Battered, 4oz, Individually Quick Frozen",
+                "fr": "Filet d\u2019aiglefin \u00e0 la bi\u00e8re en p\u00e2te \u00e0 frire 4 oz, surg\u00e9lation individuelle",
+                "es": "Filetes de abadejo, rebozados en cerveza, 4 oz, congelados individualmente r\u00e1pidamente"
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D12000125052542"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "20059371799451",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "LB",
+                    "displayCode": "LB",
+                    "isoCode": "LBR",
+                    "parentUom": "CS",
+                    "qtyInParent": "10.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.540",
+                "gross": "4.990",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "6075605",
+            "brand": {
+                "en": "High Liner Foods",
+                "fr": "High Liner Foods",
+                "es": null,
+                "id": "103537"
+            },
+            "description": {
+                "en": "Cod Nuggets, 160Ct Breaded, Marine Stewardship Council, Frozen",
+                "fr": "P\u00e9pites de morue pan\u00e9es 160 unit\u00e9s, MSC, congel\u00e9",
+                "es": null
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250436619"
+                },
+                "fr": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250469621"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "00059111261350",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "LB",
+                    "displayCode": "LB",
+                    "isoCode": "LBR",
+                    "parentUom": "CS",
+                    "qtyInParent": "10.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.540",
+                "gross": "5.000",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1082040",
+            "brand": {
+                "en": "Phillips Foods",
+                "fr": "Phillips Foods",
+                "es": null,
+                "id": "105898"
+            },
+            "description": {
+                "en": "Crab Claw Meat, Cooked, Tin, Fresh",
+                "fr": "Chair de pinces de crabe bleu cuite, bo\u00eete, frais",
+                "es": "Carne de garra de cangrejo, cocida, lata, fresca"
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250596309"
+                },
+                "fr": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250574517"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10070057254012",
+                    "alternateGtins": [
+                        "70057006065"
+                    ],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "12.0",
+                    "primaryGtin": "070057006065",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "G",
+                    "displayCode": "G",
+                    "isoCode": "GRM",
+                    "parentUom": "EA",
+                    "qtyInParent": "454.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "5.440",
+                "gross": "6.800",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "017",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1141089",
+            "brand": {
+                "en": "High Liner Foods",
+                "fr": "High Liner Foods",
+                "es": null,
+                "id": "103537"
+            },
+            "description": {
+                "en": "Cod Loins, Boneless Skinless Center Cut Atlantic, 4oz, Marine Stewardship Council, Vacuum Packed, Frozen",
+                "fr": "Longes de morue de l\u2019Atlantique coupe du centre 4 oz sans ar\u00eate sans peau, MSC sous vide, congel\u00e9",
+                "es": "Filetes de bacalao, centro sin espinas y sin piel del Atl\u00e1ntico, 4 oz, Consejo de administraci\u00f3n marina, envasado al vac\u00edo, congelado"
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250535197"
+                },
+                "fr": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250534133"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10061763032698",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "4.54",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.540",
+                "gross": "5.220",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1287995",
+            "brand": {
+                "en": "High Liner Foods",
+                "fr": "High Liner Foods",
+                "es": null,
+                "id": "103537"
+            },
+            "description": {
+                "en": "Hake Fillets, Silver Cape, 4oz, Vacuum Packed, Frozen",
+                "fr": "Filet de merlu du Cap argent\u00e9 4oz, emball\u00e9 sous vide, congel\u00e9",
+                "es": "Filetes de merluza, Plata del Cabo, 4 oz, envasados al vac\u00edo, congelados"
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D12000128261689"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10061763059466",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "4.54",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.540",
+                "gross": "5.220",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1519259",
+            "brand": {
+                "en": "True North",
+                "fr": "True North",
+                "es": null,
+                "id": "107874"
+            },
+            "description": {
+                "en": "Salmon Fillets, 3-4Lb Trim D Skin On Atlantic, Fresh",
+                "fr": "Filet de saumon Atlantique avec peau 3-4 lb, coupe D, frais",
+                "es": null
+            },
+            "image": null,
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10625709200376",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KGA",
+                    "displayCode": "KGA",
+                    "isoCode": "KL",
+                    "parentUom": "CS",
+                    "qtyInParent": "4.54",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.540",
+                "gross": "4.770",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": true
+        },
+        {
+            "materialNumber": "7888308",
+            "brand": {
+                "en": "Ready-Set-Serve",
+                "fr": "Ready-Set-Serve",
+                "es": null,
+                "id": "104728"
+            },
+            "description": {
+                "en": "Carrots, Shredded",
+                "fr": "Carottes r\u00e2p\u00e9es pr\u00eates \u00e0 servir, frais",
+                "es": "Zanahorias Ralladas"
+            },
+            "image": {
+                "en": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001290674"
+                },
+                "fr": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250592709"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10611628916559",
+                    "alternateGtins": [
+                        "10611628950300",
+                        "10078783001504"
+                    ],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "2.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "LB",
+                    "displayCode": "LB",
+                    "isoCode": "LBR",
+                    "parentUom": "EA",
+                    "qtyInParent": "5.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.940",
+                "gross": "5.000",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "066",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1149469",
+            "brand": {
+                "en": "Ready-Set-Serve",
+                "fr": "Ready-Set-Serve",
+                "es": null,
+                "id": "104728"
+            },
+            "description": {
+                "en": "Broccoli Florets, Bite Size",
+                "fr": "Fleurons de brocoli, bouch\u00e9es, pr\u00eats-\u00e0-servir, frais",
+                "es": "Floretes de br\u00f3coli, tama\u00f1o bocado"
+            },
+            "image": {
+                "en": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D1200012861814"
+                },
+                "fr": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D12000126189197"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10611628916108",
+                    "alternateGtins": [
+                        "10030223095993"
+                    ],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "4.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "LB",
+                    "displayCode": "LB",
+                    "isoCode": "LBR",
+                    "parentUom": "EA",
+                    "qtyInParent": "3.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "5.440",
+                "gross": "5.890",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "066",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1327858",
+            "brand": {
+                "en": "Sifto",
+                "fr": "Sifto",
+                "es": null,
+                "id": "106928"
+            },
+            "description": {
+                "en": "Salt, #8 Marinading",
+                "fr": "Sel \u00e0 marinades no 8",
+                "es": "SAL, #8 Marinado"
+            },
+            "image": {
+                "en": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250410641"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "00067568254603",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "20.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "19.990",
+                "gross": "20.000",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "085",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1427027",
+            "brand": {
+                "en": "Kitchen Essentials",
+                "fr": "Kitchen Essentials",
+                "es": null,
+                "id": "104108"
+            },
+            "description": {
+                "en": "Flour, All-Purpose, Obuy",
+                "fr": "Farine tout usage, sp\u00e9cial",
+                "es": null
+            },
+            "image": {
+                "en": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D12000126179572"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "00620868159537",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "20.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "20.000",
+                "gross": "20.090",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "079",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1374790",
+            "brand": {
+                "en": "Grizzly",
+                "fr": "Grizzly",
+                "es": null,
+                "id": "103335"
+            },
+            "description": {
+                "en": "Salmon, Diced Tartare, Atlantic, Frozen",
+                "fr": "Saumon de l'Atlantique en d\u00e9s pour tartare, surgel\u00e9",
+                "es": "Salm\u00f3n T\u00e1rtaro en cubos, Atl\u00e1ntico, congelado"
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D1200012618535"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10775200042804",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "8.0",
+                    "primaryGtin": "775200042807",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "EA",
+                    "qtyInParent": "1.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "8.000",
+                "gross": "8.360",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1431526",
+            "brand": {
+                "en": "Allen",
+                "fr": "Allen",
+                "es": null,
+                "id": "100213"
+            },
+            "description": {
+                "en": "Drinks, Cranberry Cocktail, Pet",
+                "fr": "Cocktail aux canneberges, bouteille en plastique",
+                "es": "Bebidas de c\u00f3ctel de ar\u00e1ndano, mascota"
+            },
+            "image": {
+                "en": {
+                    "type": "COR",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D12000130344914"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "00056412740621",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "24.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "ML",
+                    "displayCode": "ML",
+                    "isoCode": "MLT",
+                    "parentUom": "EA",
+                    "qtyInParent": "300.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "9.530",
+                "gross": "10.000",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "060",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1510707",
+            "brand": {
+                "en": "Dunya Harvest",
+                "fr": null,
+                "es": null,
+                "id": "129907"
+            },
+            "description": {
+                "en": "COUSCOUS ISRAELI",
+                "fr": "COUSCOUS PERLE",
+                "es": null
+            },
+            "image": null,
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "00066844618795",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "10.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "10.000",
+                "gross": "10.200",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "033",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1487187",
+            "brand": {
+                "en": "True North",
+                "fr": "True North",
+                "es": null,
+                "id": "107874"
+            },
+            "description": {
+                "en": "Shrimp, Peeled & Deveined Tail Off Argentina, 16/20, Individually Quick Frozen",
+                "fr": "CREV ROSE ARG P/D S/Q 16/20 IQF",
+                "es": "Camarones de Argentina pelados y sin venas, 16/20, congelados individualmente r\u00e1pidamente"
+            },
+            "image": null,
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10060719044860",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "5.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "G",
+                    "displayCode": "G",
+                    "isoCode": "GRM",
+                    "parentUom": "EA",
+                    "qtyInParent": "908.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.540",
+                "gross": "4.900",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "022",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1339907",
+            "brand": {
+                "en": "Baril",
+                "fr": "Baril",
+                "es": null,
+                "id": "100586"
+            },
+            "description": {
+                "en": "Potatoes, Parisienne",
+                "fr": "Pommes de terre parisiennes",
+                "es": "Patatas parisinas"
+            },
+            "image": {
+                "en": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250487224"
+                },
+                "fr": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D1200012504105629"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "00650746005113",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "4.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "EA",
+                    "qtyInParent": "3.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "12.000",
+                "gross": "12.440",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "066",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1375467",
+            "brand": {
+                "en": "High Liner Foods",
+                "fr": "High Liner Foods",
+                "es": null,
+                "id": "103537"
+            },
+            "description": {
+                "en": "Cod Fillets, 4oz Guinness Beer Battered, Frozen",
+                "fr": "Filets de morue 4 oz pan\u00e9s \u00e0 la bi\u00e8re Guinness, surgel\u00e9",
+                "es": null
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250520871"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10061763088961",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "LB",
+                    "displayCode": "LB",
+                    "isoCode": "LBR",
+                    "parentUom": "CS",
+                    "qtyInParent": "10.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.540",
+                "gross": "4.990",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1366627",
+            "brand": {
+                "en": "Knorr",
+                "fr": "Knorr",
+                "es": null,
+                "id": "104125"
+            },
+            "description": {
+                "en": "Paste, Beef Base, Gluten Free",
+                "fr": "Base de bouillon de boeuf, sans gluten",
+                "es": "Pasta base de carne de res, sin gluten"
+            },
+            "image": {
+                "en": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250591359"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10063350000318",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "6.0",
+                    "primaryGtin": "063350000311",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "G",
+                    "displayCode": "G",
+                    "isoCode": "GRM",
+                    "parentUom": "EA",
+                    "qtyInParent": "454.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "2.720",
+                "gross": "3.060",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "077",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1411413",
+            "brand": {
+                "en": "Saveur Ultime",
+                "fr": "Saveur Ultime",
+                "es": null,
+                "id": "106720"
+            },
+            "description": {
+                "en": "Salad, Homemade Fruit",
+                "fr": "Salade de fruits, frais",
+                "es": null
+            },
+            "image": {
+                "en": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D12000126684254"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "00620868211426",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "L",
+                    "displayCode": "L",
+                    "isoCode": "LTR",
+                    "parentUom": "CS",
+                    "qtyInParent": "5.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "5.000",
+                "gross": "5.500",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "067",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1030116",
+            "brand": {
+                "en": "Qualifraiche",
+                "fr": "Qualifraiche",
+                "es": null,
+                "id": "106221"
+            },
+            "description": {
+                "en": "Fries, Blanched No Skin, Fresh 7/16In Oil Blanch",
+                "fr": "Frites sans pelure blanchies dans l\u2019huile 7/16 po, frais",
+                "es": "Papas Fritas Blanqueadas sin Piel, Frescas, Blanqueadas en Aceite a 7/16 de Pulgada"
+            },
+            "image": {
+                "en": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250463916"
+                },
+                "fr": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250443545"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "00058508317007",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "6.0",
+                    "primaryGtin": "00058508317007",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "EA",
+                    "qtyInParent": "2.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "12.000",
+                "gross": "12.100",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "034",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1131186",
+            "brand": {
+                "en": "Tropic",
+                "fr": "Tropic",
+                "es": null,
+                "id": "107856"
+            },
+            "description": {
+                "en": "Oranges, Sectioned Mandarin, Smooth Syrup",
+                "fr": "Mandarines en quartier dans un sirop l\u00e9ger",
+                "es": "Mandarinas en secciones, en alm\u00edbar suave"
+            },
+            "image": {
+                "en": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250581904"
+                },
+                "fr": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D1200012505103655"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10055710070512",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "6.0",
+                    "primaryGtin": "055710070515",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "L",
+                    "displayCode": "L",
+                    "isoCode": "LTR",
+                    "parentUom": "EA",
+                    "qtyInParent": "2.84",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "21.100",
+                "gross": "21.100",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "070",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1423961",
+            "brand": {
+                "en": "Qualifraiche",
+                "fr": "Qualifraiche",
+                "es": null,
+                "id": "106221"
+            },
+            "description": {
+                "en": "Fries, Skin On Shoestring",
+                "fr": "Frites julienne avec pelure",
+                "es": "Papas Fritas En C\u00e1scara"
+            },
+            "image": null,
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "00058508315010",
+                    "alternateGtins": [
+                        "58508375090",
+                        "58508315072"
+                    ],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "6.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "EA",
+                    "qtyInParent": "2.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "12.000",
+                "gross": "12.200",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "034",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1345090",
+            "brand": {
+                "en": "Grizzly",
+                "fr": "Grizzly",
+                "es": null,
+                "id": "103335"
+            },
+            "description": {
+                "en": "Tuna Tartar, Cubed, Frozen",
+                "fr": "Tartare de thon en cubes, congel\u00e9",
+                "es": "Tartar de at\u00fan cortado en dados, congelado"
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D1200012618481"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10775200042606",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "6.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "G",
+                    "displayCode": "G",
+                    "isoCode": "GRM",
+                    "parentUom": "EA",
+                    "qtyInParent": "454.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "2.720",
+                "gross": "2.820",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1041044",
+            "brand": {
+                "en": "Norwegian Fjord",
+                "fr": "Norwegian Fjord",
+                "es": null,
+                "id": "105388"
+            },
+            "description": {
+                "en": "Salmon, Sliced Smoked Norway Steelhead, Frozen",
+                "fr": "Saumon steelhead de la Norv\u00e8ge fum\u00e9 tranch\u00e9, surgel\u00e9",
+                "es": "Salm\u00f3n noruego ahumado rebanado en rodajas, congelado"
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D1200012505113215"
+                },
+                "fr": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250588335"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10772945100011",
+                    "alternateGtins": [
+                        "772945100014",
+                        "10772945100028"
+                    ],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "12.0",
+                    "primaryGtin": "772945100014",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "EA",
+                    "qtyInParent": "1.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "12.000",
+                "gross": "12.720",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1484273",
+            "brand": {
+                "en": "High Liner Foods",
+                "fr": "High Liner Foods",
+                "es": null,
+                "id": "103537"
+            },
+            "description": {
+                "en": "Cod Loins, 4oz Pacific, Individually Quick Frozen",
+                "fr": "Longe de morue du Pacifique, surg\u00e9lation individuelle",
+                "es": null
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D1200012901179"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10061763001823",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "4.54",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.540",
+                "gross": "4.910",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1352817",
+            "brand": {
+                "en": "Qualifraiche",
+                "fr": "Qualifraiche",
+                "es": null,
+                "id": "106221"
+            },
+            "description": {
+                "en": "Fries, Red, Straight Cut, 7/16In",
+                "fr": "Frites de pommes de terre rouges coupe r\u00e9guli\u00e8re 7/16 po",
+                "es": "Papas Fritas Rojas, Cortadas Recto, 7/16 Pulgadas"
+            },
+            "image": {
+                "en": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D1200012504130070"
+                },
+                "fr": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D1200012504107592"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "00058508317502",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "6.0",
+                    "primaryGtin": "00058508317502",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "EA",
+                    "qtyInParent": "2.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "12.000",
+                "gross": "12.000",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "034",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1243216",
+            "brand": {
+                "en": "Ready-Set-Serve",
+                "fr": "Ready-Set-Serve",
+                "es": null,
+                "id": "104728"
+            },
+            "description": {
+                "en": "Kale, Shredded Blend",
+                "fr": "Chou kale \u00e9minc\u00e9, m\u00e9lange de couleurs",
+                "es": "Mezcla de col rizada rallada"
+            },
+            "image": {
+                "en": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D12000129571322"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10611628918911",
+                    "alternateGtins": [
+                        "10790629105015",
+                        "611628918914",
+                        "10030223000379"
+                    ],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "4.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "LB",
+                    "displayCode": "LB",
+                    "isoCode": "LBR",
+                    "parentUom": "EA",
+                    "qtyInParent": "1.5",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "2.720",
+                "gross": "3.170",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "066",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1453570",
+            "brand": {
+                "en": "Nutrioption",
+                "fr": "Nutrioption",
+                "es": null,
+                "id": "109101"
+            },
+            "description": {
+                "en": "Seasoning, Lemon Herb, Salt-Free",
+                "fr": "Assaisonnement citron et fines herbes, sans sel",
+                "es": "Condimento de hierbas de lim\u00f3n, sin sal"
+            },
+            "image": {
+                "en": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D12000128261719"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10069809017982",
+                    "alternateGtins": [
+                        "069809017985"
+                    ],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "6.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "G",
+                    "displayCode": "G",
+                    "isoCode": "GRM",
+                    "parentUom": "EA",
+                    "qtyInParent": "550.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "2.700",
+                "gross": "3.360",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "085",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "3938406",
+            "brand": {
+                "en": "High Liner Foods",
+                "fr": "High Liner Foods",
+                "es": null,
+                "id": "103537"
+            },
+            "description": {
+                "en": "Haddock, Lightly Breaded, 4oz, Marine Stewardship Council, Frozen",
+                "fr": "Aiglefin l\u00e9g\u00e8rement pan\u00e9 4 oz, MSC, congel\u00e9",
+                "es": null
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D1200012826738"
+                },
+                "fr": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250518642"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10061763018258",
+                    "alternateGtins": [
+                        "061763018251"
+                    ],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "4.54",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.540",
+                "gross": "4.960",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1003861",
+            "brand": {
+                "en": "Maison Perrier",
+                "fr": null,
+                "es": null,
+                "id": "128055"
+            },
+            "description": {
+                "en": "Water, Sparkling Mineral, Glass",
+                "fr": "Eau min\u00e9rale p\u00e9tillante, bouteille en verre",
+                "es": "AGUA, mineral, con gas, vidrio"
+            },
+            "image": null,
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "00055000216524",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "24.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "ML",
+                    "displayCode": "ML",
+                    "isoCode": "MLT",
+                    "parentUom": "EA",
+                    "qtyInParent": "330.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "7.920",
+                "gross": "13.720",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "065",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1508192",
+            "brand": {
+                "en": "Dunya Harvest",
+                "fr": null,
+                "es": null,
+                "id": "129907"
+            },
+            "description": {
+                "en": "Rice, Jasmine",
+                "fr": "Riz au jasmin",
+                "es": null
+            },
+            "image": null,
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "00066844617170",
+                    "alternateGtins": [
+                        "00066844120359"
+                    ],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "8.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "8.000",
+                "gross": "8.050",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "037",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1376217",
+            "brand": {
+                "en": "Saveur Ultime",
+                "fr": "Saveur Ultime",
+                "es": null,
+                "id": "106720"
+            },
+            "description": {
+                "en": "Beets, Julienne, 1/8in",
+                "fr": "Betteraves en juliennes de 1/8 po",
+                "es": null
+            },
+            "image": {
+                "en": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D12000126683257"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "00650746298560",
+                    "alternateGtins": [
+                        "628242150033",
+                        "628242150019"
+                    ],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "1.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "1.000",
+                "gross": "1.100",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "071",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "8276656",
+            "brand": {
+                "en": "High Liner Foods",
+                "fr": "High Liner Foods",
+                "es": null,
+                "id": "103537"
+            },
+            "description": {
+                "en": "Haddock Fillets, Beer Battered, 3oz, Marine Stewardship Council, Frozen",
+                "fr": "Filet d\u2019aiglefin \u00e0 la bi\u00e8re en p\u00e2te \u00e0 frire 3 oz, MSC, congel\u00e9",
+                "es": "Filetes de eglefino rebozados en cerveza, 3 onzas, Consejo de administraci\u00f3n marina, Congelado"
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D1200012504127872"
+                },
+                "fr": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250484289"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "00059111861062",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "2.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "EA",
+                    "qtyInParent": "2.27",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.540",
+                "gross": "5.000",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1287997",
+            "brand": {
+                "en": "High Liner Foods",
+                "fr": "High Liner Foods",
+                "es": null,
+                "id": "103537"
+            },
+            "description": {
+                "en": "Hake Fillets, Silver Cape, 5oz, Vacuum Packed, Frozen",
+                "fr": "Filet de merlu du Cap argent\u00e9 5oz, emball\u00e9 sous vide, congel\u00e9",
+                "es": "Filetes de Merluza, Cabo plateado, 5oz, envasados al vac\u00edo, congelados"
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D12000128261121"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10061763059473",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "4.54",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.540",
+                "gross": "5.220",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1194575",
+            "brand": {
+                "en": "High Liner Foods",
+                "fr": "High Liner Foods",
+                "es": null,
+                "id": "103537"
+            },
+            "description": {
+                "en": "Cod Loins, Glazed Italian Rustic, 4-5oz, Frozen",
+                "fr": "Longes de morue rustiques glac\u00e9es \u00e0 l\u2019italienne 4-5 oz, congel\u00e9",
+                "es": "Lomitos de bacalao r\u00fastico italiano glaseado, 4-5 oz, congelado"
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D12000130343836"
+                },
+                "fr": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250529394"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10061763089562",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "2.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "EA",
+                    "qtyInParent": "2.27",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.540",
+                "gross": "5.220",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1167591",
+            "brand": {
+                "en": "Grizzly",
+                "fr": "Grizzly",
+                "es": null,
+                "id": "103335"
+            },
+            "description": {
+                "en": "Salmon, Sliced Smoked Coho, BAP, Frozen",
+                "fr": "Saumon coho fum\u00e9 tranch\u00e9, congel\u00e9",
+                "es": "Salm\u00f3n Coho Ahumado En Rebanadas, BAP, Congelado"
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D12000126188725"
+                },
+                "fr": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250549596"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10775200020857",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "7.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "G",
+                    "displayCode": "G",
+                    "isoCode": "GRM",
+                    "parentUom": "EA",
+                    "qtyInParent": "715.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "5.000",
+                "gross": "5.000",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1107477",
+            "brand": {
+                "en": "Kraft",
+                "fr": "Kraft",
+                "es": null,
+                "id": "104166"
+            },
+            "description": {
+                "en": "Peanut Butter, Creamy",
+                "fr": "Beurre d\u2019arachides cr\u00e9meux",
+                "es": "Mantequilla de Man\u00ed Cremosa"
+            },
+            "image": {
+                "en": {
+                    "type": "MON",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250573058"
+                },
+                "fr": {
+                    "type": "MON",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250537872"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10068100084273",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "6.0",
+                    "primaryGtin": "00068100084276",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "EA",
+                    "qtyInParent": "2.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "12.000",
+                "gross": "12.810",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "077",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1082539",
+            "brand": {
+                "en": "High Liner Foods",
+                "fr": "High Liner Foods",
+                "es": null,
+                "id": "103537"
+            },
+            "description": {
+                "en": "Sole Fillets, Pacific, 4oz, Marine Stewardship Council, Individually Quick Frozen",
+                "fr": "Filets de sole du Pacifique, 4 oz, MSC, surg\u00e9lation individuelle",
+                "es": "Filetes de Lenguado, del Pac\u00edfico, 4oz, Consejo de Administraci\u00f3n Marina, Congelados Individualmente R\u00e1pido"
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250516598"
+                },
+                "fr": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250531713"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10061763052672",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "4.54",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.540",
+                "gross": "5.220",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "3251405",
+            "brand": {
+                "en": "High Liner Foods",
+                "fr": "High Liner Foods",
+                "es": null,
+                "id": "103537"
+            },
+            "description": {
+                "en": "Salmon Loins, 4oz Pacific, Vacuum Packed, Frozen",
+                "fr": "Longes de saumon du Pacifique 4 oz, emball\u00e9es sous vide, congel\u00e9",
+                "es": null
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D12000126744008"
+                },
+                "fr": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250528010"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10061763089609",
+                    "alternateGtins": [
+                        "921144292284"
+                    ],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "4.54",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.540",
+                "gross": "5.400",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "5271405",
+            "brand": {
+                "en": "High Liner Foods",
+                "fr": "High Liner Foods",
+                "es": null,
+                "id": "103537"
+            },
+            "description": {
+                "en": "Shrimp Skewers, Peeled And Deveined Tail On, 5 Per Skewer, 40Ct, Raw, Frozen",
+                "fr": "Brochette de crevettes d\u00e9cortiqu\u00e9es et d\u00e9vein\u00e9es avec queue, calibre 31-40, surg\u00e9lation individuelle",
+                "es": null
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250531063"
+                },
+                "fr": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250514410"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10061763075657",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "2.27",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "2.270",
+                "gross": "2.610",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "022",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1377000",
+            "brand": {
+                "en": "Givrex",
+                "fr": "Givrex",
+                "es": null,
+                "id": "103114"
+            },
+            "description": {
+                "en": "Seeds, Pomegranate, Individual Quick Frozen",
+                "fr": "Arilles de grenade, surg\u00e9lation individuelle",
+                "es": "Semillas de granada, congelaci\u00f3n r\u00e1pida individual"
+            },
+            "image": {
+                "en": {
+                    "type": "PNB",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D1200012788698"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "00825414619118",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "4.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "LB",
+                    "displayCode": "LB",
+                    "isoCode": "LBR",
+                    "parentUom": "EA",
+                    "qtyInParent": "5.5",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "9.980",
+                "gross": "10.880",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "067",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1445826",
+            "brand": {
+                "en": "Toppits",
+                "fr": "Toppits",
+                "es": null,
+                "id": "107747"
+            },
+            "description": {
+                "en": "Cod, 1.7oz Beer Battered Taco Cut, Marine Stewardship Council, Ocean Wise, Frozen",
+                "fr": "Morue pan\u00e9e \u00e0 la bi\u00e8re, portions de 1,7 oz pour tacos, MSC, Ocean Wise, surgel\u00e9",
+                "es": "Bacalao en corte de taco rebozado en cerveza, Consejo de Administraci\u00f3n Marina, Ocean Wise, congelado, 1.7 oz"
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D12000129439233"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10068689151854",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "EA",
+                    "displayCode": "EA",
+                    "isoCode": "EA",
+                    "parentUom": "CS",
+                    "qtyInParent": "2.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "LB",
+                    "displayCode": "LB",
+                    "isoCode": "LBR",
+                    "parentUom": "EA",
+                    "qtyInParent": "5.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.530",
+                "gross": "5.210",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "6311605",
+            "brand": {
+                "en": "High Liner Foods",
+                "fr": "High Liner Foods",
+                "es": null,
+                "id": "103537"
+            },
+            "description": {
+                "en": "Salmon Loins, Pacific, 5oz, Vacuum Packed, Frozen",
+                "fr": "Longes de saumon du Pacifique 5 oz emball\u00e9es sous vide, surg\u00e9lation individuelle",
+                "es": null
+            },
+            "image": {
+                "en": {
+                    "type": "IPG",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250534241"
+                },
+                "fr": {
+                    "type": "MON",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D120001250521148"
+                },
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "10061763089616",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "4.54",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "4.540",
+                "gross": "5.400",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "020",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        },
+        {
+            "materialNumber": "1376213",
+            "brand": {
+                "en": "Saveur Ultime",
+                "fr": "Saveur Ultime",
+                "es": null,
+                "id": "106720"
+            },
+            "description": {
+                "en": "Carrot, Thin Shredded, Fresh",
+                "fr": "Carottes r\u00e2p\u00e9es, frais",
+                "es": null
+            },
+            "image": {
+                "en": {
+                    "type": "RAW",
+                    "url": "https://gfs-p360.global.ssl.fastly.net/image/D12000126683866"
+                },
+                "fr": null,
+                "es": null
+            },
+            "innerPackSize": null,
+            "units": [
+                {
+                    "uom": "CS",
+                    "displayCode": "CS",
+                    "isoCode": "CS",
+                    "parentUom": null,
+                    "qtyInParent": null,
+                    "primaryGtin": "00650746298553",
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                },
+                {
+                    "uom": "KG",
+                    "displayCode": "KG",
+                    "isoCode": "KGM",
+                    "parentUom": "CS",
+                    "qtyInParent": "1.0",
+                    "primaryGtin": null,
+                    "alternateGtins": [],
+                    "pricingPortionCoefficient": 0.0
+                }
+            ],
+            "baseUom": "CS",
+            "baseUomWeight": {
+                "net": "1.000",
+                "gross": "1.100",
+                "uom": "KG"
+            },
+            "pricingPortionUom": null,
+            "pricingPortionPerBaseUom": null,
+            "level2CategoryId": "066",
+            "complimentaryMaterials": [],
+            "isCatchWeight": false
+        }
+    ]
+}
