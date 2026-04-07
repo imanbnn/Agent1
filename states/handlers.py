@@ -1,21 +1,23 @@
+# FILE: states/handlers.py
 import asyncio
 import os
-import re
 import json
+import urllib.parse
 from dotenv import load_dotenv
-from actions import teach_and_click, build_sitemap
-from harvester import run_harvest, setup_wiretap
+from actions import teach_and_click, smart_sitemap_extraction, understand_page_context, dismiss_all_popups
 
 load_dotenv()
-
 USERNAME = os.getenv("GFS_USERNAME")
 PASSWORD = os.getenv("GFS_PASSWORD")
-PRODUCT = os.getenv("GFS_DEFAULT_PRODUCT", "Butter") 
+SEARCH_TERMS_STR = os.getenv("GFS_SEARCH_TERMS", "Rice, Avocado, Chicken")
 
-# Global flags for Auto-Pilot state management
+def get_fresh_queue():
+    """Generates a fresh list of search terms from the environment variable."""
+    return [term.strip() for term in SEARCH_TERMS_STR.split(",") if term.strip()]
+
+SEARCH_QUEUE = get_fresh_queue()
 WIRETAP_ATTACHED = False
-AUTO_PILOT = False
-URL_QUEUE = []
+BOT_MODE = "search"  # Modified dynamically by main.py based on Dashboard UI
 
 async def handle_popup_active(page, kb):
     print("🚨 Popup detected blocking the screen!")
@@ -28,7 +30,6 @@ async def handle_login_page(page, kb):
     if not USERNAME or not PASSWORD:
         print("⚠️ ERROR: Missing credentials in .env file!")
         return "stop"
-    
     await teach_and_click(page, kb, "login_page", "username_field", "type", USERNAME)
     await asyncio.sleep(2)
     await teach_and_click(page, kb, "login_page", "password_field", "type", PASSWORD)
@@ -41,198 +42,105 @@ async def handle_location_selection(page, kb):
     return "continue"
 
 async def handle_dashboard(page, kb):
-    global WIRETAP_ATTACHED, AUTO_PILOT, URL_QUEUE
-    
+    global WIRETAP_ATTACHED, SEARCH_QUEUE
+  
     if not WIRETAP_ATTACHED:
-        print("📡 Deploying Global Wiretap for upcoming search...")
+        print("📡 Deploying Global Wiretap...")
+        from harvester import setup_wiretap
         await setup_wiretap(page)
         WIRETAP_ATTACHED = True
-
-    print("🧹 Clearing workspace...")
-    await page.keyboard.press("Escape")
-    await asyncio.sleep(1) 
-    
-    print("\n📍 [STATE] Dashboard Confirmed.")
-    print("👆 Awaiting manual action... Choose [SEARCH ITEM] or [AUTO-CRAWL SITEMAP]")
-
-    await page.evaluate("""() => {
-        const container = document.createElement('div');
-        container.id = 'dashboard-trigger-container';
-        container.style.cssText = `
-            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
-            z-index: 9999999; display: flex; gap: 20px;
-        `;
-
-        const createBtn = (id, text, color) => {
-            const btn = document.createElement('button');
-            btn.id = id;
-            btn.innerHTML = text;
-            btn.style.cssText = `
-                padding: 15px 30px; background: ${color}; color: white;
-                font-size: 16px; font-weight: bold; border: 3px solid rgba(0,0,0,0.2);
-                border-radius: 10px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-                transition: transform 0.1s;
-            `;
-            btn.onmousedown = () => btn.style.transform = 'scale(0.95)';
-            btn.onmouseup = () => btn.style.transform = 'scale(1)';
-            return btn;
-        };
-
-        const searchBtn = createBtn('btn-search', '🔍 SEARCH SINGLE ITEM', '#8e44ad');
-        const crawlBtn = createBtn('btn-crawl', '🗺️ AUTO-CRAWL SITEMAP', '#c0392b'); 
-
-        searchBtn.onclick = () => { window.dashAction = 'search'; searchBtn.innerHTML = '⏳ TYPING...'; searchBtn.style.background = '#f39c12'; };
-        crawlBtn.onclick = () => { window.dashAction = 'crawl'; crawlBtn.innerHTML = '⏳ MAPPING ROUTE...'; crawlBtn.style.background = '#f39c12'; };
-
-        container.appendChild(searchBtn);
-        container.appendChild(crawlBtn);
-        document.body.appendChild(container);
-    }""")
-
-    action = None
-    while not action:
-        action = await page.evaluate("window.dashAction || null")
-        await asyncio.sleep(0.5)
-
-    await page.evaluate("""() => {
-        const container = document.getElementById('dashboard-trigger-container');
-        if (container) container.remove();
-        delete window.dashAction;
-    }""")
-
-    if action == "search":
-        print("🔍 Proceeding with single-item search...")
-        await teach_and_click(page, kb, "dashboard", "search_bar", "type", PRODUCT)
-        await asyncio.sleep(8)
-        return "continue"
-
-    elif action == "crawl":
-        print("🗺️ Engaging Auto-Pilot: Expanding category menus...")
-
-        try:
-            await page.locator("text=Categories").first.click(timeout=3000)
-            await asyncio.sleep(2) 
-        except Exception:
-            print("⚠️ Could not click 'Categories', attempting standard DOM scrape...")
-
-        print("🕸️ Spidering DOM for active category links...")
-        links = await page.evaluate("""() => {
-            const anchors = document.querySelectorAll('a[href]');
-            return [...new Set(Array.from(anchors).map(a => a.href))];
-        }""")
-
-        valid_urls = []
-        for link in links:
-            if "gfs.com" in link and any(k in link.lower() for k in ["/category", "/shop", "/products"]):
-                clean_link = link.split('?')[0].split('#')[0] 
-                if clean_link not in valid_urls:
-                    valid_urls.append(clean_link)
-
-        if os.path.exists("navigation_dump.json"):
-            try:
-                with open("navigation_dump.json", "r", encoding="utf-8") as f:
-                    nav_links = re.findall(r'"(/[a-zA-Z0-9\-\/]*category[a-zA-Z0-9\-\/]*)"', f.read())
-                    for nl in nav_links:
-                        full_url = "https://order.gfs.com" + nl
-                        if full_url not in valid_urls:
-                            valid_urls.append(full_url)
-            except Exception:
-                pass
-
-        if not valid_urls:
-            print("⚠️ [WARNING] No valid category URLs found. Defaulting to Search.")
-            await teach_and_click(page, kb, "dashboard", "search_bar", "type", PRODUCT)
-            return "continue"
-
-        URL_QUEUE = valid_urls
-        AUTO_PILOT = True
-        print(f"🚀 [AUTO-PILOT] Found {len(URL_QUEUE)} targeted categories to scrape!")
-
-        next_url = URL_QUEUE.pop(0)
-        print(f"🌐 Navigating to first URL: {next_url}")
-        await page.goto(next_url)
-        await asyncio.sleep(5) 
-        return "continue" 
-
-async def handle_product_page(page, kb):
-    global AUTO_PILOT, URL_QUEUE
-
-    if AUTO_PILOT:
-        print(f"\n🤖 [AUTO-PILOT] Auto-Scraping Category... ({len(URL_QUEUE)} pages remaining in queue)")
         
-        await run_harvest(page, mode="scan")
+    print("🧹 Clearing workspace...")
+    # 🧹 CRITICAL FIX: Explicitly clear the workspace of popups before interacting with the search bar
+    await dismiss_all_popups(page)
+    await page.keyboard.press("Escape")
+    await asyncio.sleep(3) 
+    
+    if BOT_MODE == "explore":
+        print("\n🧭 [STATE] Dashboard -> EXPLORE MODE. Mapping Catalog...")
+        if "categories" not in page.url and "guides" not in page.url:
+            print("🚀 Redirecting to the Categories / Guides Hub...")
+            await page.goto("https://order.gfs.com/categories")
+            await asyncio.sleep(5)
+            
+        await smart_sitemap_extraction(page, kb)
+        next_url = kb.get_next_url()
+        
+        if next_url:
+            print(f"🚀 [AUTONOMOUS ROUTING] Navigating to next queued category: {next_url}")
+            await page.goto(next_url)
+            await asyncio.sleep(4)
+        else:
+            print("⚠️ Queue empty. Ensure smart sitemap extraction found valid links.")
+            await asyncio.sleep(5)
+    else:
+        # 🔄 CRITICAL FIX: Reload the queue continuously to monitor for changes instead of stopping
+        if not SEARCH_QUEUE:
+            print("🔄 Search Queue is empty! Resetting queue for continuous change monitoring...")
+            SEARCH_QUEUE = get_fresh_queue()
+            await asyncio.sleep(3)
+            
+        current_product = SEARCH_QUEUE[0] # PEEK, don't pop yet!
+        print(f"\n🔍 [STATE] Dashboard -> SEARCH MODE. Target: {current_product}...")
+        
+        await teach_and_click(page, kb, "dashboard", "search_bar", "type", current_product)
+        
+        try:
+            print("⏳ Waiting for page to route to search results...")
+            await page.wait_for_url("**/search**", timeout=12000)
+            SEARCH_QUEUE.pop(0) # Only pop if successful!
+            print(f"✅ Route confirmed! Remaining in queue: {len(SEARCH_QUEUE)} items.")
+        except Exception:
+            print(f"⚠️ Search UI failed or timed out. Forcing direct URL navigation...")
+            encoded_product = urllib.parse.quote(current_product)
+            await page.goto(f"https://order.gfs.com/search?searchText={encoded_product}")
+            SEARCH_QUEUE.pop(0)
+            print(f"✅ Route forced! Remaining in queue: {len(SEARCH_QUEUE)} items.")
+        await asyncio.sleep(4)
+        
+    return "continue"
 
-        if URL_QUEUE:
-            next_url = URL_QUEUE.pop(0)
-            print(f"🤖 [AUTO-PILOT] Moving to next category in sitemap: {next_url}")
+async def handle_single_product(page, kb):
+    print("\n⚠️ [NAVIGATION ALERT] I am inside a Single Product details page! Reversing back to the search list...")
+    await page.go_back()
+    await asyncio.sleep(3)
+    return "continue"
+
+async def handle_search_results(page, kb):
+    global SEARCH_QUEUE
+    print("\n📍 [STATE] Catalog Page Confirmed.")
+    
+    category_name = await understand_page_context(page, kb)
+    print(f"🚜 Engaging Auto-Harvester for category: {category_name}...")
+    
+    from harvester import run_harvest 
+    await run_harvest(page, kb=kb, state="search_results")
+    
+    if BOT_MODE == "explore":
+        await smart_sitemap_extraction(page, kb)
+        next_url = kb.get_next_url()
+        
+        if next_url:
+            print(f"🧭 Page Harvest Complete. Remaining items in queue: {len(kb.data['queue'])}")
+            print(f"🚀 [AUTONOMOUS ROUTING] Proceeding to next category: {next_url}")
             await page.goto(next_url)
             await asyncio.sleep(5)
-            return "continue"
+            return "continue" 
         else:
-            print("🎉 [AUTO-PILOT] Sitemap queue empty! Full site crawl is complete.")
+            print("🎉 Exploration Queue Empty. Entire catalog mapped. Stopping agent.")
             return "stop"
-
-    print("\n📍 [STATE] Product Page Confirmed.")
-    print("👆 Awaiting manual action... Please select a mode.")
-
-    await page.evaluate("""() => {
-        const container = document.createElement('div');
-        container.id = 'manual-trigger-container';
-        container.style.cssText = `
-            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
-            z-index: 9999999; display: flex; gap: 15px;
-        `;
-
-        const createBtn = (id, text, color) => {
-            const btn = document.createElement('button');
-            btn.id = id;
-            btn.innerHTML = text;
-            btn.style.cssText = `
-                padding: 15px 20px; background: ${color}; color: white;
-                font-size: 15px; font-weight: bold; border: 3px solid rgba(0,0,0,0.2);
-                border-radius: 10px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-                transition: transform 0.1s;
-            `;
-            btn.onmousedown = () => btn.style.transform = 'scale(0.95)';
-            btn.onmouseup = () => btn.style.transform = 'scale(1)';
-            return btn;
-        };
-
-        const quickDumpBtn = createBtn('btn-quick-dump', '⚡ QUICK JSON DUMP', '#2980b9'); 
-        const scrollDumpBtn = createBtn('btn-scroll-dump', '🗄️ SCROLL & DUMP', '#8e44ad'); 
-        const scanBtn = createBtn('btn-api-scan', '📡 FULL SCAN', '#27ae60'); 
-
-        quickDumpBtn.onclick = () => { window.manualAction = 'quick_dump'; quickDumpBtn.innerHTML = '⏳ DUMPING...'; quickDumpBtn.style.background = '#f39c12'; };
-        scrollDumpBtn.onclick = () => { window.manualAction = 'agg_dump'; scrollDumpBtn.innerHTML = '⏳ MAPPING...'; scrollDumpBtn.style.background = '#f39c12'; };
-        scanBtn.onclick = () => { window.manualAction = 'scan'; scanBtn.innerHTML = '⏳ SCANNING...'; scanBtn.style.background = '#f39c12'; };
-
-        container.appendChild(quickDumpBtn);
-        container.appendChild(scrollDumpBtn);
-        container.appendChild(scanBtn);
-        document.body.appendChild(container);
-    }""")
-
-    action = None
-    while not action:
-        action = await page.evaluate("window.manualAction || null")
-        await asyncio.sleep(0.5)
-
-    print(f"📡 [COMMAND RECEIVED] Executing: {action.upper()}")
-    await run_harvest(page, mode=action) 
-
-    await page.evaluate("""() => {
-        const container = document.getElementById('manual-trigger-container');
-        if (container) container.remove();
-        delete window.manualAction;
-    }""")
-    
-    print(f"🎉 {action.upper()} Complete. Stopping agent.")
-    return "stop"
+    else:
+        # Loop back to dashboard to process the next item (or reload the queue if empty)
+        print(f"🧭 Search Harvest Complete. Returning to dashboard for next target...")
+        await page.goto("https://order.gfs.com/")
+        await asyncio.sleep(5)
+        return "continue"
 
 STATE_ROUTER = {
     "login_page": handle_login_page,
     "location_selection": handle_location_selection,
     "dashboard": handle_dashboard,
-    "product_page": handle_product_page,
+    "search_results": handle_search_results,
+    "single_product": handle_single_product,
     "popup_active": handle_popup_active,
 }

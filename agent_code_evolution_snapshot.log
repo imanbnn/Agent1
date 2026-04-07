@@ -1,1020 +1,1385 @@
-# ============================================================
-# 🧠 GEMINI TROUBLESHOOTING MANIFEST
-# GENERATED: 2026-04-04 17:25:21
-# OS: Darwin 25.3.0
-# PYTHON: 3.14.3
-# ============================================================
+# GEMINI COMPRESSED MANIFEST | 2026-04-07 13:56:35
 
-# --- 🧠 CURRENT KNOWLEDGE BASE (MEMORY) ---
-{
-    "login_page": {
-        "username_field": {
-            "x": 852,
-            "y": 356
-        },
-        "password_field": {
-            "x": 864,
-            "y": 401
-        }
-    },
-    "dashboard": {
-        "scroll_depth": {
-            "scrolls": 1
-        },
-        "search_bar": {
-            "x": 467,
-            "y": 71
-        }
-    },
-    "sitemap": {
-        "xml_links": "<... 0 links hidden ...>",
-        "dom_links": "<... 10 links hidden ...>"
-    }
-}
+# --- MINIFIED MEMORY ---
+{"login_page":{"username_field":{"x":852,"y":356},"password_field":{"x":864,"y":401}},"dashboard":{"scroll_depth":{"scrolls":1},"search_bar":{"x":467,"y":71}},"sitemap":{"xml_links":"<0 links hidden>","dom_links":"<10 links hidden>"},"product_page":{"order_guide_tab":{"x":57,"y":17}},"url_map":{"order.gfs.com/categories":"transitioning","order.gfs.com/guides":"transitioning"},"search_results":{"order_guide_tab":{"x":554,"y":170}},"queue":[],"visited":["https://order.gfs.com/categories","https://order.gfs.com/","https://order.gfs.com/guides"],"catalog_map":{"https://order.gfs.com/search?searchText=Rice":"258 results for \"Rice\"","https://order.gfs.com/search?searchText=Avocado":"Fresh Produce","https://order.gfs.com/search?searchText=Chicken":"Chicken Products"},"transitioning":{"scroll_depth":{"scrolls":1}}}
 
-# --- 📂 DIRECTORY STRUCTURE ---
-./
-    raw_info_dump.json
-    raw_price_dump.json
-    CHANGELOG.md
-    gfs_results.csv
-    scroll.py
-    actions.py
-    logger.py
-    brain.py
-    .env
-    harvester.py
-    knowledge.json
-    main.py
-    states/
-        handlers.py
-        __init__.py
-    raw_dumps/
-    .vscode/
-        settings.json
+# --- RECENT CHANGELOG ENTRIES ---
+### [2026-04-07 13:36:42] UPDATE
+* **Summary:** Data Optimization Update
+* **Details:** Migrated to google.genai, fixed circular imports, isolated phase memory dumps.
+
+### [2026-04-07 13:46:07] UPDATE
+* **Summary:** Data Optimization Update
+* **Details:** Migrated to google.genai, fixed circular imports, isolated phase memory dumps.
+
+### [2026-04-07 13:50:40] UPDATE
+* **Summary:** Data Optimization Update
+* **Details:** Migrated to google.genai, fixed circular imports, isolated phase memory dumps.
+
+### [2026-04-07 13:52:19] UPDATE
+* **Summary:** Data Optimization Update
+* **Details:** Migrated to google.genai, fixed circular imports, isolated phase memory dumps.
+
+### [2026-04-07 13:56:35] UPDATE
+* **Summary:** Data Optimization Update
+* **Details:** Migrated to google.genai, fixed circular imports, isolated phase memory dumps.
 
 
-# --- 💻 FULL ARCHITECTURE SNAPSHOT ---
-
-# FILE: CHANGELOG.md
-# 🤖 Agent Architecture Changelog
-
-### [2026-04-04 16:26:56]
-* **Change:** Accelerated Video
-* **Details:** Added FFmpeg post-processing for 2x speed and smaller file size.
-
-### [2026-04-04 16:41:27]
-* **Change:** Hyper-Accelerated Video
-* **Details:** Updated FFmpeg post-processing to 3.5x playback speed.
-
-### [2026-04-04 17:08:55] SESSION START
-* **Change/Run Context:** Hyper-Accelerated Video
-* **Technical Details:** Updated FFmpeg post-processing to 3.5x playback speed.
-
-### [2026-04-04 17:12:54] SESSION START
-* **Change/Run Context:** Hyper-Accelerated Video
-* **Technical Details:** Updated FFmpeg post-processing to 3.5x playback speed.
-
-### [2026-04-04 17:13:28] SESSION START
-* **Change/Run Context:** Hyper-Accelerated Video
-* **Technical Details:** Updated FFmpeg post-processing to 3.5x playback speed.
-
-### [2026-04-04 17:22:06] SESSION START
-* **Change/Run Context:** Hyper-Accelerated Video
-* **Technical Details:** Updated FFmpeg post-processing to 3.5x playback speed.
-
-### [2026-04-04 17:25:21] SESSION START
-* **Change/Run Context:** Hyper-Accelerated Video
-* **Technical Details:** Updated FFmpeg post-processing to 3.5x playback speed.
-
-
+# --- COMPRESSED ARCHITECTURE SNAPSHOT ---
 
 # FILE: main.py
+import sys
+import subprocess
+def ensure_ai_environment():
+    try:
+        from google import genai
+        import PIL
+    except ImportError:
+        print("\n📦 [SYSTEM] Gemini Supervisor SDKs are missing from THIS specific Python environment.")
+        print("⚙️ Auto-installing 'google-genai' and fixing dependencies. Please wait...")
+        try:
+            subprocess.check_call([sys.executable, "-m", "pip", "install", "--upgrade", "google-genai", "pillow", "requests", "urllib3", "chardet", "charset-normalizer", "--break-system-packages"])
+            print("✅ [SYSTEM] AI SDKs and dependencies successfully updated! Resuming boot sequence...\n")
+        except Exception as e:
+            print(f"❌ [SYSTEM FATAL] Auto-install failed: {e}")
+            print(f"👉 Please manually run: {sys.executable} -m pip install google-genai pillow --break-system-packages")
+            sys.exit(1)
+ensure_ai_environment()
 import asyncio
 import random
 import os
 import glob
 import shutil
-import subprocess
+import threading
+import http.server
+import socketserver
 from playwright.async_api import async_playwright
 from brain import KnowledgeBase
-from actions import identify_state, apply_stealth, dismiss_all_popups, deep_human_scroll
+from actions import identify_state, apply_stealth, dismiss_all_popups, deep_human_scroll, test_gemini_basic
 from states.handlers import STATE_ROUTER
+import states.handlers  # For updating BOT_MODE
 from logger import log_event, generate_evolution_manifest, log_evolution_snapshot
-
-async def main():
-    # 📝 Self-Updating Evolution Log
-    log_evolution_snapshot("Hyper-Accelerated Video", "Updated FFmpeg post-processing to 3.5x playback speed.")
-    generate_evolution_manifest()
-    
-    kb = KnowledgeBase()
-    
-    async with async_playwright() as p:
-        ua = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
-        browser = await p.chromium.launch(headless=False, args=["--disable-blink-features=AutomationControlled"])
-        
-        # 🔴 Enable Video Recording in the Browser Context
-        context = await browser.new_context(
-            viewport={'width': 1280, 'height': 800}, 
-            user_agent=ua,
-            record_video_dir="videos/",  # Save raw videos here temporarily
-            record_video_size={"width": 1280, "height": 800}
-        )
-        page = await context.new_page()
-
-        await apply_stealth(page)
-
-        print("🚀 Launching Beefed-up Autonomous Scraper with Debug Recording...")
-        await page.goto("https://order.gfs.com/")
-
-        last_state = None
-        
+from harvester import generate_html_dashboard, update_status
+def start_server(loop, bot_trigger_event):
+    """Spins up a local HTTP Server in the background to serve the Control Panel."""
+    def trigger_bot(mode):
+        states.handlers.BOT_MODE = mode
+        loop.call_soon_threadsafe(bot_trigger_event.set)
+    class APIHandler(http.server.SimpleHTTPRequestHandler):
+        def log_message(self, format, *args):
+            pass 
+        def do_GET(self):
+            if self.path.startswith('/api/start'):
+                from urllib.parse import urlparse, parse_qs
+                query = parse_qs(urlparse(self.path).query)
+                mode = query.get('mode', ['search'])[0]
+                trigger_bot(mode)
+                self.send_response(200)
+                self.send_header('Content-type', 'application/json')
+                self.end_headers()
+                self.wfile.write(b'{"status": "started"}')
+            else:
+                super().do_GET()
+    class ReusableTCPServer(socketserver.ThreadingTCPServer):
+        allow_reuse_address = True
+    port = 8000
+    while port <= 8010:
         try:
-            while True:
-                await dismiss_all_popups(page)
-                current_state = await identify_state(page)
-                
-                if current_state != last_state:
-                    log_event("STATE_CHANGE", {"from": last_state, "to": current_state})
-                    print(f"📍 State Changed -> {current_state}")
-                    
-                    if current_state not in ["transitioning", "unknown_page"]:
-                        try:
-                            await page.wait_for_load_state("networkidle", timeout=5000)
-                        except: 
-                            pass
-                        
+            httpd = ReusableTCPServer(("", port), APIHandler)
+            print("\n" + "="*50)
+            print("🌐 [DASHBOARD ACTIVE] Control Panel available at:")
+            print(f"👉 http://localhost:{port}/dashboard.html")
+            print("="*50 + "\n")
+            httpd.serve_forever()
+            break
+        except OSError:
+            port += 1
+    if port > 8010:
+        print("🚨 ERROR: Could not bind a port for the web server!")
+async def main():
+    log_evolution_snapshot("Data Optimization Update", "Migrated to google.genai, fixed circular imports, isolated phase memory dumps.")
+    generate_evolution_manifest()
+    generate_html_dashboard()
+    kb = KnowledgeBase()
+    loop = asyncio.get_running_loop()
+    bot_trigger = asyncio.Event()
+    server_thread = threading.Thread(target=start_server, args=(loop, bot_trigger), daemon=True)
+    server_thread.start()
+    await test_gemini_basic()
+    while True:
+        update_status("idle", "Ready to Launch. Select a mode to start.", 0, 0)
+        print("⏳ Awaiting signal from Dashboard Control Panel...")
+        await bot_trigger.wait() 
+        bot_trigger.clear() 
+        update_status("running", f"Launching Browser in {states.handlers.BOT_MODE.upper()} mode...", 0, 100)
+        print(f"🚀 Launching Bot ({states.handlers.BOT_MODE.upper()})...")
+        context = None
+        browser = None
+        try:
+            async with async_playwright() as p:
+                ua = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+                browser = await p.chromium.launch(headless=False, args=["--disable-blink-features=AutomationControlled"])
+                context = await browser.new_context(
+                    viewport={'width': 1280, 'height': 800}, 
+                    user_agent=ua,
+                    record_video_dir="videos/",  
+                    record_video_size={"width": 1280, "height": 800}
+                )
+                page = await context.new_page()
+                await apply_stealth(page)
+                await page.goto("https://order.gfs.com/")
+                last_state = None
+                while True:
+                    await dismiss_all_popups(page)
+                    current_state = await identify_state(page, kb)
+                    if current_state != last_state:
+                        log_event("STATE_CHANGE", {"from": last_state, "to": current_state})
+                        print(f"📍 State Changed -> {current_state}")
+                        if current_state not in ["transitioning", "unknown_page"]:
+                            try: await page.wait_for_load_state("networkidle", timeout=5000)
+                            except: pass
                     await deep_human_scroll(page, kb, current_state)
-                    current_state = await identify_state(page)
+                    current_state = await identify_state(page, kb)
                     last_state = current_state
-
-                if current_state in ["transitioning", "unknown_page"]:
-                    await asyncio.sleep(2)
-                    continue
-
-                if current_state in STATE_ROUTER:
-                    status = await STATE_ROUTER[current_state](page, kb)
-                    if status == "stop": break
-                
-                await asyncio.sleep(random.uniform(1.5, 3.5))
-                
+                    if current_state in ["transitioning", "unknown_page"]:
+                        await asyncio.sleep(2)
+                        continue
+                    if current_state in STATE_ROUTER:
+                        status = await STATE_ROUTER[current_state](page, kb)
+                        if status == "stop": break
+                    await asyncio.sleep(random.uniform(1.5, 3.5))
+        except Exception as e:
+            print(f"⚠️ [CRITICAL EXCEPTION] Playwright loop broken: {e}")
+            log_event("CRASH", str(e))
         finally:
-            print("\n🛑 Stopping bot. Finalizing debug video...")
-            
-            await context.close()
-            await browser.close()
-            
-            # ♻️ 3.5x Speed Compression & Overwrite Logic
+            print("\n🛑 Stopping bot. Finalizing systems...")
+            update_status("processing", "Saving CSV and regenerating Dashboard...", 95, 100)
+            try: await context.close()
+            except: pass
+            try: await browser.close()
+            except: pass
             video_files = glob.glob("videos/*.webm")
             if video_files:
                 latest_video = max(video_files, key=os.path.getctime)
                 target_path = "debug_recording.webm"
-                
-                print("📼 Compressing and accelerating video (3.5x speed)...")
                 try:
-                    # FFmpeg command: 1 / 3.5 = 0.2857
-                    subprocess.run(
-                        ["ffmpeg", "-y", "-i", latest_video, "-filter:v", "setpts=0.2857*PTS", "-an", target_path],
-                        check=True,
-                        stdout=subprocess.DEVNULL,
-                        stderr=subprocess.DEVNULL
-                    )
-                    print(f"✅ Success! 3.5x Speed video saved to: {target_path}")
-                except (subprocess.CalledProcessError, FileNotFoundError):
-                    print("⚠️ FFmpeg not installed or failed. Falling back to normal 1x raw video.")
-                    if os.path.exists(target_path):
-                        os.remove(target_path)
+                    subprocess.run(["ffmpeg", "-y", "-i", latest_video, "-filter:v", "setpts=0.2857*PTS,scale=854:480", "-r", "15", "-crf", "35", "-an", target_path], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                except Exception:
+                    if os.path.exists(target_path): os.remove(target_path)
                     shutil.move(latest_video, target_path)
-                    print(f"📼 Raw video saved over: {target_path}")
-
                 for f in glob.glob("videos/*.webm"):
                     try: os.remove(f)
                     except: pass
                 try: os.rmdir("videos")
                 except: pass
-
+            generate_html_dashboard() 
+            update_status("complete", "Harvest Complete! Dashboard updated.", 100, 100)
+            await asyncio.sleep(5) 
 if __name__ == "__main__":
     asyncio.run(main())
 
 # FILE: actions.py
 import asyncio
 import random
-import re
 import os
-import datetime
-import shutil
 import json
 from urllib.parse import urlparse
 from logger import log_event, capture_context
-from PIL import Image, ImageChops
-from paddleocr import PaddleOCR
-
-# --- 🧠 VISION ENGINE INITIALIZATION ---
-ocr_engine = None
-
-def get_ocr():
-    global ocr_engine
-    if ocr_engine is None:
-        print("🧠 Vision Engine: Booting AI Eye (PaddleOCR)...")
-        ocr_engine = PaddleOCR(use_angle_cls=False, lang='en')
-    return ocr_engine
-
-# --- 🧪 HUMAN PHYSICS ENGINE ---
+from PIL import Image
+def get_supervisor_status():
+    try:
+        from google import genai
+        if not os.getenv("GEMINI_API_KEY"):
+            return "Offline 🔴 (Missing API Key in .env)"
+        return "Online 🟢"
+    except ImportError:
+        return "Offline 🔴 (Missing 'google-genai' SDK)"
+async def test_gemini_basic():
+    print("\n🧠 [SUPERVISOR DIAGNOSTIC] Running Level 1 Gemini connection test...")
+    try:
+        from google import genai
+        api_key = os.getenv("GEMINI_API_KEY")
+        if not api_key:
+            print("⚠️ [SUPERVISOR] Offline: No GEMINI_API_KEY found in your .env file!")
+            return False
+        client = genai.Client(api_key=api_key)
+        response = client.models.generate_content(
+            model='gemini-2.5-flash',
+            contents=["Reply with exactly the word 'ONLINE' if you are active and receiving this message."]
+        )
+        if "ONLINE" in response.text.upper():
+            print("✅ [SUPERVISOR] Level 1 Passed: Text Generation Pipeline is Active!\n")
+            return True
+        else:
+            print(f"⚠️ [SUPERVISOR] Level 1 Failed: Unexpected response -> {response.text}\n")
+            return False
+    except Exception as e:
+        print(f"❌ [SUPERVISOR] Connection test failed: {e}\n")
+        return False
+async def ask_supervisor(page, prompt, expect_json=False):
+    try:
+        from google import genai
+        from google.genai import types
+        api_key = os.getenv("GEMINI_API_KEY")
+        client = genai.Client(api_key=api_key)
+        os.makedirs("vision", exist_ok=True)
+        shot_path = f"vision/supervisor_eyes_{random.randint(1000,9999)}.png"
+        await page.screenshot(path=shot_path)
+        config = types.GenerateContentConfig(response_mime_type="application/json" if expect_json else "text/plain")
+        try:
+            img = Image.open(shot_path)
+            response = client.models.generate_content(model='gemini-2.5-flash', contents=[prompt, img], config=config)
+        except Exception:
+            response = client.models.generate_content(model='gemini-2.5-pro', contents=[prompt, img], config=config)
+        try: os.remove(shot_path)
+        except: pass
+        return response.text.strip()
+    except Exception as e:
+        print(f"⚠️ [SUPERVISOR ERROR]: {e}")
+        return None
+async def gemini_double_check_totals(page):
+    prompt = """
+    Analyze this screenshot of a Gordon Food Service search results page.
+    Look at the tab headers at the top of the item list.
+    Return ONLY a valid JSON object containing the numerical totals for each tab.
+    If a tab is not visible, set its value to 0.
+    Format: {"all_results_total": 258, "order_guide_total": 19}
+    """
+    res = await ask_supervisor(page, prompt, expect_json=True)
+    if res:
+        try:
+            clean_res = res.replace('```json', '').replace('```', '').strip()
+            return json.loads(clean_res)
+        except: pass
+    return None
+async def identify_state(page, kb=None):
+    url = page.url.lower()
+    if kb is None:
+        from brain import KnowledgeBase
+        kb = KnowledgeBase()
+    parsed_url = urlparse(url)
+    base_path = parsed_url.netloc + parsed_url.path
+    if any(x in url for x in ["sso.gfs.com", "okta"]): return "login_page"
+    if "search" in url or "catalog" in url: return "search_results"
+    if any(x in url for x in ["product/", "item/", "order.gfs.com/shopping"]): return "single_product"
+    if "home" in url or "dashboard" in url or "categories" in url or "guides" in url: 
+        return "dashboard"
+    if "url_map" not in kb.data: kb.data["url_map"] = {}
+    if base_path in kb.data["url_map"]: return kb.data["url_map"][base_path]
+    prompt = f"""
+    The bot landed on an unrecognized URL: {url}
+    Look at the screenshot.
+    Which internal state best describes it?
+    Respond with ONLY ONE word: 'login_page', 'dashboard', 'search_results', 'single_product', 'transitioning'
+    """
+    ai_state = await ask_supervisor(page, prompt, expect_json=False)
+    if ai_state:
+        ai_state_clean = ai_state.lower().strip()
+        for v in ["login_page", "dashboard", "search_results", "single_product", "transitioning"]:
+            if v in ai_state_clean:
+                kb.data["url_map"][base_path] = v
+                kb.save()
+                return v
+    return "transitioning"
+async def understand_page_context(page, kb):
+    """Uses DOM context and Gemini to understand exactly what category of products it is viewing."""
+    try:
+        url = page.url
+        dom_context = await page.evaluate("""() => {
+            let breadcrumbs = Array.from(document.querySelectorAll('nav[aria-label="breadcrumb"] li, .breadcrumb li')).map(el => el.innerText).join(' > ');
+            let title = document.title;
+            let h1 = document.querySelector('h1') ? document.querySelector('h1').innerText : '';
+            return {title, h1, breadcrumbs};
+        }""")
+        try:
+            from google import genai
+            from google.genai import types
+            client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+            prompt = f"""
+            You are organizing a food service catalog.
+            Based on this page data, what specific category of products is being shown?
+            URL: {url}
+            Title: {dom_context['title']}
+            Header: {dom_context['h1']}
+            Breadcrumbs: {dom_context['breadcrumbs']}
+            Return ONLY a short string describing the category (e.g., 'Fresh Produce', 'Dairy & Eggs', 'Takeout Packaging', 'Mixed Search Results').
+            """
+            response = client.models.generate_content(model='gemini-2.5-flash', contents=[prompt])
+            category_name = response.text.strip()
+            print(f"🧠 [CONTEXT AWARENESS] Gemini identified this page as: 🏷️ {category_name}")
+            kb.log_category(url, category_name)
+            return category_name
+        except Exception as e:
+            print(f"⚠️ Context extraction via Gemini failed (Rate Limit?): {e}")
+            fallback_name = dom_context.get('h1') or dom_context.get('title', '').split('|')[0].strip() or "Unknown Category"
+            print(f"🔄 [LOCAL FALLBACK] Using DOM context: 🏷️ {fallback_name}")
+            kb.log_category(url, fallback_name)
+            return fallback_name
+    except Exception as e:
+        return "Unknown Category"
+async def smart_sitemap_extraction(page, kb):
+    """Extracts DOM links and uses Gemini (or Local Fallback) to build the exploration queue."""
+    print("🕸️ Extracting raw DOM links...")
+    try:
+        raw_links = await page.evaluate("""() => {
+            const anchors = document.querySelectorAll('a[href], [routerLink], [ng-href], [data-href]');
+            return [...new Set(Array.from(anchors).map(a => {
+                if (a.href) return a.href;
+                let path = a.getAttribute('routerLink') || a.getAttribute('ng-href') || a.getAttribute('data-href');
+                if (path) return new URL(path, window.location.origin).href;
+                return '';
+            }).filter(Boolean))];
+        }""")
+        valid_links = [l for l in raw_links if "gfs.com" in l and not any(junk in l.lower() for junk in ['javascript:', 'mailto:', 'logout', 'cart', 'support', 'login'])]
+        if not valid_links: 
+            print("⚠️ No valid DOM links found on this page to route.")
+            return
+        try:
+            from google import genai
+            from google.genai import types
+            client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+            prompt = f"""
+            You are the routing brain for a web crawler.
+            Review this list of URLs scraped from Gordon Food Service.
+            Identify ONLY the URLs that lead to Categories, Product Lists, or Catalog sections.
+            EXCLUDE individual product pages (e.g., /item/123), terms of service, or user accounts.
+            Return ONLY a valid JSON object in this format: {{"valid_categories": ["url1", "url2"]}}
+            URLs to analyze:
+            {json.dumps(valid_links[:75])} 
+            """
+            config = types.GenerateContentConfig(response_mime_type="application/json")
+            response = client.models.generate_content(model='gemini-2.5-flash', contents=[prompt], config=config)
+            raw_json = response.text.strip()
+            raw_json = raw_json.replace('```json', '').replace('```', '').strip()
+            data = json.loads(raw_json)
+            new_targets = data.get("valid_categories", [])
+            added = kb.add_urls_to_queue(new_targets)
+            print(f"🗺️ [SMART SITEMAP] Gemini found {len(new_targets)} valid category routes. Added {added} NEW routes to the exploration queue.")
+        except Exception as e:
+            print(f"⚠️ Smart sitemap extraction via Gemini failed: {e}")
+            print("🔄 Falling back to Local Heuristic Router to bypass API limits...")
+            new_targets = []
+            for link in valid_links:
+                l_lower = link.lower()
+                if any(x in l_lower for x in ["/category/", "/categories", "/catalog/", "product-list"]):
+                    new_targets.append(link)
+            if new_targets:
+                added = kb.add_urls_to_queue(new_targets)
+                print(f"🗺️ [LOCAL FALLBACK] Found {len(new_targets)} valid category routes. Added {added} NEW routes.")
+            else:
+                print("⚠️ Local fallback found no new categories.")
+    except Exception as e:
+        print(f"⚠️ Link extraction failed entirely: {e}")
 async def bezier_move(page, end_x, end_y, steps=15):
-    """Moves mouse in a curve to simulate human trackpad acceleration."""
     start_x, start_y = random.randint(0, 100), random.randint(0, 100)
     cp1_x = start_x + (end_x - start_x) * random.uniform(0.1, 0.4)
     cp1_y = start_y + (end_y - start_y) * random.uniform(0.1, 0.4)
     cp2_x = start_x + (end_x - start_x) * random.uniform(0.6, 0.9)
     cp2_y = start_y + (end_y - start_y) * random.uniform(0.6, 0.9)
-
     for i in range(steps + 1):
         t = i / steps
         x = (1-t)**3 * start_x + 3*(1-t)**2 * t * cp1_x + 3*(1-t) * t**2 * cp2_x + t**3 * end_x
         y = (1-t)**3 * start_y + 3*(1-t)**2 * t * cp1_y + 3*(1-t) * t**2 * cp2_y + t**3 * end_y
         await page.mouse.move(x, y)
         await asyncio.sleep(random.uniform(0.01, 0.02))
-
 async def deep_human_scroll(page, kb, state):
-    """Smart Scroll: Bypasses non-content pages like Login to prevent layout breaks."""
-    if state in ["product_page", "login_page"]:
-        print(f"⚡ {state} detected. Bypassing pre-scan to keep form stable.")
+    if state in ["search_results", "login_page", "single_product", "dashboard"]: 
         return
-
     saved_depth = kb.get_coords(state, "scroll_depth")
     if saved_depth and "scrolls" in saved_depth:
-        print(f"🧠 Memory active: Recalled this page needs {saved_depth['scrolls']} scrolls.")
         for _ in range(saved_depth["scrolls"]):
-            await page.mouse.wheel(0, random.randint(800, 1200))
+            await page.evaluate("window.scrollBy(0, 1000);")
+            await page.keyboard.press("PageDown")
             await asyncio.sleep(random.uniform(0.3, 0.8))
         return
-
     last_height = await page.evaluate("document.body.scrollHeight")
     scrolls_taken = 0
     for _ in range(15):
         scrolls_taken += 1
-        await page.mouse.wheel(0, random.randint(800, 1200))
-        await page.evaluate("window.scrollBy(0, 1000)")
+        await page.evaluate("window.scrollBy(0, 1000);")
+        await page.keyboard.press("PageDown")
         await asyncio.sleep(2.5) 
         new_height = await page.evaluate("document.body.scrollHeight")
         if new_height == last_height: break
-        last_height = new_height
-        
+    last_height = new_height
     kb.learn(state, "scroll_depth", {"scrolls": scrolls_taken})
-
 async def human_click(page, x, y):
     hx, hy = x + random.randint(-3, 3), y + random.randint(-3, 3)
     await page.mouse.move(hx, hy)
     await page.mouse.down()
     await asyncio.sleep(random.uniform(0.07, 0.18))
     await page.mouse.up()
-
-# --- 🛡️ STEALTH & POPUPS ---
 async def apply_stealth(page):
     await page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined});")
-
 async def dismiss_all_popups(page):
-    selectors = ["button:has-text('Close')", "button:has-text('Dismiss')", ".close", "[aria-label*='close' i]"]
-    for selector in selectors:
-        loc = page.locator(selector).filter(visible=True).first
-        if await loc.count() > 0:
-            print(f"🧹 Clearing popup: {selector}")
-            box = await loc.bounding_box()
-            await bezier_move(page, box['x'] + box['width']/2, box['y'] + box['height']/2)
-            await human_click(page, box['x'] + box['width']/2, box['y'] + box['height']/2)
-            return True
-    return False
-
-# --- 🗺️ SITE DISCOVERY (SPIDER) ---
-async def build_sitemap(page, kb):
-    print("\n🗺️ --- STARTING 3-LEVEL SITE DISCOVERY ---")
-    
-    # We use the current origin as the base URL
-    base_url = await page.evaluate("window.location.origin")
-    sitemap_data = {"xml_links": [], "dom_links": []}
-
-    # ==========================================
-    # LEVEL 1: Standard XML Sitemap
-    # ==========================================
-    print("🔍 [LEVEL 1] Checking robots.txt & sitemap.xml...")
+    selectors = [
+        "button:has-text('Close')",
+        "button:has-text('Dismiss')",
+        "button:has-text('Just Browsing')",
+        "button:has-text('No Thanks')",
+        "button:has-text('Got it')",
+        ".close-button",
+        ".close",
+        "[aria-label*='close' i]",
+        "[title*='close' i]",
+        "mat-icon:has-text('close')"
+    ]
+    dismissed_any = False
     try:
-        # Check robots.txt
-        response = await page.request.get(f"{base_url}/robots.txt")
-        if response.ok:
-            print("✅ Found robots.txt. (Can be parsed for hidden paths)")
-        
-        # Check standard sitemap
-        response = await page.request.get(f"{base_url}/sitemap.xml")
-        if response.ok:
-            text = await response.text()
-            urls = re.findall(r'<loc>(.*?)</loc>', text)
-            sitemap_data["xml_links"] = list(set(urls))
-            print(f"✅ Extracted {len(sitemap_data['xml_links'])} hidden links from sitemap.xml!")
-        else:
-            print("⚠️ No public sitemap.xml found. Proceeding to DOM Spidering...")
-    except Exception as e:
-        print(f"⚠️ Level 1 Failed: {e}")
-
-    # ==========================================
-    # LEVEL 2: Recursive DOM Spidering
-    # ==========================================
-    print("🕸️ [LEVEL 2] Spidering current DOM for hidden href links...")
-    try:
-        links = await page.evaluate("""() => {
-            const anchors = document.querySelectorAll('a[href]');
-            return [...new Set(Array.from(anchors).map(a => a.href))];
-        }""")
-        
-        valid_links = []
-        for link in links:
-            if "gfs.com" in link and "javascript:" not in link and "mailto:" not in link:
-                clean_link = link.split('?')[0].split('#')[0] 
-                valid_links.append(clean_link)
-                
-        sitemap_data["dom_links"] = list(set(valid_links))
-        print(f"✅ Extracted {len(sitemap_data['dom_links'])} internal links from the page.")
-    except Exception as e:
-        print(f"⚠️ Level 2 Failed: {e}")
-
-    # Save findings to Knowledge Base
-    if "sitemap" not in kb.data:
-        kb.data["sitemap"] = {}
-    
-    kb.data["sitemap"].update(sitemap_data)
-    
-    with open(kb.file_path, 'w', encoding='utf-8') as f:
-        json.dump(kb.data, f, indent=4)
-        
-    print("💾 Sitemap saved to knowledge.json (Level 3 API intercepts running in background).")
-    print("🗺️ --- DISCOVERY COMPLETE ---\n")
-
-# --- 👁️ VISION & STATE AWARENESS ---
-def detect_visual_change(new_path, ref_path, threshold=5):
-    if not os.path.exists(ref_path): return False
-    try:
-        img1, img2 = Image.open(new_path).convert('RGB'), Image.open(ref_path).convert('RGB')
-        diff = ImageChops.difference(img1, img2)
-        if diff.getbbox():
-            diff_pixels = sum(abs(p) for p in diff.getdata())
-            total_pixels = img1.size[0] * img1.size[1] * 255
-            return (diff_pixels / total_pixels) * 100 > threshold
+        for selector in selectors:
+            locs = await page.locator(selector).all()
+            for loc in locs:
+                if await loc.is_visible():
+                    try:
+                        await loc.click(force=True, timeout=1000)
+                        dismissed_any = True
+                        await asyncio.sleep(0.5)
+                    except: pass
+        if dismissed_any:
+            await page.keyboard.press("Escape")
+            await asyncio.sleep(0.5)
     except Exception: pass
-    return False
-
-async def identify_state(page):
-    url = page.url.lower()
-    if any(x in url for x in ["sso.gfs.com", "okta"]): return "login_page"
-    if any(x in url for x in ["search", "product", "item", "order.gfs.com/shopping"]): 
-        return "product_page"
-    if "home" in url or "dashboard" in url: return "dashboard"
-    return "transitioning"
-
+    return dismissed_any
 async def teach_and_click(page, kb, state, element, action="click", value=None):
-    """Hybrid Click: Tries standard DOM, falls back to OCR, then falls back to Human."""
     coords = kb.get_coords(state, element)
-    
     if not coords:
         selectors = {
             "username_field": 'input[name*="user" i], input[type="email"], #okta-signin-username',
             "password_field": 'input[type="password"], #okta-signin-password',
             "search_bar": 'input[type="search"], input[placeholder*="search" i]'
         }
-        
-        # PLAN A: Standard HTML Selectors
         if element in selectors:
             try:
                 loc = page.locator(selectors[element]).first
                 await loc.wait_for(state="visible", timeout=2000)
                 box = await loc.bounding_box()
-                if box:
-                    coords = {"x": int(box["x"] + box["width"]/2), "y": int(box["y"] + box["height"]/2)}
-            except:
-                for frame in page.frames:
-                    try:
-                        loc = frame.locator(selectors[element]).first
-                        if await loc.is_visible():
-                            box = await loc.bounding_box()
-                            if box:
-                                coords = {"x": int(box["x"] + box["width"]/2), "y": int(box["y"] + box["height"]/2)}
-                                break
-                    except: pass
-                
-                # PLAN B: PaddleOCR Vision Fallback
-                if not coords:
-                    print(f"👁️ [VISION] HTML failed for {element}. Trying OCR...")
-                    await asyncio.sleep(2.5) 
-                    
-                    shot_path = f"vision/ocr_attempt_{element}.png"
-                    os.makedirs("vision", exist_ok=True)
-                    await page.screenshot(path=shot_path)
-                    
-                    ocr = get_ocr()
-                    result = ocr.ocr(shot_path)
-                    
-                    if result and result[0]:
-                        look_for = ["Email", "Username", "Sign In", "User"] if "username" in element else ["Password"]
-                        for line in result[0]:
-                            text = line[1][0]
-                            if any(word.lower() in text.lower() for word in look_for):
-                                box = line[0]
-                                offset = 40 if any(w in text.lower() for w in ["password", "email", "user"]) else 0
-                                coords = {"x": int((box[0][0] + box[2][0]) / 2), "y": int((box[0][1] + box[2][1]) / 2) + offset}
-                                print(f"🎯 [VISION] TARGET ACQUIRED: '{text}'! Mapping coordinates.")
-                                break
-
-                # 🚨 PLAN C: HUMAN IN THE LOOP (The Ultimate Override)
-                if not coords:
-                    print(f"\n🚨 [CRITICAL ALERT] Bot is blind! Cannot find {element}.")
-                    print(f"👉 PLEASE CLICK THE {element.upper()} DIRECTLY ON THE BROWSER WINDOW NOW...")
-                    
-                    coords = await page.evaluate("""() => {
-                        return new Promise(resolve => {
-                            const overlay = document.createElement('div');
-                            overlay.style.position = 'fixed';
-                            overlay.style.top = '0';
-                            overlay.style.left = '0';
-                            overlay.style.width = '100vw';
-                            overlay.style.height = '100vh';
-                            overlay.style.zIndex = '99999999';
-                            overlay.style.backgroundColor = 'rgba(255, 0, 0, 0.15)'; 
-                            overlay.style.cursor = 'crosshair';
-                            overlay.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                document.body.removeChild(overlay);
-                                resolve({x: e.clientX, y: e.clientY});
-                            });
-                            document.body.appendChild(overlay);
-                        });
-                    }""")
-                    
-                    print(f"🤝 [HUMAN OVERRIDE] Learned coordinates at X:{coords['x']}, Y:{coords['y']}!")
-
+                if box: coords = {"x": int(box["x"] + box["width"]/2), "y": int(box["y"] + box["height"]/2)}
+            except: pass
+        if not coords:
+            print(f"\n🚨 [CRITICAL ALERT] Bot needs coordinates for '{element}'.")
+            print(f"👉 PLEASE CLICK THE '{element.upper()}' DIRECTLY ON THE BROWSER WINDOW NOW...")
+            coords = await page.evaluate("""() => {
+                return new Promise(resolve => {
+                    const overlay = document.createElement('div');
+                    overlay.style.position = 'fixed';
+                    overlay.style.top = '0'; 
+                    overlay.style.left = '0';
+                    overlay.style.width = '100vw'; 
+                    overlay.style.height = '100vh';
+                    overlay.style.zIndex = '99999999';
+                    overlay.style.backgroundColor = 'rgba(255, 0, 0, 0.15)';
+                    overlay.style.cursor = 'crosshair';
+                    overlay.addEventListener('click', (e) => {
+                        e.preventDefault(); e.stopPropagation();
+                        document.body.removeChild(overlay);
+                        resolve({x: e.clientX, y: e.clientY});
+                    });
+                    document.body.appendChild(overlay);
+                });
+            }""")
     if coords:
         kb.learn(state, element, coords)
-        print(f"🖱️ Moving to {element}...")
         await bezier_move(page, coords['x'], coords['y'])
         await human_click(page, coords['x'], coords['y'])
         if action.startswith("type") and value:
             await asyncio.sleep(0.5)
+            await page.keyboard.press("Control+A")
+            await page.keyboard.press("Meta+A") # Backup for Mac
+            await page.keyboard.press("Backspace")
             await page.keyboard.type(value, delay=random.randint(50, 90))
             if action == "type": await page.keyboard.press("Enter")
         return True
-        
-    print(f"❌ [CRITICAL] Could not find {element} via HTML, Vision, or Human.")
     return False
 
 # FILE: brain.py
 import json
 import os
-
 class KnowledgeBase:
     def __init__(self, file_path="knowledge.json"):
         self.file_path = file_path
         self.data = self._load()
-
+        if "queue" not in self.data: self.data["queue"] = []
+        if "visited" not in self.data: self.data["visited"] = []
+        if "catalog_map" not in self.data: self.data["catalog_map"] = {}
     def _load(self):
         if os.path.exists(self.file_path):
-            with open(self.file_path, 'r') as f:
-                return json.load(f)
+            try:
+                with open(self.file_path, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+            except: pass
         return {}
-
+    def save(self):
+        with open(self.file_path, 'w', encoding='utf-8') as f:
+            json.dump(self.data, f, indent=4)
     def learn(self, state, element, coords):
         if state not in self.data: self.data[state] = {}
         self.data[state][element] = coords
-        with open(self.file_path, 'w') as f:
-            json.dump(self.data, f, indent=4)
-
+        self.save()
     def get_coords(self, state, element):
         return self.data.get(state, {}).get(element)
+    def add_urls_to_queue(self, urls):
+        added = 0
+        for u in urls:
+            clean_url = u.split('?')[0].split('#')[0] # Remove tracking params
+            if clean_url not in self.data["visited"] and clean_url not in self.data["queue"]:
+                self.data["queue"].append(clean_url)
+                added += 1
+        if added > 0:
+            self.save()
+        return added
+    def get_next_url(self):
+        while self.data["queue"]:
+            url = self.data["queue"].pop(0)
+            if url not in self.data["visited"]:
+                self.data["visited"].append(url)
+                self.save()
+                return url
+        return None
+    def log_category(self, url, category_name):
+        self.data["catalog_map"][url] = category_name
+        self.save()
 
 # FILE: harvester.py
 import asyncio
 import os
 import re
 import json
+import datetime
+import sqlite3
 from logger import log_event
 from scroll import force_scroll_down
-from actions import get_ocr
-
+from actions import teach_and_click, gemini_double_check_totals, get_supervisor_status, dismiss_all_popups
+DB_FILE = "gfs_products.db"
 CSV_FILE = "gfs_results.csv"
-
-# 🌍 GLOBAL MEMORY FOR THE WIRETAP
 product_db = {}
-written_codes = set()
 target_total = 9999 
-
-# 🧠 BUFFERS: Aggregates JSON payloads across multiple scrolls
-RAW_INFO_BUFFER = None
-RAW_PRICE_BUFFER = None
-
-def initialize_csv():
-    """Clears the CSV and writes the headers."""
-    with open(CSV_FILE, mode="w", encoding="utf-8") as f:
-        f.write("Name;Code;Price;First_Measurement;Second_Measurement\n")
-    print("🧹 CSV initialized for new harvest.")
-
-def write_csv_line(code, data):
-    """Appends a completed product to the CSV."""
-    if code in written_codes: return
-    with open(CSV_FILE, mode="a", encoding="utf-8") as f:
-        name = str(data.get('name', 'Unknown')).replace(';', ',').replace('\n', ' ')
-        price = str(data.get('price', 'Price Not Found')).replace(';', ',')
-        m1 = str(data.get('m1', 'Not Found')).replace(';', ',')
-        m2 = str(data.get('m2', 'Not Found')).replace(';', ',')
-        f.write(f"{name};{code};{price};{m1};{m2}\n")
-    written_codes.add(code)
-
-async def scrape_current_html(page):
-    """
-    Direct DOM Scrape: Extracts visible products from HTML.
-    FIXED: Escaped forward slashes in Regex to prevent JavaScript SyntaxError.
-    """
-    products = await page.evaluate("""() => {
-        const items = [];
-        const cards = document.querySelectorAll('.product-card, .list-item, .product-row, tr, [role="row"], article, .product-info, .item-row');
-
-        cards.forEach(card => {
-            const cardText = card.innerText;
-            if (!cardText) return;
-
-            // 1. Find Item Number
-            const codeMatch = cardText.match(/#\\s*(\\d{6,8})/);
-            let cleanCode = '';
-
-            if (codeMatch) {
-                cleanCode = codeMatch[1];
-            } else {
-                const codeEl = card.querySelector('.item-number, .product-code, [class*="material-number"], [class*="sku"]');
-                if (codeEl) cleanCode = codeEl.innerText.replace(/[^0-9]/g, '');
-            }
-
-            if (cleanCode.length > 3) {
-                const upperText = cardText.toUpperCase();
-                const isOOS = upperText.includes('OUT OF STOCK');
-                const isContact = upperText.includes('CONTACT YOUR SALES REPRESENTATIVE');
-
-                // 2. Find Price & Handle Dual Pricing (Case | Unit)
-                let finalPrice = 'Price Not Found';
-                if (isOOS) {
-                    finalPrice = 'OUT OF STOCK';
-                } else if (isContact) {
-                    finalPrice = 'Contact Sales Rep';
-                } else {
-                    const priceEl = card.querySelector('.price, .amount, [class*="unit-price"], .price-container, [class*="pricing"], [class*="price-val"], td:nth-child(4)');
-                    if (priceEl && priceEl.innerText.includes('$')) {
-                        finalPrice = priceEl.innerText.trim().replace(/\\n+/g, ' | ').replace(/\\s{2,}/g, ' ');
-                    } else {
-                        // FIXED: Escaped forward slashes (\\/) for JS context
-                        const priceMatches = cardText.match(/\\$\\d+\\.\\d{2}(?:\\s*(?:Case|Each|\\/CS|\\/EA|\\/LB|\\/KG))?/gi);
-                        if (priceMatches) finalPrice = priceMatches.join(' | ');
-                    }
-                }
-
-                let cleanName = 'Unknown';
-                const nameEl = card.querySelector('.product-name, h3, [class*="title"], [class*="desc"]');
-                if (nameEl) cleanName = nameEl.innerText.trim();
-
-                items.push({
-                    name: cleanName,
-                    code: cleanCode,
-                    price: finalPrice
-                });
-            }
-        });
-        return items;
-    }""")
-
-    for p in products:
-        if p['code'] not in product_db:
-            product_db[p['code']] = {"name": p['name'], "price": p['price'], "m1": "HTML_SCAN", "m2": "HTML_SCAN"}
+RAW_INFO_BUFFER = []
+RAW_PRICE_BUFFER = []
+NO_IMAGE_SVG = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iMTYwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZWVlIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIE5vdCBGb3VuZDwvdGV4dD48L3N2Zz4="
+def init_db():
+    conn = sqlite3.connect(DB_FILE)
+    c = conn.cursor()
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS products (
+            code TEXT PRIMARY KEY,
+            name TEXT,
+            details TEXT,
+            price TEXT,
+            stock TEXT,
+            last_ordered TEXT,
+            image_file TEXT,
+            img_url TEXT,
+            changes TEXT,
+            last_seen TEXT
+        )
+    ''')
+    conn.commit()
+    conn.close()
+def process_changes():
+    init_db()
+    conn = sqlite3.connect(DB_FILE)
+    c = conn.cursor()
+    current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+    for code, details in product_db.items():
+        c.execute("SELECT price, details, img_url, changes FROM products WHERE code = ?", (code,))
+        row = c.fetchone()
+        change_msg = ""
+        if row:
+            old_price, old_details, old_img, old_changes = row
+            if old_price != details["price"] and details["price"] != "Price Not Found":
+                change_msg = f"New Price: {details['price']} ({current_time})"
+            elif old_details != details["details"] and details["details"] != "No Details":
+                change_msg = f"Desc Changed ({current_time})"
+            elif old_img != details["img_url"] and details["img_url"]:
+                change_msg = f"New Image ({current_time})"
+            else:
+                change_msg = old_changes or ""
+            details["changes"] = change_msg
+            c.execute("""
+                UPDATE products 
+                SET name=?, details=?, price=?, stock=?, last_ordered=?, image_file=?, img_url=?, changes=?, last_seen=?
+                WHERE code=?
+            """, (details["name"], details["details"], details["price"], details["stock"], 
+                  details["last_ordered"], details["image_file"], details["img_url"], change_msg, current_time, code))
         else:
-            if p['price'] != "Price Not Found":
-                product_db[p['code']]["price"] = p['price']
-        write_csv_line(p['code'], product_db[p['code']])
-
-async def get_total_results_via_ocr(page):
-    """Uses Vision to read the total result count from the screen."""
-    shot_path = "vision/harvest_start_count.png"
-    os.makedirs("vision", exist_ok=True)
-    try: await page.wait_for_selector(".result-text-title", timeout=5000)
+            change_msg = f"New Product ({current_time})"
+            details["changes"] = change_msg
+            c.execute("""
+                INSERT INTO products (code, name, details, price, stock, last_ordered, image_file, img_url, changes, last_seen)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (code, details["name"], details["details"], details["price"], details["stock"], 
+                  details["last_ordered"], details["image_file"], details["img_url"], change_msg, current_time))
+    conn.commit()
+    conn.close()
+def update_status(state, message, current=0, total=0):
+    try:
+        with open("status.json", "w", encoding="utf-8") as f:
+            json.dump({"state": state, "message": message, "current": current, "total": total}, f)
     except: pass
-    await page.screenshot(path=shot_path)
-    ocr = get_ocr()
-    result = ocr.ocr(shot_path)
-    if result and result[0]:
-        for line in result[0]:
-            text = line[1][0]
-            match = re.search(r'(\d+)\s+results', text.lower())
-            if match:
-                total = int(match.group(1))
-                return total
-    return 9999
-
+def initialize_csv():
+    with open(CSV_FILE, mode="w", encoding="utf-8") as f:
+        f.write("Name;Code;Details;Pricing;Stock_Status;Last_Ordered;Image_File;Changes\n")
+def sanitize_text(text):
+    if not text: return ""
+    return str(text).replace(';', ',').replace('\n', ' ').replace('\r', '').strip()
+def write_csv_line(code, data):
+    with open(CSV_FILE, mode="a", encoding="utf-8") as f:
+        name = sanitize_text(data.get('name', 'Unknown'))
+        details = sanitize_text(data.get('details', 'No Details'))
+        price = sanitize_text(data.get('price', 'Price Not Found'))
+        stock = sanitize_text(data.get('stock', 'In Stock'))
+        last_ord = sanitize_text(data.get('last_ordered', 'N/A'))
+        img_file = sanitize_text(data.get('image_file', 'No Image'))
+        changes = sanitize_text(data.get('changes', ''))
+        f.write(f"{name};{code};{details};{price};{stock};{last_ord};{img_file};{changes}\n")
+def generate_html_dashboard():
+    print("🌐 Generating HTML Visual Dashboard from Master Database...")
+    sup_status = get_supervisor_status()
+    cards_html = ""
+    table_data = []
+    try:
+        if os.path.exists(DB_FILE):
+            conn = sqlite3.connect(DB_FILE)
+            c = conn.cursor()
+            c.execute("SELECT name, code, details, price, stock, last_ordered, image_file, changes, last_seen FROM products ORDER BY last_seen DESC")
+            rows = c.fetchall()
+            for row in rows:
+                name, code, details, price, stock, last_ord, img, changes, last_seen = row
+                stock_class = "in-stock"
+                if "OUT OF STOCK" in stock.upper(): stock_class = "out-of-stock"
+                elif "CONTACT" in stock.upper(): stock_class = "contact-sales"
+                img_path = img if img not in ["No Image", "Failed to Download", ""] else NO_IMAGE_SVG
+                badge_html = f'<div class="badge">🆕 {changes}</div>' if changes else ""
+                cards_html += f"""
+                <div class="card">
+                    {badge_html}
+                    <img src="{img_path}" alt="Product Image">
+                    <h3>{name}</h3>
+                    <div class="details">#{code} | {details}</div>
+                    <div class="price">{price}</div>
+                    <div class="stock {stock_class}">{stock}</div>
+                    <div class="ordered">Last Ordered: {last_ord} <br><small>Last Seen: {last_seen}</small></div>
+                </div>
+                """
+                table_data.append([
+                    f"<img src='{img_path}' style='width: 45px; height: 45px; object-fit: contain; border-radius: 4px;'>",
+                    f"<b>#{code}</b>",
+                    name,
+                    details,
+                    f"<span style='color: #27ae60; font-weight: bold;'>{price}</span>",
+                    f"<span class='stock {stock_class}'>{stock}</span>",
+                    last_ord,
+                    changes,
+                    last_seen
+                ])
+            conn.close()
+    except Exception as e:
+        print(f"⚠️ Failed to read DB for dashboard: {e}")
+    html_content = f"""<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GFS Harvest Dashboard</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+        <style>
+            body {{ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f7f6; padding: 140px 20px 20px; color: #333; margin: 0; }}
+            .control-panel {{ position: fixed; top: 0; left: 0; right: 0; background: white; padding: 15px 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 1000; display: flex; flex-direction: column; gap: 15px; }}
+            .panel-top {{ display: flex; align-items: center; gap: 20px; justify-content: space-between; width: 100%; }}
+            .panel-left {{ display: flex; align-items: center; gap: 15px; flex-grow: 1; }}
+            .btn-search, .btn-explore, .btn-view {{ color: white; border: none; padding: 10px 20px; font-size: 14px; font-weight: bold; border-radius: 6px; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.15); }}
+            .btn-search {{ background: #27ae60; }} .btn-search:hover {{ background: #219150; transform: translateY(-1px); }}
+            .btn-explore {{ background: #8e44ad; }} .btn-explore:hover {{ background: #732d91; transform: translateY(-1px); }}
+            .btn-view {{ background: #ecf0f1; color: #2c3e50; box-shadow: none; border: 1px solid #bdc3c7; }} 
+            .btn-view:hover {{ background: #bdc3c7; }}
+            .btn-search:disabled, .btn-explore:disabled {{ background: #95a5a6; cursor: not-allowed; box-shadow: none; transform: none; }}
+            .view-toggle-container {{ display: flex; gap: 10px; border-left: 2px solid #eee; padding-left: 20px; margin-left: 10px; }}
+            .active-view {{ background: #34495e !important; color: white !important; border-color: #34495e !important; box-shadow: 0 4px 6px rgba(52, 73, 94, 0.3) !important; }}
+            .status-container {{ flex-grow: 1; max-width: 500px; margin-left: 20px; }}
+            .progress-bg {{ background: #ecf0f1; height: 12px; border-radius: 6px; overflow: hidden; width: 100%; box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); }}
+            .supervisor-badge {{ background: #2c3e50; color: white; padding: 10px 20px; border-radius: 8px; font-weight: bold; font-size: 0.9em; white-space: nowrap; }}
+            h1 {{ text-align: center; color: #2c3e50; margin-top: 0; }}
+            /* Grid View */
+            .grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }}
+            .card {{ background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column; transition: transform 0.2s; position: relative; }}
+            .card:hover {{ transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.15); }}
+            .card img {{ max-width: 100%; height: 160px; object-fit: contain; align-self: center; margin-bottom: 15px; border-radius: 4px; }}
+            .card h3 {{ margin: 0 0 10px 0; font-size: 1.1em; color: #2c3e50; }}
+            .details {{ color: #7f8c8d; font-size: 0.9em; margin-bottom: 15px; flex-grow: 1; }}
+            /* Shared Item Attributes */
+            .price {{ color: #27ae60; font-weight: bold; font-size: 1.2em; margin-bottom: 5px; }}
+            .stock {{ font-weight: bold; font-size: 0.9em; margin-bottom: 5px; }}
+            .in-stock {{ color: #27ae60; }} .out-of-stock {{ color: #e74c3c; }} .contact-sales {{ color: #f39c12; }}
+            .ordered {{ color: #34495e; font-size: 0.85em; margin-top: 10px; padding-top: 10px; border-top: 1px solid #eee; }}
+            .badge {{ background: #e74c3c; color: white; padding: 4px 10px; border-radius: 12px; font-size: 0.8em; font-weight: bold; margin-bottom: 12px; display: inline-block; align-self: flex-start; }}
+            /* Table View */
+            table.dataTable thead th {{ background-color: #34495e; color: white; padding: 12px 10px; border-bottom: none; }}
+            table.dataTable tbody tr:hover {{ background-color: #f8f9fa; }}
+            table.dataTable tbody td {{ vertical-align: middle; }}
+            .dataTables_wrapper .dataTables_filter input {{ border: 1px solid #bdc3c7; border-radius: 4px; padding: 6px 10px; margin-left: 10px; }}
+        </style>
+    </head>
+    <body>
+        <div class="control-panel">
+            <div class="panel-top">
+                <div class="panel-left">
+                    <button id="searchBtn" class="btn-search" onclick="startBot('search')">🔍 Run Search Queue</button>
+                    <button id="exploreBtn" class="btn-explore" onclick="startBot('explore')">🧭 Explore Catalog</button>
+                    <div class="view-toggle-container">
+                        <button id="btn-grid" class="btn-view active-view" onclick="toggleView('grid')">📱 Grid View</button>
+                        <button id="btn-table" class="btn-view" onclick="toggleView('table')">🗄️ ERP Database View</button>
+                    </div>
+                    <div class="status-container">
+                        <p id="status-text">Status: Loading...</p>
+                        <div class="progress-bg"><div id="progress-bar"></div></div>
+                    </div>
+                </div>
+                <div class="supervisor-badge">🧠 Supervisor: {sup_status}</div>
+            </div>
+        </div>
+        <h1>📦 Master Local Database Dashboard</h1>
+        <div id="grid-container" class="grid">
+            {cards_html}
+        </div>
+        <div id="table-container" style="display: none; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: 20px;">
+            <table id="erpTable" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Details</th>
+                        <th>Price</th>
+                        <th>Stock Status</th>
+                        <th>Last Ordered</th>
+                        <th>Recent Changes</th>
+                        <th>Last Seen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <script>
+            const erpData = {json.dumps(table_data)};
+            $(document).ready(function() {{
+                $('#erpTable').DataTable({{
+                    data: erpData,
+                    pageLength: 25,
+                    lengthMenu: [10, 25, 50, 100, 500],
+                    order: [[8, 'desc']], 
+                    columnDefs: [
+                        {{ orderable: false, targets: 0 }},
+                        {{ className: "dt-head-left", targets: "_all" }}
+                    ],
+                    language: {{
+                        search: "Global Filter:",
+                        lengthMenu: "Show _MENU_ products per page"
+                    }}
+                }});
+            }});
+            function toggleView(viewType) {{
+                if (viewType === 'grid') {{
+                    document.getElementById('grid-container').style.display = 'grid';
+                    document.getElementById('table-container').style.display = 'none';
+                    document.getElementById('btn-grid').classList.add('active-view');
+                    document.getElementById('btn-table').classList.remove('active-view');
+                }} else {{
+                    document.getElementById('grid-container').style.display = 'none';
+                    document.getElementById('table-container').style.display = 'block';
+                    document.getElementById('btn-table').classList.add('active-view');
+                    document.getElementById('btn-grid').classList.remove('active-view');
+                    $('#erpTable').DataTable().columns.adjust().draw();
+                }}
+            }}
+            function startBot(mode) {{
+                document.getElementById('searchBtn').disabled = true;
+                document.getElementById('exploreBtn').disabled = true;
+                fetch('/api/start?mode=' + mode).then(() => {{
+                    document.getElementById('status-text').innerText = "Status: Initializing " + mode.toUpperCase() + " mode...";
+                }});
+            }}
+            setInterval(() => {{
+                fetch('status.json?t=' + Date.now())
+                    .then(r => r.json())
+                    .then(data => {{
+                        document.getElementById('status-text').innerText = "Status: " + data.message;
+                        let pct = data.total > 0 ? (data.current / data.total) * 100 : 0;
+                        if(data.state === "complete") pct = 100;
+                        document.getElementById('progress-bar').style.width = pct + '%';
+                        if(data.state === 'running' || data.state === 'processing') {{
+                            document.getElementById('searchBtn').disabled = true;
+                            document.getElementById('exploreBtn').disabled = true;
+                        }} else {{
+                            document.getElementById('searchBtn').disabled = false;
+                            document.getElementById('exploreBtn').disabled = false;
+                        }}
+                        if(data.state === 'complete' && !window.hasRefreshed) {{
+                            window.hasRefreshed = true;
+                            setTimeout(() => window.location.reload(), 2500);
+                        }}
+                        if(data.state === 'idle') window.hasRefreshed = false;
+                    }}).catch(e => {{}});
+            }}, 1500);
+        </script>
+    </body></html>
+    """
+    try:
+        with open("dashboard.html", "w", encoding="utf-8") as f:
+            f.write(html_content)
+    except Exception as e:
+        print(f"⚠️ Failed to generate HTML dashboard: {e}")
+async def download_pending_images(page):
+    os.makedirs("dashboard_images", exist_ok=True)
+    headers = {"User-Agent": "Mozilla/5.0", "Accept": "image/avif,image/webp,image/*,*/*;q=0.8"}
+    pending = [k for k, v in product_db.items() if v.get("img_url") and v.get("image_file") in ["No Image", "Failed to Download"]]
+    if not pending: return
+    completed = 0
+    sem = asyncio.Semaphore(15) 
+    async def fetch_img(code, details):
+        nonlocal completed
+        img_file = f"dashboard_images/{code}.jpg"
+        if not os.path.exists(img_file):
+            try:
+                async with sem:
+                    url = details["img_url"]
+                    if url.startswith("//"): url = "https:" + url
+                    response = await page.request.get(url, headers=headers, timeout=10000)
+                    if response.ok:
+                        with open(img_file, 'wb') as f: f.write(await response.body())
+                        product_db[code]["image_file"] = img_file
+            except: product_db[code]["image_file"] = "Failed to Download"
+        else: product_db[code]["image_file"] = img_file
+        completed += 1
+        if completed % 10 == 0: update_status("running", f"Downloading Images... {completed}/{len(pending)}", completed, len(pending))
+    print(f"📸 Downloading {len(pending)} queued images in parallel...")
+    await asyncio.gather(*[fetch_img(code, product_db[code]) for code in pending])
+async def get_total_results_via_dom(page):
+    try:
+        text = await page.evaluate("document.body.innerText")
+        match = re.search(r'(\d+)\s+results', text.lower())
+        return int(match.group(1)) if match else 9999
+    except: return 9999
 async def setup_wiretap(page):
-    """Intercepts and aggregates all background API traffic."""
+    global RAW_INFO_BUFFER, RAW_PRICE_BUFFER
+    RAW_INFO_BUFFER.clear()
+    RAW_PRICE_BUFFER.clear()
     async def handle_response(response):
         global target_total, RAW_INFO_BUFFER, RAW_PRICE_BUFFER
+        url = response.url.lower()
         if response.request.resource_type in ["fetch", "xhr"]:
-            url = response.url.lower()
             try:
-                if any(x in url for x in ["categories", "nav", "menu", "taxonomy"]):
-                    data = await response.json()
-                    with open("navigation_dump.json", "w", encoding="utf-8") as f: json.dump(data, f, indent=4)
-                elif "materials/search" in url:
-                    data = await response.json()
-                    if "totalResults" in data: target_total = int(data["totalResults"])
-                elif "materials/info" in url or "material-info" in url:
-                    data = await response.json()
-                    if RAW_INFO_BUFFER is None: RAW_INFO_BUFFER = data
-                    elif "materialInfos" in data: RAW_INFO_BUFFER.setdefault("materialInfos", []).extend(data["materialInfos"])
-                    for item in data.get("materialInfos", []):
-                        code = item.get("materialNumber")
-                        if not code: continue
-                        desc = item.get("description", {})
-                        name = desc.get("en") or desc.get("fr") or "Unknown"
-                        weight = item.get("baseUomWeight", {})
-                        m1 = f"{weight.get('net', '')} {weight.get('uom', '')}".strip() or "Not Found"
-                        if code not in product_db:
-                            product_db[code] = {"name": name, "price": "Price Not Found", "m1": m1, "m2": "Not Found"}
-                        else: product_db[code].update({"name": name, "m1": m1})
-                elif "prices" in url:
-                    data = await response.json()
-                    if RAW_PRICE_BUFFER is None: RAW_PRICE_BUFFER = data
-                    elif "materialPrices" in data: RAW_PRICE_BUFFER.setdefault("materialPrices", []).extend(data["materialPrices"])
-                    for item in data.get("materialPrices", []):
-                        code = item.get("materialNumber")
-                        if not code: continue
-                        units = item.get("unitPrices") or []
-                        price_strings = [f"${u['price']}/{u.get('uom', 'EA')}" for u in units if u.get("price") is not None]
-                        price_val = " | ".join(price_strings) if price_strings else "Price Not Found"
-                        if code not in product_db:
-                            product_db[code] = {"name": "", "price": price_val, "m1": "Not Found", "m2": "Not Found"}
-                        elif product_db[code]["price"] == "Price Not Found":
-                            product_db[code]["price"] = price_val
+                data = await response.json()
+                if "totalResults" in data and ("materials/search" in url or "search" in url): 
+                    new_total = int(data["totalResults"])
+                    if target_total == 9999 or new_total > target_total:
+                        target_total = new_total
+                if "materialInfos" in data:
+                    RAW_INFO_BUFFER.append(data)
+                if "materialPrices" in data:
+                    RAW_PRICE_BUFFER.append(data)
             except: pass
     page.on("response", handle_response)
-
-async def run_harvest(page, mode="scan"):
-    global target_total, RAW_INFO_BUFFER, RAW_PRICE_BUFFER
+def merge_buffers_to_db():
+    global product_db, RAW_INFO_BUFFER, RAW_PRICE_BUFFER
+    for payload in RAW_INFO_BUFFER:
+        for item in payload.get("materialInfos", []):
+            code = str(item.get("materialNumber", ""))
+            if not code: continue
+            if code not in product_db:
+                product_db[code] = { "name": "Unknown", "details": "No Details", "price": "Price Not Found", "stock": "In Stock", "last_ordered": "N/A", "image_file": "No Image", "img_url": "", "changes": "" }
+            desc = item.get("description") or {}
+            name = desc.get("en") or desc.get("fr") or product_db[code].get("name")
+            brand = (item.get("brand") or {}).get("en", "Unknown Brand")
+            weight = item.get("baseUomWeight") or {}
+            net_weight = weight.get("net", "")
+            try:
+                nw_float = float(net_weight)
+                net_weight = f"{int(nw_float)}" if nw_float.is_integer() else f"{nw_float}"
+            except Exception: pass
+            uom = weight.get("uom", "").upper()
+            if uom in ["KG", "KGM"]: uom = "Kilograms"
+            elif uom in ["LB", "LBR"]: uom = "Pounds"
+            elif uom in ["G", "GRM"]: uom = "Grams"
+            elif uom in ["ML", "MLT"]: uom = "Milliliters"
+            elif uom in ["L", "LTR"]: uom = "Liters"
+            else: uom = uom.capitalize()
+            base_uom = item.get("baseUom", "Case").capitalize()
+            if base_uom in ["Cs", "Bg", "Ea"]: base_uom = {"Cs":"Case", "Bg":"Bag", "Ea":"Each"}.get(base_uom, base_uom)
+            details_str = f"{brand} | {net_weight} {uom}/{base_uom}"
+            img_url = ""
+            if "image" in item and item["image"]:
+                for lang in ["en", "fr", "es"]:
+                    img_data = item["image"].get(lang) or {}
+                    if img_data.get("url"):
+                        img_url = img_data["url"]
+                        break
+            product_db[code].update({"name": name, "details": details_str})
+            if img_url and not product_db[code].get("img_url"):
+                product_db[code]["img_url"] = img_url
+    for payload in RAW_PRICE_BUFFER:
+        for item in payload.get("materialPrices", []):
+            code = str(item.get("materialNumber", ""))
+            if not code: continue
+            if code not in product_db:
+                product_db[code] = { "name": "Unknown", "details": "No Details", "price": "Price Not Found", "stock": "In Stock", "last_ordered": "N/A", "image_file": "No Image", "img_url": "", "changes": "" }
+            units = item.get("unitPrices") or []
+            price_strings = []
+            for u in units:
+                if u.get("price") is not None:
+                    uom = u.get("salesUom") or u.get("uom") or "EA"
+                    if uom in ["CS", "BG", "EA"]: uom = {"CS":"Case", "BG":"Bag", "EA":"Each"}.get(uom, uom)
+                    else: uom = uom.capitalize()
+                    price_strings.append(f"{uom}: ${float(u['price']):.2f}")
+            if price_strings:
+                product_db[code]["price"] = " | ".join(price_strings)
+async def dump_json_buffers(suffix=""):
+    global RAW_INFO_BUFFER, RAW_PRICE_BUFFER
+    try:
+        if RAW_INFO_BUFFER:
+            filename = f"raw_info_dump_{suffix}.json" if suffix else "raw_info_dump.json"
+            with open(filename, "w", encoding="utf-8") as f:
+                json.dump(RAW_INFO_BUFFER, f, separators=(',', ':'))
+        if RAW_PRICE_BUFFER:
+            filename = f"raw_price_dump_{suffix}.json" if suffix else "raw_price_dump.json"
+            with open(filename, "w", encoding="utf-8") as f:
+                json.dump(RAW_PRICE_BUFFER, f, separators=(',', ':'))
+    except Exception as e:
+        print(f"⚠️ FATAL ERROR dumping JSON buffers: {e}")
+async def run_harvest(page, kb=None, state="search_results"):
+    global target_total, product_db, RAW_INFO_BUFFER, RAW_PRICE_BUFFER
+    global_product_db = {}
+    product_db.clear()
+    RAW_INFO_BUFFER.clear()
+    RAW_PRICE_BUFFER.clear()
+    target_total = 9999 
     initialize_csv()
-    print(f"📡 DEPLOYING HARVESTER (Mode: {mode.upper()})...")
-
-    if mode == "quick_dump":
-        print("🚨 INITIATING QUICK JSON DUMP...")
-        if RAW_INFO_BUFFER:
-            with open("raw_info_dump.json", "w", encoding="utf-8") as f: json.dump(RAW_INFO_BUFFER, f, indent=4)
-        if RAW_PRICE_BUFFER:
-            with open("raw_price_dump.json", "w", encoding="utf-8") as f: json.dump(RAW_PRICE_BUFFER, f, indent=4)
-        await scrape_current_html(page) 
-        for code, details in list(product_db.items()):
-            if details["name"]: write_csv_line(code, details)
-        return 
-
-    if target_total == 9999: target_total = await get_total_results_via_ocr(page)
-
-    await scrape_current_html(page)
-    max_empty_scrolls, scroll_attempts, last_screen_text, stagnant_strikes = 20, 0, "", 0
-    
-    while len(written_codes) < target_total and scroll_attempts < max_empty_scrolls:
-        last_count = len(written_codes)
-        await force_scroll_down(page, scrolls=1)
-        await asyncio.sleep(4.0) 
-        await scrape_current_html(page)
-        
-        for code, details in list(product_db.items()):
-            if details["name"] and details["price"] != "Price Not Found":
-                write_csv_line(code, details)
-
-        if len(written_codes) > last_count:
-            scroll_attempts, last_screen_text, stagnant_strikes = 0, "", 0
-            print(f"📦 Progress: {len(written_codes)} / {target_total} products saved.")
-        else:
-            scroll_attempts += 1
-            if scroll_attempts % 2 == 0: 
-                shot_path = "vision/bottom_check.png"
-                await page.screenshot(path=shot_path)
-                ocr = get_ocr()
-                result = ocr.ocr(shot_path)
-                current_screen_text = " ".join([line[1][0].strip() for line in result[0]]) if result and result[0] else ""
-                if current_screen_text and current_screen_text == last_screen_text:
-                    stagnant_strikes += 1
-                    if stagnant_strikes >= 2: break 
-                else:
-                    stagnant_strikes = 0
-                    last_screen_text = current_screen_text
-
-    for code, details in list(product_db.items()):
-        if details["name"]: write_csv_line(code, details)
-
-    if mode == "agg_dump":
-        print("🚨 SAVING AGGREGATED JSON DUMPS...")
-        if RAW_INFO_BUFFER:
-            with open("raw_info_dump.json", "w", encoding="utf-8") as f: json.dump(RAW_INFO_BUFFER, f, indent=4)
-        if RAW_PRICE_BUFFER:
-            with open("raw_price_dump.json", "w", encoding="utf-8") as f: json.dump(RAW_PRICE_BUFFER, f, indent=4)
-
-    print(f"🎉 Harvest complete. Total Saved: {len(written_codes)}")
+    update_status("running", "Initializing Harvester...", 5, 100)
+    for _ in range(15):
+        if target_total != 9999: break
+        await asyncio.sleep(0.5)
+    all_res_target = 9999
+    order_guide_target = 0
+    print("🔍 Scanning DOM for product totals...")
+    try:
+        text = await page.evaluate("document.body.innerText")
+        text_lower = text.lower()
+        all_match = re.search(r'(\d+)\s+results', text_lower)
+        og_match = re.search(r'order guide only\s*\((\d+)\)', text_lower)
+        if all_match: 
+            all_res_target = int(all_match.group(1))
+            print(f"📊 DOM found All Results: {all_res_target}")
+        if og_match: 
+            order_guide_target = int(og_match.group(1))
+            print(f"📊 DOM found Order Guide: {order_guide_target}")
+    except Exception as e:
+        print(f"⚠️ DOM parsing error: {e}")
+    if target_total != 9999:
+        print(f"📡 Wiretap intercepted target: {target_total}")
+        all_res_target = target_total
+    if all_res_target == 9999 or order_guide_target == 0:
+        print("🤖 Missing some totals. Tagging in Gemini Supervisor...")
+        totals = await gemini_double_check_totals(page)
+        if totals:
+            if all_res_target == 9999: 
+                all_res_target = int(totals.get("all_results_total", 9999))
+            if order_guide_target == 0: 
+                order_guide_target = int(totals.get("order_guide_total", 0))
+    target_total = all_res_target
+    print(f"🎯 Target Phase 1 Confirmed: {target_total} | Target Phase 2 Confirmed: {order_guide_target}")
+    async def perform_scroll_loop(phase_name="Phase 1"):
+        stagnant_strikes = 0
+        max_strikes = 8 
+        seen_in_dom = set() 
+        while len(seen_in_dom) < target_total and stagnant_strikes < max_strikes:
+            last_count = len(seen_in_dom)
+            remaining_items = max(0, target_total - last_count)
+            update_status("running", f"[{phase_name}] Scrolling... {last_count}/{target_total} (Need {remaining_items} more)", last_count, target_total)
+            await dismiss_all_popups(page)
+            await force_scroll_down(page, scrolls=1)
+            merge_buffers_to_db()
+            try:
+                dom_data = await page.evaluate("""() => {
+                    let items = {};
+                    let regex = /#(\\d{5,9})/;
+                    let container = document.querySelector('cdk-virtual-scroll-viewport, .scroll-container, main, .product-grid, .item-list') || document.body;
+                    let elements = container.querySelectorAll('*');
+                    for (let el of elements) {
+                        if (el.children.length > 0) continue;
+                        let tagName = el.tagName.toLowerCase();
+                        if (tagName === 'script' || tagName === 'style' || tagName === 'noscript') continue;
+                        if (el.closest('header') || el.closest('naoo-header') || el.closest('.header') || el.closest('nav') || el.closest('.docket-header')) continue;
+                        let text = el.innerText || el.textContent || '';
+                        if (text.includes('{') || text.includes('}')) continue;
+                        let match = text.match(regex);
+                        if (match) {
+                            let code = match[1];
+                            let parent = el.parentElement;
+                            let maxDepth = 12; 
+                            let foundCard = false;
+                            let cardNode = null;
+                            while (parent && maxDepth > 0) {
+                                let pText = parent.innerText || '';
+                                if (pText.includes(code) && (pText.includes('$') || pText.includes('Case') || pText.includes('Pack') || pText.includes('Compare') || pText.includes('Price') || pText.includes('Ordered'))) {
+                                    cardNode = parent;
+                                    foundCard = true;
+                                    if (parent.querySelector('img')) {
+                                        break;
+                                    }
+                                }
+                                parent = parent.parentElement;
+                                maxDepth--;
+                            }
+                            let lines = [];
+                            let imgUrl = "";
+                            if (foundCard && cardNode) {
+                                lines = (cardNode.innerText || '').split('\\n').map(s => s.trim()).filter(Boolean);
+                                let imgs = cardNode.querySelectorAll('img');
+                                for (let img of imgs) {
+                                    let src = img.src || img.getAttribute('data-src') || '';
+                                    if (src && !src.startsWith('data:image') && !src.includes('svg')) {
+                                        imgUrl = src;
+                                        break;
+                                    }
+                                }
+                            } else if (parent && (parent.innerText || '').split('\\n').length >= 3) {
+                                lines = (parent.innerText || '').split('\\n').map(s => s.trim()).filter(Boolean);
+                            }
+                            items[code] = { lines: lines, img: imgUrl };
+                        }
+                    }
+                    return items;
+                }""")
+                for code, data_dict in dom_data.items():
+                    if code == "722349852": continue
+                    seen_in_dom.add(code) 
+                    lines = data_dict.get("lines", [])
+                    scraped_img = data_dict.get("img", "")
+                    if code not in product_db:
+                        if code in global_product_db:
+                            product_db[code] = dict(global_product_db[code])
+                        else:
+                            product_db[code] = { "name": "Unknown", "details": "No Details", "price": "Price Not Found", "stock": "In Stock", "last_ordered": "N/A", "image_file": "No Image", "img_url": "", "changes": "" }
+                    if scraped_img and (not product_db[code].get("img_url") or "no_image" in product_db[code].get("img_url", "").lower()):
+                        product_db[code]["img_url"] = scraped_img
+                    if len(lines) > 0:
+                        ignore_labels = ["compare", "view similar items", "long term out of stock", "new", "in stock", "contact sales", "add to cart", "out of stock", "special order", "hide unavailable items"]
+                        clean_lines = [l for l in lines if l.lower() not in ignore_labels and "delivery" not in l.lower()]
+                        ordered_lines = [l for l in clean_lines if "ordered:" in l.lower() or "ordered " in l.lower()]
+                        for l in ordered_lines:
+                            match = re.search(r'ordered:?\s*(.*)', l, re.IGNORECASE)
+                            if match:
+                                product_db[code]["last_ordered"] = match.group(1).strip()
+                            clean_lines.remove(l) 
+                        code_idx = -1
+                        for i, l in enumerate(clean_lines):
+                            if f"#{code}" in l:
+                                code_idx = i
+                                break
+                        if code_idx != -1:
+                            if code_idx > 0 and product_db[code]["name"] in ["Unknown", ""]:
+                                product_db[code]["name"] = clean_lines[code_idx - 1]
+                            if product_db[code]["details"] in ["No Details", "⭐ [ORDER GUIDE] No Details", ""]:
+                                d_line = clean_lines[code_idx]
+                                c_details = d_line.replace(f"#{code} |", "").replace(f"#{code}", "").strip()
+                                if c_details:
+                                    product_db[code]["details"] = c_details
+                                elif code_idx + 1 < len(clean_lines):
+                                    product_db[code]["details"] = clean_lines[code_idx + 1]
+                        else:
+                            if product_db[code]["name"] in ["Unknown", ""] and clean_lines:
+                                product_db[code]["name"] = clean_lines[0]
+                        if product_db[code]["price"] in ["Price Not Found", ""]:
+                            for i, l in enumerate(clean_lines):
+                                if "$" in l and any(c.isdigit() for c in l):
+                                    if ":" in l:
+                                        product_db[code]["price"] = l
+                                    else:
+                                        unit = clean_lines[i-1] if i > 0 and len(clean_lines[i-1]) <= 6 else "Case"
+                                        product_db[code]["price"] = f"{unit}: {l}"
+                                    break
+            except Exception as e:
+                print(f"⚠️ DOM extraction error: {e}")
+            if len(seen_in_dom) == last_count:
+                stagnant_strikes += 1
+                print(f"⚠️ Memory Stagnant on {phase_name}. Strike {stagnant_strikes}/{max_strikes}")
+                try:
+                    await page.evaluate("""() => {
+                        const containers = document.querySelectorAll('cdk-virtual-scroll-viewport, .scroll-container, [class*="scroll"], main, .product-grid, .item-list');
+                        containers.forEach(c => {
+                            if (c && c.scrollHeight > c.clientHeight) {
+                                c.scrollTop += 1500;
+                                c.dispatchEvent(new Event('scroll', { bubbles: true }));
+                            }
+                        });
+                        window.scrollBy({ top: 1500, behavior: 'instant' });
+                    }""")
+                    viewport = page.viewport_size
+                    if viewport:
+                        safe_x = int(viewport['width'] - 10)
+                        safe_y = int(viewport['height'] * 0.5)
+                        await page.mouse.click(safe_x, safe_y)
+                    await page.keyboard.press("PageDown")
+                    await asyncio.sleep(1.5)
+                except: pass
+            else: 
+                stagnant_strikes = 0
+                print(f"📦 [{phase_name}] Progress: {len(seen_in_dom)} / {target_total} products mapped. ({max(0, target_total - len(seen_in_dom))} left to go!)")
+    try:
+        print("🚀 Starting Phase 1: Scraping 'All Results' tab...")
+        await perform_scroll_loop(phase_name="Phase 1")
+        await dump_json_buffers("phase1")
+        merge_buffers_to_db()
+        global_product_db.update(product_db)
+        if order_guide_target > 0 and kb is not None:
+            print(f"\n🔄 Initiating Phase 2: Switching to 'Order Guide Only' tab to fetch {order_guide_target} items...")
+            await page.evaluate("""() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+                const elements = document.querySelectorAll('cdk-virtual-scroll-viewport, .scroll-container, main, .product-grid, .item-list');
+                for (let el of elements) {
+                    el.scrollTop = 0;
+                    el.dispatchEvent(new Event('scroll'));
+                }
+            }""")
+            await asyncio.sleep(2.0)
+            for _ in range(5):
+                await page.keyboard.press("PageUp")
+                await asyncio.sleep(0.2)
+            for _ in range(3):
+                await page.keyboard.press("Home")
+                await asyncio.sleep(0.5)
+            tab_clicked = False
+            try:
+                selectors_to_try = [
+                    "text=/Order Guide Only/i",
+                    "[role='tab']:has-text('Order Guide')",
+                    "div.tab-header:has-text('Order Guide')",
+                    "//div[contains(translate(text(), 'ORDER', 'order'), 'order guide')]"
+                ]
+                for sel in selectors_to_try:
+                    try:
+                        tab_loc = page.locator(sel).first
+                        await tab_loc.wait_for(state="attached", timeout=2000)
+                        await tab_loc.scroll_into_view_if_needed()
+                        await asyncio.sleep(0.5)
+                        await tab_loc.click(force=True)
+                        tab_clicked = True
+                        print(f"✅ Switched tabs via direct DOM Locator successfully using: {sel}")
+                        break
+                    except Exception:
+                        continue
+            except Exception as e:
+                print(f"⚠️ Direct DOM clicker failed: {e}")
+                pass
+            if not tab_clicked:
+                tab_clicked = await teach_and_click(page, kb, state, "order_guide_tab", action="click")
+            if tab_clicked:
+                print("✅ Wiping memory buffers for Phase 2 isolation...")
+                product_db.clear()
+                RAW_INFO_BUFFER.clear()
+                RAW_PRICE_BUFFER.clear()
+                target_total = order_guide_target
+                await asyncio.sleep(5) 
+                merge_buffers_to_db() 
+                await perform_scroll_loop(phase_name="Phase 2")
+                await dump_json_buffers("phase2")
+                merge_buffers_to_db()
+                for code, data in product_db.items():
+                    if "[ORDER GUIDE]" not in data["details"]:
+                        data["details"] = f"⭐ [ORDER GUIDE] {data['details']}"
+                    global_product_db[code] = data
+    except Exception as e:
+        print(f"⚠️ HARVEST WARNING: Sequence interrupted ({e}). Saving retrieved data...")
+    finally:
+        update_status("processing", "Saving to SQLite DB & Generating Dashboard...", 90, 100)
+        product_db.clear()
+        product_db.update(global_product_db)
+        await download_pending_images(page)
+        process_changes()
+        for code, data in product_db.items(): write_csv_line(code, data)
+        generate_html_dashboard()
 
 # FILE: scroll.py
 import asyncio
 import random
-
 async def force_scroll_down(page, scrolls=1):
     """
-    A dedicated scroll engine to guarantee DOWNWARD movement.
-    Bypasses OS-level 'Natural Scrolling' quirks by using pure JavaScript 
-    injection to target the exact GFS Angular containers.
+    A highly robust, mechanical scroll engine that targets nested virtual viewports.
+    No Gemini, no OS-dependent mouse wheel. Pure DOM manipulation and focused keystrokes.
     """
     for _ in range(scrolls):
-        # 1. Move mouse to center so wheel events hit the actual products, not the margins
-        viewport = page.viewport_size
-        if viewport:
-            await page.mouse.move(viewport['width'] / 2, viewport['height'] / 2)
-        
-        # 2. Playwright Wheel Backup (Positive 1000 = Down)
-        await page.mouse.wheel(0, random.randint(800, 1200))
-        
-        # 3. 🚨 THE FIX: JavaScript Force-Scroll (Guarantees downward movement)
         await page.evaluate("""() => {
-            // Scroll the main window down
-            window.scrollBy({ top: 1000, behavior: 'smooth' });
-            
-            // Scroll GFS's specific internal containers down
-            const containers = document.querySelectorAll('cdk-virtual-scroll-viewport, .scroll-container, main, .product-grid');
+            const containers = document.querySelectorAll('cdk-virtual-scroll-viewport, .scroll-container, [class*="scroll"], main, .product-grid, .item-list');
+            let scrolled = false;
             containers.forEach(c => {
-                c.scrollBy({ top: 1000, behavior: 'smooth' });
+                if (c && c.scrollHeight > c.clientHeight) {
+                    c.scrollTop += (c.clientHeight || 1000) * 1.5;
+                    c.dispatchEvent(new Event('scroll', { bubbles: true }));
+                    scrolled = true;
+                }
             });
+            // Fallback to absolute window scroll
+            window.scrollBy({ top: 1200, behavior: 'instant' });
         }""")
-        
-        # Wait for the network to catch up and load the next batch of products
-        await asyncio.sleep(random.uniform(2.0, 3.5))
-
+        await asyncio.sleep(0.5)
+        try:
+            viewport = page.viewport_size
+            if viewport:
+                safe_x = int(viewport['width'] - 10)
+                safe_y = int(viewport['height'] * 0.5)
+                await page.mouse.move(safe_x, safe_y)
+                await page.mouse.click(safe_x, safe_y)
+        except:
+            pass
+        await page.keyboard.press("PageDown")
+        await asyncio.sleep(0.2)
+        await page.keyboard.press("PageDown")
+        await asyncio.sleep(random.uniform(2.0, 3.0))
 async def deep_human_scan(page, kb, state, is_product_page=False):
-    """
-    Scans the page to calculate total depth.
-    """
+    """Scans the page to calculate total depth."""
     print(f"📜 Initiating Universal Downward Scan for: {state}...")
-    
     if is_product_page:
         print("🛒 Product page detected. Yielding scroll control to Harvester.")
         return
-
     last_height = await page.evaluate("document.body.scrollHeight")
     scrolls_taken = 0
     max_scrolls = 15 
-    
     for _ in range(max_scrolls):
         scrolls_taken += 1
         await force_scroll_down(page, scrolls=1)
-        
         new_height = await page.evaluate("document.body.scrollHeight")
         if new_height == last_height:
-            print(f"✅ Verified: Reached absolute bottom after {scrolls_taken} scrolls.")
-            break
-            
+            await page.keyboard.press("End")
+            await asyncio.sleep(2)
+            if await page.evaluate("document.body.scrollHeight") == new_height:
+                print(f"✅ Verified: Reached absolute bottom after {scrolls_taken} scrolls.")
+                break
         last_height = new_height
         print(f"📉 Scrolled down... Page expanded (New height: {new_height}px)")
-        
     kb.learn(state, "scroll_depth", {"scrolls": scrolls_taken})
 
 # FILE: states/handlers.py
 import asyncio
 import os
-import re
 import json
+import urllib.parse
 from dotenv import load_dotenv
-from actions import teach_and_click, build_sitemap
-from harvester import run_harvest, setup_wiretap
-
+from actions import teach_and_click, smart_sitemap_extraction, understand_page_context, dismiss_all_popups
 load_dotenv()
-
 USERNAME = os.getenv("GFS_USERNAME")
 PASSWORD = os.getenv("GFS_PASSWORD")
-PRODUCT = os.getenv("GFS_DEFAULT_PRODUCT", "Butter") 
-
-# Global flags for Auto-Pilot state management
+SEARCH_TERMS_STR = os.getenv("GFS_SEARCH_TERMS", "Rice, Avocado, Chicken")
+def get_fresh_queue():
+    """Generates a fresh list of search terms from the environment variable."""
+    return [term.strip() for term in SEARCH_TERMS_STR.split(",") if term.strip()]
+SEARCH_QUEUE = get_fresh_queue()
 WIRETAP_ATTACHED = False
-AUTO_PILOT = False
-URL_QUEUE = []
-
+BOT_MODE = "search"  # Modified dynamically by main.py based on Dashboard UI
 async def handle_popup_active(page, kb):
     print("🚨 Popup detected blocking the screen!")
     await teach_and_click(page, kb, "popup_active", "close_popup_btn", "click")
     await asyncio.sleep(3) 
     return "continue"
-
 async def handle_login_page(page, kb):
     print("\n🔑 Login page detected. Assessing form...")
     if not USERNAME or not PASSWORD:
         print("⚠️ ERROR: Missing credentials in .env file!")
         return "stop"
-    
     await teach_and_click(page, kb, "login_page", "username_field", "type", USERNAME)
     await asyncio.sleep(2)
     await teach_and_click(page, kb, "login_page", "password_field", "type", PASSWORD)
     await asyncio.sleep(5)
     return "continue"
-
 async def handle_location_selection(page, kb):
     await teach_and_click(page, kb, "location_selection", "brera_row")
     await asyncio.sleep(5)
     return "continue"
-
 async def handle_dashboard(page, kb):
-    global WIRETAP_ATTACHED, AUTO_PILOT, URL_QUEUE
-    
+    global WIRETAP_ATTACHED, SEARCH_QUEUE
     if not WIRETAP_ATTACHED:
-        print("📡 Deploying Global Wiretap for upcoming search...")
+        print("📡 Deploying Global Wiretap...")
+        from harvester import setup_wiretap
         await setup_wiretap(page)
         WIRETAP_ATTACHED = True
-
     print("🧹 Clearing workspace...")
+    await dismiss_all_popups(page)
     await page.keyboard.press("Escape")
-    await asyncio.sleep(1) 
-    
-    print("\n📍 [STATE] Dashboard Confirmed.")
-    print("👆 Awaiting manual action... Choose [SEARCH ITEM] or [AUTO-CRAWL SITEMAP]")
-
-    await page.evaluate("""() => {
-        const container = document.createElement('div');
-        container.id = 'dashboard-trigger-container';
-        container.style.cssText = `
-            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
-            z-index: 9999999; display: flex; gap: 20px;
-        `;
-
-        const createBtn = (id, text, color) => {
-            const btn = document.createElement('button');
-            btn.id = id;
-            btn.innerHTML = text;
-            btn.style.cssText = `
-                padding: 15px 30px; background: ${color}; color: white;
-                font-size: 16px; font-weight: bold; border: 3px solid rgba(0,0,0,0.2);
-                border-radius: 10px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-                transition: transform 0.1s;
-            `;
-            btn.onmousedown = () => btn.style.transform = 'scale(0.95)';
-            btn.onmouseup = () => btn.style.transform = 'scale(1)';
-            return btn;
-        };
-
-        const searchBtn = createBtn('btn-search', '🔍 SEARCH SINGLE ITEM', '#8e44ad');
-        const crawlBtn = createBtn('btn-crawl', '🗺️ AUTO-CRAWL SITEMAP', '#c0392b'); 
-
-        searchBtn.onclick = () => { window.dashAction = 'search'; searchBtn.innerHTML = '⏳ TYPING...'; searchBtn.style.background = '#f39c12'; };
-        crawlBtn.onclick = () => { window.dashAction = 'crawl'; crawlBtn.innerHTML = '⏳ MAPPING ROUTE...'; crawlBtn.style.background = '#f39c12'; };
-
-        container.appendChild(searchBtn);
-        container.appendChild(crawlBtn);
-        document.body.appendChild(container);
-    }""")
-
-    action = None
-    while not action:
-        action = await page.evaluate("window.dashAction || null")
-        await asyncio.sleep(0.5)
-
-    await page.evaluate("""() => {
-        const container = document.getElementById('dashboard-trigger-container');
-        if (container) container.remove();
-        delete window.dashAction;
-    }""")
-
-    if action == "search":
-        print("🔍 Proceeding with single-item search...")
-        await teach_and_click(page, kb, "dashboard", "search_bar", "type", PRODUCT)
-        await asyncio.sleep(8)
-        return "continue"
-
-    elif action == "crawl":
-        print("🗺️ Engaging Auto-Pilot: Expanding category menus...")
-
+    await asyncio.sleep(3) 
+    if BOT_MODE == "explore":
+        print("\n🧭 [STATE] Dashboard -> EXPLORE MODE. Mapping Catalog...")
+        if "categories" not in page.url and "guides" not in page.url:
+            print("🚀 Redirecting to the Categories / Guides Hub...")
+            await page.goto("https://order.gfs.com/categories")
+            await asyncio.sleep(5)
+        await smart_sitemap_extraction(page, kb)
+        next_url = kb.get_next_url()
+        if next_url:
+            print(f"🚀 [AUTONOMOUS ROUTING] Navigating to next queued category: {next_url}")
+            await page.goto(next_url)
+            await asyncio.sleep(4)
+        else:
+            print("⚠️ Queue empty. Ensure smart sitemap extraction found valid links.")
+            await asyncio.sleep(5)
+    else:
+        if not SEARCH_QUEUE:
+            print("🔄 Search Queue is empty! Resetting queue for continuous change monitoring...")
+            SEARCH_QUEUE = get_fresh_queue()
+            await asyncio.sleep(3)
+        current_product = SEARCH_QUEUE[0] # PEEK, don't pop yet!
+        print(f"\n🔍 [STATE] Dashboard -> SEARCH MODE. Target: {current_product}...")
+        await teach_and_click(page, kb, "dashboard", "search_bar", "type", current_product)
         try:
-            await page.locator("text=Categories").first.click(timeout=3000)
-            await asyncio.sleep(2) 
+            print("⏳ Waiting for page to route to search results...")
+            await page.wait_for_url("**/search**", timeout=12000)
+            SEARCH_QUEUE.pop(0) # Only pop if successful!
+            print(f"✅ Route confirmed! Remaining in queue: {len(SEARCH_QUEUE)} items.")
         except Exception:
-            print("⚠️ Could not click 'Categories', attempting standard DOM scrape...")
-
-        print("🕸️ Spidering DOM for active category links...")
-        links = await page.evaluate("""() => {
-            const anchors = document.querySelectorAll('a[href]');
-            return [...new Set(Array.from(anchors).map(a => a.href))];
-        }""")
-
-        valid_urls = []
-        for link in links:
-            if "gfs.com" in link and any(k in link.lower() for k in ["/category", "/shop", "/products"]):
-                clean_link = link.split('?')[0].split('#')[0] 
-                if clean_link not in valid_urls:
-                    valid_urls.append(clean_link)
-
-        if os.path.exists("navigation_dump.json"):
-            try:
-                with open("navigation_dump.json", "r", encoding="utf-8") as f:
-                    nav_links = re.findall(r'"(/[a-zA-Z0-9\-\/]*category[a-zA-Z0-9\-\/]*)"', f.read())
-                    for nl in nav_links:
-                        full_url = "https://order.gfs.com" + nl
-                        if full_url not in valid_urls:
-                            valid_urls.append(full_url)
-            except Exception:
-                pass
-
-        if not valid_urls:
-            print("⚠️ [WARNING] No valid category URLs found. Defaulting to Search.")
-            await teach_and_click(page, kb, "dashboard", "search_bar", "type", PRODUCT)
-            return "continue"
-
-        URL_QUEUE = valid_urls
-        AUTO_PILOT = True
-        print(f"🚀 [AUTO-PILOT] Found {len(URL_QUEUE)} targeted categories to scrape!")
-
-        next_url = URL_QUEUE.pop(0)
-        print(f"🌐 Navigating to first URL: {next_url}")
-        await page.goto(next_url)
-        await asyncio.sleep(5) 
-        return "continue" 
-
-async def handle_product_page(page, kb):
-    global AUTO_PILOT, URL_QUEUE
-
-    if AUTO_PILOT:
-        print(f"\n🤖 [AUTO-PILOT] Auto-Scraping Category... ({len(URL_QUEUE)} pages remaining in queue)")
-        
-        await run_harvest(page, mode="scan")
-
-        if URL_QUEUE:
-            next_url = URL_QUEUE.pop(0)
-            print(f"🤖 [AUTO-PILOT] Moving to next category in sitemap: {next_url}")
+            print(f"⚠️ Search UI failed or timed out. Forcing direct URL navigation...")
+            encoded_product = urllib.parse.quote(current_product)
+            await page.goto(f"https://order.gfs.com/search?searchText={encoded_product}")
+            SEARCH_QUEUE.pop(0)
+            print(f"✅ Route forced! Remaining in queue: {len(SEARCH_QUEUE)} items.")
+        await asyncio.sleep(4)
+    return "continue"
+async def handle_single_product(page, kb):
+    print("\n⚠️ [NAVIGATION ALERT] I am inside a Single Product details page! Reversing back to the search list...")
+    await page.go_back()
+    await asyncio.sleep(3)
+    return "continue"
+async def handle_search_results(page, kb):
+    global SEARCH_QUEUE
+    print("\n📍 [STATE] Catalog Page Confirmed.")
+    category_name = await understand_page_context(page, kb)
+    print(f"🚜 Engaging Auto-Harvester for category: {category_name}...")
+    from harvester import run_harvest 
+    await run_harvest(page, kb=kb, state="search_results")
+    if BOT_MODE == "explore":
+        await smart_sitemap_extraction(page, kb)
+        next_url = kb.get_next_url()
+        if next_url:
+            print(f"🧭 Page Harvest Complete. Remaining items in queue: {len(kb.data['queue'])}")
+            print(f"🚀 [AUTONOMOUS ROUTING] Proceeding to next category: {next_url}")
             await page.goto(next_url)
             await asyncio.sleep(5)
-            return "continue"
+            return "continue" 
         else:
-            print("🎉 [AUTO-PILOT] Sitemap queue empty! Full site crawl is complete.")
+            print("🎉 Exploration Queue Empty. Entire catalog mapped. Stopping agent.")
             return "stop"
-
-    print("\n📍 [STATE] Product Page Confirmed.")
-    print("👆 Awaiting manual action... Please select a mode.")
-
-    await page.evaluate("""() => {
-        const container = document.createElement('div');
-        container.id = 'manual-trigger-container';
-        container.style.cssText = `
-            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
-            z-index: 9999999; display: flex; gap: 15px;
-        `;
-
-        const createBtn = (id, text, color) => {
-            const btn = document.createElement('button');
-            btn.id = id;
-            btn.innerHTML = text;
-            btn.style.cssText = `
-                padding: 15px 20px; background: ${color}; color: white;
-                font-size: 15px; font-weight: bold; border: 3px solid rgba(0,0,0,0.2);
-                border-radius: 10px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-                transition: transform 0.1s;
-            `;
-            btn.onmousedown = () => btn.style.transform = 'scale(0.95)';
-            btn.onmouseup = () => btn.style.transform = 'scale(1)';
-            return btn;
-        };
-
-        const quickDumpBtn = createBtn('btn-quick-dump', '⚡ QUICK JSON DUMP', '#2980b9'); 
-        const scrollDumpBtn = createBtn('btn-scroll-dump', '🗄️ SCROLL & DUMP', '#8e44ad'); 
-        const scanBtn = createBtn('btn-api-scan', '📡 FULL SCAN', '#27ae60'); 
-
-        quickDumpBtn.onclick = () => { window.manualAction = 'quick_dump'; quickDumpBtn.innerHTML = '⏳ DUMPING...'; quickDumpBtn.style.background = '#f39c12'; };
-        scrollDumpBtn.onclick = () => { window.manualAction = 'agg_dump'; scrollDumpBtn.innerHTML = '⏳ MAPPING...'; scrollDumpBtn.style.background = '#f39c12'; };
-        scanBtn.onclick = () => { window.manualAction = 'scan'; scanBtn.innerHTML = '⏳ SCANNING...'; scanBtn.style.background = '#f39c12'; };
-
-        container.appendChild(quickDumpBtn);
-        container.appendChild(scrollDumpBtn);
-        container.appendChild(scanBtn);
-        document.body.appendChild(container);
-    }""")
-
-    action = None
-    while not action:
-        action = await page.evaluate("window.manualAction || null")
-        await asyncio.sleep(0.5)
-
-    print(f"📡 [COMMAND RECEIVED] Executing: {action.upper()}")
-    await run_harvest(page, mode=action) 
-
-    await page.evaluate("""() => {
-        const container = document.getElementById('manual-trigger-container');
-        if (container) container.remove();
-        delete window.manualAction;
-    }""")
-    
-    print(f"🎉 {action.upper()} Complete. Stopping agent.")
-    return "stop"
-
+    else:
+        print(f"🧭 Search Harvest Complete. Returning to dashboard for next target...")
+        await page.goto("https://order.gfs.com/")
+        await asyncio.sleep(5)
+        return "continue"
 STATE_ROUTER = {
     "login_page": handle_login_page,
     "location_selection": handle_location_selection,
     "dashboard": handle_dashboard,
-    "product_page": handle_product_page,
+    "search_results": handle_search_results,
+    "single_product": handle_single_product,
     "popup_active": handle_popup_active,
 }
 
@@ -1024,118 +1389,87 @@ import os
 import datetime
 import platform
 import sys
-
+import shutil
+def backup_codebase(change_summary, timestamp_str):
+    """Creates a physical backup of core python files."""
+    history_dir = os.path.join(".history", timestamp_str)
+    os.makedirs(history_dir, exist_ok=True)
+    files_to_backup = ["CHANGELOG.md", "main.py", "actions.py", "brain.py", "harvester.py", "scroll.py", "logger.py"]
+    for file in files_to_backup:
+        if os.path.exists(file):
+            shutil.copy2(file, os.path.join(history_dir, file))
+    os.makedirs(os.path.join(history_dir, "states"), exist_ok=True)
+    if os.path.exists("states/handlers.py"):
+        shutil.copy2("states/handlers.py", os.path.join(history_dir, "states/handlers.py"))
+    with open(os.path.join(history_dir, "meta.txt"), "w", encoding="utf-8") as f:
+        f.write(change_summary)
+def enforce_file_line_limit(filepath, max_lines, header=""):
+    """Prevents log files from growing infinitely by keeping only the most recent lines."""
+    if not os.path.exists(filepath): return
+    try:
+        with open(filepath, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+        if len(lines) > max_lines:
+            with open(filepath, "w", encoding="utf-8") as f:
+                if header: f.write(header + "\n")
+                f.writelines(lines[-max_lines:])
+    except Exception: pass
 def log_event(event_type, details):
-    """Logs runtime data to JSONL for debugging."""
-    log_entry = {
-        "timestamp": datetime.datetime.now().isoformat(),
-        "type": event_type,
-        "details": details
-    }
+    """Logs runtime data to JSONL and aggressively trims it."""
+    log_entry = {"timestamp": datetime.datetime.now().isoformat(), "type": event_type, "details": details}
     with open("evolution_log.jsonl", "a", encoding="utf-8") as f:
-        f.write(json.dumps(log_entry) + "\n")
-
+        f.write(json.dumps(log_entry, separators=(',', ':')) + "\n")
+    enforce_file_line_limit("evolution_log.jsonl", 30)
 def log_evolution_snapshot(change_summary, technical_details):
-    """Maintains a persistent history of every run session in CHANGELOG.md."""
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    
-    # 1. Log to the machine-readable JSONL
+    """Updates history and triggers codebase backup."""
+    now = datetime.datetime.now()
+    timestamp_readable = now.strftime("%Y-%m-%d %H:%M:%S")
+    backup_codebase(change_summary, now.strftime("%Y%m%d_%H%M%S"))
     log_event("ARCHITECTURE_UPDATE", {"summary": change_summary, "details": technical_details})
-    
-    # 2. Append to a persistent CHANGELOG.md
     changelog_path = "CHANGELOG.md"
-    
     if not os.path.exists(changelog_path):
         with open(changelog_path, "w", encoding="utf-8") as f:
             f.write("# 🤖 Agent Architecture Changelog\n\n")
-            
-    # FIXED: We removed the 'if' gatekeeper. 
-    # Every execution now adds a new timestamped entry to the log.
-    entry = (
-        f"### [{timestamp}] SESSION START\n"
-        f"* **Change/Run Context:** {change_summary}\n"
-        f"* **Technical Details:** {technical_details}\n\n"
-    )
+    entry = f"### [{timestamp_readable}] UPDATE\n* **Summary:** {change_summary}\n* **Details:** {technical_details}\n\n"
     with open(changelog_path, "a", encoding="utf-8") as f:
         f.write(entry)
-
+    enforce_file_line_limit(changelog_path, 20, "# 🤖 Agent Architecture Changelog\n")
 def generate_evolution_manifest():
-    """
-    Bundles core logic files, the changelog, and environment context.
-    Provides the ultimate 'God View' for Gemini troubleshooting.
-    """
-    files_to_track = [
-        "CHANGELOG.md", 
-        "main.py", 
-        "actions.py", 
-        "brain.py", 
-        "harvester.py", 
-        "scroll.py", 
-        "states/handlers.py", 
-        "logger.py"
-    ]
+    """Bundles logic with PRUNED logs and STRIPPED code to fit within Gemini's context window."""
+    files_to_track = ["main.py", "actions.py", "brain.py", "harvester.py", "scroll.py", "states/handlers.py", "logger.py"]
     manifest_path = "agent_code_evolution_snapshot.log"
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    # Overwrite the snapshot file so it is always fresh and clean
     with open(manifest_path, "w", encoding="utf-8") as manifest:
-        manifest.write(f"# {'='*60}\n")
-        manifest.write(f"# 🧠 GEMINI TROUBLESHOOTING MANIFEST\n")
-        manifest.write(f"# GENERATED: {timestamp}\n")
-        manifest.write(f"# OS: {platform.system()} {platform.release()}\n")
-        manifest.write(f"# PYTHON: {sys.version.split(' ')[0]}\n")
-        manifest.write(f"# {'='*60}\n\n")
-
-        # --- 1. LOG THE BOT'S MEMORY STATE ---
-        manifest.write("# --- 🧠 CURRENT KNOWLEDGE BASE (MEMORY) ---\n")
+        manifest.write(f"# GEMINI COMPRESSED MANIFEST | {timestamp}\n")
         if os.path.exists("knowledge.json"):
+            manifest.write("\n# --- MINIFIED MEMORY ---\n")
             try:
                 with open("knowledge.json", "r") as f:
-                    kb_data = json.load(f)
-                    # Truncate massive sitemap arrays for brevity
-                    if "sitemap" in kb_data:
-                        dom_len = len(kb_data["sitemap"].get("dom_links", []))
-                        xml_len = len(kb_data["sitemap"].get("xml_links", []))
-                        kb_data["sitemap"]["dom_links"] = f"<... {dom_len} links hidden ...>"
-                        kb_data["sitemap"]["xml_links"] = f"<... {xml_len} links hidden ...>"
-                    manifest.write(json.dumps(kb_data, indent=4) + "\n")
-            except Exception as e:
-                manifest.write(f"# Error reading knowledge.json: {e}\n")
-        else:
-            manifest.write("# No knowledge.json found yet.\n")
-
-        # --- 2. LOG DIRECTORY STRUCTURE ---
-        manifest.write("\n# --- 📂 DIRECTORY STRUCTURE ---\n")
-        for root, dirs, files in os.walk("."):
-            if any(ignored in root for ignored in [".git", "__pycache__", "venv", "env", "videos", "vision"]):
-                continue
-            level = root.replace(".", "").count(os.sep)
-            indent = " " * 4 * (level)
-            manifest.write(f"{indent}{os.path.basename(root)}/\n")
-            subindent = " " * 4 * (level + 1)
-            for f in files:
-                if f.endswith((".py", ".json", ".csv", ".env", ".md")):
-                    manifest.write(f"{subindent}{f}\n")
-
-        # --- 3. DUMP THE CODEBASE & CHANGELOG ---
-        manifest.write(f"\n\n# --- 💻 FULL ARCHITECTURE SNAPSHOT ---\n")
+                    kb = json.load(f)
+                    if "sitemap" in kb:
+                        kb["sitemap"]["dom_links"] = f"<{len(kb['sitemap'].get('dom_links', []))} links hidden>"
+                        kb["sitemap"]["xml_links"] = f"<{len(kb['sitemap'].get('xml_links', []))} links hidden>"
+                    manifest.write(json.dumps(kb, separators=(',', ':')) + "\n")
+            except: pass
+        if os.path.exists("CHANGELOG.md"):
+            manifest.write("\n# --- RECENT CHANGELOG ENTRIES ---\n")
+            with open("CHANGELOG.md", "r") as f:
+                lines = f.readlines()
+                manifest.writelines(lines[-20:])
+        manifest.write("\n# --- COMPRESSED ARCHITECTURE SNAPSHOT ---\n")
         for file_path in files_to_track:
             if os.path.exists(file_path):
                 with open(file_path, "r", encoding="utf-8", errors="replace") as f:
-                    content = f.read()
-                manifest.write(f"\n# FILE: {file_path}\n{content}\n")
-            else:
-                manifest.write(f"\n# FILE: {file_path} (⚠️ NOT FOUND)\n")
-        
-        manifest.write("\n# --- END SNAPSHOT ---\n")
-
+                    lines = f.readlines()
+                    cleaned_code = ""
+                    for line in lines:
+                        stripped = line.strip()
+                        if stripped and not stripped.startswith("#"):
+                            cleaned_code += line
+                    manifest.write(f"\n# FILE: {file_path}\n{cleaned_code}\n")
 async def capture_context(page, name):
-    """Captures the URL and a snippet of HTML when a popup or error occurs."""
     try:
         url = page.url
-        content = (await page.content())[:500]
-        log_event("CONTEXT_SNAPSHOT", {"element": name, "url": url, "html": content})
-    except Exception:
-        log_event("CONTEXT_ERROR", {"msg": "Failed to capture page context"})
-
-# --- END SNAPSHOT ---
+        content = (await page.content())[:200]
+        log_event("CONTEXT", {"element": name, "url": url, "html": content})
+    except Exception: pass

@@ -1,205 +1,30 @@
-{"timestamp": "2026-03-23T15:47:15.900622", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-24T09:18:02.986042", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-24T09:21:12.981013", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-24T09:23:05.780708", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-24T09:26:25.349093", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-24T09:33:32.276016", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-24T10:02:15.337057", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-24T10:03:46.842244", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-24T10:05:51.974134", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-24T10:08:08.692590", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-24T10:10:17.827462", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-24T10:13:45.374430", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-24T10:17:38.675841", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-24T10:18:12.871950", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-03-24T10:18:41.895264", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-03-24T10:18:41.897615", "type": "HARVEST_START", "details": {"mode": "API_COMPILER"}}
-{"timestamp": "2026-03-24T10:19:13.967582", "type": "HARVEST_END", "details": {"total_items": 0, "target_total": 9999}}
-{"timestamp": "2026-03-24T10:25:59.918727", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-24T10:26:15.018330", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-03-24T10:26:43.000179", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-03-24T10:29:16.500803", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-24T10:29:31.171189", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-03-24T10:29:58.281468", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-03-24T10:29:58.283306", "type": "HARVEST_START", "details": {"mode": "API_COMPILER"}}
-{"timestamp": "2026-03-24T10:30:26.230237", "type": "HARVEST_END", "details": {"total_items": 0, "target_total": 9999}}
-{"timestamp": "2026-03-24T10:36:29.740888", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-24T10:36:44.832580", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-03-24T10:37:10.394159", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-03-24T10:37:10.396919", "type": "HARVEST_START", "details": {"mode": "API_COMPILER"}}
-{"timestamp": "2026-03-24T10:37:35.669128", "type": "HARVEST_END", "details": {"total_items": 0, "target_total": 9999}}
-{"timestamp": "2026-03-24T10:40:27.700070", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-24T10:40:42.447577", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-03-24T10:41:14.980356", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-03-24T10:41:14.982169", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
-{"timestamp": "2026-03-24T10:41:15.032233", "type": "HARVEST_END", "details": {"total_items": 2139, "target_total": 16}}
-{"timestamp": "2026-03-24T11:23:07.798042", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-24T11:23:22.434161", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-03-24T11:23:50.118958", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-03-24T11:23:50.121692", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
-{"timestamp": "2026-03-24T11:23:50.187055", "type": "HARVEST_END", "details": {"total_items": 2138, "target_total": 16}}
-{"timestamp": "2026-03-24T12:29:48.150548", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-24T12:30:04.238158", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-03-24T12:30:30.523621", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-03-24T12:30:30.526447", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
-{"timestamp": "2026-03-24T12:30:30.592423", "type": "HARVEST_END", "details": {"total_items": 2142, "target_total": 16}}
-{"timestamp": "2026-03-25T13:46:35.892293", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-25T13:46:51.064691", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-03-25T13:47:32.119497", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-03-25T13:47:32.122416", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
-{"timestamp": "2026-03-25T13:47:32.182745", "type": "HARVEST_END", "details": {"total_items": 2142, "target_total": 16}}
-{"timestamp": "2026-03-25T13:48:38.455852", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-25T13:48:54.583158", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-03-25T13:49:35.022264", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-03-25T13:49:35.025406", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
-{"timestamp": "2026-03-25T13:49:35.087471", "type": "HARVEST_END", "details": {"total_items": 2143, "target_total": 16}}
-{"timestamp": "2026-03-25T13:51:55.544484", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-25T13:52:11.068325", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-03-25T13:52:51.522346", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-03-25T13:52:51.524177", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
-{"timestamp": "2026-03-25T13:52:51.582868", "type": "HARVEST_END", "details": {"total_items": 2143, "target_total": 16}}
-{"timestamp": "2026-03-25T14:47:57.796913", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-25T14:48:12.760390", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-03-25T14:48:39.606634", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-03-25T14:48:39.609483", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
-{"timestamp": "2026-03-25T14:48:39.671490", "type": "HARVEST_END", "details": {"total_items": 2102, "target_total": 16}}
-{"timestamp": "2026-03-25T16:02:24.083022", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-25T16:02:39.757391", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-03-25T16:03:12.233524", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-03-25T16:03:12.236227", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
-{"timestamp": "2026-03-25T16:03:12.298228", "type": "HARVEST_END", "details": {"total_items": 2118, "target_total": 16}}
-{"timestamp": "2026-03-25T18:39:49.289840", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-25T18:40:05.290248", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-03-25T18:40:44.516497", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-03-25T18:40:44.517821", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
-{"timestamp": "2026-03-25T18:40:44.568761", "type": "HARVEST_END", "details": {"total_items": 2133, "target_total": 16}}
-{"timestamp": "2026-03-26T13:49:03.942192", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-26T13:49:19.066135", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-03-26T13:50:04.625745", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-03-26T13:50:04.628466", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
-{"timestamp": "2026-03-26T13:50:04.686110", "type": "HARVEST_END", "details": {"total_items": 2167, "target_total": 16}}
-{"timestamp": "2026-03-26T17:52:00.605950", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-26T17:53:05.562443", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-26T17:53:23.895420", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-03-26T17:54:36.241738", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-26T17:54:52.351458", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-03-26T17:55:36.919202", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-03-26T17:55:36.921750", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
-{"timestamp": "2026-03-26T17:55:37.361610", "type": "HARVEST_END", "details": {"total_items": 2175, "target_total": 362}}
-{"timestamp": "2026-03-26T18:00:33.284737", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-26T18:01:11.402747", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-26T18:01:29.402899", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-03-26T18:02:17.488065", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-03-26T18:02:17.498791", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
-{"timestamp": "2026-03-26T18:02:18.211205", "type": "HARVEST_END", "details": {"total_items": 2135, "target_total": 362}}
-{"timestamp": "2026-03-29T16:08:55.415408", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-29T16:09:12.290563", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-03-29T16:09:53.434214", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-03-29T16:09:53.436956", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
-{"timestamp": "2026-03-29T16:09:54.203940", "type": "HARVEST_END", "details": {"total_items": 2141, "target_total": 362}}
-{"timestamp": "2026-03-29T16:13:58.167550", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-29T16:14:17.506470", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-03-29T16:14:58.533881", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-03-29T16:14:58.536823", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
-{"timestamp": "2026-03-29T16:14:58.923831", "type": "HARVEST_END", "details": {"total_items": 2183, "target_total": 258}}
-{"timestamp": "2026-03-30T13:13:29.634394", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-03-30T13:13:45.289367", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "transitioning"}}
-{"timestamp": "2026-03-30T13:13:48.106721", "type": "STATE_CHANGE", "details": {"from": "transitioning", "to": "dashboard"}}
-{"timestamp": "2026-03-30T13:14:31.559875", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-03-30T13:14:31.566576", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
-{"timestamp": "2026-03-30T13:14:31.951210", "type": "HARVEST_END", "details": {"total_items": 2169, "target_total": 258}}
-{"timestamp": "2026-04-04T14:35:41.600280", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T14:35:56.738501", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T14:36:35.925807", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T14:36:35.928191", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
-{"timestamp": "2026-04-04T14:36:35.992383", "type": "HARVEST_END", "details": {"total_items": 2172, "target_total": 258}}
-{"timestamp": "2026-04-04T14:53:34.489333", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T14:53:50.609155", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T14:54:32.526806", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T14:54:32.529935", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
-{"timestamp": "2026-04-04T14:54:32.589372", "type": "HARVEST_END", "details": {"total_items": 2197, "target_total": 258}}
-{"timestamp": "2026-04-04T15:00:20.047716", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T15:00:35.726422", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T15:01:16.193510", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T15:01:27.303287", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
-{"timestamp": "2026-04-04T15:01:27.375165", "type": "HARVEST_END", "details": {"total_items": 2181, "target_total": 258}}
-{"timestamp": "2026-04-04T15:09:10.293782", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T15:09:25.408262", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T15:10:05.274713", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T15:10:12.853801", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
-{"timestamp": "2026-04-04T15:13:37.706852", "type": "HARVEST_END", "details": {"total_items": 239, "target_total": 258}}
-{"timestamp": "2026-04-04T15:21:54.451707", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T15:22:10.581051", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T15:22:49.178290", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T15:23:00.293358", "type": "HARVEST_START", "details": {"mode": "GLOBAL_WIRETAP"}}
-{"timestamp": "2026-04-04T15:29:25.364761", "type": "HARVEST_END", "details": {"total_items": 239, "target_total": 258}}
-{"timestamp": "2026-04-04T15:31:34.432081", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T15:31:49.212379", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T15:32:28.993173", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T15:41:15.117450", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T15:41:29.258474", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T15:42:09.920113", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T15:44:08.254487", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T15:44:24.270191", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T15:45:04.512395", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T15:51:56.597002", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T15:52:12.934213", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T15:52:52.651558", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T15:56:13.061825", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T15:56:29.065044", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T15:57:07.591689", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T16:07:34.632034", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T16:07:48.908659", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T16:08:45.765745", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T16:13:16.266336", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T16:13:32.081586", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T16:14:42.971084", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T16:21:37.783531", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T16:21:52.715552", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T16:26:56.140502", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Accelerated Video", "details": "Added FFmpeg post-processing for 2x speed and smaller file size."}}
-{"timestamp": "2026-04-04T16:26:58.644882", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T16:27:13.129849", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T16:27:49.109515", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T16:36:24.294020", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Accelerated Video", "details": "Added FFmpeg post-processing for 2x speed and smaller file size."}}
-{"timestamp": "2026-04-04T16:36:27.159930", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T16:36:42.025419", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T16:37:14.518075", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T16:41:27.086976", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Hyper-Accelerated Video", "details": "Updated FFmpeg post-processing to 3.5x playback speed."}}
-{"timestamp": "2026-04-04T16:41:29.627980", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T16:41:44.713520", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T16:42:00.163367", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T16:47:18.715583", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Hyper-Accelerated Video", "details": "Updated FFmpeg post-processing to 3.5x playback speed."}}
-{"timestamp": "2026-04-04T16:47:21.624912", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T16:47:36.849657", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T16:47:52.673853", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T16:51:24.218325", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Hyper-Accelerated Video", "details": "Updated FFmpeg post-processing to 3.5x playback speed."}}
-{"timestamp": "2026-04-04T16:51:27.100019", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T16:51:41.433483", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T16:51:57.406026", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T16:58:35.034490", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Hyper-Accelerated Video", "details": "Updated FFmpeg post-processing to 3.5x playback speed."}}
-{"timestamp": "2026-04-04T16:58:37.652853", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T16:58:51.722114", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T16:59:09.303518", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T17:04:01.871994", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Hyper-Accelerated Video", "details": "Updated FFmpeg post-processing to 3.5x playback speed."}}
-{"timestamp": "2026-04-04T17:04:04.459989", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T17:04:20.728186", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T17:04:50.436327", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T17:08:55.771587", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Hyper-Accelerated Video", "details": "Updated FFmpeg post-processing to 3.5x playback speed."}}
-{"timestamp": "2026-04-04T17:08:58.479457", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T17:09:13.952735", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T17:09:34.066992", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T17:12:54.823706", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Hyper-Accelerated Video", "details": "Updated FFmpeg post-processing to 3.5x playback speed."}}
-{"timestamp": "2026-04-04T17:12:57.262548", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T17:13:11.209242", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T17:13:28.019126", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Hyper-Accelerated Video", "details": "Updated FFmpeg post-processing to 3.5x playback speed."}}
-{"timestamp": "2026-04-04T17:13:30.584353", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T17:13:45.097733", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T17:13:59.469782", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T17:22:06.278149", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Hyper-Accelerated Video", "details": "Updated FFmpeg post-processing to 3.5x playback speed."}}
-{"timestamp": "2026-04-04T17:22:08.833832", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T17:22:24.225022", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T17:22:39.274435", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
-{"timestamp": "2026-04-04T17:25:21.004858", "type": "ARCHITECTURE_UPDATE", "details": {"summary": "Hyper-Accelerated Video", "details": "Updated FFmpeg post-processing to 3.5x playback speed."}}
-{"timestamp": "2026-04-04T17:25:23.447020", "type": "STATE_CHANGE", "details": {"from": null, "to": "login_page"}}
-{"timestamp": "2026-04-04T17:25:37.875992", "type": "STATE_CHANGE", "details": {"from": "login_page", "to": "dashboard"}}
-{"timestamp": "2026-04-04T17:25:52.869529", "type": "STATE_CHANGE", "details": {"from": "dashboard", "to": "product_page"}}
+{"timestamp":"2026-04-07T13:51:13.161435","type":"STATE_CHANGE","details":{"from":"login_page","to":"dashboard"}}
+{"timestamp":"2026-04-07T13:51:24.110615","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T13:51:40.089029","type":"CRASH","details":"Page.goto: Target page, context or browser has been closed"}
+{"timestamp":"2026-04-07T13:52:19.831446","type":"ARCHITECTURE_UPDATE","details":{"summary":"Data Optimization Update","details":"Migrated to google.genai, fixed circular imports, isolated phase memory dumps."}}
+{"timestamp":"2026-04-07T13:52:30.540018","type":"STATE_CHANGE","details":{"from":null,"to":"login_page"}}
+{"timestamp":"2026-04-07T13:52:47.093109","type":"STATE_CHANGE","details":{"from":"login_page","to":"dashboard"}}
+{"timestamp":"2026-04-07T13:52:58.796057","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T13:56:35.347235","type":"ARCHITECTURE_UPDATE","details":{"summary":"Data Optimization Update","details":"Migrated to google.genai, fixed circular imports, isolated phase memory dumps."}}
+{"timestamp":"2026-04-07T13:56:45.458715","type":"STATE_CHANGE","details":{"from":null,"to":"login_page"}}
+{"timestamp":"2026-04-07T13:57:02.614938","type":"STATE_CHANGE","details":{"from":"login_page","to":"dashboard"}}
+{"timestamp":"2026-04-07T13:57:13.888494","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T13:58:29.181227","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T13:58:40.124705","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T13:59:15.207046","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T13:59:26.686488","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T14:01:54.267749","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:02:07.067563","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T14:03:23.707110","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:03:34.017498","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T14:04:08.388579","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:04:18.983338","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T14:07:05.028302","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:07:23.878265","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T14:08:42.734923","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:08:54.275572","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T14:09:28.971625","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:09:42.374424","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T14:12:30.275602","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:12:44.502712","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T14:12:54.143651","type":"CRASH","details":"Page.goto: Target page, context or browser has been closed"}

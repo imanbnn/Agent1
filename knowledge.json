@@ -32,5 +32,37 @@
             "https://order.gfs.com/product/1125457",
             "https://order.gfs.com/product/1203024"
         ]
+    },
+    "product_page": {
+        "order_guide_tab": {
+            "x": 57,
+            "y": 17
+        }
+    },
+    "url_map": {
+        "order.gfs.com/categories": "transitioning",
+        "order.gfs.com/guides": "transitioning"
+    },
+    "search_results": {
+        "order_guide_tab": {
+            "x": 554,
+            "y": 170
+        }
+    },
+    "queue": [],
+    "visited": [
+        "https://order.gfs.com/categories",
+        "https://order.gfs.com/",
+        "https://order.gfs.com/guides"
+    ],
+    "catalog_map": {
+        "https://order.gfs.com/search?searchText=Rice": "Mixed Search Results",
+        "https://order.gfs.com/search?searchText=Avocado": "16 results for \"Avocado\"",
+        "https://order.gfs.com/search?searchText=Chicken": "721 results for \"Chicken\""
+    },
+    "transitioning": {
+        "scroll_depth": {
+            "scrolls": 1
+        }
     }
 }
