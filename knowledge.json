@@ -56,7 +56,7 @@
         "https://order.gfs.com/guides"
     ],
     "catalog_map": {
-        "https://order.gfs.com/search?searchText=Rice": "Mixed Search Results",
+        "https://order.gfs.com/search?searchText=Rice": "258 results for \"Rice\"",
         "https://order.gfs.com/search?searchText=Avocado": "16 results for \"Avocado\"",
         "https://order.gfs.com/search?searchText=Chicken": "721 results for \"Chicken\""
     },
@@ -64,5 +64,6 @@
         "scroll_depth": {
             "scrolls": 1
         }
-    }
+    },
+    "retry_count": 0
 }

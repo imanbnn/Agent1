@@ -1,7 +1,6 @@
 # FILE: states/handlers.py
 import asyncio
 import os
-import json
 import urllib.parse
 from dotenv import load_dotenv
 from actions import teach_and_click, smart_sitemap_extraction, understand_page_context, dismiss_all_popups
@@ -51,7 +50,6 @@ async def handle_dashboard(page, kb):
         WIRETAP_ATTACHED = True
         
     print("🧹 Clearing workspace...")
-    # 🧹 CRITICAL FIX: Explicitly clear the workspace of popups before interacting with the search bar
     await dismiss_all_popups(page)
     await page.keyboard.press("Escape")
     await asyncio.sleep(3) 
@@ -74,13 +72,12 @@ async def handle_dashboard(page, kb):
             print("⚠️ Queue empty. Ensure smart sitemap extraction found valid links.")
             await asyncio.sleep(5)
     else:
-        # 🔄 CRITICAL FIX: Reload the queue continuously to monitor for changes instead of stopping
         if not SEARCH_QUEUE:
-            print("🔄 Search Queue is empty! Resetting queue for continuous change monitoring...")
-            SEARCH_QUEUE = get_fresh_queue()
-            await asyncio.sleep(3)
+            print("🎉 Search Queue is entirely empty! All requested terms have been harvested.")
+            SEARCH_QUEUE = get_fresh_queue() # Reset queue for the next manual run
+            return "stop"
             
-        current_product = SEARCH_QUEUE[0] # PEEK, don't pop yet!
+        current_product = SEARCH_QUEUE[0] # PEEK at the queue, DO NOT POP yet!
         print(f"\n🔍 [STATE] Dashboard -> SEARCH MODE. Target: {current_product}...")
         
         await teach_and_click(page, kb, "dashboard", "search_bar", "type", current_product)
@@ -88,14 +85,13 @@ async def handle_dashboard(page, kb):
         try:
             print("⏳ Waiting for page to route to search results...")
             await page.wait_for_url("**/search**", timeout=12000)
-            SEARCH_QUEUE.pop(0) # Only pop if successful!
-            print(f"✅ Route confirmed! Remaining in queue: {len(SEARCH_QUEUE)} items.")
+            print(f"✅ Route confirmed for target: {current_product}")
         except Exception:
             print(f"⚠️ Search UI failed or timed out. Forcing direct URL navigation...")
             encoded_product = urllib.parse.quote(current_product)
             await page.goto(f"https://order.gfs.com/search?searchText={encoded_product}")
-            SEARCH_QUEUE.pop(0)
-            print(f"✅ Route forced! Remaining in queue: {len(SEARCH_QUEUE)} items.")
+            print(f"✅ Route forced for target: {current_product}")
+            
         await asyncio.sleep(4)
         
     return "continue"
@@ -114,12 +110,12 @@ async def handle_search_results(page, kb):
     print(f"🚜 Engaging Auto-Harvester for category: {category_name}...")
     
     from harvester import run_harvest 
-    await run_harvest(page, kb=kb, state="search_results")
+    # Capture the boolean success status from the harvester
+    success = await run_harvest(page, kb=kb, state="search_results")
     
     if BOT_MODE == "explore":
         await smart_sitemap_extraction(page, kb)
         next_url = kb.get_next_url()
-        
         if next_url:
             print(f"🧭 Page Harvest Complete. Remaining items in queue: {len(kb.data['queue'])}")
             print(f"🚀 [AUTONOMOUS ROUTING] Proceeding to next category: {next_url}")
@@ -130,8 +126,23 @@ async def handle_search_results(page, kb):
             print("🎉 Exploration Queue Empty. Entire catalog mapped. Stopping agent.")
             return "stop"
     else:
-        # Loop back to dashboard to process the next item (or reload the queue if empty)
-        print(f"🧭 Search Harvest Complete. Returning to dashboard for next target...")
+        # 🔄 AUTO-RETRY LOGIC 
+        if success:
+            completed_term = SEARCH_QUEUE.pop(0)
+            kb.data["retry_count"] = 0
+            print(f"\n✅ SUCCESS! '{completed_term}' fully harvested. {len(SEARCH_QUEUE)} items left in queue.")
+        else:
+            retry_count = kb.data.get("retry_count", 0) + 1
+            kb.data["retry_count"] = retry_count
+            
+            if retry_count >= 3:
+                failed_term = SEARCH_QUEUE.pop(0)
+                print(f"\n❌ MAX RETRIES (3) reached for '{failed_term}'. Skipping to next item to prevent getting stuck.")
+                kb.data["retry_count"] = 0
+            else:
+                print(f"\n🔄 REDO TRIGGERED: Retrying '{SEARCH_QUEUE[0]}' (Attempt {retry_count} of 3) to fetch missing items...")
+
+        print(f"🧭 Returning to dashboard for next sequence...")
         await page.goto("https://order.gfs.com/")
         await asyncio.sleep(5)
         return "continue"

@@ -1,30 +1,30 @@
-{"timestamp":"2026-04-07T13:51:13.161435","type":"STATE_CHANGE","details":{"from":"login_page","to":"dashboard"}}
-{"timestamp":"2026-04-07T13:51:24.110615","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T13:51:40.089029","type":"CRASH","details":"Page.goto: Target page, context or browser has been closed"}
-{"timestamp":"2026-04-07T13:52:19.831446","type":"ARCHITECTURE_UPDATE","details":{"summary":"Data Optimization Update","details":"Migrated to google.genai, fixed circular imports, isolated phase memory dumps."}}
-{"timestamp":"2026-04-07T13:52:30.540018","type":"STATE_CHANGE","details":{"from":null,"to":"login_page"}}
-{"timestamp":"2026-04-07T13:52:47.093109","type":"STATE_CHANGE","details":{"from":"login_page","to":"dashboard"}}
-{"timestamp":"2026-04-07T13:52:58.796057","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T13:56:35.347235","type":"ARCHITECTURE_UPDATE","details":{"summary":"Data Optimization Update","details":"Migrated to google.genai, fixed circular imports, isolated phase memory dumps."}}
-{"timestamp":"2026-04-07T13:56:45.458715","type":"STATE_CHANGE","details":{"from":null,"to":"login_page"}}
-{"timestamp":"2026-04-07T13:57:02.614938","type":"STATE_CHANGE","details":{"from":"login_page","to":"dashboard"}}
-{"timestamp":"2026-04-07T13:57:13.888494","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T13:58:29.181227","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T13:58:40.124705","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T13:59:15.207046","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T13:59:26.686488","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T14:01:54.267749","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:02:07.067563","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T14:03:23.707110","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:03:34.017498","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T14:04:08.388579","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:04:18.983338","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T14:07:05.028302","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:07:23.878265","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T14:08:42.734923","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:08:54.275572","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T14:09:28.971625","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:09:42.374424","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T14:12:30.275602","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:12:44.502712","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T14:12:54.143651","type":"CRASH","details":"Page.goto: Target page, context or browser has been closed"}
+{"timestamp":"2026-04-07T14:37:01.549633","type":"STATE_CHANGE","details":{"from":"login_page","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:37:13.582434","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T14:37:47.600005","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:37:57.770588","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T14:40:41.323212","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:40:55.276483","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T14:42:11.147425","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:42:23.038577","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T14:42:57.735834","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:43:08.265365","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T14:45:58.629002","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:46:12.008643","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T14:47:28.126657","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:47:39.021455","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T14:48:13.519583","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:48:24.105232","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T14:51:08.528476","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:51:22.937500","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T14:52:40.448069","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:52:52.404511","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T14:53:27.404419","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:55:59.141873","type":"ARCHITECTURE_UPDATE","details":{"summary":"Data Optimization Update","details":"Migrated to google.genai, fixed circular imports, isolated phase memory dumps."}}
+{"timestamp":"2026-04-07T14:56:47.366071","type":"STATE_CHANGE","details":{"from":null,"to":"login_page"}}
+{"timestamp":"2026-04-07T14:57:05.504905","type":"STATE_CHANGE","details":{"from":"login_page","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:57:17.220582","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T14:58:31.051741","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:58:41.874279","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T14:59:15.590689","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-07T14:59:26.190059","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-07T15:01:19.638540","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}

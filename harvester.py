@@ -3,14 +3,28 @@ import asyncio
 import os
 import re
 import json
+import sys
+import subprocess
 import datetime
 import sqlite3
 from logger import log_event
 from scroll import force_scroll_down
 from actions import teach_and_click, gemini_double_check_totals, get_supervisor_status, dismiss_all_popups
 
-DB_FILE = "gfs_products.db"
-CSV_FILE = "gfs_results.csv"
+# Auto-Install openpyxl for Excel generation if missing
+try:
+    import openpyxl
+    from openpyxl.styles import Font, Alignment
+except ImportError:
+    print("📦 [SYSTEM] Installing 'openpyxl' for Excel Master Sheet generation...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "openpyxl", "--break-system-packages"])
+    import openpyxl
+    from openpyxl.styles import Font, Alignment
+
+# Upgraded to v3 to cleanly support the new Last Updated column
+DB_FILE = "gfs_master_v3.db"
+EXCEL_FILE = "GFS_Master_Catalog.xlsx"
+
 product_db = {}
 target_total = 9999 
 RAW_INFO_BUFFER = []
@@ -24,13 +38,19 @@ def init_db():
         CREATE TABLE IF NOT EXISTS products (
             code TEXT PRIMARY KEY,
             name TEXT,
-            details TEXT,
-            price TEXT,
+            brand TEXT,
+            measure_1 TEXT,
+            measure_2 TEXT,
+            price_1_unit TEXT,
+            price_1 TEXT,
+            price_2_unit TEXT,
+            price_2 TEXT,
             stock TEXT,
             last_ordered TEXT,
             image_file TEXT,
             img_url TEXT,
             changes TEXT,
+            last_updated TEXT,
             last_seen TEXT
         )
     ''')
@@ -42,62 +62,103 @@ def process_changes():
     conn = sqlite3.connect(DB_FILE)
     c = conn.cursor()
     current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+    
     for code, details in product_db.items():
-        c.execute("SELECT price, details, img_url, changes FROM products WHERE code = ?", (code,))
+        c.execute("SELECT price_1, price_2, img_url, changes, last_updated FROM products WHERE code = ?", (code,))
         row = c.fetchone()
         change_msg = ""
+        
         if row:
-            old_price, old_details, old_img, old_changes = row
-            if old_price != details["price"] and details["price"] != "Price Not Found":
-                change_msg = f"New Price: {details['price']} ({current_time})"
-            elif old_details != details["details"] and details["details"] != "No Details":
-                change_msg = f"Desc Changed ({current_time})"
+            old_p1, old_p2, old_img, old_changes, old_last_updated = row
+            has_changed = False
+            
+            if old_p1 != details["price_1"] and details["price_1"]:
+                change_msg = f"Primary Price Changed to {details['price_1']}"
+                has_changed = True
+            elif old_p2 != details["price_2"] and details["price_2"]:
+                change_msg = f"Secondary Price Changed to {details['price_2']}"
+                has_changed = True
             elif old_img != details["img_url"] and details["img_url"]:
-                change_msg = f"New Image ({current_time})"
+                change_msg = f"New Image"
+                has_changed = True
             else:
                 change_msg = old_changes or ""
+                
+            # If data changed, update the timestamp. Otherwise, keep the old one.
+            last_updated_val = current_time if has_changed else (old_last_updated or current_time)
+                
             details["changes"] = change_msg
             c.execute("""
                 UPDATE products 
-                SET name=?, details=?, price=?, stock=?, last_ordered=?, image_file=?, img_url=?, changes=?, last_seen=?
+                SET name=?, brand=?, measure_1=?, measure_2=?, price_1_unit=?, price_1=?, price_2_unit=?, price_2=?, stock=?, last_ordered=?, image_file=?, img_url=?, changes=?, last_updated=?, last_seen=?
                 WHERE code=?
-            """, (details["name"], details["details"], details["price"], details["stock"], 
-                  details["last_ordered"], details["image_file"], details["img_url"], change_msg, current_time, code))
+            """, (details["name"], details["brand"], details["measure_1"], details["measure_2"], details["price_1_unit"], details["price_1"], details["price_2_unit"], details["price_2"], details["stock"], details["last_ordered"], details["image_file"], details["img_url"], change_msg, last_updated_val, current_time, code))
         else:
-            change_msg = f"New Product ({current_time})"
+            change_msg = f"New Product"
             details["changes"] = change_msg
+            last_updated_val = current_time
             c.execute("""
-                INSERT INTO products (code, name, details, price, stock, last_ordered, image_file, img_url, changes, last_seen)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """, (code, details["name"], details["details"], details["price"], details["stock"], 
-                  details["last_ordered"], details["image_file"], details["img_url"], change_msg, current_time))
+                INSERT INTO products (code, name, brand, measure_1, measure_2, price_1_unit, price_1, price_2_unit, price_2, stock, last_ordered, image_file, img_url, changes, last_updated, last_seen)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (code, details["name"], details["brand"], details["measure_1"], details["measure_2"], details["price_1_unit"], details["price_1"], details["price_2_unit"], details["price_2"], details["stock"], details["last_ordered"], details["image_file"], details["img_url"], change_msg, last_updated_val, current_time))
+            
     conn.commit()
     conn.close()
+
+def generate_excel_master():
+    print(f"📊 Generating perfectly formatted Excel Master Catalog: {EXCEL_FILE}...")
+    try:
+        conn = sqlite3.connect(DB_FILE)
+        c = conn.cursor()
+        # Order the query alphabetically by product name before writing to Excel
+        c.execute("SELECT code, name, brand, measure_1, measure_2, price_1_unit, price_1, price_2_unit, price_2, stock, last_ordered, changes, last_updated, last_seen FROM products ORDER BY name ASC")
+        rows = c.fetchall()
+        conn.close()
+
+        wb = openpyxl.Workbook()
+        ws = wb.active
+        ws.title = "Master Catalog"
+
+        # Added Last Updated to headers
+        headers = ["Code", "Product Name", "Brand", "Measure 1 (Weight/Vol)", "Measure 2 (Base UOM)", "Primary Unit", "Primary Price", "Secondary Unit", "Secondary Price", "Stock Status", "Last Ordered", "Recent Changes", "Last Updated", "Last Seen"]
+        ws.append(headers)
+
+        # Style the header row and freeze it
+        for col in range(1, len(headers) + 1):
+            cell = ws.cell(row=1, column=col)
+            cell.font = Font(bold=True, color="FFFFFF")
+            cell.fill = openpyxl.styles.PatternFill(start_color="34495E", end_color="34495E", fill_type="solid")
+            cell.alignment = Alignment(horizontal="center")
+        ws.freeze_panes = 'A2'
+        
+        # Add auto-filter to all columns
+        ws.auto_filter.ref = f"A1:N{len(rows) + 1}"
+
+        for row_data in rows:
+            ws.append(row_data)
+
+        # Auto-adjust column widths
+        for col in ws.columns:
+            max_length = 0
+            column = col[0].column_letter
+            for cell in col:
+                try:
+                    if len(str(cell.value)) > max_length:
+                        max_length = len(str(cell.value))
+                except: pass
+            adjusted_width = min(max_length + 2, 50) # Cap width at 50 to prevent massive columns
+            ws.column_dimensions[column].width = adjusted_width
+
+        wb.save(EXCEL_FILE)
+        print("✅ Excel Master Catalog successfully updated!")
+    except Exception as e:
+        print(f"⚠️ Failed to generate Excel file: {e}")
 
 def update_status(state, message, current=0, total=0):
     try:
         with open("status.json", "w", encoding="utf-8") as f:
             json.dump({"state": state, "message": message, "current": current, "total": total}, f)
     except: pass
-
-def initialize_csv():
-    with open(CSV_FILE, mode="w", encoding="utf-8") as f:
-        f.write("Name;Code;Details;Pricing;Stock_Status;Last_Ordered;Image_File;Changes\n")
-
-def sanitize_text(text):
-    if not text: return ""
-    return str(text).replace(';', ',').replace('\n', ' ').replace('\r', '').strip()
-
-def write_csv_line(code, data):
-    with open(CSV_FILE, mode="a", encoding="utf-8") as f:
-        name = sanitize_text(data.get('name', 'Unknown'))
-        details = sanitize_text(data.get('details', 'No Details'))
-        price = sanitize_text(data.get('price', 'Price Not Found'))
-        stock = sanitize_text(data.get('stock', 'In Stock'))
-        last_ord = sanitize_text(data.get('last_ordered', 'N/A'))
-        img_file = sanitize_text(data.get('image_file', 'No Image'))
-        changes = sanitize_text(data.get('changes', ''))
-        f.write(f"{name};{code};{details};{price};{stock};{last_ord};{img_file};{changes}\n")
 
 def generate_html_dashboard():
     print("🌐 Generating HTML Visual Dashboard from Master Database...")
@@ -108,40 +169,55 @@ def generate_html_dashboard():
         if os.path.exists(DB_FILE):
             conn = sqlite3.connect(DB_FILE)
             c = conn.cursor()
-            c.execute("SELECT name, code, details, price, stock, last_ordered, image_file, changes, last_seen FROM products ORDER BY last_seen DESC")
+            c.execute("SELECT name, code, brand, measure_1, measure_2, price_1_unit, price_1, price_2_unit, price_2, stock, last_ordered, image_file, changes, last_updated, last_seen FROM products ORDER BY last_seen DESC")
             rows = c.fetchall()
             for row in rows:
-                name, code, details, price, stock, last_ord, img, changes, last_seen = row
+                name, code, brand, m1, m2, p1u, p1, p2u, p2, stock, last_ord, img, changes, last_updated, last_seen = row
+                
                 stock_class = "in-stock"
                 if "OUT OF STOCK" in stock.upper(): stock_class = "out-of-stock"
                 elif "CONTACT" in stock.upper(): stock_class = "contact-sales"
+                
                 img_path = img if img not in ["No Image", "Failed to Download", ""] else NO_IMAGE_SVG
                 badge_html = f'<div class="badge">🆕 {changes}</div>' if changes else ""
+                
+                # Format price string for visual grid
+                price_display = f"{p1u}: {p1}" if p1 else "Price Not Found"
+                if p2: price_display += f" | {p2u}: {p2}"
+                
+                details_display = f"{brand} | {m1} / {m2}".strip(" / |")
+                
                 cards_html += f"""
                 <div class="card">
                     {badge_html}
                     <img src="{img_path}" alt="Product Image">
                     <h3>{name}</h3>
-                    <div class="details">#{code} | {details}</div>
-                    <div class="price">{price}</div>
+                    <div class="details">#{code} | {details_display}</div>
+                    <div class="price">{price_display}</div>
                     <div class="stock {stock_class}">{stock}</div>
-                    <div class="ordered">Last Ordered: {last_ord} <br><small>Last Seen: {last_seen}</small></div>
+                    <div class="ordered">Last Ordered: {last_ord} <br><small>Updated: {last_updated}</small></div>
                 </div>
                 """
+                
                 table_data.append([
                     f"<img src='{img_path}' style='width: 45px; height: 45px; object-fit: contain; border-radius: 4px;'>",
                     f"<b>#{code}</b>",
                     name,
-                    details,
-                    f"<span style='color: #27ae60; font-weight: bold;'>{price}</span>",
+                    brand,
+                    m1,
+                    m2,
+                    f"<span style='color: #27ae60; font-weight: bold;'>{p1u}: {p1}</span>",
+                    f"<span style='color: #2980b9; font-weight: bold;'>{p2u}: {p2}</span>" if p2 else "",
                     f"<span class='stock {stock_class}'>{stock}</span>",
                     last_ord,
                     changes,
+                    last_updated,
                     last_seen
                 ])
             conn.close()
     except Exception as e:
         print(f"⚠️ Failed to read DB for dashboard: {e}")
+        
     html_content = f"""<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -218,11 +294,15 @@ def generate_html_dashboard():
                         <th>Image</th>
                         <th>Code</th>
                         <th>Name</th>
-                        <th>Details</th>
-                        <th>Price</th>
+                        <th>Brand</th>
+                        <th>Measure 1</th>
+                        <th>Measure 2</th>
+                        <th>Price 1</th>
+                        <th>Price 2</th>
                         <th>Stock Status</th>
                         <th>Last Ordered</th>
                         <th>Recent Changes</th>
+                        <th>Last Updated</th>
                         <th>Last Seen</th>
                     </tr>
                 </thead>
@@ -237,7 +317,7 @@ def generate_html_dashboard():
                     data: erpData,
                     pageLength: 25,
                     lengthMenu: [10, 25, 50, 100, 500],
-                    order: [[8, 'desc']], 
+                    order: [[12, 'desc']], 
                     columnDefs: [
                         {{ orderable: false, targets: 0 }},
                         {{ className: "dt-head-left", targets: "_all" }}
@@ -356,21 +436,34 @@ async def setup_wiretap(page):
 
 def merge_buffers_to_db():
     global product_db, RAW_INFO_BUFFER, RAW_PRICE_BUFFER
+    
+    # 1. Process all intercepted product details
     for payload in RAW_INFO_BUFFER:
         for item in payload.get("materialInfos", []):
             code = str(item.get("materialNumber", ""))
             if not code: continue
+            
             if code not in product_db:
-                product_db[code] = { "name": "Unknown", "details": "No Details", "price": "Price Not Found", "stock": "In Stock", "last_ordered": "N/A", "image_file": "No Image", "img_url": "", "changes": "" }
+                product_db[code] = {
+                    "name": "Unknown", "brand": "Unknown",
+                    "measure_1": "", "measure_2": "",
+                    "price_1_unit": "Case", "price_1": "",
+                    "price_2_unit": "", "price_2": "",
+                    "stock": "In Stock", "last_ordered": "N/A",
+                    "image_file": "No Image", "img_url": "", "changes": ""
+                }
+                
             desc = item.get("description") or {}
             name = desc.get("en") or desc.get("fr") or product_db[code].get("name")
             brand = (item.get("brand") or {}).get("en", "Unknown Brand")
+            
             weight = item.get("baseUomWeight") or {}
             net_weight = weight.get("net", "")
             try:
                 nw_float = float(net_weight)
                 net_weight = f"{int(nw_float)}" if nw_float.is_integer() else f"{nw_float}"
             except Exception: pass
+            
             uom = weight.get("uom", "").upper()
             if uom in ["KG", "KGM"]: uom = "Kilograms"
             elif uom in ["LB", "LBR"]: uom = "Pounds"
@@ -378,9 +471,13 @@ def merge_buffers_to_db():
             elif uom in ["ML", "MLT"]: uom = "Milliliters"
             elif uom in ["L", "LTR"]: uom = "Liters"
             else: uom = uom.capitalize()
+            
             base_uom = item.get("baseUom", "Case").capitalize()
             if base_uom in ["Cs", "Bg", "Ea"]: base_uom = {"Cs":"Case", "Bg":"Bag", "Ea":"Each"}.get(base_uom, base_uom)
-            details_str = f"{brand} | {net_weight} {uom}/{base_uom}"
+            
+            measure_1 = f"{net_weight} {uom}".strip()
+            measure_2 = base_uom
+            
             img_url = ""
             if "image" in item and item["image"]:
                 for lang in ["en", "fr", "es"]:
@@ -388,25 +485,50 @@ def merge_buffers_to_db():
                     if img_data.get("url"):
                         img_url = img_data["url"]
                         break
-            product_db[code].update({"name": name, "details": details_str})
+                        
+            product_db[code].update({
+                "name": name, 
+                "brand": brand,
+                "measure_1": measure_1,
+                "measure_2": measure_2
+            })
             if img_url and not product_db[code].get("img_url"):
                 product_db[code]["img_url"] = img_url
+                
+    # 2. Process all intercepted pricing and map exactly to Price 1 and Price 2
     for payload in RAW_PRICE_BUFFER:
         for item in payload.get("materialPrices", []):
             code = str(item.get("materialNumber", ""))
             if not code: continue
+            
             if code not in product_db:
-                product_db[code] = { "name": "Unknown", "details": "No Details", "price": "Price Not Found", "stock": "In Stock", "last_ordered": "N/A", "image_file": "No Image", "img_url": "", "changes": "" }
+                product_db[code] = {
+                    "name": "Unknown", "brand": "Unknown",
+                    "measure_1": "", "measure_2": "",
+                    "price_1_unit": "Case", "price_1": "",
+                    "price_2_unit": "", "price_2": "",
+                    "stock": "In Stock", "last_ordered": "N/A",
+                    "image_file": "No Image", "img_url": "", "changes": ""
+                }
+                
             units = item.get("unitPrices") or []
-            price_strings = []
-            for u in units:
+            p1_u, p1_v, p2_u, p2_v = "", "", "", ""
+            
+            for idx, u in enumerate(units):
                 if u.get("price") is not None:
-                    uom = u.get("salesUom") or u.get("uom") or "EA"
-                    if uom in ["CS", "BG", "EA"]: uom = {"CS":"Case", "BG":"Bag", "EA":"Each"}.get(uom, uom)
-                    else: uom = uom.capitalize()
-                    price_strings.append(f"{uom}: ${float(u['price']):.2f}")
-            if price_strings:
-                product_db[code]["price"] = " | ".join(price_strings)
+                    uom_str = u.get("salesUom") or u.get("uom") or "EA"
+                    uom_str = {"CS":"Case", "BG":"Bag", "EA":"Each"}.get(uom_str, uom_str.capitalize())
+                    p_str = f"${float(u['price']):.2f}"
+                    if idx == 0:
+                        p1_u, p1_v = uom_str, p_str
+                    elif idx == 1:
+                        p2_u, p2_v = uom_str, p_str
+                        
+            if p1_v:
+                product_db[code].update({
+                    "price_1_unit": p1_u, "price_1": p1_v,
+                    "price_2_unit": p2_u, "price_2": p2_v
+                })
 
 async def dump_json_buffers(suffix=""):
     global RAW_INFO_BUFFER, RAW_PRICE_BUFFER
@@ -430,7 +552,8 @@ async def run_harvest(page, kb=None, state="search_results"):
     RAW_PRICE_BUFFER.clear()
     target_total = 9999 
     
-    initialize_csv()
+    harvest_success = True
+    
     update_status("running", "Initializing Harvester...", 5, 100)
     for _ in range(15):
         if target_total != 9999: break
@@ -537,13 +660,23 @@ async def run_harvest(page, kb=None, state="search_results"):
                     seen_in_dom.add(code) 
                     lines = data_dict.get("lines", [])
                     scraped_img = data_dict.get("img", "")
+                    
                     if code not in product_db:
                         if code in global_product_db:
                             product_db[code] = dict(global_product_db[code])
                         else:
-                            product_db[code] = { "name": "Unknown", "details": "No Details", "price": "Price Not Found", "stock": "In Stock", "last_ordered": "N/A", "image_file": "No Image", "img_url": "", "changes": "" }
+                            product_db[code] = {
+                                "name": "Unknown", "brand": "Unknown",
+                                "measure_1": "", "measure_2": "",
+                                "price_1_unit": "Case", "price_1": "",
+                                "price_2_unit": "", "price_2": "",
+                                "stock": "In Stock", "last_ordered": "N/A",
+                                "image_file": "No Image", "img_url": "", "changes": ""
+                            }
+                            
                     if scraped_img and (not product_db[code].get("img_url") or "no_image" in product_db[code].get("img_url", "").lower()):
                         product_db[code]["img_url"] = scraped_img
+                        
                     if len(lines) > 0:
                         ignore_labels = ["compare", "view similar items", "long term out of stock", "new", "in stock", "contact sales", "add to cart", "out of stock", "special order", "hide unavailable items"]
                         clean_lines = [l for l in lines if l.lower() not in ignore_labels and "delivery" not in l.lower()]
@@ -553,33 +686,39 @@ async def run_harvest(page, kb=None, state="search_results"):
                             if match:
                                 product_db[code]["last_ordered"] = match.group(1).strip()
                             clean_lines.remove(l) 
+                            
                         code_idx = -1
                         for i, l in enumerate(clean_lines):
                             if f"#{code}" in l:
                                 code_idx = i
                                 break
+                                
                         if code_idx != -1:
                             if code_idx > 0 and product_db[code]["name"] in ["Unknown", ""]:
                                 product_db[code]["name"] = clean_lines[code_idx - 1]
-                            if product_db[code]["details"] in ["No Details", "⭐ [ORDER GUIDE] No Details", ""]:
+                                
+                            if product_db[code]["measure_1"] == "":
                                 d_line = clean_lines[code_idx]
                                 c_details = d_line.replace(f"#{code} |", "").replace(f"#{code}", "").strip()
                                 if c_details:
-                                    product_db[code]["details"] = c_details
-                                elif code_idx + 1 < len(clean_lines):
-                                    product_db[code]["details"] = clean_lines[code_idx + 1]
+                                    product_db[code]["measure_1"] = c_details
                         else:
                             if product_db[code]["name"] in ["Unknown", ""] and clean_lines:
                                 product_db[code]["name"] = clean_lines[0]
-                        if product_db[code]["price"] in ["Price Not Found", ""]:
+                                
+                        if product_db[code]["price_1"] == "":
                             for i, l in enumerate(clean_lines):
                                 if "$" in l and any(c.isdigit() for c in l):
                                     if ":" in l:
-                                        product_db[code]["price"] = l
+                                        parts = l.split(":", 1)
+                                        product_db[code]["price_1_unit"] = parts[0].strip()
+                                        product_db[code]["price_1"] = parts[1].strip()
                                     else:
                                         unit = clean_lines[i-1] if i > 0 and len(clean_lines[i-1]) <= 6 else "Case"
-                                        product_db[code]["price"] = f"{unit}: {l}"
+                                        product_db[code]["price_1_unit"] = unit
+                                        product_db[code]["price_1"] = l
                                     break
+                                    
             except Exception as e:
                 print(f"⚠️ DOM extraction error: {e}")
             
@@ -600,7 +739,6 @@ async def run_harvest(page, kb=None, state="search_results"):
                     
                     viewport = page.viewport_size
                     if viewport:
-                        # CRITICAL FIX: Click far right edge to avoid product cards
                         safe_x = int(viewport['width'] - 10)
                         safe_y = int(viewport['height'] * 0.5)
                         await page.mouse.click(safe_x, safe_y)
@@ -611,6 +749,7 @@ async def run_harvest(page, kb=None, state="search_results"):
             else: 
                 stagnant_strikes = 0
                 print(f"📦 [{phase_name}] Progress: {len(seen_in_dom)} / {target_total} products mapped. ({max(0, target_total - len(seen_in_dom))} left to go!)")
+                
     try:
         print("🚀 Starting Phase 1: Scraping 'All Results' tab...")
         
@@ -618,6 +757,7 @@ async def run_harvest(page, kb=None, state="search_results"):
         await dump_json_buffers("phase1")
         merge_buffers_to_db()
         global_product_db.update(product_db)
+        
         if order_guide_target > 0 and kb is not None:
             print(f"\n🔄 Initiating Phase 2: Switching to 'Order Guide Only' tab to fetch {order_guide_target} items...")
             await page.evaluate("""() => {
@@ -660,6 +800,7 @@ async def run_harvest(page, kb=None, state="search_results"):
             except Exception as e:
                 print(f"⚠️ Direct DOM clicker failed: {e}")
                 pass
+                
             if not tab_clicked:
                 tab_clicked = await teach_and_click(page, kb, state, "order_guide_tab", action="click")
             if tab_clicked:
@@ -674,16 +815,32 @@ async def run_harvest(page, kb=None, state="search_results"):
                 await dump_json_buffers("phase2")
                 merge_buffers_to_db()
                 for code, data in product_db.items():
-                    if "[ORDER GUIDE]" not in data["details"]:
-                        data["details"] = f"⭐ [ORDER GUIDE] {data['details']}"
+                    if "[ORDER GUIDE]" not in data["name"]:
+                        data["name"] = f"⭐ [ORDER GUIDE] {data['name']}"
                     global_product_db[code] = data
+                    
+        total_collected = len(global_product_db)
+        expected_minimum = int(all_res_target * 0.90) 
+        
+        if total_collected < expected_minimum and all_res_target != 9999:
+            print(f"\n⚠️ [HARVEST INCOMPLETE] Only collected {total_collected} out of expected ~{all_res_target} items.")
+            harvest_success = False
+        else:
+            print(f"\n✅ [HARVEST COMPLETE] Successfully collected {total_collected} items.")
+            harvest_success = True
+
     except Exception as e:
         print(f"⚠️ HARVEST WARNING: Sequence interrupted ({e}). Saving retrieved data...")
+        harvest_success = False
+        
     finally:
-        update_status("processing", "Saving to SQLite DB & Generating Dashboard...", 90, 100)
+        update_status("processing", "Saving to SQLite DB & Generating Master Excel...", 90, 100)
         product_db.clear()
         product_db.update(global_product_db)
         await download_pending_images(page)
+        
         process_changes()
-        for code, data in product_db.items(): write_csv_line(code, data)
+        generate_excel_master()
         generate_html_dashboard()
+        
+        return harvest_success
