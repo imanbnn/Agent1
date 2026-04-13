@@ -1,26 +1,26 @@
-# GEMINI COMPRESSED MANIFEST | 2026-04-07 14:55:59
+# GEMINI COMPRESSED MANIFEST | 2026-04-12 12:34:25
 
 # --- MINIFIED MEMORY ---
-{"login_page":{"username_field":{"x":852,"y":356},"password_field":{"x":864,"y":401}},"dashboard":{"scroll_depth":{"scrolls":1},"search_bar":{"x":467,"y":71}},"sitemap":{"xml_links":"<0 links hidden>","dom_links":"<10 links hidden>"},"product_page":{"order_guide_tab":{"x":57,"y":17}},"url_map":{"order.gfs.com/categories":"transitioning","order.gfs.com/guides":"transitioning"},"search_results":{"order_guide_tab":{"x":554,"y":170}},"queue":[],"visited":["https://order.gfs.com/categories","https://order.gfs.com/","https://order.gfs.com/guides"],"catalog_map":{"https://order.gfs.com/search?searchText=Rice":"258 results for \"Rice\"","https://order.gfs.com/search?searchText=Avocado":"16 results for \"Avocado\"","https://order.gfs.com/search?searchText=Chicken":"721 results for \"Chicken\""},"transitioning":{"scroll_depth":{"scrolls":1}}}
+{"login_page":{"username_field":{"x":852,"y":356},"password_field":{"x":864,"y":401}},"dashboard":{"scroll_depth":{"scrolls":1},"search_bar":{"x":467,"y":71}},"sitemap":{"xml_links":"<0 links hidden>","dom_links":"<10 links hidden>"},"product_page":{"order_guide_tab":{"x":57,"y":17}},"url_map":{"order.gfs.com/categories":"transitioning","order.gfs.com/guides":"transitioning"},"search_results":{"order_guide_tab":{"x":554,"y":170}},"queue":["https://order.gfs.com/categories/results/2~077","https://order.gfs.com/categories/results/2~078","https://order.gfs.com/categories/results/2~079","https://order.gfs.com/categories/results/2~080","https://order.gfs.com/categories/results/2~081","https://order.gfs.com/categories/results/2~082","https://order.gfs.com/categories/results/2~083","https://order.gfs.com/categories/results/2~084","https://order.gfs.com/categories/results/2~085","https://order.gfs.com/categories/results/2~086","https://order.gfs.com/categories/results/2~087","https://order.gfs.com/categories/results/2~088","https://order.gfs.com/categories/results/2~089","https://order.gfs.com/categories/results/2~090","https://order.gfs.com/categories/results/2~091","https://order.gfs.com/categories/results/2~092","https://order.gfs.com/categories/results/2~093","https://order.gfs.com/categories/results/2~094","https://order.gfs.com/categories/results/2~095","https://order.gfs.com/categories/results/2~096","https://order.gfs.com/categories/results/2~097","https://order.gfs.com/categories/results/2~098","https://order.gfs.com/categories/results/2~099","https://order.gfs.com/categories/results/2~100","https://order.gfs.com/categories/results/2~101","https://order.gfs.com/categories/results/2~102","https://order.gfs.com/categories/results/2~103","https://order.gfs.com/categories/results/2~104","https://order.gfs.com/categories/results/2~105","https://order.gfs.com/categories/results/2~106","https://order.gfs.com/categories/results/2~107","https://order.gfs.com/categories/results/2~108","https://order.gfs.com/categories/results/2~109","https://order.gfs.com/categories/results/2~110","https://order.gfs.com/categories/results/2~111","https://order.gfs.com/categories/results/2~112","https://order.gfs.com/categories/results/2~113","https://order.gfs.com/categories/results/2~114","https://order.gfs.com/categories/results/2~115","https://order.gfs.com/categories/results/2~116","https://order.gfs.com/categories/results/2~117","https://order.gfs.com/categories/results/2~118","https://order.gfs.com/categories/results/2~119","https://order.gfs.com/categories/results/2~120","https://order.gfs.com/categories/results/2~121","https://order.gfs.com/categories/results/2~122","https://order.gfs.com/categories/results/2~123","https://order.gfs.com/categories/results/2~124","https://order.gfs.com/categories/results/2~125","https://order.gfs.com/categories/results/2~126","https://order.gfs.com/categories/results/2~127","https://order.gfs.com/categories/results/2~128","https://order.gfs.com/categories/results/2~129","https://order.gfs.com/categories/results/2~130","https://order.gfs.com/categories/results/2~131","https://order.gfs.com/categories/results/2~132","https://order.gfs.com/categories/results/2~133","https://order.gfs.com/categories/results/2~134","https://order.gfs.com/categories/results/2~135","https://order.gfs.com/categories/results/2~136","https://order.gfs.com/categories/results/2~137","https://order.gfs.com/categories/results/2~138","https://order.gfs.com/categories/results/2~139","https://order.gfs.com/categories/results/2~140","https://order.gfs.com/categories/results/2~141","https://order.gfs.com/categories/results/2~142","https://order.gfs.com/categories/results/2~143","https://order.gfs.com/categories/results/2~144","https://order.gfs.com/categories/results/2~145","https://order.gfs.com/categories/results/2~146","https://order.gfs.com/categories/results/2~147","https://order.gfs.com/categories/results/2~148","https://order.gfs.com/categories/results/2~149","https://order.gfs.com/categories/results/2~150","https://order.gfs.com/categories/results/2~151","https://order.gfs.com/categories/results/2~152","https://order.gfs.com/categories/results/2~153","https://order.gfs.com/categories/results/2~154","https://order.gfs.com/categories/results/2~155","https://order.gfs.com/categories/results/2~156","https://order.gfs.com/categories/results/2~157","https://order.gfs.com/categories/results/2~158","https://order.gfs.com/categories/results/2~159","https://order.gfs.com/categories/results/2~160","https://order.gfs.com/categories/results/2~161","https://order.gfs.com/categories/results/2~162","https://order.gfs.com/categories/results/2~163","https://order.gfs.com/categories/results/2~164","https://order.gfs.com/categories/results/2~165","https://order.gfs.com/categories/results/2~166","https://order.gfs.com/categories/results/2~167","https://order.gfs.com/categories/results/2~168","https://order.gfs.com/categories/results/2~169","https://order.gfs.com/categories/results/2~170","https://order.gfs.com/categories/results/2~171","https://order.gfs.com/categories/results/2~172","https://order.gfs.com/categories/results/2~173","https://order.gfs.com/categories/results/2~174","https://order.gfs.com/categories/results/2~175","https://order.gfs.com/categories/results/2~176","https://order.gfs.com/categories/results/2~177","https://order.gfs.com/categories/results/2~178","https://order.gfs.com/categories/results/2~179","https://order.gfs.com/categories/results/2~180","https://order.gfs.com/categories/results/2~181","https://order.gfs.com/categories/results/2~182","https://order.gfs.com/categories/results/2~183","https://order.gfs.com/categories/results/2~184","https://order.gfs.com/categories/results/2~185","https://order.gfs.com/categories/results/2~186","https://order.gfs.com/categories/results/2~187","https://order.gfs.com/categories/results/2~188","https://order.gfs.com/categories/results/2~189","https://order.gfs.com/categories/results/2~190","https://order.gfs.com/categories/results/2~191","https://order.gfs.com/categories/results/2~192","https://order.gfs.com/categories/results/2~193","https://order.gfs.com/categories/results/2~194","https://order.gfs.com/categories/results/2~195","https://order.gfs.com/categories/results/2~196","https://order.gfs.com/categories/results/2~197","https://order.gfs.com/categories/results/2~198","https://order.gfs.com/categories/results/2~199","https://order.gfs.com/categories/results/2~200","https://order.gfs.com/categories/results/2~201","https://order.gfs.com/categories/results/2~202","https://order.gfs.com/categories/results/2~203","https://order.gfs.com/categories/results/2~204","https://order.gfs.com/categories/results/2~205","https://order.gfs.com/categories/results/2~206","https://order.gfs.com/categories/results/2~207","https://order.gfs.com/categories/results/2~208","https://order.gfs.com/categories/results/2~209","https://order.gfs.com/categories/results/2~210","https://order.gfs.com/categories/results/2~211","https://order.gfs.com/categories/results/2~212","https://order.gfs.com/categories/results/2~213","https://order.gfs.com/categories/results/2~214","https://order.gfs.com/categories/results/2~215","https://order.gfs.com/categories/results/2~216","https://order.gfs.com/categories/results/2~217","https://order.gfs.com/categories/results/2~218","https://order.gfs.com/categories/results/2~219","https://order.gfs.com/categories/results/2~220","https://order.gfs.com/categories/results/2~221","https://order.gfs.com/categories/results/2~222","https://order.gfs.com/categories/results/2~223","https://order.gfs.com/categories/results/2~224","https://order.gfs.com/categories/results/2~225","https://order.gfs.com/categories/results/2~226","https://order.gfs.com/categories/results/2~227","https://order.gfs.com/categories/results/2~228","https://order.gfs.com/categories/results/2~229","https://order.gfs.com/categories/results/2~230","https://order.gfs.com/categories/results/2~231","https://order.gfs.com/categories/results/2~232","https://order.gfs.com/categories/results/2~233","https://order.gfs.com/categories/results/2~234","https://order.gfs.com/categories/results/2~235","https://order.gfs.com/categories/results/2~236","https://order.gfs.com/categories/results/2~237","https://order.gfs.com/categories/results/2~238","https://order.gfs.com/categories/results/2~239","https://order.gfs.com/categories/results/2~240","https://order.gfs.com/categories/results/2~241","https://order.gfs.com/categories/results/2~242","https://order.gfs.com/categories/results/2~243","https://order.gfs.com/categories/results/2~244","https://order.gfs.com/categories/results/2~245","https://order.gfs.com/categories/results/2~246","https://order.gfs.com/categories/results/2~247","https://order.gfs.com/categories/results/2~248","https://order.gfs.com/categories/results/2~249","https://order.gfs.com/categories/results/2~250"],"visited":["https://order.gfs.com/categories/results/2~001","https://order.gfs.com/categories/results/2~002","https://order.gfs.com/categories/results/2~003","https://order.gfs.com/categories/results/2~004","https://order.gfs.com/categories/results/2~005","https://order.gfs.com/categories/results/2~006","https://order.gfs.com/categories/results/2~007","https://order.gfs.com/categories/results/2~008","https://order.gfs.com/categories/results/2~009","https://order.gfs.com/categories/results/2~010","https://order.gfs.com/categories/results/2~011","https://order.gfs.com/categories/results/2~012","https://order.gfs.com/categories/results/2~013","https://order.gfs.com/categories/results/2~014","https://order.gfs.com/categories/results/2~015","https://order.gfs.com/categories/results/2~016","https://order.gfs.com/categories/results/2~017","https://order.gfs.com/categories/results/2~018","https://order.gfs.com/categories/results/2~019","https://order.gfs.com/categories/results/2~020","https://order.gfs.com/categories/results/2~021","https://order.gfs.com/categories/results/2~022","https://order.gfs.com/categories/results/2~023","https://order.gfs.com/categories/results/2~024","https://order.gfs.com/categories/results/2~025","https://order.gfs.com/categories/results/2~026","https://order.gfs.com/categories/results/2~027","https://order.gfs.com/categories/results/2~028","https://order.gfs.com/categories/results/2~029","https://order.gfs.com/categories/results/2~030","https://order.gfs.com/categories/results/2~031","https://order.gfs.com/categories/results/2~032","https://order.gfs.com/categories/results/2~033","https://order.gfs.com/categories/results/2~034","https://order.gfs.com/categories/results/2~035","https://order.gfs.com/categories/results/2~036","https://order.gfs.com/categories/results/2~037","https://order.gfs.com/categories/results/2~038","https://order.gfs.com/categories/results/2~039","https://order.gfs.com/categories/results/2~040","https://order.gfs.com/categories/results/2~041","https://order.gfs.com/categories/results/2~042","https://order.gfs.com/categories/results/2~043","https://order.gfs.com/categories/results/2~044","https://order.gfs.com/categories/results/2~045","https://order.gfs.com/categories/results/2~046","https://order.gfs.com/categories/results/2~047","https://order.gfs.com/categories/results/2~048","https://order.gfs.com/categories/results/2~049","https://order.gfs.com/categories/results/2~050","https://order.gfs.com/categories/results/2~051","https://order.gfs.com/categories/results/2~052","https://order.gfs.com/categories/results/2~053","https://order.gfs.com/categories/results/2~054","https://order.gfs.com/categories/results/2~055","https://order.gfs.com/categories/results/2~056","https://order.gfs.com/categories/results/2~057","https://order.gfs.com/categories/results/2~058","https://order.gfs.com/categories/results/2~059","https://order.gfs.com/categories/results/2~060","https://order.gfs.com/categories/results/2~061","https://order.gfs.com/categories/results/2~062","https://order.gfs.com/categories/results/2~063","https://order.gfs.com/categories/results/2~064","https://order.gfs.com/categories/results/2~065","https://order.gfs.com/categories/results/2~066","https://order.gfs.com/categories/results/2~067","https://order.gfs.com/categories/results/2~068","https://order.gfs.com/categories/results/2~069","https://order.gfs.com/categories/results/2~070","https://order.gfs.com/categories/results/2~071","https://order.gfs.com/categories/results/2~072","https://order.gfs.com/categories/results/2~073","https://order.gfs.com/categories/results/2~074","https://order.gfs.com/categories/results/2~075","https://order.gfs.com/categories/results/2~076"],"catalog_map":{"https://order.gfs.com/search?searchText=Rice":"258 results for \"Rice\"","https://order.gfs.com/search?searchText=Avocado":"16 results for \"Avocado\"","https://order.gfs.com/search?searchText=Chicken":"719 results for \"Chicken\"","https://order.gfs.com/categories/results/2~001":"39 results for \"Cubed, Diced, Stew & Kabob\"","https://order.gfs.com/categories/results/2~002":"169 results for \"Ground Beef, Patties & Meatballs\"","https://order.gfs.com/categories/results/2~003":"8 results for \"Philly & Breaded\"","https://order.gfs.com/categories/results/2~004":"365 results for \"Roasts & Boxed Beef\"","https://order.gfs.com/categories/results/2~005":"34 results for \"Sliced Beef\"","https://order.gfs.com/categories/results/2~006":"178 results for \"Steak\"","https://order.gfs.com/categories/results/2~007":"452 results for \"Chicken\"","https://order.gfs.com/categories/results/2~008":"71 results for \"Duck\"","https://order.gfs.com/categories/results/2~009":"66 results for \"Turkey\"","https://order.gfs.com/categories/results/2~010":"13 results for \"Other Poultry\"","https://order.gfs.com/categories/results/2~011":"86 results for \"Bacon\"","https://order.gfs.com/categories/results/2~012":"100 results for \"Boxed Pork\"","https://order.gfs.com/categories/results/2~013":"39 results for \"Ground, Cubed, Chopped & Breaded\"","https://order.gfs.com/categories/results/2~014":"53 results for \"Ribs\"","https://order.gfs.com/categories/results/2~015":"120 results for \"Roasts & Hams\"","https://order.gfs.com/categories/results/2~016":"20 results for \"Steaks & Chops\"","https://order.gfs.com/categories/results/2~017":"21 results for \"Crab\"","https://order.gfs.com/categories/results/2~018":"52 results for \"Freshwater Fish\"","https://order.gfs.com/categories/results/2~019":"32 results for \"Lobster\"","https://order.gfs.com/categories/results/2~020":"323 results for \"Ocean Fish\"","https://order.gfs.com/categories/results/2~021":"52 results for \"Oysters, Mussels, Clams & Scallops\"","https://order.gfs.com/categories/results/2~022":"88 results for \"Shrimp\"","https://order.gfs.com/categories/results/2~023":"17 results for \"Sushi\"","https://order.gfs.com/categories/results/2~024":"77 results for \"Other Seafood\"","https://order.gfs.com/categories/results/2~025":"67 results for \"Lamb\"","https://order.gfs.com/categories/results/2~026":"147 results for \"Veal\"","https://order.gfs.com/categories/results/2~027":"106 results for \"Specialty Meats\"","https://order.gfs.com/categories/results/2~028":"59 results for \"Hot Dogs & Franks\"","https://order.gfs.com/categories/results/2~029":"71 results for \"Pizza Toppings\"","https://order.gfs.com/categories/results/2~030":"233 results for \"Sausage\"","https://order.gfs.com/categories/results/2~031":"226 results for \"Appetizers\"","https://order.gfs.com/categories/results/2~032":"198 results for \"Entrees\"","https://order.gfs.com/categories/results/2~033":"433 results for \"Pasta\"","https://order.gfs.com/categories/results/2~034":"157 results for \"Potato Products\"","https://order.gfs.com/categories/results/2~035":"22 results for \"Prepared Pizza\"","https://order.gfs.com/categories/results/2~036":"92 results for \"Prepared Salads\"","https://order.gfs.com/categories/results/2~037":"185 results for \"Rice & Stuffing\"","https://order.gfs.com/categories/results/2~038":"221 results for \"Soups & Chili\"","https://order.gfs.com/categories/results/2~039":"97 results for \"Vegetarian Products\"","https://order.gfs.com/categories/results/2~040":"Ordering","https://order.gfs.com/categories/results/2~041":"280 results for \"Bagels, Muffins, Pastries & Croissants\"","https://order.gfs.com/categories/results/2~042":"Ordering","https://order.gfs.com/categories/results/2~043":"337 results for \"Breads, Rolls & Flatbreads\"","https://order.gfs.com/categories/results/2~044":"421 results for \"Brownies, Bars & Cookies\"","https://order.gfs.com/categories/results/2~045":"87 results for \"Buns\"","https://order.gfs.com/categories/results/2~046":"402 results for \"Cakes & Cupcakes\"","https://order.gfs.com/categories/results/2~047":"141 results for \"Gelatins & Pudding\"","https://order.gfs.com/categories/results/2~048":"226 results for \"Ice Cream\"","https://order.gfs.com/categories/results/2~049":"221 results for \"Pies, Tarts & Pie Crusts\"","https://order.gfs.com/categories/results/2~050":"80 results for \"Pizza Crust & Dough\"","https://order.gfs.com/categories/results/2~051":"327 results for \"Toppings & Cones\"","https://order.gfs.com/categories/results/2~052":"44 results for \"Butter & Margarine\"","https://order.gfs.com/categories/results/2~053":"704 results for \"Cheese\"","https://order.gfs.com/categories/results/2~054":"82 results for \"Eggs\"","https://order.gfs.com/categories/results/2~055":"180 results for \"Milk & Cream\"","https://order.gfs.com/categories/results/2~056":"155 results for \"Cultured Dairy\"","https://order.gfs.com/categories/results/2~057":"755 results for \"Beverage Condiments\"","https://order.gfs.com/categories/results/2~058":"28 results for \"Cocoa\"","https://order.gfs.com/categories/results/2~059":"368 results for \"Coffee, Espresso & Cappuccino\"","https://order.gfs.com/categories/results/2~060":"479 results for \"Fruit Juices & Drinks\"","https://order.gfs.com/categories/results/2~061":"279 results for \"Mixes & Drink Bases\"","https://order.gfs.com/categories/results/2~062":"316 results for \"Soft Drinks\"","https://order.gfs.com/categories/results/2~063":"99 results for \"Sports & Energy Drinks\"","https://order.gfs.com/categories/results/2~064":"583 results for \"Tea\"","https://order.gfs.com/categories/results/2~065":"186 results for \"Water\"","https://order.gfs.com/categories/results/2~066":"513 results for \"Fresh Vegetables\"","https://order.gfs.com/categories/results/2~067":"123 results for \"Fresh Fruit\"","https://order.gfs.com/categories/results/2~068":"Ordering","https://order.gfs.com/categories/results/2~069":"Ordering","https://order.gfs.com/categories/results/2~070":"386 results for \"Canned Fruit\"","https://order.gfs.com/categories/results/2~071":"613 results for \"Canned Vegetables\"","https://order.gfs.com/categories/results/2~072":"69 results for \"Frozen Fruit\"","https://order.gfs.com/categories/results/2~073":"221 results for \"Frozen Vegetables\"","https://order.gfs.com/categories/results/2~074":"288 results for \"Breading, Mixes & Batters\"","https://order.gfs.com/categories/results/2~075":"Candy","https://order.gfs.com/categories/results/2~076":"334 results for \"Cereal & Breakfast Food\"","https://order.gfs.com/categories/results/2~077":"729 results for \"Condiments & Dips\"","https://order.gfs.com/categories/results/2~078":"82 results for \"Crackers\"","https://order.gfs.com/categories/results/2~079":"644 results for \"Flour & Baking Ingredients\"","https://order.gfs.com/categories/results/2~080":"226 results for \"Bases, Broth & Gravies\"","https://order.gfs.com/categories/results/2~081":"243 results for \"Salad Dressings & Toppings\"","https://order.gfs.com/categories/results/2~082":"916 results for \"Sauces & Marinades\"","https://order.gfs.com/categories/results/2~083":"183 results for \"Shortenings & Oils\"","https://order.gfs.com/categories/results/2~084":"1087 results for \"Snacks\"","https://order.gfs.com/categories/results/2~085":"1363 results for \"Spices & Seasonings\"","https://order.gfs.com/categories/results/2~086":"49 results for \"Sugar\"","https://order.gfs.com/categories/results/2~087":"18 results for \"Dinnerware\"","https://order.gfs.com/categories/results/2~088":"12 results for \"Incontinence Care\"","https://order.gfs.com/categories/results/2~089":"129 results for \"Purees\"","https://order.gfs.com/categories/results/2~090":"213 results for \"Supplements\"","https://order.gfs.com/categories/results/2~091":"69 results for \"Thickened Liquids & Thickeners\"","https://order.gfs.com/categories/results/2~092":"677 results for \"Bags\"","https://order.gfs.com/categories/results/2~093":"142 results for \"Baking Supplies\"","https://order.gfs.com/categories/results/2~094":"1564 results for \"Containers\"","https://order.gfs.com/categories/results/2~095":"309 results for \"Cutlery\"","https://order.gfs.com/categories/results/2~096":"544 results for \"Dinnerware\"","https://order.gfs.com/categories/results/2~097":"679 results for \"Drinkware & Lids\"","https://order.gfs.com/categories/results/2~098":"168 results for \"Films, Foils & Wraps\"","https://order.gfs.com/categories/results/2~099":"99 results for \"Gloves & Apparel\"","https://order.gfs.com/categories/results/2~100":"166 results for \"Guest Checks & Register Tape\"","https://order.gfs.com/categories/results/2~101":"175 results for \"Napkins\"","https://order.gfs.com/categories/results/2~102":"108 results for \"Party & Catering Supplies\"","https://order.gfs.com/categories/results/2~103":"31 results for \"Pizza Supplies\"","https://order.gfs.com/categories/results/2~104":"82 results for \"Souffle & Portion Cups\"","https://order.gfs.com/categories/results/2~105":"391 results for \"Straws, Stirrers, Picks & Markers\"","https://order.gfs.com/categories/results/2~106":"136 results for \"Placemats, Table Covers & Skirts\"","https://order.gfs.com/categories/results/2~107":"223 results for \"Bar Supplies\"","https://order.gfs.com/categories/results/2~108":"261 results for \"Beverage Service\"","https://order.gfs.com/categories/results/2~109":"866 results for \"Buffet & Catering Supplies\"","https://order.gfs.com/categories/results/2~110":"686 results for \"Candles & Lighting\"","https://order.gfs.com/categories/results/2~111":"1220 results for \"Dining Room Supplies\"","https://order.gfs.com/categories/results/2~112":"2636 results for \"Dinnerware\"","https://order.gfs.com/categories/results/2~113":"776 results for \"Flatware\"","https://order.gfs.com/categories/results/2~114":"1133 results for \"Glassware\"","https://order.gfs.com/categories/results/2~115":"1280 results for \"Linen\"","https://order.gfs.com/categories/results/2~116":"255 results for \"Furniture\"","https://order.gfs.com/categories/results/2~117":"1 result for \"Promotional Items\"","https://order.gfs.com/categories/results/2~118":"1134 results for \"Apparel\"","https://order.gfs.com/categories/results/2~119":"831 results for \"Cookware & Bakeware\"","https://order.gfs.com/categories/results/2~120":"1422 results for \"Equipment & Appliances\"","https://order.gfs.com/categories/results/2~121":"322 results for \"Professional Cutlery\"","https://order.gfs.com/categories/results/2~122":"334 results for \"Storage Containers\"","https://order.gfs.com/categories/results/2~123":"1554 results for \"Utensils\"","https://order.gfs.com/categories/results/2~124":"489 results for \"Heavy Equipment\"","https://order.gfs.com/categories/results/2~125":"272 results for \"Cleaners & Degreasers\"","https://order.gfs.com/categories/results/2~126":"264 results for \"Dishwash\"","https://order.gfs.com/categories/results/2~127":"361 results for \"First Aid & Safety\"","https://order.gfs.com/categories/results/2~128":"285 results for \"Floorcare\"","https://order.gfs.com/categories/results/2~129":"412 results for \"Hand Hygiene\"","https://order.gfs.com/categories/results/2~130":"158 results for \"Housekeeping\"","https://order.gfs.com/categories/results/2~131":"68 results for \"Laundry\"","https://order.gfs.com/categories/results/2~132":"68 results for \"Odor Control\"","https://order.gfs.com/categories/results/2~133":"70 results for \"Scouring Pads, Sponges & Scrubbers\"","https://order.gfs.com/categories/results/2~134":"87 results for \"Tissue\"","https://order.gfs.com/categories/results/2~135":"249 results for \"Towels\"","https://order.gfs.com/categories/results/2~136":"257 results for \"Trash Cans & Liners\"","https://order.gfs.com/categories/results/2~137":"2 results for \"Internal Items\"","https://order.gfs.com/categories/results/2~138":"2 results for \"Medicine\"","https://order.gfs.com/categories/results/2~139":"Ordering","https://order.gfs.com/categories/results/2~140":"Ordering","https://order.gfs.com/categories/results/2~141":"Ordering","https://order.gfs.com/categories/results/2~142":"Ordering","https://order.gfs.com/categories/results/2~143":"Ordering","https://order.gfs.com/categories/results/2~144":"Ordering","https://order.gfs.com/categories/results/2~145":"1 result for \"Disposables\"","https://order.gfs.com/categories/results/2~146":"Ordering","https://order.gfs.com/categories/results/2~147":"Ordering","https://order.gfs.com/categories/results/2~148":"Ordering","https://order.gfs.com/categories/results/2~149":"2 results for \"Tabletop\"","https://order.gfs.com/categories/results/2~150":"Ordering","https://order.gfs.com/categories/results/2~151":"Ordering","https://order.gfs.com/categories/results/2~152":"Ordering","https://order.gfs.com/categories/results/2~153":"Ordering","https://order.gfs.com/categories/results/2~154":"Ordering","https://order.gfs.com/categories/results/2~155":"Ordering","https://order.gfs.com/categories/results/2~156":"Ordering","https://order.gfs.com/categories/results/2~157":"Ordering","https://order.gfs.com/categories/results/2~158":"Ordering","https://order.gfs.com/categories/results/2~159":"Ordering","https://order.gfs.com/categories/results/2~160":"Ordering","https://order.gfs.com/categories/results/2~161":"Ordering","https://order.gfs.com/categories/results/2~162":"Ordering","https://order.gfs.com/categories/results/2~163":"Ordering","https://order.gfs.com/categories/results/2~164":"Ordering","https://order.gfs.com/categories/results/2~165":"Ordering","https://order.gfs.com/categories/results/2~166":"Ordering","https://order.gfs.com/categories/results/2~167":"Ordering","https://order.gfs.com/categories/results/2~168":"Ordering","https://order.gfs.com/categories/results/2~169":"Ordering","https://order.gfs.com/categories/results/2~170":"Ordering","https://order.gfs.com/categories/results/2~171":"Ordering","https://order.gfs.com/categories/results/2~172":"Ordering","https://order.gfs.com/categories/results/2~173":"Ordering","https://order.gfs.com/categories/results/2~174":"Ordering","https://order.gfs.com/categories/results/2~175":"Ordering","https://order.gfs.com/categories/results/2~176":"Ordering","https://order.gfs.com/categories/results/2~177":"Ordering","https://order.gfs.com/categories/results/2~178":"Ordering","https://order.gfs.com/categories/results/2~179":"Ordering","https://order.gfs.com/categories/results/2~180":"Ordering","https://order.gfs.com/categories/results/2~181":"Ordering","https://order.gfs.com/categories/results/2~182":"Ordering","https://order.gfs.com/categories/results/2~183":"Ordering","https://order.gfs.com/categories/results/2~184":"Ordering","https://order.gfs.com/categories/results/2~185":"Ordering","https://order.gfs.com/categories/results/2~186":"Ordering","https://order.gfs.com/categories/results/2~187":"Ordering","https://order.gfs.com/categories/results/2~188":"Ordering","https://order.gfs.com/categories/results/2~189":"Ordering","https://order.gfs.com/categories/results/2~190":"Ordering","https://order.gfs.com/categories/results/2~191":"Ordering","https://order.gfs.com/categories/results/2~192":"Ordering","https://order.gfs.com/categories/results/2~193":"Ordering","https://order.gfs.com/categories/results/2~194":"Ordering","https://order.gfs.com/categories/results/2~195":"Ordering","https://order.gfs.com/categories/results/2~196":"Ordering","https://order.gfs.com/categories/results/2~197":"Ordering","https://order.gfs.com/categories/results/2~198":"Ordering","https://order.gfs.com/categories/results/2~199":"Ordering","https://order.gfs.com/categories/results/2~200":"Ordering","https://order.gfs.com/categories/results/2~201":"Ordering","https://order.gfs.com/categories/results/2~202":"Ordering","https://order.gfs.com/categories/results/2~203":"Ordering","https://order.gfs.com/categories/results/2~204":"Ordering","https://order.gfs.com/categories/results/2~205":"Ordering","https://order.gfs.com/categories/results/2~206":"Ordering","https://order.gfs.com/categories/results/2~207":"Ordering","https://order.gfs.com/categories/results/2~208":"Ordering","https://order.gfs.com/categories/results/2~209":"Ordering","https://order.gfs.com/categories/results/2~210":"Ordering","https://order.gfs.com/categories/results/2~211":"Ordering","https://order.gfs.com/categories/results/2~212":"Ordering","https://order.gfs.com/categories/results/2~213":"Ordering","https://order.gfs.com/categories/results/2~214":"Ordering","https://order.gfs.com/categories/results/2~215":"Ordering","https://order.gfs.com/categories/results/2~216":"Ordering","https://order.gfs.com/categories/results/2~217":"Ordering","https://order.gfs.com/categories/results/2~218":"Ordering","https://order.gfs.com/categories/results/2~219":"Ordering","https://order.gfs.com/categories/results/2~220":"Ordering","https://order.gfs.com/categories/results/2~221":"Ordering","https://order.gfs.com/categories/results/2~222":"Ordering","https://order.gfs.com/categories/results/2~223":"Ordering","https://order.gfs.com/categories/results/2~224":"Ordering","https://order.gfs.com/categories/results/2~225":"Ordering","https://order.gfs.com/categories/results/2~226":"Ordering","https://order.gfs.com/categories/results/2~227":"Ordering","https://order.gfs.com/categories/results/2~228":"Ordering","https://order.gfs.com/categories/results/2~229":"Ordering","https://order.gfs.com/categories/results/2~230":"Ordering","https://order.gfs.com/categories/results/2~231":"Ordering","https://order.gfs.com/categories/results/2~232":"Ordering","https://order.gfs.com/categories/results/2~233":"Ordering","https://order.gfs.com/categories/results/2~234":"Ordering","https://order.gfs.com/categories/results/2~235":"Ordering","https://order.gfs.com/categories/results/2~236":"Ordering","https://order.gfs.com/categories/results/2~237":"Ordering","https://order.gfs.com/categories/results/2~238":"Ordering","https://order.gfs.com/categories/results/2~239":"Ordering","https://order.gfs.com/categories/results/2~240":"Ordering","https://order.gfs.com/categories/results/2~241":"Ordering","https://order.gfs.com/categories/results/2~242":"Ordering","https://order.gfs.com/categories/results/2~243":"Ordering","https://order.gfs.com/categories/results/2~244":"Ordering","https://order.gfs.com/categories/results/2~245":"Ordering","https://order.gfs.com/categories/results/2~246":"Ordering","https://order.gfs.com/categories/results/2~247":"Ordering","https://order.gfs.com/categories/results/2~248":"Ordering","https://order.gfs.com/categories/results/2~249":"Ordering","https://order.gfs.com/categories/results/2~250":"Ordering"},"transitioning":{"scroll_depth":{"scrolls":1}},"retry_count":0}
 
 # --- RECENT CHANGELOG ENTRIES ---
-### [2026-04-07 13:50:40] UPDATE
+### [2026-04-11 16:07:43] UPDATE
 * **Summary:** Data Optimization Update
 * **Details:** Migrated to google.genai, fixed circular imports, isolated phase memory dumps.
 
-### [2026-04-07 13:52:19] UPDATE
+### [2026-04-12 12:08:27] UPDATE
 * **Summary:** Data Optimization Update
 * **Details:** Migrated to google.genai, fixed circular imports, isolated phase memory dumps.
 
-### [2026-04-07 13:56:35] UPDATE
+### [2026-04-12 12:14:55] UPDATE
 * **Summary:** Data Optimization Update
 * **Details:** Migrated to google.genai, fixed circular imports, isolated phase memory dumps.
 
-### [2026-04-07 14:35:40] UPDATE
+### [2026-04-12 12:19:18] UPDATE
 * **Summary:** Data Optimization Update
 * **Details:** Migrated to google.genai, fixed circular imports, isolated phase memory dumps.
 
-### [2026-04-07 14:55:59] UPDATE
+### [2026-04-12 12:34:25] UPDATE
 * **Summary:** Data Optimization Update
 * **Details:** Migrated to google.genai, fixed circular imports, isolated phase memory dumps.
 
@@ -260,7 +260,7 @@ async def identify_state(page, kb=None):
     parsed_url = urlparse(url)
     base_path = parsed_url.netloc + parsed_url.path
     if any(x in url for x in ["sso.gfs.com", "okta"]): return "login_page"
-    if "search" in url or "catalog" in url: return "search_results"
+    if "search" in url or "catalog" in url or "/results/2~" in url: return "search_results"
     if any(x in url for x in ["product/", "item/", "order.gfs.com/shopping"]): return "single_product"
     if "home" in url or "dashboard" in url or "categories" in url or "guides" in url: 
         return "dashboard"
@@ -282,94 +282,54 @@ async def identify_state(page, kb=None):
                 return v
     return "transitioning"
 async def understand_page_context(page, kb):
-    """Uses DOM context and Gemini to understand exactly what category of products it is viewing."""
+    """Uses pure DOM context to extract the exact Category Breadcrumbs without hitting Gemini limits."""
     try:
         url = page.url
         dom_context = await page.evaluate("""() => {
-            let breadcrumbs = Array.from(document.querySelectorAll('nav[aria-label="breadcrumb"] li, .breadcrumb li')).map(el => el.innerText).join(' > ');
+            // 🛡️ FIX: Aggressively filter out 'Home', 'Categories', and strip 'X results for Y' string
+            let crumbs = Array.from(document.querySelectorAll('nav[aria-label="breadcrumb"] li, .breadcrumb li, .breadcrumbs li, ol[class*="breadcrumb"] li, .breadcrumb-item'))
+                .map(el => el.innerText.trim())
+                .filter(t => t.toLowerCase() !== 'home' && t.toLowerCase() !== 'categories' && t !== '');
+            crumbs = crumbs.map(c => c.replace(/^\\d+\\s+results for\\s+"/i, '').replace(/"$/g, ''));
+            let breadcrumbs = crumbs.length > 0 ? crumbs.join(' > ') : '';
             let title = document.title;
-            let h1 = document.querySelector('h1') ? document.querySelector('h1').innerText : '';
-            return {title, h1, breadcrumbs};
+            let h1Text = '';
+            let h1 = document.querySelector('h1');
+            if (h1) {
+                h1Text = h1.innerText.trim().replace(/^\\d+\\s+results for\\s+"/i, '').replace(/"$/g, '');
+            }
+            return {title, h1: h1Text, breadcrumbs};
         }""")
-        try:
-            from google import genai
-            from google.genai import types
-            client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-            prompt = f"""
-            You are organizing a food service catalog.
-            Based on this page data, what specific category of products is being shown?
-            URL: {url}
-            Title: {dom_context['title']}
-            Header: {dom_context['h1']}
-            Breadcrumbs: {dom_context['breadcrumbs']}
-            Return ONLY a short string describing the category (e.g., 'Fresh Produce', 'Dairy & Eggs', 'Takeout Packaging', 'Mixed Search Results').
-            """
-            response = client.models.generate_content(model='gemini-2.5-flash', contents=[prompt])
-            category_name = response.text.strip()
-            print(f"🧠 [CONTEXT AWARENESS] Gemini identified this page as: 🏷️ {category_name}")
-            kb.log_category(url, category_name)
-            return category_name
-        except Exception as e:
-            print(f"⚠️ Context extraction via Gemini failed (Rate Limit?): {e}")
-            fallback_name = dom_context.get('h1') or dom_context.get('title', '').split('|')[0].strip() or "Unknown Category"
-            print(f"🔄 [LOCAL FALLBACK] Using DOM context: 🏷️ {fallback_name}")
-            kb.log_category(url, fallback_name)
-            return fallback_name
+        category_name = dom_context.get('breadcrumbs') or dom_context.get('h1') or dom_context.get('title', '').split('|')[0].strip() or "Unknown Category"
+        category_name = category_name.replace('\n', '').replace('\r', '').strip()
+        print(f"🔄 [LOCAL CONTEXT] Identified page category as: 🏷️ {category_name}")
+        kb.log_category(url, category_name)
+        return category_name
     except Exception as e:
         return "Unknown Category"
 async def smart_sitemap_extraction(page, kb):
-    """Extracts DOM links and uses Gemini (or Local Fallback) to build the exploration queue."""
-    print("🕸️ Extracting raw DOM links...")
+    print("🕸️ [BRUTE-FORCE INJECTION] Generating full sequential catalog queue...")
+    if kb and len(kb.data.get("queue", [])) > 0:
+        print(f"🕸️ Queue already active with {len(kb.data['queue'])} remaining subcategories. Skipping injection.")
+        return
     try:
-        raw_links = await page.evaluate("""() => {
-            const anchors = document.querySelectorAll('a[href], [routerLink], [ng-href], [data-href]');
-            return [...new Set(Array.from(anchors).map(a => {
-                if (a.href) return a.href;
-                let path = a.getAttribute('routerLink') || a.getAttribute('ng-href') || a.getAttribute('data-href');
-                if (path) return new URL(path, window.location.origin).href;
-                return '';
-            }).filter(Boolean))];
-        }""")
-        valid_links = [l for l in raw_links if "gfs.com" in l and not any(junk in l.lower() for junk in ['javascript:', 'mailto:', 'logout', 'cart', 'support', 'login'])]
-        if not valid_links: 
-            print("⚠️ No valid DOM links found on this page to route.")
-            return
-        try:
-            from google import genai
-            from google.genai import types
-            client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-            prompt = f"""
-            You are the routing brain for a web crawler.
-            Review this list of URLs scraped from Gordon Food Service.
-            Identify ONLY the URLs that lead to Categories, Product Lists, or Catalog sections.
-            EXCLUDE individual product pages (e.g., /item/123), terms of service, or user accounts.
-            Return ONLY a valid JSON object in this format: {{"valid_categories": ["url1", "url2"]}}
-            URLs to analyze:
-            {json.dumps(valid_links[:75])} 
-            """
-            config = types.GenerateContentConfig(response_mime_type="application/json")
-            response = client.models.generate_content(model='gemini-2.5-flash', contents=[prompt], config=config)
-            raw_json = response.text.strip()
-            raw_json = raw_json.replace('```json', '').replace('```', '').strip()
-            data = json.loads(raw_json)
-            new_targets = data.get("valid_categories", [])
+        base_url_template = "https://order.gfs.com/categories/results/2~{cat_id:03d}"
+        new_targets = [base_url_template.format(cat_id=i) for i in range(1, 251)]
+        added = kb.add_urls_to_queue(new_targets)
+        print(f"⚡ [FAST-TRACK ROUTER] Generated {len(new_targets)} sequential subcategory routes.")
+        print(f"🗺️ Added {added} NEW routes to the exploration queue.")
+        if added == 0:
+            print("⚠️ Queue memory is full. Bot has already queued these pages in a past session.")
+            print("💡 Force-wiping exploration memory to begin a fresh 250-page sweep...")
+            if "queue" in kb.data: kb.data["queue"] = []
+            if "visited" in kb.data: kb.data["visited"] = []
+            kb.save()
             added = kb.add_urls_to_queue(new_targets)
-            print(f"🗺️ [SMART SITEMAP] Gemini found {len(new_targets)} valid category routes. Added {added} NEW routes to the exploration queue.")
-        except Exception as e:
-            print(f"⚠️ Smart sitemap extraction via Gemini failed: {e}")
-            print("🔄 Falling back to Local Heuristic Router to bypass API limits...")
-            new_targets = []
-            for link in valid_links:
-                l_lower = link.lower()
-                if any(x in l_lower for x in ["/category/", "/categories", "/catalog/", "product-list"]):
-                    new_targets.append(link)
-            if new_targets:
-                added = kb.add_urls_to_queue(new_targets)
-                print(f"🗺️ [LOCAL FALLBACK] Found {len(new_targets)} valid category routes. Added {added} NEW routes.")
-            else:
-                print("⚠️ Local fallback found no new categories.")
+            print(f"🗺️ Successfully added {added} NEW routes after memory wipe. Let's go!")
     except Exception as e:
-        print(f"⚠️ Link extraction failed entirely: {e}")
+        print(f"⚠️ Brute-force queue injection failed: {e}")
+async def explore_full_catalog(page, kb):
+    pass 
 async def bezier_move(page, end_x, end_y, steps=15):
     start_x, start_y = random.randint(0, 100), random.randint(0, 100)
     cp1_x = start_x + (end_x - start_x) * random.uniform(0.1, 0.4)
@@ -418,6 +378,8 @@ async def dismiss_all_popups(page):
         "button:has-text('Just Browsing')",
         "button:has-text('No Thanks')",
         "button:has-text('Got it')",
+        "button[aria-label='Close']",
+        ".modal-close",
         ".close-button",
         ".close",
         "[aria-label*='close' i]",
@@ -435,6 +397,11 @@ async def dismiss_all_popups(page):
                         dismissed_any = True
                         await asyncio.sleep(0.5)
                     except: pass
+        modal_backdrop = page.locator(".cdk-overlay-backdrop, .modal-backdrop").first
+        if await modal_backdrop.is_visible():
+            await page.keyboard.press("Escape")
+            dismissed_any = True
+            await asyncio.sleep(0.5)
         if dismissed_any:
             await page.keyboard.press("Escape")
             await asyncio.sleep(0.5)
@@ -484,7 +451,7 @@ async def teach_and_click(page, kb, state, element, action="click", value=None):
         if action.startswith("type") and value:
             await asyncio.sleep(0.5)
             await page.keyboard.press("Control+A")
-            await page.keyboard.press("Meta+A") # Backup for Mac
+            await page.keyboard.press("Meta+A") 
             await page.keyboard.press("Backspace")
             await page.keyboard.type(value, delay=random.randint(50, 90))
             if action == "type": await page.keyboard.press("Enter")
@@ -589,6 +556,10 @@ def init_db():
             last_seen TEXT
         )
     ''')
+    try:
+        c.execute("ALTER TABLE products ADD COLUMN category TEXT DEFAULT 'Unknown'")
+    except sqlite3.OperationalError:
+        pass 
     conn.commit()
     conn.close()
 def process_changes():
@@ -596,12 +567,13 @@ def process_changes():
     conn = sqlite3.connect(DB_FILE)
     c = conn.cursor()
     current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+    c.execute("SELECT code, price_1, price_2, img_url, changes, last_updated FROM products")
+    existing_products = {row[0]: row[1:] for row in c.fetchall()}
+    inserts = []
+    updates = []
     for code, details in product_db.items():
-        c.execute("SELECT price_1, price_2, img_url, changes, last_updated FROM products WHERE code = ?", (code,))
-        row = c.fetchone()
-        change_msg = ""
-        if row:
-            old_p1, old_p2, old_img, old_changes, old_last_updated = row
+        if code in existing_products:
+            old_p1, old_p2, old_img, old_changes, old_last_updated = existing_products[code]
             has_changed = False
             if old_p1 != details["price_1"] and details["price_1"]:
                 change_msg = f"Primary Price Changed to {details['price_1']}"
@@ -616,19 +588,36 @@ def process_changes():
                 change_msg = old_changes or ""
             last_updated_val = current_time if has_changed else (old_last_updated or current_time)
             details["changes"] = change_msg
-            c.execute("""
-                UPDATE products 
-                SET name=?, brand=?, measure_1=?, measure_2=?, price_1_unit=?, price_1=?, price_2_unit=?, price_2=?, stock=?, last_ordered=?, image_file=?, img_url=?, changes=?, last_updated=?, last_seen=?
-                WHERE code=?
-            """, (details["name"], details["brand"], details["measure_1"], details["measure_2"], details["price_1_unit"], details["price_1"], details["price_2_unit"], details["price_2"], details["stock"], details["last_ordered"], details["image_file"], details["img_url"], change_msg, last_updated_val, current_time, code))
+            updates.append((
+                details["name"], details.get("category", "Unknown"), details["brand"], 
+                details["measure_1"], details["measure_2"], details["price_1_unit"], 
+                details["price_1"], details["price_2_unit"], details["price_2"], 
+                details["stock"], details["last_ordered"], details["image_file"], 
+                details["img_url"], change_msg, last_updated_val, current_time, code
+            ))
         else:
             change_msg = f"New Product"
             details["changes"] = change_msg
             last_updated_val = current_time
-            c.execute("""
-                INSERT INTO products (code, name, brand, measure_1, measure_2, price_1_unit, price_1, price_2_unit, price_2, stock, last_ordered, image_file, img_url, changes, last_updated, last_seen)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """, (code, details["name"], details["brand"], details["measure_1"], details["measure_2"], details["price_1_unit"], details["price_1"], details["price_2_unit"], details["price_2"], details["stock"], details["last_ordered"], details["image_file"], details["img_url"], change_msg, last_updated_val, current_time))
+            inserts.append((
+                code, details["name"], details.get("category", "Unknown"), details["brand"], 
+                details["measure_1"], details["measure_2"], details["price_1_unit"], 
+                details["price_1"], details["price_2_unit"], details["price_2"], 
+                details["stock"], details["last_ordered"], details["image_file"], 
+                details["img_url"], change_msg, last_updated_val, current_time
+            ))
+    if updates:
+        c.executemany("""
+            UPDATE products 
+            SET name=?, category=?, brand=?, measure_1=?, measure_2=?, price_1_unit=?, price_1=?, price_2_unit=?, price_2=?, stock=?, last_ordered=?, image_file=?, img_url=?, changes=?, last_updated=?, last_seen=?
+            WHERE code=?
+        """, updates)
+    if inserts:
+        c.executemany("""
+            INSERT INTO products 
+            (code, name, category, brand, measure_1, measure_2, price_1_unit, price_1, price_2_unit, price_2, stock, last_ordered, image_file, img_url, changes, last_updated, last_seen)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, inserts)
     conn.commit()
     conn.close()
 def generate_excel_master():
@@ -636,13 +625,13 @@ def generate_excel_master():
     try:
         conn = sqlite3.connect(DB_FILE)
         c = conn.cursor()
-        c.execute("SELECT code, name, brand, measure_1, measure_2, price_1_unit, price_1, price_2_unit, price_2, stock, last_ordered, changes, last_updated, last_seen FROM products ORDER BY name ASC")
+        c.execute("SELECT code, name, category, brand, measure_1, measure_2, price_1_unit, price_1, price_2_unit, price_2, stock, last_ordered, changes, last_updated, last_seen FROM products ORDER BY name ASC")
         rows = c.fetchall()
         conn.close()
         wb = openpyxl.Workbook()
         ws = wb.active
         ws.title = "Master Catalog"
-        headers = ["Code", "Product Name", "Brand", "Measure 1 (Weight/Vol)", "Measure 2 (Base UOM)", "Primary Unit", "Primary Price", "Secondary Unit", "Secondary Price", "Stock Status", "Last Ordered", "Recent Changes", "Last Updated", "Last Seen"]
+        headers = ["Code", "Product Name", "Category (Breadcrumbs)", "Brand", "Measure 1 (Weight/Vol)", "Measure 2 (Base UOM)", "Primary Unit", "Primary Price", "Secondary Unit", "Secondary Price", "Stock Status", "Last Ordered", "Recent Changes", "Last Updated", "Last Seen"]
         ws.append(headers)
         for col in range(1, len(headers) + 1):
             cell = ws.cell(row=1, column=col)
@@ -650,18 +639,18 @@ def generate_excel_master():
             cell.fill = openpyxl.styles.PatternFill(start_color="34495E", end_color="34495E", fill_type="solid")
             cell.alignment = Alignment(horizontal="center")
         ws.freeze_panes = 'A2'
-        ws.auto_filter.ref = f"A1:N{len(rows) + 1}"
+        ws.auto_filter.ref = f"A1:O{len(rows) + 1}"
         for row_data in rows:
             ws.append(row_data)
         for col in ws.columns:
             max_length = 0
             column = col[0].column_letter
-            for cell in col:
+            for cell in col[:100]: 
                 try:
                     if len(str(cell.value)) > max_length:
                         max_length = len(str(cell.value))
                 except: pass
-            adjusted_width = min(max_length + 2, 50) # Cap width at 50 to prevent massive columns
+            adjusted_width = min(max_length + 2, 50) 
             ws.column_dimensions[column].width = adjusted_width
         wb.save(EXCEL_FILE)
         print("✅ Excel Master Catalog successfully updated!")
@@ -673,52 +662,36 @@ def update_status(state, message, current=0, total=0):
             json.dump({"state": state, "message": message, "current": current, "total": total}, f)
     except: pass
 def generate_html_dashboard():
-    print("🌐 Generating HTML Visual Dashboard from Master Database...")
+    print("🌐 Generating Lightning-Fast HTML Visual Dashboard...")
     sup_status = get_supervisor_status()
-    cards_html = ""
-    table_data = []
+    raw_data = []
     try:
         if os.path.exists(DB_FILE):
             conn = sqlite3.connect(DB_FILE)
             c = conn.cursor()
-            c.execute("SELECT name, code, brand, measure_1, measure_2, price_1_unit, price_1, price_2_unit, price_2, stock, last_ordered, image_file, changes, last_updated, last_seen FROM products ORDER BY last_seen DESC")
+            c.execute("SELECT name, code, category, brand, measure_1, measure_2, price_1_unit, price_1, price_2_unit, price_2, stock, last_ordered, image_file, changes, last_updated, last_seen FROM products ORDER BY last_seen DESC")
             rows = c.fetchall()
             for row in rows:
-                name, code, brand, m1, m2, p1u, p1, p2u, p2, stock, last_ord, img, changes, last_updated, last_seen = row
-                stock_class = "in-stock"
-                if "OUT OF STOCK" in stock.upper(): stock_class = "out-of-stock"
-                elif "CONTACT" in stock.upper(): stock_class = "contact-sales"
+                name, code, category, brand, m1, m2, p1u, p1, p2u, p2, stock, last_ord, img, changes, last_updated, last_seen = row
                 img_path = img if img not in ["No Image", "Failed to Download", ""] else NO_IMAGE_SVG
-                badge_html = f'<div class="badge">🆕 {changes}</div>' if changes else ""
-                price_display = f"{p1u}: {p1}" if p1 else "Price Not Found"
-                if p2: price_display += f" | {p2u}: {p2}"
-                details_display = f"{brand} | {m1} / {m2}".strip(" / |")
-                cards_html += f"""
-                <div class="card">
-                    {badge_html}
-                    <img src="{img_path}" alt="Product Image">
-                    <h3>{name}</h3>
-                    <div class="details">#{code} | {details_display}</div>
-                    <div class="price">{price_display}</div>
-                    <div class="stock {stock_class}">{stock}</div>
-                    <div class="ordered">Last Ordered: {last_ord} <br><small>Updated: {last_updated}</small></div>
-                </div>
-                """
-                table_data.append([
-                    f"<img src='{img_path}' style='width: 45px; height: 45px; object-fit: contain; border-radius: 4px;'>",
-                    f"<b>#{code}</b>",
-                    name,
-                    brand,
-                    m1,
-                    m2,
-                    f"<span style='color: #27ae60; font-weight: bold;'>{p1u}: {p1}</span>",
-                    f"<span style='color: #2980b9; font-weight: bold;'>{p2u}: {p2}</span>" if p2 else "",
-                    f"<span class='stock {stock_class}'>{stock}</span>",
-                    last_ord,
-                    changes,
-                    last_updated,
-                    last_seen
-                ])
+                raw_data.append({
+                    "code": code,
+                    "name": name,
+                    "category": category,
+                    "brand": brand,
+                    "m1": m1,
+                    "m2": m2,
+                    "p1u": p1u,
+                    "p1": p1,
+                    "p2u": p2u,
+                    "p2": p2,
+                    "stock": stock,
+                    "last_ord": last_ord,
+                    "img": img_path,
+                    "changes": changes,
+                    "last_updated": last_updated,
+                    "last_seen": last_seen
+                })
             conn.close()
     except Exception as e:
         print(f"⚠️ Failed to read DB for dashboard: {e}")
@@ -748,102 +721,210 @@ def generate_html_dashboard():
             .progress-bg {{ background: #ecf0f1; height: 12px; border-radius: 6px; overflow: hidden; width: 100%; box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); }}
             .supervisor-badge {{ background: #2c3e50; color: white; padding: 10px 20px; border-radius: 8px; font-weight: bold; font-size: 0.9em; white-space: nowrap; }}
             h1 {{ text-align: center; color: #2c3e50; margin-top: 0; }}
-            /* Grid View */
-            .grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }}
+            .grid {{ display: none; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; padding-bottom: 20px; margin-top: 15px; }}
             .card {{ background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column; transition: transform 0.2s; position: relative; }}
             .card:hover {{ transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.15); }}
             .card img {{ max-width: 100%; height: 160px; object-fit: contain; align-self: center; margin-bottom: 15px; border-radius: 4px; }}
             .card h3 {{ margin: 0 0 10px 0; font-size: 1.1em; color: #2c3e50; }}
-            .details {{ color: #7f8c8d; font-size: 0.9em; margin-bottom: 15px; flex-grow: 1; }}
-            /* Shared Item Attributes */
+            .details {{ color: #7f8c8d; font-size: 0.9em; margin-bottom: 15px; flex-grow: 1; line-height: 1.4; }}
             .price {{ color: #27ae60; font-weight: bold; font-size: 1.2em; margin-bottom: 5px; }}
             .stock {{ font-weight: bold; font-size: 0.9em; margin-bottom: 5px; }}
             .in-stock {{ color: #27ae60; }} .out-of-stock {{ color: #e74c3c; }} .contact-sales {{ color: #f39c12; }}
             .ordered {{ color: #34495e; font-size: 0.85em; margin-top: 10px; padding-top: 10px; border-top: 1px solid #eee; }}
             .badge {{ background: #e74c3c; color: white; padding: 4px 10px; border-radius: 12px; font-size: 0.8em; font-weight: bold; margin-bottom: 12px; display: inline-block; align-self: flex-start; }}
-            /* Table View */
+            .dataTables_wrapper {{ background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: 20px; }}
             table.dataTable thead th {{ background-color: #34495e; color: white; padding: 12px 10px; border-bottom: none; }}
             table.dataTable tbody tr:hover {{ background-color: #f8f9fa; }}
             table.dataTable tbody td {{ vertical-align: middle; }}
             .dataTables_wrapper .dataTables_filter input {{ border: 1px solid #bdc3c7; border-radius: 4px; padding: 6px 10px; margin-left: 10px; }}
+            body.grid-mode table.dataTable {{ display: none !important; }}
+            body.grid-mode .grid {{ display: grid !important; }}
+            body.grid-mode .dataTables_wrapper {{ background: transparent; box-shadow: none; padding: 0; }}
+            /* Checklist Modal CSS */
+            .modal-backdrop {{ display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 1999; backdrop-filter: blur(3px); }}
+            .category-modal {{ display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); z-index: 2000; width: 450px; }}
+            .cat-list {{ max-height: 250px; overflow-y: auto; margin: 15px 0; display: flex; flex-direction: column; gap: 12px; border: 1px solid #eee; padding: 15px; border-radius: 6px; background: #fdfdfd; }}
+            .cat-list label {{ font-size: 16px; display: flex; align-items: center; gap: 10px; cursor: pointer; }}
+            .cat-list input[type="checkbox"] {{ transform: scale(1.3); cursor: pointer; }}
+            .custom-input {{ width: 100%; padding: 12px; border: 1px solid #bdc3c7; border-radius: 6px; font-size: 15px; margin-bottom: 20px; box-sizing: border-box; }}
         </style>
     </head>
     <body>
         <div class="control-panel">
             <div class="panel-top">
                 <div class="panel-left">
-                    <button id="searchBtn" class="btn-search" onclick="startBot('search')">🔍 Run Search Queue</button>
-                    <button id="exploreBtn" class="btn-explore" onclick="startBot('explore')">🧭 Explore Catalog</button>
+                    <button id="searchBtn" class="btn-search" onclick="openModal()">📋 Select Categories to Scrape</button>
+                    <button id="exploreBtn" class="btn-explore" onclick="startBot('explore')">🧭 Brute-Force Entire Catalog</button>
                     <div class="view-toggle-container">
                         <button id="btn-grid" class="btn-view active-view" onclick="toggleView('grid')">📱 Grid View</button>
                         <button id="btn-table" class="btn-view" onclick="toggleView('table')">🗄️ ERP Database View</button>
                     </div>
                     <div class="status-container">
-                        <p id="status-text">Status: Loading...</p>
+                        <p id="status-text">Status: Ready</p>
                         <div class="progress-bg"><div id="progress-bar"></div></div>
                     </div>
                 </div>
                 <div class="supervisor-badge">🧠 Supervisor: {sup_status}</div>
             </div>
         </div>
+        <div id="modalBackdrop" class="modal-backdrop" onclick="closeModal()"></div>
+        <div id="categoryModal" class="category-modal">
+            <h2 style="margin-top: 0; color: #2c3e50;">🎯 Select Targets to Scrape</h2>
+            <p style="color: #7f8c8d; font-size: 0.9em; margin-top: -10px;">Select the categories you want the bot to map.</p>
+            <div class="cat-list">
+                <label><input type="checkbox" class="cat-cb" value="Beef"> 🥩 Beef</label>
+                <label><input type="checkbox" class="cat-cb" value="Poultry"> 🍗 Poultry</label>
+                <label><input type="checkbox" class="cat-cb" value="Pork"> 🥓 Pork</label>
+                <label><input type="checkbox" class="cat-cb" value="Seafood"> 🐟 Seafood</label>
+                <label><input type="checkbox" class="cat-cb" value="Dairy & Eggs"> 🥚 Dairy & Eggs</label>
+                <label><input type="checkbox" class="cat-cb" value="Fresh Produce"> 🍎 Fresh Produce</label>
+                <label><input type="checkbox" class="cat-cb" value="Frozen Vegetables"> 🥦 Frozen Vegetables</label>
+                <label><input type="checkbox" class="cat-cb" value="Baking Supplies"> 🥖 Baking Supplies</label>
+                <label><input type="checkbox" class="cat-cb" value="Candy"> 🍬 Candy & Snacks</label>
+                <label><input type="checkbox" class="cat-cb" value="Beverages"> 🥤 Beverages</label>
+                <label><input type="checkbox" class="cat-cb" value="Takeout Packaging"> 🥡 Takeout Packaging</label>
+            </div>
+            <input type="text" id="customCatInput" class="custom-input" placeholder="Or type a custom term (e.g. French Fries)">
+            <div style="display:flex; justify-content:flex-end; gap:10px;">
+                <button onclick="closeModal()" class="btn-view">Cancel</button>
+                <button onclick="startSelectedHarvest()" class="btn-search">🚀 Start Custom Harvest</button>
+            </div>
+        </div>
         <h1>📦 Master Local Database Dashboard</h1>
-        <div id="grid-container" class="grid">
-            {cards_html}
-        </div>
-        <div id="table-container" style="display: none; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: 20px;">
-            <table id="erpTable" class="display" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>Image</th>
-                        <th>Code</th>
-                        <th>Name</th>
-                        <th>Brand</th>
-                        <th>Measure 1</th>
-                        <th>Measure 2</th>
-                        <th>Price 1</th>
-                        <th>Price 2</th>
-                        <th>Stock Status</th>
-                        <th>Last Ordered</th>
-                        <th>Recent Changes</th>
-                        <th>Last Updated</th>
-                        <th>Last Seen</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </div>
+        <table id="erpTable" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Brand</th>
+                    <th>Measure 1</th>
+                    <th>Measure 2</th>
+                    <th>Price 1</th>
+                    <th>Price 2</th>
+                    <th>Stock Status</th>
+                    <th>Last Ordered</th>
+                    <th>Recent Changes</th>
+                    <th>Last Updated</th>
+                    <th>Last Seen</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
         <script>
-            const erpData = {json.dumps(table_data)};
+            const rawData = {json.dumps(raw_data)};
             $(document).ready(function() {{
-                $('#erpTable').DataTable({{
-                    data: erpData,
+                const table = $('#erpTable').DataTable({{
+                    data: rawData,
                     pageLength: 25,
-                    lengthMenu: [10, 25, 50, 100, 500],
-                    order: [[12, 'desc']], 
-                    columnDefs: [
-                        {{ orderable: false, targets: 0 }},
-                        {{ className: "dt-head-left", targets: "_all" }}
+                    lengthMenu: [10, 25, 50, 100, 250],
+                    deferRender: true,
+                    searchDelay: 400, 
+                    order: [[13, 'desc']], 
+                    columns: [
+                        {{ data: 'img', render: function(data) {{ return `<img src='${{data}}' loading="lazy" style='width: 45px; height: 45px; object-fit: contain; border-radius: 4px;'>`; }}, orderable: false }},
+                        {{ data: 'code', render: function(data) {{ return `<b>#${{data}}</b>`; }} }},
+                        {{ data: 'name' }},
+                        {{ data: 'category' }},
+                        {{ data: 'brand' }},
+                        {{ data: 'm1' }},
+                        {{ data: 'm2' }},
+                        {{ data: null, render: function(data, type, row) {{ return row.p1 ? `<span style='color: #27ae60; font-weight: bold;'>${{row.p1u}}: ${{row.p1}}</span>` : 'Price Not Found'; }} }},
+                        {{ data: null, render: function(data, type, row) {{ return row.p2 ? `<span style='color: #2980b9; font-weight: bold;'>${{row.p2u}}: ${{row.p2}}</span>` : ''; }} }},
+                        {{ data: 'stock', render: function(data) {{
+                            let sc = "in-stock";
+                            let rawStock = data ? data.toUpperCase() : "";
+                            if(rawStock.includes("OUT OF STOCK")) sc = "out-of-stock";
+                            else if(rawStock.includes("CONTACT")) sc = "contact-sales";
+                            return `<span class='stock ${{sc}}'>${{data || ''}}</span>`;
+                        }}}},
+                        {{ data: 'last_ord' }},
+                        {{ data: 'changes' }},
+                        {{ data: 'last_updated' }},
+                        {{ data: 'last_seen' }}
                     ],
                     language: {{
-                        search: "Global Filter:",
+                        search: "Global Filter (Searches Grid & Table instantly):",
                         lengthMenu: "Show _MENU_ products per page"
                     }}
                 }});
-            }});
-            function toggleView(viewType) {{
-                if (viewType === 'grid') {{
-                    document.getElementById('grid-container').style.display = 'grid';
-                    document.getElementById('table-container').style.display = 'none';
-                    document.getElementById('btn-grid').classList.add('active-view');
-                    document.getElementById('btn-table').classList.remove('active-view');
-                }} else {{
-                    document.getElementById('grid-container').style.display = 'none';
-                    document.getElementById('table-container').style.display = 'block';
-                    document.getElementById('btn-table').classList.add('active-view');
-                    document.getElementById('btn-grid').classList.remove('active-view');
-                    $('#erpTable').DataTable().columns.adjust().draw();
+                $('#erpTable').before('<div id="grid-container" class="grid"></div>');
+                function renderGrid() {{
+                    const grid = $('#grid-container');
+                    let currentData = table.rows({{ page: 'current' }}).data();
+                    let htmlArray = [];
+                    for(let i=0; i<currentData.length; i++) {{
+                        let r = currentData[i];
+                        let rawStock = r.stock ? r.stock.toUpperCase() : "";
+                        let sc = "in-stock";
+                        if(rawStock.includes("OUT OF STOCK")) sc = "out-of-stock";
+                        else if(rawStock.includes("CONTACT")) sc = "contact-sales";
+                        let badge = r.changes ? `<div class="badge">🆕 ${{r.changes}}</div>` : "";
+                        let price1 = r.p1 ? `${{r.p1u || 'Unit'}}: ${{r.p1}}` : "Price Not Found";
+                        let price2 = r.p2 ? ` | ${{r.p2u || 'Unit'}}: ${{r.p2}}` : "";
+                        let brandVal = r.brand || "Unknown Brand";
+                        let m1Val = r.m1 || "";
+                        let m2Val = r.m2 || "";
+                        let details = `${{brandVal}} | ${{m1Val}} / ${{m2Val}}`.replace(/^[ \\/\\|]+|[ \\/\\|]+$/g, '');
+                        htmlArray.push(`
+                        <div class="card">
+                            ${{badge}}
+                            <img src="${{r.img}}" loading="lazy" alt="Product Image">
+                            <h3>${{r.name || 'Unknown'}}</h3>
+                            <div class="details">#${{r.code}} | <span style="color:#2980b9;">${{r.category || 'Unknown Category'}}</span><br>${{details}}</div>
+                            <div class="price">${{price1}}${{price2}}</div>
+                            <div class="stock ${{sc}}">${{r.stock || 'In Stock'}}</div>
+                            <div class="ordered">Last Ordered: ${{r.last_ord || 'N/A'}} <br><small>Updated: ${{r.last_updated}}</small></div>
+                        </div>`);
+                    }}
+                    grid.html(htmlArray.join(''));
                 }}
+                table.on('draw', renderGrid);
+                renderGrid(); 
+                window.toggleView = function(viewType) {{
+                    if (viewType === 'grid') {{
+                        $('body').addClass('grid-mode');
+                        $('#btn-grid').addClass('active-view');
+                        $('#btn-table').removeClass('active-view');
+                    }} else {{
+                        $('body').removeClass('grid-mode');
+                        $('#btn-table').addClass('active-view');
+                        $('#btn-grid').removeClass('active-view');
+                        table.columns.adjust().draw(false); 
+                    }}
+                }};
+                toggleView('grid');
+            }});
+            // Modal Logic
+            function openModal() {{
+                document.getElementById('modalBackdrop').style.display = 'block';
+                document.getElementById('categoryModal').style.display = 'block';
+            }}
+            function closeModal() {{
+                document.getElementById('modalBackdrop').style.display = 'none';
+                document.getElementById('categoryModal').style.display = 'none';
+            }}
+            function startSelectedHarvest() {{
+                let selected = Array.from(document.querySelectorAll('.cat-cb:checked')).map(cb => cb.value);
+                let custom = document.getElementById('customCatInput').value.trim();
+                if (custom) {{
+                    let customParts = custom.split(',').map(s => s.trim()).filter(Boolean);
+                    selected = selected.concat(customParts);
+                }}
+                if (selected.length === 0) {{
+                    alert("Please select at least one category, or type a custom term!");
+                    return;
+                }}
+                let encodedTerms = encodeURIComponent(selected.join(','));
+                document.getElementById('searchBtn').disabled = true;
+                document.getElementById('exploreBtn').disabled = true;
+                closeModal();
+                // Fires the request to your backend with the selected terms
+                fetch('/api/start?mode=custom_search&terms=' + encodedTerms).then(() => {{
+                    document.getElementById('status-text').innerText = "Status: Initializing Selected Targets...";
+                }});
             }}
             function startBot(mode) {{
                 document.getElementById('searchBtn').disabled = true;
@@ -907,12 +988,6 @@ async def download_pending_images(page):
         if completed % 10 == 0: update_status("running", f"Downloading Images... {completed}/{len(pending)}", completed, len(pending))
     print(f"📸 Downloading {len(pending)} queued images in parallel...")
     await asyncio.gather(*[fetch_img(code, product_db[code]) for code in pending])
-async def get_total_results_via_dom(page):
-    try:
-        text = await page.evaluate("document.body.innerText")
-        match = re.search(r'(\d+)\s+results', text.lower())
-        return int(match.group(1)) if match else 9999
-    except: return 9999
 async def setup_wiretap(page):
     global RAW_INFO_BUFFER, RAW_PRICE_BUFFER
     RAW_INFO_BUFFER.clear()
@@ -933,7 +1008,7 @@ async def setup_wiretap(page):
                     RAW_PRICE_BUFFER.append(data)
             except: pass
     page.on("response", handle_response)
-def merge_buffers_to_db():
+def merge_buffers_to_db(page_breadcrumbs="Unknown Category"):
     global product_db, RAW_INFO_BUFFER, RAW_PRICE_BUFFER
     for payload in RAW_INFO_BUFFER:
         for item in payload.get("materialInfos", []):
@@ -941,7 +1016,7 @@ def merge_buffers_to_db():
             if not code: continue
             if code not in product_db:
                 product_db[code] = {
-                    "name": "Unknown", "brand": "Unknown",
+                    "name": "Unknown", "category": page_breadcrumbs, "brand": "Unknown",
                     "measure_1": "", "measure_2": "",
                     "price_1_unit": "Case", "price_1": "",
                     "price_2_unit": "", "price_2": "",
@@ -951,6 +1026,16 @@ def merge_buffers_to_db():
             desc = item.get("description") or {}
             name = desc.get("en") or desc.get("fr") or product_db[code].get("name")
             brand = (item.get("brand") or {}).get("en", "Unknown Brand")
+            if page_breadcrumbs != "Unknown Category":
+                product_db[code]["category"] = page_breadcrumbs
+            elif product_db[code]["category"] in ["Unknown", ""]:
+                hier = item.get("hierarchy", [])
+                if hier and isinstance(hier, list):
+                    for level in reversed(hier):
+                        cat_name = level.get("name", {}).get("en")
+                        if cat_name:
+                            product_db[code]["category"] = cat_name
+                            break
             weight = item.get("baseUomWeight") or {}
             net_weight = weight.get("net", "")
             try:
@@ -989,13 +1074,15 @@ def merge_buffers_to_db():
             if not code: continue
             if code not in product_db:
                 product_db[code] = {
-                    "name": "Unknown", "brand": "Unknown",
+                    "name": "Unknown", "category": page_breadcrumbs, "brand": "Unknown",
                     "measure_1": "", "measure_2": "",
                     "price_1_unit": "Case", "price_1": "",
                     "price_2_unit": "", "price_2": "",
                     "stock": "In Stock", "last_ordered": "N/A",
                     "image_file": "No Image", "img_url": "", "changes": ""
                 }
+            if page_breadcrumbs != "Unknown Category":
+                product_db[code]["category"] = page_breadcrumbs
             units = item.get("unitPrices") or []
             p1_u, p1_v, p2_u, p2_v = "", "", "", ""
             for idx, u in enumerate(units):
@@ -1039,10 +1126,28 @@ async def run_harvest(page, kb=None, state="search_results"):
         await asyncio.sleep(0.5)
     all_res_target = 9999
     order_guide_target = 0
-    print("🔍 Scanning DOM for product totals...")
+    print("🔍 Scanning DOM for product totals and breadcrumbs...")
+    page_breadcrumbs = "Unknown Category"
     try:
+        page_breadcrumbs = await page.evaluate("""() => {
+            let crumbs = Array.from(document.querySelectorAll('nav[aria-label="breadcrumb"] li, .breadcrumb li, .breadcrumbs li, ol[class*="breadcrumb"] li, .breadcrumb-item'))
+                .map(el => el.innerText.trim())
+                .filter(t => t.toLowerCase() !== 'home' && t.toLowerCase() !== 'categories' && t !== '');
+            crumbs = crumbs.map(c => c.replace(/^\\d+\\s+results for\\s+"/i, '').replace(/"$/g, ''));
+            if (crumbs.length > 0) return crumbs.join(' > ');
+            let h1 = document.querySelector('h1');
+            if (h1) {
+                return h1.innerText.trim().replace(/^\\d+\\s+results for\\s+"/i, '').replace(/"$/g, '');
+            }
+            return "Unknown Category";
+        }""")
+        page_breadcrumbs = page_breadcrumbs.replace('\n', '').replace('\r', '').strip()
+        print(f"🏷️ Page Breadcrumbs Found: {page_breadcrumbs}")
         text = await page.evaluate("document.body.innerText")
         text_lower = text.lower()
+        if "0 results" in text_lower or "no results found" in text_lower:
+            print("⚠️ No products found on this page. Assuming empty category.")
+            return True 
         all_match = re.search(r'(\d+)\s+results', text_lower)
         og_match = re.search(r'order guide only\s*\((\d+)\)', text_lower)
         if all_match: 
@@ -1068,7 +1173,7 @@ async def run_harvest(page, kb=None, state="search_results"):
     print(f"🎯 Target Phase 1 Confirmed: {target_total} | Target Phase 2 Confirmed: {order_guide_target}")
     async def perform_scroll_loop(phase_name="Phase 1"):
         stagnant_strikes = 0
-        max_strikes = 8 
+        max_strikes = 15 
         seen_in_dom = set() 
         while len(seen_in_dom) < target_total and stagnant_strikes < max_strikes:
             last_count = len(seen_in_dom)
@@ -1076,7 +1181,7 @@ async def run_harvest(page, kb=None, state="search_results"):
             update_status("running", f"[{phase_name}] Scrolling... {last_count}/{target_total} (Need {remaining_items} more)", last_count, target_total)
             await dismiss_all_popups(page)
             await force_scroll_down(page, scrolls=1)
-            merge_buffers_to_db()
+            merge_buffers_to_db(page_breadcrumbs)
             try:
                 dom_data = await page.evaluate("""() => {
                     let items = {};
@@ -1139,17 +1244,19 @@ async def run_harvest(page, kb=None, state="search_results"):
                             product_db[code] = dict(global_product_db[code])
                         else:
                             product_db[code] = {
-                                "name": "Unknown", "brand": "Unknown",
+                                "name": "Unknown", "category": page_breadcrumbs, "brand": "Unknown",
                                 "measure_1": "", "measure_2": "",
                                 "price_1_unit": "Case", "price_1": "",
                                 "price_2_unit": "", "price_2": "",
                                 "stock": "In Stock", "last_ordered": "N/A",
                                 "image_file": "No Image", "img_url": "", "changes": ""
                             }
+                    if page_breadcrumbs != "Unknown Category":
+                        product_db[code]["category"] = page_breadcrumbs
                     if scraped_img and (not product_db[code].get("img_url") or "no_image" in product_db[code].get("img_url", "").lower()):
                         product_db[code]["img_url"] = scraped_img
                     if len(lines) > 0:
-                        ignore_labels = ["compare", "view similar items", "long term out of stock", "new", "in stock", "contact sales", "add to cart", "out of stock", "special order", "hide unavailable items"]
+                        ignore_labels = ["compare", "view similar items", "long term out of stock", "new", "in stock", "contact sales", "add to cart", "out of stock", "special order", "hide unavailable items", "new item coming soon"]
                         clean_lines = [l for l in lines if l.lower() not in ignore_labels and "delivery" not in l.lower()]
                         ordered_lines = [l for l in clean_lines if "ordered:" in l.lower() or "ordered " in l.lower()]
                         for l in ordered_lines:
@@ -1163,28 +1270,62 @@ async def run_harvest(page, kb=None, state="search_results"):
                                 code_idx = i
                                 break
                         if code_idx != -1:
-                            if code_idx > 0 and product_db[code]["name"] in ["Unknown", ""]:
-                                product_db[code]["name"] = clean_lines[code_idx - 1]
-                            if product_db[code]["measure_1"] == "":
-                                d_line = clean_lines[code_idx]
-                                c_details = d_line.replace(f"#{code} |", "").replace(f"#{code}", "").strip()
-                                if c_details:
-                                    product_db[code]["measure_1"] = c_details
+                            name_found = False
+                            if code_idx > 0:
+                                badges = ["local", "new", "compare", "view similar items", "can", "us", "add to list", "order guide"]
+                                for i in range(code_idx - 1, -1, -1):
+                                    if clean_lines[i].lower() not in badges and len(clean_lines[i]) > 3:
+                                        if product_db[code]["name"] in ["Unknown", ""]:
+                                            product_db[code]["name"] = clean_lines[i]
+                                        name_found = True
+                                        break
+                            if not name_found and product_db[code]["name"] in ["Unknown", ""] and clean_lines:
+                                product_db[code]["name"] = clean_lines[0]
+                            code_line = clean_lines[code_idx]
+                            parts = [p.strip() for p in code_line.split("|")]
+                            if len(parts) >= 3:
+                                if product_db[code]["brand"] in ["Unknown", ""]:
+                                    product_db[code]["brand"] = parts[1]
+                                measure_str = parts[2]
+                                if "," in measure_str:
+                                    m_parts = [m.strip() for m in measure_str.split(",", 1)]
+                                    product_db[code]["measure_1"] = m_parts[0]
+                                    product_db[code]["measure_2"] = m_parts[1]
+                                else:
+                                    product_db[code]["measure_1"] = measure_str
+                            elif len(parts) == 2:
+                                if any(char.isdigit() for char in parts[1]):
+                                    measure_str = parts[1]
+                                    if "," in measure_str:
+                                        m_parts = [m.strip() for m in measure_str.split(",", 1)]
+                                        product_db[code]["measure_1"] = m_parts[0]
+                                        product_db[code]["measure_2"] = m_parts[1]
+                                    else:
+                                        product_db[code]["measure_1"] = measure_str
+                                else:
+                                    if product_db[code]["brand"] in ["Unknown", ""]:
+                                        product_db[code]["brand"] = parts[1]
                         else:
                             if product_db[code]["name"] in ["Unknown", ""] and clean_lines:
                                 product_db[code]["name"] = clean_lines[0]
-                        if product_db[code]["price_1"] == "":
-                            for i, l in enumerate(clean_lines):
-                                if "$" in l and any(c.isdigit() for c in l):
-                                    if ":" in l:
-                                        parts = l.split(":", 1)
-                                        product_db[code]["price_1_unit"] = parts[0].strip()
-                                        product_db[code]["price_1"] = parts[1].strip()
-                                    else:
-                                        unit = clean_lines[i-1] if i > 0 and len(clean_lines[i-1]) <= 6 else "Case"
-                                        product_db[code]["price_1_unit"] = unit
-                                        product_db[code]["price_1"] = l
-                                    break
+                        price_list = []
+                        for i, l in enumerate(clean_lines):
+                            if "$" in l and any(c.isdigit() for c in l):
+                                if ":" in l: 
+                                    p_parts = l.split(":", 1)
+                                    unit = p_parts[0].strip()
+                                    val = p_parts[1].strip()
+                                else: 
+                                    unit = clean_lines[i-1] if i > 0 and len(clean_lines[i-1]) <= 6 else "Case"
+                                    val = l
+                                price_list.append((unit, val))
+                        if price_list:
+                            if product_db[code]["price_1"] == "":
+                                product_db[code]["price_1_unit"] = price_list[0][0]
+                                product_db[code]["price_1"] = price_list[0][1]
+                            if len(price_list) > 1 and product_db[code]["price_2"] == "":
+                                product_db[code]["price_2_unit"] = price_list[1][0]
+                                product_db[code]["price_2"] = price_list[1][1]
             except Exception as e:
                 print(f"⚠️ DOM extraction error: {e}")
             if len(seen_in_dom) == last_count:
@@ -1192,14 +1333,14 @@ async def run_harvest(page, kb=None, state="search_results"):
                 print(f"⚠️ Memory Stagnant on {phase_name}. Strike {stagnant_strikes}/{max_strikes}")
                 try:
                     await page.evaluate("""() => {
-                        const containers = document.querySelectorAll('cdk-virtual-scroll-viewport, .scroll-container, [class*="scroll"], main, .product-grid, .item-list');
-                        containers.forEach(c => {
-                            if (c && c.scrollHeight > c.clientHeight) {
-                                c.scrollTop += 1500;
-                                c.dispatchEvent(new Event('scroll', { bubbles: true }));
-                            }
-                        });
-                        window.scrollBy({ top: 1500, behavior: 'instant' });
+                        const viewport = document.querySelector('cdk-virtual-scroll-viewport, .scroll-container');
+                        if (viewport) {
+                            viewport.scrollTop -= 200; 
+                            setTimeout(() => { viewport.scrollTop += 1200; }, 150); 
+                        } else {
+                            window.scrollBy(0, -200);
+                            setTimeout(() => { window.scrollBy(0, 1200); }, 150);
+                        }
                     }""")
                     viewport = page.viewport_size
                     if viewport:
@@ -1207,7 +1348,7 @@ async def run_harvest(page, kb=None, state="search_results"):
                         safe_y = int(viewport['height'] * 0.5)
                         await page.mouse.click(safe_x, safe_y)
                     await page.keyboard.press("PageDown")
-                    await asyncio.sleep(1.5)
+                    await asyncio.sleep(2.0)
                 except: pass
             else: 
                 stagnant_strikes = 0
@@ -1216,7 +1357,7 @@ async def run_harvest(page, kb=None, state="search_results"):
         print("🚀 Starting Phase 1: Scraping 'All Results' tab...")
         await perform_scroll_loop(phase_name="Phase 1")
         await dump_json_buffers("phase1")
-        merge_buffers_to_db()
+        merge_buffers_to_db(page_breadcrumbs)
         global_product_db.update(product_db)
         if order_guide_target > 0 and kb is not None:
             print(f"\n🔄 Initiating Phase 2: Switching to 'Order Guide Only' tab to fetch {order_guide_target} items...")
@@ -1254,6 +1395,8 @@ async def run_harvest(page, kb=None, state="search_results"):
                         await tab_loc.click(force=True)
                         tab_clicked = True
                         print(f"✅ Switched tabs via direct DOM Locator successfully using: {sel}")
+                        await asyncio.sleep(2)
+                        await dismiss_all_popups(page) 
                         break
                     except Exception:
                         continue
@@ -1269,10 +1412,10 @@ async def run_harvest(page, kb=None, state="search_results"):
                 RAW_PRICE_BUFFER.clear()
                 target_total = order_guide_target
                 await asyncio.sleep(5) 
-                merge_buffers_to_db() 
+                merge_buffers_to_db(page_breadcrumbs) 
                 await perform_scroll_loop(phase_name="Phase 2")
                 await dump_json_buffers("phase2")
-                merge_buffers_to_db()
+                merge_buffers_to_db(page_breadcrumbs)
                 for code, data in product_db.items():
                     if "[ORDER GUIDE]" not in data["name"]:
                         data["name"] = f"⭐ [ORDER GUIDE] {data['name']}"
@@ -1290,6 +1433,14 @@ async def run_harvest(page, kb=None, state="search_results"):
         harvest_success = False
     finally:
         update_status("processing", "Saving to SQLite DB & Generating Master Excel...", 90, 100)
+        keys_to_delete = []
+        for k, v in global_product_db.items():
+            if v["name"] in ["Unknown", ""] and v["price_1"] == "":
+                keys_to_delete.append(k)
+        for k in keys_to_delete:
+            del global_product_db[k]
+        if keys_to_delete:
+            print(f"👻 Cleaned up {len(keys_to_delete)} Virtual Scroller ghost artifacts.")
         product_db.clear()
         product_db.update(global_product_db)
         await download_pending_images(page)
@@ -1405,15 +1556,14 @@ async def handle_dashboard(page, kb):
     await asyncio.sleep(3) 
     if BOT_MODE == "explore":
         print("\n🧭 [STATE] Dashboard -> EXPLORE MODE. Mapping Catalog...")
-        if "categories" not in page.url and "guides" not in page.url:
-            print("🚀 Redirecting to the Categories / Guides Hub...")
-            await page.goto("https://order.gfs.com/categories")
-            await asyncio.sleep(5)
         await smart_sitemap_extraction(page, kb)
         next_url = kb.get_next_url()
         if next_url:
             print(f"🚀 [AUTONOMOUS ROUTING] Navigating to next queued category: {next_url}")
-            await page.goto(next_url)
+            try:
+                await page.goto(next_url, wait_until="domcontentloaded", timeout=60000)
+            except Exception as e:
+                print(f"⚠️ [CRITICAL EXCEPTION AVOIDED] Navigation failed for {next_url}: {e}")
             await asyncio.sleep(4)
         else:
             print("⚠️ Queue empty. Ensure smart sitemap extraction found valid links.")
@@ -1433,13 +1583,18 @@ async def handle_dashboard(page, kb):
         except Exception:
             print(f"⚠️ Search UI failed or timed out. Forcing direct URL navigation...")
             encoded_product = urllib.parse.quote(current_product)
-            await page.goto(f"https://order.gfs.com/search?searchText={encoded_product}")
+            try:
+                await page.goto(f"https://order.gfs.com/search?searchText={encoded_product}", wait_until="domcontentloaded", timeout=60000)
+            except Exception as e:
+                print(f"⚠️ Force route failed: {e}")
             print(f"✅ Route forced for target: {current_product}")
         await asyncio.sleep(4)
     return "continue"
 async def handle_single_product(page, kb):
     print("\n⚠️ [NAVIGATION ALERT] I am inside a Single Product details page! Reversing back to the search list...")
-    await page.go_back()
+    try:
+        await page.go_back(wait_until="domcontentloaded", timeout=30000)
+    except: pass
     await asyncio.sleep(3)
     return "continue"
 async def handle_search_results(page, kb):
@@ -1453,9 +1608,13 @@ async def handle_search_results(page, kb):
         await smart_sitemap_extraction(page, kb)
         next_url = kb.get_next_url()
         if next_url:
-            print(f"🧭 Page Harvest Complete. Remaining items in queue: {len(kb.data['queue'])}")
+            print(f"🧭 Page Harvest Complete. Remaining items in queue: {len(kb.data.get('queue', []))}")
             print(f"🚀 [AUTONOMOUS ROUTING] Proceeding to next category: {next_url}")
-            await page.goto(next_url)
+            try:
+                await page.goto(next_url, wait_until="domcontentloaded", timeout=60000)
+            except Exception as e:
+                print(f"⚠️ [CRITICAL EXCEPTION AVOIDED] Playwright failed to load {next_url}: {e}")
+                print("⏭️ Skipping to next URL in queue to maintain bot loop...")
             await asyncio.sleep(5)
             return "continue" 
         else:
@@ -1476,7 +1635,9 @@ async def handle_search_results(page, kb):
             else:
                 print(f"\n🔄 REDO TRIGGERED: Retrying '{SEARCH_QUEUE[0]}' (Attempt {retry_count} of 3) to fetch missing items...")
         print(f"🧭 Returning to dashboard for next sequence...")
-        await page.goto("https://order.gfs.com/")
+        try:
+            await page.goto("https://order.gfs.com/", wait_until="domcontentloaded", timeout=60000)
+        except: pass
         await asyncio.sleep(5)
         return "continue"
 STATE_ROUTER = {

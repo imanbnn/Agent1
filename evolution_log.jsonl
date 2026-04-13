@@ -1,30 +1,30 @@
-{"timestamp":"2026-04-07T14:37:01.549633","type":"STATE_CHANGE","details":{"from":"login_page","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:37:13.582434","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T14:37:47.600005","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:37:57.770588","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T14:40:41.323212","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:40:55.276483","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T14:42:11.147425","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:42:23.038577","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T14:42:57.735834","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:43:08.265365","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T14:45:58.629002","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:46:12.008643","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T14:47:28.126657","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:47:39.021455","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T14:48:13.519583","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:48:24.105232","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T14:51:08.528476","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:51:22.937500","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T14:52:40.448069","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:52:52.404511","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T14:53:27.404419","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:55:59.141873","type":"ARCHITECTURE_UPDATE","details":{"summary":"Data Optimization Update","details":"Migrated to google.genai, fixed circular imports, isolated phase memory dumps."}}
-{"timestamp":"2026-04-07T14:56:47.366071","type":"STATE_CHANGE","details":{"from":null,"to":"login_page"}}
-{"timestamp":"2026-04-07T14:57:05.504905","type":"STATE_CHANGE","details":{"from":"login_page","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:57:17.220582","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T14:58:31.051741","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:58:41.874279","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T14:59:15.590689","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
-{"timestamp":"2026-04-07T14:59:26.190059","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
-{"timestamp":"2026-04-07T15:01:19.638540","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-11T15:26:02.825116","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-11T15:28:47.033100","type":"STATE_CHANGE","details":{"from":"search_results","to":"dashboard"}}
+{"timestamp":"2026-04-11T15:38:46.909031","type":"ARCHITECTURE_UPDATE","details":{"summary":"Data Optimization Update","details":"Migrated to google.genai, fixed circular imports, isolated phase memory dumps."}}
+{"timestamp":"2026-04-11T15:39:03.053286","type":"STATE_CHANGE","details":{"from":null,"to":"login_page"}}
+{"timestamp":"2026-04-11T15:39:21.823855","type":"STATE_CHANGE","details":{"from":"login_page","to":"dashboard"}}
+{"timestamp":"2026-04-11T15:50:11.610740","type":"ARCHITECTURE_UPDATE","details":{"summary":"Data Optimization Update","details":"Migrated to google.genai, fixed circular imports, isolated phase memory dumps."}}
+{"timestamp":"2026-04-11T15:50:19.959247","type":"STATE_CHANGE","details":{"from":null,"to":"login_page"}}
+{"timestamp":"2026-04-11T15:50:38.662167","type":"STATE_CHANGE","details":{"from":"login_page","to":"dashboard"}}
+{"timestamp":"2026-04-11T15:55:36.142823","type":"ARCHITECTURE_UPDATE","details":{"summary":"Data Optimization Update","details":"Migrated to google.genai, fixed circular imports, isolated phase memory dumps."}}
+{"timestamp":"2026-04-11T15:55:45.497216","type":"STATE_CHANGE","details":{"from":null,"to":"login_page"}}
+{"timestamp":"2026-04-11T15:56:03.820325","type":"STATE_CHANGE","details":{"from":"login_page","to":"dashboard"}}
+{"timestamp":"2026-04-11T16:00:18.235416","type":"ARCHITECTURE_UPDATE","details":{"summary":"Data Optimization Update","details":"Migrated to google.genai, fixed circular imports, isolated phase memory dumps."}}
+{"timestamp":"2026-04-11T16:00:27.543732","type":"STATE_CHANGE","details":{"from":null,"to":"login_page"}}
+{"timestamp":"2026-04-11T16:00:45.251366","type":"STATE_CHANGE","details":{"from":"login_page","to":"dashboard"}}
+{"timestamp":"2026-04-11T16:01:03.956557","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-11T16:07:43.782865","type":"ARCHITECTURE_UPDATE","details":{"summary":"Data Optimization Update","details":"Migrated to google.genai, fixed circular imports, isolated phase memory dumps."}}
+{"timestamp":"2026-04-11T16:07:53.581328","type":"STATE_CHANGE","details":{"from":null,"to":"login_page"}}
+{"timestamp":"2026-04-11T16:08:11.744068","type":"STATE_CHANGE","details":{"from":"login_page","to":"dashboard"}}
+{"timestamp":"2026-04-11T16:08:23.848187","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-12T05:27:18.893447","type":"CRASH","details":"Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://order.gfs.com/categories/results/2~074\", waiting until \"load\"\n"}
+{"timestamp":"2026-04-12T12:08:27.318567","type":"ARCHITECTURE_UPDATE","details":{"summary":"Data Optimization Update","details":"Migrated to google.genai, fixed circular imports, isolated phase memory dumps."}}
+{"timestamp":"2026-04-12T12:14:55.612094","type":"ARCHITECTURE_UPDATE","details":{"summary":"Data Optimization Update","details":"Migrated to google.genai, fixed circular imports, isolated phase memory dumps."}}
+{"timestamp":"2026-04-12T12:19:18.601452","type":"ARCHITECTURE_UPDATE","details":{"summary":"Data Optimization Update","details":"Migrated to google.genai, fixed circular imports, isolated phase memory dumps."}}
+{"timestamp":"2026-04-12T12:20:20.284770","type":"STATE_CHANGE","details":{"from":null,"to":"login_page"}}
+{"timestamp":"2026-04-12T12:20:38.339079","type":"STATE_CHANGE","details":{"from":"login_page","to":"dashboard"}}
+{"timestamp":"2026-04-12T12:20:51.500862","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}
+{"timestamp":"2026-04-12T12:34:25.298687","type":"ARCHITECTURE_UPDATE","details":{"summary":"Data Optimization Update","details":"Migrated to google.genai, fixed circular imports, isolated phase memory dumps."}}
+{"timestamp":"2026-04-12T12:34:45.521373","type":"STATE_CHANGE","details":{"from":null,"to":"login_page"}}
+{"timestamp":"2026-04-12T12:35:03.047527","type":"STATE_CHANGE","details":{"from":"login_page","to":"dashboard"}}
+{"timestamp":"2026-04-12T12:35:28.922836","type":"STATE_CHANGE","details":{"from":"dashboard","to":"search_results"}}

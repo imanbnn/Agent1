@@ -2,7 +2,6 @@ venv/
 BACKUP/
 vision/
 videos/
-states/
 __pycache__/
 agent_code_evolution_snapshot.log
 debug_recording.webm
@@ -10,5 +9,8 @@ gfs_raw_dom_dump.html
 .DS_Store
 vision_backup_dashboard_search_bar.png
 dashboard.html
-dashboard_images
+dashboard_images/
 .history/
+raw_dumps/
+fast_debug.webm
+gfs_raw_dom_dump.html
